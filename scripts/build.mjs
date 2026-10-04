@@ -114,7 +114,7 @@ function render(scan, prev, { isLatest, scans }) {
   const ncv = scan.meta.nicheCreatives;
   const kpis = `<div class="kpis">
     ${kpi(String(brands.length), 'אתרים בסריקה', `${niche.length} נישה · ${ref.length} רפרנס`)}
-    ${kpi(`${advertisersMeta}/${niche.length}`, 'מתחרי נישה מפרסמים ב-Meta', 'בעברית, ' + scan.date)}
+    ${kpi(`${advertisersMeta}/${niche.length}`, 'מתחרי נישה מפרסמים ב-Meta', 'בכל השפות, ' + scan.date)}
     ${kpi('~' + num(scan.meta.brandStats[mostRes.id].results), `תוצאות Meta של ${mostRes.name}`, 'הנפח הגבוה בנישה')}
     ${kpi('~' + scan.meta.brandStats[longest.id].longestDays, 'ימי ריצה – המודעה הוותיקה בנישה', `${longest.name}, Meta`)}
     ${kpi(`${ncv.image} / ${ncv.video}`, `תמונה·קרוסלה / וידאו (מתוך ${ncv.total})`, `~${Math.round((ncv.image / ncv.total) * 100)}% / ~${Math.round((ncv.video / ncv.total) * 100)}%`)}
@@ -147,6 +147,7 @@ function render(scan, prev, { isLatest, scans }) {
     <h3>מה בסריקה</h3>
     <ul class="notes"><li>7 אתרי נישה (משקל גבוה מאוד) ו-6 אתרי רפרנס מחוץ לנישה (משקל נמוך – טרנדים, מבצעים עונתיים, פורמטים).</li>
     <li>4 פלטפורמות נותחו: Meta (מודעות), TikTok (אורגני בלבד), Google (שקיפות מודעות), נראות אורגנית (פייסבוק, YouTube, פיד אינסטגרם מוטמע).</li>
+    <li>היקף: מודעות ותוכן נותחו בכל שפה ובכל מדינה (לא רק עברית) – עודכן ב-04.10.2026.</li>
     <li>אינסטגרם עדיין <b>בהמשך</b> – ההתחברות לא הושלמה.</li></ul>
     <h3>הדוחות המלאים בדרייב</h3>${overviewDocs}`);
 
@@ -155,10 +156,10 @@ function render(scan, prev, { isLatest, scans }) {
   const metaResultsItems = [...niche, ...ref].filter((b) => ms[b.id].results > 0).sort((a, b) => ms[b.id].results - ms[a.id].results).map((b) => ({ label: bdi(b.name), value: ms[b.id].results, display: '~' + num(ms[b.id].results), group: b.group, delta: delta('meta', b.id, 'results') }));
   const zeroMeta = [...niche, ...ref].filter((b) => ms[b.id].results === 0).map((b) => `<span class="pill">${bdi(b.name)}</span>`).join('');
   const longestItems = [...niche, ...ref].filter((b) => ms[b.id].longestDays).sort((a, b) => ms[b.id].longestDays - ms[a.id].longestDays).map((b) => ({ label: bdi(b.name), value: ms[b.id].longestDays, display: '~' + ms[b.id].longestDays, group: b.group }));
-  const maxRun = 210;
+  const maxRun = Math.ceil(Math.max(210, ...[...niche, ...ref].map((b) => ms[b.id].longestDays || 0)) / 50) * 50 + 20;
   const dotRows = [...niche, ...ref].filter((b) => ms[b.id].runDays).sort((a, b) => ms[b.id].longestDays - ms[a.id].longestDays).map((b) => `<div class="dot-row"><div class="bar-label">${bdi(b.name)}</div><div class="dot-track">${ms[b.id].runDays.map((d) => `<i class="adot g-${b.group}" style="right:${(d / maxRun) * 100}%" title="${d} ימים"></i>`).join('')}</div><div class="bar-val" dir="ltr">${ms[b.id].runDays.length}</div></div>`).join('');
   const dotChart = `<figure class="chart"><figcaption><b>משך ריצה של כל קריאייטיב שנדגם (ימים)</b>${srcTag('meta', 'Meta Ad Library')}</figcaption>
-    <div class="dots">${dotRows}</div><div class="dot-row axis-row"><div></div><div class="axis">${[0, 50, 100, 150, 200].map((v) => `<span style="right:${(v / maxRun) * 100}%">${v}</span>`).join('')}</div><div class="bar-val">&nbsp;</div></div>
+    <div class="dots">${dotRows}</div><div class="dot-row axis-row"><div></div><div class="axis">${[0, 100, 200, 300, 400].filter((v) => v < maxRun).map((v) => `<span style="right:${(v / maxRun) * 100}%">${v}</span>`).join('')}</div><div class="bar-val">&nbsp;</div></div>
     <p class="fine">כל נקודה = קריאייטיב/משפחה אחת בדוח המותג. ימי ריצה מתאריך ההתחלה עד 04.10.2026 בהנחה שהמודעה פעילה. העמודה השמאלית = מספר קריאייטיבים במדגם.</p></figure>`;
   const nc = scan.meta.nicheCreatives;
   const formatSplit = stack({ title: 'פורמט בנישה – 40 קריאייטיבים מובילים', source: srcTag('meta', 'Meta Ad Library · ספירה בדוח ההשוואתי'), segments: [{ label: 'תמונה / כרטיס / קרוסלה', value: nc.image }, { label: 'וידאו', value: nc.video }], total: nc.total });
@@ -178,7 +179,7 @@ function render(scan, prev, { isLatest, scans }) {
   const metaPanel = section('meta', 'Meta – מודעות ממומנות', `
     <p class="scope">${esc(scan.meta.scope)}</p>${legend()}
     <div class="grid2">
-      ${bars({ title: 'תוצאות Meta לפי מפרסם', source: srcTag('meta', 'Meta Ad Library'), items: metaResultsItems, note: `<b>0 מודעות בעברית:</b> ${zeroMeta}` })}
+      ${bars({ title: 'תוצאות Meta לפי מפרסם', source: srcTag('meta', 'Meta Ad Library'), items: metaResultsItems, note: `<b>0 מודעות לפי Page ID (ישראל + כל המדינות):</b> ${zeroMeta}` })}
       ${bars({ title: 'הריצה הארוכה ביותר (ימים)', source: srcTag('meta', 'Meta Ad Library'), items: longestItems, max: maxRun })}
     </div>
     ${dotChart}

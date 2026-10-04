@@ -3,7 +3,7 @@
   "_howToUpdate": "להוספת סריקה שבועית: להוסיף אובייקט חדש בסוף המערך scans (אפשר להעתיק את האחרון), לעדכן id/date/statusLabel ואת המספרים. הלוח מציג תמיד את הסריקה האחרונה, ומשווה אוטומטית (Δ) לסריקה הקודמת. סריקות קודמות נשמרות כארכיון בנתיב /archive/<id>/. מותגים נשמרים פעם אחת ב-brands.",
   "site": {
     "title": "לוח מודיעין תחרותי – סושיאל ופרסום",
-    "subtitle": "אייל גולדמן · חנות Shopify לתוסף תזונה נישתי · שוק ישראל, עברית בלבד",
+    "subtitle": "אייל גולדמן · חנות Shopify לתוסף תזונה נישתי · שוק ישראל, ניתוח בכל השפות",
     "scanType": "סריקה חד-פעמית ראשונה"
   },
   "events": [
@@ -35,8 +35,8 @@
     {
       "id": "2026-10-04",
       "date": "04.10.2026",
-      "statusLabel": "סריקה חד-פעמית ראשונה",
-      "scanNote": "כל הנתונים נאספו ב-04.10.2026 (שעון ישראל), מקורות ציבוריים, קריאה בלבד.",
+      "statusLabel": "סריקה חד-פעמית ראשונה · עודכן: כל השפות",
+      "scanNote": "כל הנתונים נאספו ב-04.10.2026 (שעון ישראל), מקורות ציבוריים, קריאה בלבד. עודכן ב-04.10.2026: לפי הנחיית אייל, מנתחים מודעות ותוכן בכל שפה ובכל מדינה (לא רק עברית); בדיקות Page ID; מסמכי Meta ונראות אורגנית נבנו מחדש וקישורי הדרייב עודכנו.",
 
       "drive": {
         "folders": {
@@ -46,40 +46,40 @@
           "organic": "https://drive.google.com/drive/folders/12doj8P-mBRSS8sS1vsmKMdW35mhiBZKA"
         },
         "comparative": {
-          "meta": "1S65Wv2ssQ2tTthNuUlnwoO2FzZpUDbcrEvzGm8WDxBE",
+          "meta": "1txRL2IJIMjm18KZP9Uak1fGGjZ44T8HKTjTLJw0dw5I",
           "tiktok": "15_GGopHo9qdQ5ZuxALPsJY4pKeV9WXWHiYXMW5fWD7U",
           "google": "1YH9plgPkOU2LxHcT3byhhzxpgzIZSWe9MGGvUK0WdbM",
-          "organic": "1h7vTeMS7phE-Qm6sRWo1NnIiKVv6toVPzYcI_mhtyfw"
+          "organic": "15aNOWLgv2XjqsSkrJH70mY4CRbayAJvJUUoRZUBKPEw"
         },
         "extra": {
           "tiktokCreators": { "label": "נספח יוצרים וקודי הנחה (TikTok)", "id": "1JYGRbOf7I9I26x3u4uRrYvQ3P5q4SHZ83yJHGZk4CFg" },
-          "organicBlockers": { "label": "דוח חסמים (נראות אורגנית)", "id": "1eTy3Mvw19wIlhgZiza_w329qzSCet24CkDu-_FvXo1E" }
+          "organicBlockers": { "label": "דוח חסמים (נראות אורגנית)", "id": "1tPfvJmIF2X-nJGAjMUN5wPbuRLY8y7zmJ4rh-5nOSrI" }
         },
         "perBrand": {
-          "by-harmony": { "meta": "1aa1XkXhsOM54g6I2QgkDBlw-PjGQahIqN1zZ4OMikIQ", "tiktok": "1DvtNRDly6FzQJ0yVP_INOBbOawz-9D6kJYX8PVN0V5s", "google": "1Cd3S-WfuWe8VqvlAL1lDf6nq_HweBfN_i2o6WYmYJmo", "organic": "1z6_jP31MT-5V_ua1WgbkUMH2z17qU7y6PXg1ThrQyVA" },
-          "goom": { "meta": "1WyMITsbgh238b-ocaj-MJi0W6sVPNKiTTvml9IWgbsA", "tiktok": "1j1q0DNesz6AgDsLgDfI6_zAtvPQM01klteAnhrhYWRo", "google": "144dFusidw9Q1ovwUk15VFqjb2nlAtPClPndbjjDRER0", "organic": "1mhbT7r3Htop9Xpu4kgFmtsLKOcbRhCJKo1L-ZPypV9Q" },
-          "ecosupp": { "meta": "1RgXyXhp0BC2Pc0Cp_irNw9oxUoaF8EhR4kzT-X3vHBw", "tiktok": "1us5QnPFLu7L82sjQIyAZU7bhlurnutRpvKJQc7PmOqI", "google": "1A17aCkhpOqgfWaBYxjMMJjKAau2uMh5V-W2hhBHPJXg", "organic": "1zpzpuj4Kvvq0--BFjHLER9oqVbnI8zI9DOtiJ-hagXg" },
-          "mycolivia": { "meta": "1dn2B5W09vjzM-nfT3NJ2PgOqwFQwaTefnqwVZc1uAAk", "tiktok": "1OZBty6os-a7luoO9pg5GAAYESrVufKB9Zpm1coB4hV8", "google": "1TQYduZVJEoECOOZeyd2s2Ft4p7hzhF7xran1Jm6lgI0", "organic": "1UlleSEJ1TS9sRpuVBy7AWEpefrhnUkC6b-f50xW-qQ0" },
-          "mayven": { "meta": "1gxHiRVI_8fo7hkNxPCwe2_ybgAdz_CcNuYwND2C6z9c", "tiktok": "1UYCafRTFfFmEdsKffV338Q5TYuYHAAOPD1zzBW2VsWQ", "google": "14hAyT-ma6y6HYmfW0UgWJ5BcBOCVzDRGlnseTdlaLWs", "organic": "1yQ29GylZ1PgZaESEUdLJCfj-RF0_glNEdBFydJo5x0g" },
-          "fillit": { "meta": "1N1WVS5E3pFKjnv78Ma6VTxP_IlI-YYAeEtjLmsNFZ9E", "tiktok": "1jSD2H561K2vmAKaHnL_4ECtEkTwS8bDZJDBqwVZNUd0", "google": "1sawlL0yMjfWb7ugwNIZ_tzoaEQIQbe1iiYZpWmMYQLw", "organic": "1nYbc8_V5g0yBTD3Zi3KIJlcdoL2F44s1llj_QMarQD0" },
-          "mycospring": { "meta": "1UUfMXrrQmdfpHMNhNT5vfrjxldLmQ39fxSMPzjrGk6Y", "tiktok": "1zYeeOhTBxBaH22SHYEF8PxoI0egLBv2u552ncUc1hbc", "google": "1x2hKEgQG_26s5LfGGlhXNYx5tbFcNx7qh_1qZs_GuZ8", "organic": "1vzJzvUX-Plz_RTj_EG-tPvnmjTlCjCv-bKinzPEIjsw" },
-          "try-smiley": { "meta": "1zWZjwdta0ms6PEjHY-G6rZ_ZvPGgHvDu8qVKCNCLuMg", "tiktok": "1t-ChCDakeVeW_QB-yQYVRpuj6LY_YTh-5ysXMpj80dY", "google": "1qrI_mY5wWG41qzsK2aIorORF4gciFtPE9N33tLJ5yfQ", "organic": "1FN8ht9chbAq2Ue96MP0aOZYPSPvh5bTQYs-eyjLBkno" },
-          "wondersteva": { "meta": "1UIzP7cwe_WSgwCqlqmo2cio-cZwgo3J1fAscxgQiBcg", "tiktok": "136B4cvMjJJcmBK5y5JCL4M1MHmPT4nleRFYbooUSUKo", "google": "1ybSWnYlF12IjPzi1RkH0efQvq-iqQqDAGqfRQueKx1U", "organic": "1S1T6AxNwE_XEPF9d4fRMlDqiiaGilz8FC21ATaU2z9U" },
-          "softella": { "meta": "1xx6t4XUF2Rat0b8iK7KCLcgieyR60demlZeH2l_OlJ4", "tiktok": "1vB6BSY-L_dW93tpIq_Am_J3Fv3j8qQ8jFL15q83YW-w", "google": "1EI5cyIXVWShshwTPRtiLHDqYjuZJsWY3lTRKD7z56HE", "organic": "1Nj5c3LbF0MXda9hav_o_v6MLPJG2lKy6wzrMs7jZ3EU" },
-          "mywoof": { "meta": "1XHth2zZFp0Q6Bwy5KPEZO7f3WSNkoIG-O5OJCsHgRHc", "tiktok": "1N8XwUm5qfeIx1bQXw5UGh_IQHVRqDSlWNCzrdqjq2UE", "google": "1XeRdKLpFKXavlRGRdvL5UGs-214ecbRwcWrdphX9Li4", "organic": "13rabZR1CLumrdrmzqD5PmvhZyUUMfaBmuhz917khAeY" },
-          "craftly": { "meta": "1-Yk4o4MnsW2Dt1bddk6Cu1qPEgzdarcUNZPkmdjhYhw", "tiktok": "1yhHjKAFQnotQGxGDqE5GM0Pn0r4xlzn7N3LbAlcziJw", "google": "1DeVFDeBIVu55NgW7_tNOQTgfjwXN6lMzPfP3fBSo0PM", "organic": "1x6C7-jLMi6zE2nbtR3-9DE5OMa5tMxZESvlx4flO9xo" },
-          "trygmila": { "meta": "1HUYUbkMZSTcyvDe7sdRfWxN-kaMRL_KbttU2rU4PA7w", "tiktok": "1z-POrxIbHHC0KGfz3ZOI_P9adT2gqceLbnE5WbFgqmQ", "google": "1AnxCOUY8py36pHLT8HbQvxqpkIJeN57OxJ8QcWgVM5M", "organic": "18s5xwLPLp08fDJdeR23NvgpU8t71vqxZhGKU5zkwquk" }
+          "by-harmony": { "meta": "1hrvpabH4Q7usIGwvAUMUj9hU4z-3yB7-qtpIX7BsVpw", "tiktok": "1DvtNRDly6FzQJ0yVP_INOBbOawz-9D6kJYX8PVN0V5s", "google": "1Cd3S-WfuWe8VqvlAL1lDf6nq_HweBfN_i2o6WYmYJmo", "organic": "170vsgGnrU0Hj9paaJhCt5gdhL7-13Qr28phGxocg5iM" },
+          "goom": { "meta": "1NOF1tA-81ec1iGA_lp6_3UCfdugSnjl_lfbzfh3YY9M", "tiktok": "1j1q0DNesz6AgDsLgDfI6_zAtvPQM01klteAnhrhYWRo", "google": "144dFusidw9Q1ovwUk15VFqjb2nlAtPClPndbjjDRER0", "organic": "1F9HBUW2WLs89Kb6JG5qwZ_6nVirw6g4RjRnqExInIHI" },
+          "ecosupp": { "meta": "1jUmwkKwY7apFfcH4GodfgYlTuK3V7JA3XlniiGH-lRo", "tiktok": "1us5QnPFLu7L82sjQIyAZU7bhlurnutRpvKJQc7PmOqI", "google": "1A17aCkhpOqgfWaBYxjMMJjKAau2uMh5V-W2hhBHPJXg", "organic": "1BU4JKnTZJ-3bpHijRAYaGk8W9kZD5YgLm9Jx4vYFiSo" },
+          "mycolivia": { "meta": "1nuLIPqK9sM7cX7XG77CixPUhS7M2zqGgwagkuvZ4kAI", "tiktok": "1OZBty6os-a7luoO9pg5GAAYESrVufKB9Zpm1coB4hV8", "google": "1TQYduZVJEoECOOZeyd2s2Ft4p7hzhF7xran1Jm6lgI0", "organic": "14FWPmVkWqk5krmUXaf1Mx7o1ZBxtoTc7xrOoxbU-too" },
+          "mayven": { "meta": "1Pu93H2aHbeUtJ4var7p1kUGFGyruPxWGZQalJHA9KHA", "tiktok": "1UYCafRTFfFmEdsKffV338Q5TYuYHAAOPD1zzBW2VsWQ", "google": "14hAyT-ma6y6HYmfW0UgWJ5BcBOCVzDRGlnseTdlaLWs", "organic": "1BbDGeBTG871gbvWiZfnl-bWbDCJdr8IxyyJJvN7Swrg" },
+          "fillit": { "meta": "15F_GzrIusbhMc6pNn7eoFMtfpZC1mU8EtGxAtWXGSvE", "tiktok": "1jSD2H561K2vmAKaHnL_4ECtEkTwS8bDZJDBqwVZNUd0", "google": "1sawlL0yMjfWb7ugwNIZ_tzoaEQIQbe1iiYZpWmMYQLw", "organic": "15xoLBN1H2Rg6gSJKv5EMPgwlyy049p1HTqGcpE6QbuM" },
+          "mycospring": { "meta": "1W6XBTte05rQt3NJ189IgS2qohqOscxRnBwkE0QvQmK8", "tiktok": "1zYeeOhTBxBaH22SHYEF8PxoI0egLBv2u552ncUc1hbc", "google": "1x2hKEgQG_26s5LfGGlhXNYx5tbFcNx7qh_1qZs_GuZ8", "organic": "1FmU4cDATcm8kkXQU30KCwWW9EuFD4vYp-qPlf3OrvM8" },
+          "try-smiley": { "meta": "1kkMfA4T5UuVrdMWIAXMFKJvBE38nG4DipzslPv1KLcI", "tiktok": "1t-ChCDakeVeW_QB-yQYVRpuj6LY_YTh-5ysXMpj80dY", "google": "1qrI_mY5wWG41qzsK2aIorORF4gciFtPE9N33tLJ5yfQ", "organic": "1VIBMpxQ6-F4b48xCGKL58wihsU-mMgNNqXUdljE3twQ" },
+          "wondersteva": { "meta": "17bh97r2VgKrFU2Rm7o_sCC2g5DAjnrb8hnYLno4iOTg", "tiktok": "136B4cvMjJJcmBK5y5JCL4M1MHmPT4nleRFYbooUSUKo", "google": "1ybSWnYlF12IjPzi1RkH0efQvq-iqQqDAGqfRQueKx1U", "organic": "1j6rQLBYRxJqOc_7-ZWG3S744b_ePfNhl3K3eIqSflcQ" },
+          "softella": { "meta": "167id9VeVXCQ_N9Lxl0U8quWvXF-TGfvf7RMBjtcBSWw", "tiktok": "1vB6BSY-L_dW93tpIq_Am_J3Fv3j8qQ8jFL15q83YW-w", "google": "1EI5cyIXVWShshwTPRtiLHDqYjuZJsWY3lTRKD7z56HE", "organic": "1yOASLkIv1XzSMPoRBxKbyHunRFKRCsDenZ-NDYN3pNg" },
+          "mywoof": { "meta": "1eA1Ozj_XcNhnAL_8GnIj5MvqJbkJLy09EzFc3Gw7diA", "tiktok": "1N8XwUm5qfeIx1bQXw5UGh_IQHVRqDSlWNCzrdqjq2UE", "google": "1XeRdKLpFKXavlRGRdvL5UGs-214ecbRwcWrdphX9Li4", "organic": "10vW69SoRY7JW3PQJ-YR01C-nTFf79B6EiKE-Dlfj6h0" },
+          "craftly": { "meta": "1NmBVzP8EIwROLB5yEQwffC37ICdBg3BqLmCs5sNorTc", "tiktok": "1yhHjKAFQnotQGxGDqE5GM0Pn0r4xlzn7N3LbAlcziJw", "google": "1DeVFDeBIVu55NgW7_tNOQTgfjwXN6lMzPfP3fBSo0PM", "organic": "1gOG6sQpuoUf0oW8nVRHLe0LFAHQ8fP35t5hPC8PHggU" },
+          "trygmila": { "meta": "1usv8l_V6Ve32n63NCwNrbHudz_90T85a7dE5NSopodw", "tiktok": "1z-POrxIbHHC0KGfz3ZOI_P9adT2gqceLbnE5WbFgqmQ", "google": "1AnxCOUY8py36pHLT8HbQvxqpkIJeN57OxJ8QcWgVM5M", "organic": "1ijlELF4rIeyOyS7ELJlMQ8O-1mNZ25kjr2-y39PgDDw" }
         }
       },
 
       "summary": {
         "takeaways": [
-          { "platform": "meta", "text": "5 מתוך 7 מתחרי הנישה מפרסמים ב-Meta בעברית (Mayven ‏~390 תוצאות, EcoSupp ‏~61, Mycolivia ‏~58, Fill It ‏~18, Mycospring ‏~18). By Harmony ו-GOOM – אפס מודעות: ערוץ ממומן פנוי מתחרות ישירה." },
+          { "platform": "meta", "text": "5 מתוך 7 מתחרי הנישה מפרסמים ב-Meta בעברית (Mayven ‏~390 תוצאות, EcoSupp ‏~61, Mycolivia ‏~58, Fill It ‏~18, Mycospring ‏~18). Mayven מפרסמת גם בערבית (8 מודעות, 5 משפחות). By Harmony ו-GOOM – אפס מודעות גם לפי Page ID בישראל ובכל המדינות, בכל השפות: ערוץ ממומן פנוי מתחרות ישירה." },
           { "platform": "meta", "text": "המודעות שרצות הכי הרבה זמן (Mycolivia ‏~206 ימים, Mayven ‏~186, Mycospring ‏~117, EcoSupp ‏~109) הן הוק כאב/שאלה או חינוך – בלי הנחה. הנישה מתחרה על אמון, לא על מחיר." },
           { "platform": "meta", "text": "בנישה: 28 מתוך 40 קריאייטיבים הם תמונה/קרוסלה ו-12 וידאו (~70% / ~30%). 15 מתוך 40 (~38%) כוללים הצעה כספית או משלוח חינם – הצעות מתונות (10%, 15% מנוי, ₪20–40 למארז)." },
           { "platform": "google", "text": "בגוגל הליבה היא מודעות טקסט/חיפוש (Mayven 94% טקסט, Mycolivia 76%, Fill It 64%, Harmony 61%), עם זווית ״רכיב ← בעיה״. הצעות כמעט לא במודעה – הן בדף הנחיתה. הכיסוי נמוך: ~20% מהיעד." },
-          { "platform": "tiktok", "text": "ב-TikTok האורגני הפוסטים המובילים בנישה הם דיבור/UGC עם הוכחה ויזואלית. 19 מתוך 21 הפוסטים המובילים בצליל מקורי. ל-GOOM (8.8K עוקבים) פוסט של 13.2M צפיות – חשבון חדש יכול לצמוח." },
-          { "platform": "meta", "text": "פערים פנויים: מנוי מפורסם רק אצל Mycospring; אף מתחרה נישה לא מפרסם החזר כסף/תקופת ניסיון (קיים רק ברפרנס: 30–90 יום); ריטרגטינג עגלה נטושה נצפה רק ברפרנס (Craftly)." },
+          { "platform": "tiktok", "text": "ב-TikTok האורגני הפוסטים המובילים בנישה הם דיבור/UGC עם הוכחה ויזואלית. 19 מתוך 21 הפוסטים המובילים בצליל מקורי. ל-GOOM (8.8K עוקבים) פוסט של 13.2M צפיות – חשבון חדש יכול לצמוח. חיפוש מודעות בכל שפה ומדינה: לא נמצאו מודעות TikTok ממומנות לאף אחד מ-13 האתרים." },
+          { "platform": "meta", "text": "פערים פנויים: מנוי מפורסם רק אצל Mycospring; אף מתחרה נישה לא מפרסם החזר כסף/תקופת ניסיון (קיים רק ברפרנס: 30–90 יום); ריטרגטינג עגלה נטושה נצפה רק ברפרנס (Craftly). שפה: רק Mayven מפרסמת בערבית ב-Meta בנישה (הסקה מהדוח: פער/הזדמנות אפשרית אם יש קהל יעד דובר ערבית); GOOM (אינסטגרם) ו-Wonders Teva (YouTube) מפרסמות גם תוכן אורגני באנגלית; ב-GOOM אין הבדל מעורבות בין השפות." },
           { "platform": "organic", "text": "לוח השנה קרוב: בלאק פריידיי 27.11.2026 וחנוכה 4–12.12.2026. במדגם לא נצפתה עדיין מודעת בלאק פריידיי של אף מותג. גם סיכון רגולטורי: טענות בריאות חזקות (סרטן, HPV, דיכאון) אצל חלק מהמתחרים – לא להעתיק." }
         ],
         "actions": [
@@ -92,9 +92,9 @@
       },
 
       "meta": {
-        "scope": "Meta Ad Library הציבורית · ישראל · All ads · מודעות בעברית בלבד · סריקה ב-04.10.2026 (11:27–11:35). קריטריון ״מוביל״: משך ריצה, שכפולים/גרסאות, חזרתיות תמה. מעורבות לא זמינה בספרייה.",
+        "scope": "Meta Ad Library הציבורית · ישראל · All ads · כל השפות (עודכן 04.10.2026: בדיקות Page ID בישראל ובכל המדינות וניתוח מודעות בכל שפה; 40 הקריאייטיבים המפורטים בנישה בעברית) · סריקה ב-04.10.2026 (11:27–11:35). קריטריון ״מוביל״: משך ריצה, שכפולים/גרסאות, חזרתיות תמה. מעורבות לא זמינה בספרייה.",
         "brandStats": {
-          "mayven": { "results": 390, "sample": 7, "longestDays": 186, "image": 5, "video": 2, "runDays": [186, 128, 128, 126, 116, 115, 91] },
+          "mayven": { "nonHebrewAds": 8, "nonHebrewFamilies": 5, "results": 390, "sample": 7, "longestDays": 186, "image": 5, "video": 2, "runDays": [186, 128, 128, 126, 116, 115, 91] },
           "ecosupp": { "results": 61, "sample": 9, "longestDays": 109, "image": 7, "video": 2, "runDays": [109, 39, 39, 39, 39, 39, 39, 39, 25] },
           "mycolivia": { "results": 58, "sample": 9, "longestDays": 206, "image": 5, "video": 4, "runDays": [206, 202, 202, 200, 88, 25, 24, 10, 6] },
           "fillit": { "results": 18, "sample": 7, "longestDays": 70, "image": 6, "video": 1, "runDays": [70, 62, 62, 47, 46, 24, 24] },
@@ -102,11 +102,11 @@
           "by-harmony": { "results": 0, "sample": 0 },
           "goom": { "results": 0, "sample": 0 },
           "craftly": { "results": 130, "sample": 9, "longestDays": 70, "runDays": [70, 54, 49, 49, 49, 49, 49, 18, 17] },
-          "trygmila": { "results": 12, "sample": 6, "longestDays": 6, "runDays": [6, 6, 6, 6, 5, 4] },
+          "trygmila": { "nonHebrewAds": 4, "nonHebrewFamilies": 3, "results": 12, "sample": 6, "longestDays": 6, "runDays": [6, 6, 6, 6, 5, 4] },
           "try-smiley": { "results": 0, "sample": 0 },
-          "wondersteva": { "results": 0, "sample": 0 },
-          "softella": { "results": 0, "sample": 0 },
-          "mywoof": { "results": 0, "sample": 0 }
+          "wondersteva": { "results": 140, "worldwide": 150, "sample": 13, "longestDays": 400, "runDays": [400, 376, 263, 224, 175, 167, 156, 127, 124, 114, 112, 51, 39] },
+          "softella": { "results": 0, "sample": 0, "keywordResults": 4, "nonHebrewAds": 1 },
+          "mywoof": { "results": 50, "sample": 0, "keywordOnly": true }
         },
         "nicheCreatives": {
           "total": 40,
@@ -136,19 +136,24 @@
           { "group": "niche", "text": "ייעוץ נטורופתי חינם (ליד) + מארז חיסכון – Mycolivia" },
           { "group": "niche", "text": "שיא חג בנישה: 40% סוכות – Mycolivia (מודעות מ-24 ו-28.09)" },
           { "group": "niche", "text": "Fill It: אין הצעות במודעות כלל – הוכחה חברתית בלבד" },
-          { "group": "reference", "text": "Gmila/LUUF: 50% + 10–20% קופון, דחיפות 24 שעות" },
-          { "group": "reference", "text": "Craftly: 2+1 מתנה / קנה 2 קבל 1, מתנת ערך ₪199, ריטרגטינג עגלה נטושה עם קוד" }
+          { "group": "reference", "text": "Gmila/LUUF: 50% + 10–20% קופון, דחיפות 24 שעות; בערבית: 50% + משלוח חינם ל-48 שעות, ניסיון 30 יום ללא התחייבות" },
+          { "group": "reference", "text": "Craftly: 2+1 מתנה / קנה 2 קבל 1, מתנת ערך ₪199, ריטרגטינג עגלה נטושה עם קוד" },
+          { "group": "reference", "text": "Wonders Teva: עד 50% + מנקה לשון / 2 מתנות במודעות הצעה; הקריאייטיבים הוותיקים (400/376 ימים) ללא הנחה" }
         ],
         "notes": [
           "ימי ריצה מחושבים מתאריך התחלה עד 04.10.2026 בהנחה שהמודעה עדיין פעילה (הכרטיסים סומנו Active).",
           "״תוצאות״ = מספר תוצאות חיפוש מילת מפתח, כולל כמעט-כפילויות – לא מספר קריאייטיבים ייחודיים.",
           "מודעת Mayven ״הצעה ל-24 שעות״ רצה ~186 ימים – דחיפות מתגלגלת (סיכון אמון).",
-          "By Harmony ו-GOOM: 0 מודעות; GOOM אומת רשמית ברמת דף. Smiley, Wonders, Softella, Woof: 0 מודעות בעברית (Wonders אומת ברמת דף)."
+          "עדכון 04.10.2026 – Wonders Teva (רפרנס): הממצא ״0 מודעות״ הוחלף. בדיקה לפי Page ID מדור קודם 270180559520184: ~140 מודעות בישראל / ~150 בכל המדינות; 13 נותחו (פחות מ-30% מ-140); הוותיקות רצות 400 ו-376 ימים (בעיה/עדות, ללא הנחה). משקל נמוך – רפרנס.",
+          "מודעות שאינן בעברית: Mayven – 8 מודעות בערבית ב-5 משפחות קריאייטיב (42–89 ימי ריצה); Gmila/LUUF – 4 בערבית (3 משפחות); Softella – מודעה אחת מעורבת אנגלית/ערבית (שיוך מותג חלקי). לא נמצאו מודעות לא-עבריות אצל EcoSupp, Mycolivia, Fill It, Mycospring, Craftly (3 מודעות CraftlyWorld של מפרסם לא קשור הוצאו), Wonders, Woof, Smiley, By Harmony ו-GOOM.",
+          "By Harmony, GOOM ו-Smiley: 0 מודעות לפי Page ID בישראל ובכל המדינות. Softella ו-LUUF: Page ID = 0, אך כרטיסי מילת מפתח עם שם מפרסם/דומיין תואמים כן מופיעים.",
+          "Woof: אין Page ID (האתר חושף YouTube/TikTok בלבד). חיפוש מילת מפתח mywoof הציג ~50 מודעות בעברית (WOOF - Pet Wellness, MYWOOF-IL.COM) – מחליף את הממצא הקודם ״0״. טרם נותחו ודורשות סריקה נפרדת.",
+          "מגבלה: פער בין חיפוש מילת מפתח לחיפוש לפי Page ID אצל LUUF, Softella ו-Craftly – מספרי התוצאות שלהם הם לפי מילת מפתח."
         ]
       },
 
       "tiktok": {
-        "scope": "TikTok · תוכן אורגני בלבד (לא מודעות ממומנות מאומתות – ספריית המודעות של TikTok לא מכסה ישראל) · פרופילים ציבוריים, 04.10.2026. נבחרו 30% העליונים בכל חשבון לפי צפיות.",
+        "scope": "TikTok · תוכן אורגני בלבד (לא מודעות ממומנות מאומתות – ספריית המודעות של TikTok לא מכסה ישראל) · פרופילים ציבוריים, 04.10.2026. נבחרו 30% העליונים בכל חשבון לפי צפיות. חיפוש מודעות בכל שפה ובכל מדינה (ספריית המודעות, כל התאריכים מאז 2020, ו-Creative Center): לא נמצאו מודעות ממומנות לאף אחד מ-13 האתרים.",
         "brandStats": {
           "by-harmony": { "followers": 1804, "sample": 87, "selected": 27, "analysed": 5, "topViews": 2600000, "topViewsLabel": "2.6M", "medianViews": 37500, "lastPost": "16.07.2026", "formats": "פוסטי תמונות עם עמודי שיער; UGC לפני/אחרי; GRWM/סטורי טיים; מומחה מסביר" },
           "goom": { "followers": 8849, "sample": 88, "selected": 27, "analysed": 12, "topViews": 13200000, "topViewsLabel": "13.2M", "medianViews": 277800, "lastPost": "26.08.2026", "formats": "UGC דיבור למצלמה עם הוכחה בגוף; תגובה לתגובה/Stitch; רופאה; פודקאסט; מם קצר" },
@@ -189,7 +194,8 @@
           "צפיות אינן מעידות על תקציב או על ביצועי מודעה; לא ידוע אם פוסט קודם בממומן.",
           "רק חלק מהנבחרים נותח ויזואלית (עד 12 הנצפים ביותר לכל מותג). אין תמלול עברי של האודיו.",
           "תגובות לא נטענו בדפדפן – לא נאסף טופ-15 תגובות באף מותג. מספרי צפיות כפי שמוצגים בטיקטוק (מעוגלים).",
-          "מגבלת Creative Center: אין אזור ישראל/עברית."
+          "בדיקת מודעות בכל שפה ומדינה (04.10.2026): ספריית המודעות של TikTok (כל המדינות, כל התאריכים מאז 2020) ו-Creative Center – לא נמצאו מודעות ממומנות לאף אחד מ-13 האתרים. הספרייה אינה מאפשרת מיקוד לישראל; ב-Creative Center אזור IL (30 ימים) – אין מודעה תואמת, ואזור ״הכול״ – אין תוצאות.",
+      "מסקנה: ניתוח TikTok נשאר אורגני + שיתופי פעולה עם יוצרים. צעד אפשרי הבא: קישורי Spark Ads או גישה ל-Ads Manager של אייל."
         ]
       },
 
@@ -231,7 +237,7 @@
       },
 
       "organic": {
-        "scope": "נראות אורגנית: פייסבוק (איסוף ידני, 2–5 פוסטים לדף), YouTube (5 ערוצים), פיד אינסטגרם מוטמע של GOOM, נתוני אתרים. אינסטגרם (פרופילים) – לא נותח.",
+        "scope": "נראות אורגנית: פייסבוק (איסוף ידני, 2–5 פוסטים לדף), YouTube (5 ערוצים), פיד אינסטגרם מוטמע של GOOM, נתוני אתרים. אינסטגרם (פרופילים) – לא נותח. עודכן: ניתוח שפת התוכן (עברית / אנגלית / אחר) לפי כותרת/כיתוב.",
         "brandStats": {
           "mayven": { "fbFollowers": 60000, "ytSubs": 1260, "ytVideos": 180 },
           "ecosupp": { "fbFollowers": 22000, "fbRecPct": 100, "fbReviews": 468, "ytSubs": 351, "ytVideos": 221 },
@@ -248,23 +254,26 @@
           "mywoof": { "fbNotFound": true }
         },
         "highlights": [
-          "Wonders Teva (רפרנס): Shorts עם 1.7M צפיות בערוץ של 473 מנויים – הוק בעיה + סמכות אישית + קישור בתיאור.",
+          "Wonders Teva (רפרנס): Shorts עם 1.7M צפיות בערוץ של 473 מנויים – הוק בעיה + סמכות אישית + קישור בתיאור. שפה: 17 מתוך 23 כותרות YouTube באנגלית, כולל 5 מתוך 7 המובילים; התיאורים והקישור בעברית (שפת הדיבור לא אומתה).",
           "Harmony: סרטוני מומחה (מהנדס תרופות / נטורופתית) – 3 מהסרטונים המובילים, 57K–114K צפיות ב-YouTube.",
           "EcoSupp: עדות קצרה בגוף ראשון (Short, 45 שנ׳) – 19K צפיות.",
           "GOOM: ~5.5 פוסטים בחודש בפיד המוטמע (חציון 22 לייקים); טיזר בלאק פריידיי 2025 (״אל תקנו עד 23.11״); קוד פסח15.",
+      "שפות – GOOM: 26 מתוך 100 פוסטי אינסטגרם (פיד מוטמע) באנגלית בלבד; ב-2026 15 מתוך 40 (~38%). אין הבדל מעורבות בין עברית לאנגלית (חציון 17 לעומת 19.5 לייקים; מדגם קטן). הכרזת בלאק פריידיי 2025 הייתה באנגלית בלבד (16 לייקים, 0 תגובות).",
+      "שפות – Mayven: Short אחד בערבית ב-YouTube (308 צפיות) – התוכן היחיד בשפה שאינה עברית/אנגלית בנתוני הנראות. EcoSupp ו-Mycospring: כמעט הכול בעברית.",
           "Mayven: מועדון לקוחות כמבצע (1+1 מיסט לחברות מועדון); Softella: מנגנון ״תגיבי אני״ לקוד 10% (ט״ו באב)."
         ],
         "notes": [
           "אינסטגרם: ניתוח הפרופילים עדיין בהמתנה (התחברות לא הושלמה) – מוצג כ״בהמשך״. מדדי עוקבים: Harmony ‏~13.7K, GOOM ‏12.8K (מדד תצוגה-מקדימה / מסמך Meta; מדד Harmony נאסף בבקשה בודדת בגבול אפור).",
           "פייסבוק: מדגם 2–5 פוסטים לדף; ללא תאריכים, permalink או labels למדדים – לא לקרוא כמדד ביצועים. דף Fill It לא זמין; ל-Smiley ו-Woof לא נמצא דף רשמי.",
           "YouTube: עמוד ראשון בלבד לכל לשונית; מעורבות = צפיות בלבד. נותחו 5 ערוצים (Harmony, EcoSupp, Mayven, Wonders, Softella).",
-          "הדוח הנוכחי מסתמך על YouTube, פייסבוק (מדגם קטן), פיד GOOM ונתוני אתרים בלבד."
+          "שפות: סיווג לפי כותרת/כיתוב, לא לפי שפת הדיבור. בפייסבוק חלק מהאנגלית עשוי להיות תרגום אוטומטי של פייסבוק (לא הוכחה לשפת מקור); שפת הדיבור ב-YouTube לא אומתה. שפת התוכן באינסטגרם (10 פרופילים) ובסרטוני TikTok לא נבדקה.",
+      "הדוח הנוכחי מסתמך על YouTube, פייסבוק (מדגם קטן), פיד GOOM ונתוני אתרים בלבד."
         ]
       },
 
       "brandCards": {
         "by-harmony": {
-          "numbers": ["Meta: 0 מודעות", "Google: 33 מודעות", "TikTok: 1,804 עוקבים · 87 פוסטים · פוסט מוביל 2.6M", "פייסבוק: 885 עוקבים · 96% המלצות (20)"],
+          "numbers": ["Meta: 0 מודעות (Page ID, ישראל + כל המדינות)", "Google: 33 מודעות", "TikTok: 1,804 עוקבים · 87 פוסטים · פוסט מוביל 2.6M", "פייסבוק: 885 עוקבים · 96% המלצות (20)"],
           "offers": "TikTok: 15%, ״מחיר השקה״, חודש התנסות; ליווי וואטסאפ חינם. אתר: מנוי 15%, משלוח חינם מעל ₪300",
           "hooks": "לפני/אחרי הרמוני, GRWM/סטורי טיים, מומחה מסביר (מהנדס תרופות, נטורופתית); ״כל תוספי התזונה שתיקח…״",
           "creators": "לא נמצאו יוצרים עצמאיים בטיקטוק; סרטוני מומחה ב-YouTube (57K–114K צפיות)",
@@ -272,15 +281,15 @@
           "takeaway": "ערוץ ממומן ב-Meta ריק; חזק אורגנית ובחיפוש (מקום 1 בנשירת שיער בגברים)."
         },
         "goom": {
-          "numbers": ["Meta: 0 (אומת ברמת דף)", "Google: 6 מודעות", "TikTok: 8,849 עוקבים · פוסט מוביל 13.2M · חציון 277.8K", "פייסבוק: 2K · IG: 12.8K"],
+          "numbers": ["Meta: 0 (Page ID, ישראל + כל המדינות)", "Google: 6 מודעות", "TikTok: 8,849 עוקבים · פוסט מוביל 13.2M · חציון 277.8K", "פייסבוק: 2K · IG: 12.8K", "שפה (IG): 26 מתוך 100 פוסטים באנגלית בלבד; ב-2026: 15 מתוך 40 (~38%); אין הבדל מעורבות"],
           "offers": "החזר כספי; חבילות 10%/15% באתר; 15% אתר-רחב במודעת גוגל; 25% בנובמבר 2025 (מחוץ לנבחרים); פסח15",
           "hooks": "״בלון״ – בטן נפוחה; גומי טבעוני ולא כדור; רופאה במעיל לבן; פודקאסט; מם POV",
           "creators": "Adi Eliyahu; jenuinefinds (Paid partnership, לא אומת שזה אותו מותג)",
           "risks": "״משרד הבריאות״, פטנט, ״92%״, ירידה במשקל",
-          "takeaway": "החציון הגבוה ביותר ב-TikTok בנישה; ללא פרסום ב-Meta."
+          "takeaway": "החציון הגבוה ביותר ב-TikTok בנישה; ללא פרסום ב-Meta (גם לא בכל המדינות). הכרזת בלאק פריידיי 2025 באנגלית בלבד – 16 לייקים."
         },
         "ecosupp": {
-          "numbers": ["Meta: ~61 תוצאות · מדגם 9 · ריצה ארוכה ~109 יום", "Google: 86 מודעות (37 וידאו)", "TikTok: 21.5K עוקבים · 281 פוסטים · פוסט מוביל 3.4M", "פייסבוק: 22K · 100% המלצות (468)"],
+          "numbers": ["Meta: ~61 תוצאות · מדגם 9 · ריצה ארוכה ~109 יום", "Google: 86 מודעות (37 וידאו)", "TikTok: 21.5K עוקבים · 281 פוסטים · פוסט מוביל 3.4M", "פייסבוק: 22K · 100% המלצות (468)", "שפה: כמעט הכול בעברית (YouTube: כותרת אחת באנגלית מתוך 78)"],
           "offers": "מארזים ₪20/₪40 + משלוח חינם; קוד YARDEN / koral10 / SHTRUDEL10; מועדון 10%",
           "hooks": "״עובדה/מיתוס״; ספיגה (ליפוזומלי, TRAACS); ״100,000 איש התמגנזו״; פרס Clean Label Project",
           "creators": "Koral Kadar, רוקח קליני, Dr. Ali Kareem ועוד – יוצרים ואנשי מקצוע",
@@ -296,12 +305,12 @@
           "takeaway": "סבלנות קריאייטיבית: 4 קריאייטיבי כאב-שאלה רצים ~200 יום."
         },
         "mayven": {
-          "numbers": ["Meta: ~390 תוצאות · מדגם 7 · ריצה ארוכה ~186 יום", "Google: 67 מודעות (94% טקסט)", "TikTok: 7,121 עוקבים · פוסט מוביל 409.5K", "פייסבוק: 60K (הגדול בנישה)"],
+          "numbers": ["Meta: ~390 תוצאות · מדגם 7 · ריצה ארוכה ~186 יום · + 8 מודעות בערבית (5 משפחות)", "Google: 67 מודעות (94% טקסט)", "TikTok: 7,121 עוקבים · פוסט מוביל 409.5K", "פייסבוק: 60K (הגדול בנישה)", "שפה: Short אחד בערבית ב-YouTube (308 צפיות); ביו TikTok באנגלית"],
           "offers": "10% + משלוח חינם (24 שע׳, רצה ~186 ימים); 15% קבוע + מתנות; מועדון; מתנה מסתורית ₪149",
           "hooks": "שיער על רצפת המקלחת, לפני/אחרי, ״טעים בטירוף״, ״נופלת לנשנושים?״",
           "creators": "UGC נרחב; רוקחת Karen N.; henatias.style (קוד הנחה מוזכר, ערך לא נראה)",
           "risks": "ירידה במשקל, ״מוכח מחקרית״, דחיפות מלאכותית",
-          "takeaway": "נפח ושכפול: כמות גדולה של וריאנטים סביב כאב אחד (נשירה)."
+          "takeaway": "נפח ושכפול: כמות גדולה של וריאנטים סביב כאב אחד (נשירה). המתחרה היחידה בנישה עם מודעות בערבית (אותם צירי מוצר בשפה מדוברת)."
         },
         "fillit": {
           "numbers": ["Meta: ~18 תוצאות · מדגם 7 · ריצה ארוכה ~70 יום", "Google: 76 מודעות", "TikTok: 2,234 עוקבים · 207 פוסטים · פוסט מוביל 2.2M", "פייסבוק: הדף לא זמין"],
@@ -312,7 +321,7 @@
           "takeaway": "הוכחה חברתית בלבד, אפס הנחות, קול אנטי-הייפ."
         },
         "mycospring": {
-          "numbers": ["Meta: ~18 תוצאות · מדגם 8 · ריצה ארוכה ~117 יום", "Google: 83 מודעות (17 וידאו)", "TikTok: 554 עוקבים · פוסט מוביל 101.1K", "פייסבוק: 9.4K · 86% המלצות (6)"],
+          "numbers": ["Meta: ~18 תוצאות · מדגם 8 · ריצה ארוכה ~117 יום", "Google: 83 מודעות (17 וידאו)", "TikTok: 554 עוקבים · פוסט מוביל 101.1K", "פייסבוק: 9.4K · 86% המלצות (6)", "שפה: כמעט הכול בעברית"],
           "offers": "מנוי 15% קבוע (כל 30/45/60 יום) – המנוי היחיד שמפורסם; קנו 4 חסכו 12%; חידון התאמה",
           "hooks": "״מה ההבדל בין האבקה לתמצית?״, מייסד/מגדל מול מצלמה, ״למה אנחנו לא מוכרים בקפסולות?״",
           "creators": "מייסד/מומחה (לא UGC); Michal Asulin (האשטגים רפואיים)",
@@ -320,7 +329,7 @@
           "takeaway": "LTV: מנוי + מייסד + בדיקות מעבדה; 3/4 בחיפוש אורגני."
         },
         "try-smiley": {
-          "numbers": ["Meta: 0 מודעות", "Google: ~400 מודעות (לא נותחו)", "TikTok: 16.3K עוקבים · 400 פוסטים · פוסט מוביל 2.4M"],
+          "numbers": ["Meta: 0 מודעות (Page ID, ישראל + כל המדינות)", "Google: ~400 מודעות (לא נותחו)", "TikTok: 16.3K עוקבים · 400 פוסטים · פוסט מוביל 2.4M"],
           "offers": "30% + משלוח חינם + 30 יום ניסיון + ״השני במתנה״ + מלאי מוגבל; סוכות 30% אתר-רחב",
           "hooks": "״רופאה״, פאנל טלוויזיה מבוים, מבחן ליקוק, גועל/בושה",
           "creators": "קוד אופק10; סטורי טיים חברות",
@@ -328,15 +337,15 @@
           "takeaway": "ערימת הצעות והיפוך סיכון – השראה בלבד."
         },
         "wondersteva": {
-          "numbers": ["Meta: 0 (אומת ברמת דף)", "Google: 5 מודעות", "TikTok: 8,699 עוקבים · פוסט מוביל 2.1M · חציון 73.1K", "YouTube: Short 1.7M צפיות (473 מנויים)"],
+          "numbers": ["Meta: ~140 מודעות בישראל / ~150 בכל המדינות · מדגם 13 · ריצה ארוכה 400 ימים", "Google: 5 מודעות", "TikTok: 8,699 עוקבים · פוסט מוביל 2.1M · חציון 73.1K", "YouTube: Short 1.7M צפיות (473 מנויים) · 17 מתוך 23 כותרות באנגלית (5 מתוך 7 המובילים)"],
           "offers": "עד 50% + משלוח חינם + 60 יום החזר + מגרד לשון במתנה; 3 בקבוקים = חודשיים",
           "hooks": "״Bad breath? Watch this״, ״שיננית אחרי 10 שנים״, גועל בגרין-סקרין",
           "creators": "—",
-          "risks": "״שיננית״/״רופא״ מבוימים; כותרות באנגלית (בניגוד לכלל עברית)",
-          "takeaway": "ערבות 60 יום כמסיר סיכון; Shorts ויראלי."
+          "risks": "״שיננית״/״רופא״ מבוימים; דיבור כנראה בעברית עם כותרת באנגלית (לא אומת)",
+          "takeaway": "ערבות 60 יום כמסיר סיכון; Shorts ויראלי; הקריאייטיבים הוותיקים בסריקה ב-Meta (400/376 ימים, בעיה/עדות ללא הנחה)."
         },
         "softella": {
-          "numbers": ["Meta: 0 מודעות בעברית", "Google: 5 מודעות", "TikTok: 1,681 עוקבים · פוסט מוביל 188.4K", "פייסבוק: 3.1K"],
+          "numbers": ["Meta: 0 לפי Page ID · ~4 תוצאות מילת מפתח (3 בעברית, 1 מעורבת אנגלית/ערבית – שיוך חלקי)", "Google: 5 מודעות", "TikTok: 1,681 עוקבים · פוסט מוביל 188.4K", "פייסבוק: 3.1K"],
           "offers": "30% + משלוח חינם + 30 יום ניסיון; ״נשארו 13 יחידות״; 10% ט״ו באב דרך ״תגיבי אני״",
           "hooks": "UGC קריינות + הדגמה, טאבו/גועל, ASMR; פסח (49 פוסטים במרץ 2026)",
           "creators": "—",
@@ -344,7 +353,7 @@
           "takeaway": "מנגנון תגובה→הודעה פרטית עם קוד."
         },
         "mywoof": {
-          "numbers": ["Meta: 0 מודעות", "Google: לא נמצא לישראל", "TikTok: 24 עוקבים · 17 פוסטים"],
+          "numbers": ["Meta: ~50 מודעות בעברית (מילת מפתח, ללא Page ID) – טרם נותחו", "Google: לא נמצא לישראל", "TikTok: 24 עוקבים · 17 פוסטים"],
           "offers": "סוכות 1+1 מתנה; 90 ימי ניסיון (באתר)",
           "hooks": "אנימציית 3D + UGC כלבים, ציר זמן (יום 4 / יום 30), מחסור (״נגמר המלאי 3 פעמים״)",
           "creators": "—",
@@ -360,8 +369,8 @@
           "takeaway": "ריטרגטינג עגלה נטושה + מבנה ״מתנה״."
         },
         "trygmila": {
-          "numbers": ["Meta: ~12 תוצאות · 6 מזהים ב-3 משפחות (כולן 28–30.09)", "Google: 5 מודעות", "TikTok: אין חשבון", "פייסבוק: 378 · 20% המלצות (6)"],
-          "offers": "50% + 10–20% קופון (KS20), דחיפות 24 שעות, ״שנה חדשה, שגרה חדשה״",
+          "numbers": ["Meta: ~12 תוצאות · 6 מזהים ב-3 משפחות (כולן 28–30.09) · + 4 מודעות בערבית (3 משפחות); Page ID = 0", "Google: 5 מודעות", "TikTok: אין חשבון", "פייסבוק: 378 · 20% המלצות (6)"],
+          "offers": "50% + 10–20% קופון (KS20), דחיפות 24 שעות, ״שנה חדשה, שגרה חדשה״; בערבית: 50% + משלוח חינם ל-48 שעות, ניסיון 30 יום",
           "hooks": "החלפת טקס / ״אוויר נקי״; לייפסטייל",
           "creators": "—",
           "risks": "סגנון דרופשיפינג אגרסיבי; האתר ללא תעודה תקינה",
@@ -374,7 +383,7 @@
           { "brand": "mycolivia", "event": "סוכות / ראש השנה", "text": "40% על Best Sellers (קודם 40% לראש השנה)", "platform": "meta", "group": "niche" },
           { "brand": "goom", "event": "ראש השנה / שנה חדשה", "text": "15% אתר-רחב (פייסבוק; תאריך לא נחשף)", "platform": "organic", "group": "niche" },
           { "brand": "goom", "event": "פסח 2025", "text": "קוד פסח15 + ״Restart לבטן אחרי הפסח״", "platform": "organic", "group": "niche" },
-          { "brand": "goom", "event": "בלאק פריידיי 2025", "text": "טיזר ״אל תקנו עד 23.11״; 25% באתר בנובמבר 2025", "platform": "organic", "group": "niche" },
+          { "brand": "goom", "event": "בלאק פריידיי 2025", "text": "טיזר ״אל תקנו עד 23.11״; 25% באתר בנובמבר 2025; הכרזת המבצע באנגלית בלבד (16 לייקים)", "platform": "organic", "group": "niche" },
           { "brand": "mayven", "event": "בלאק פריידיי 2022", "text": "20% + משלוח חינם (ארכיון)", "platform": "organic", "group": "niche" },
           { "brand": "fillit", "event": "יום העצמאות", "text": "₪78 הנחה בקנייה מעל ₪399", "platform": "tiktok", "group": "niche" },
           { "brand": "ecosupp", "event": "ט״ו באב / חזרה לשגרה / אוקטובר", "text": "Shorts עונתיים (ביצועים נמוכים); חודש המודעות לסרטן השד", "platform": "organic", "group": "niche" },
@@ -413,11 +422,12 @@
         { "id": "A10", "title": "תשתית מדידה מלאה: Google Ads (המרות begin_checkout/purchase), GA4, Meta Pixel, Clarity", "priority": "גבוהה", "effort": "נמוך", "when": "לפני ההשקה", "basis": "תצורה נפוצה אצל המתחרים", "platform": "google" },
         { "id": "A11", "title": "תוכנית בדיקות: שלב 1 – זווית (A/B/C, אותה הצעה); שלב 2 – הצעה (10%+FS מול מארז מול מנוי מול החזר); שלב 3 – סקייל, וריאנטים, ריטרגטינג עגלה נטושה", "priority": "בינונית", "effort": "בינוני", "when": "שבועות 1–8 מההשקה", "basis": "Mayven (שכפול מנצחים), Craftly (עגלה נטושה); מדדים: hook rate, CTR, CPA, AOV", "platform": "meta" },
         { "id": "A12", "title": "בחינת ערבות החזר כסף 30–60 יום (בכפוף לכלכלה ולרגולציה)", "priority": "בינונית", "effort": "נמוך", "when": "לפני ההשקה", "basis": "אף מתחרה נישה לא מפרסם; ברפרנס 30–90 יום", "platform": "meta" },
-        { "id": "A13", "title": "בלאק פריידיי 27.11: טיזר ״אל תקנו עד…״, מארז/מתנה או עד ~30%, חימום ריטרגטינג מתחילת נובמבר", "priority": "גבוהה", "effort": "נמוך–בינוני", "when": "נובמבר", "basis": "GOOM (טיזר 2025); אף מותג לא התחיל", "platform": "organic" },
+        { "id": "A13", "title": "בלאק פריידיי 27.11: טיזר ״אל תקנו עד…״, מארז/מתנה או עד ~30%, חימום ריטרגטינג מתחילת נובמבר", "priority": "גבוהה", "effort": "נמוך–בינוני", "when": "נובמבר", "basis": "GOOM (טיזר 2025 בעברית; הכרזת המבצע באנגלית בלבד – 16 לייקים, לא להכריז מבצעים באנגלית בלבד); אף מותג לא התחיל", "platform": "organic" },
         { "id": "A14", "title": "חנוכה 4–12.12: מארז מתנה / ״קנה 2 קבל מתנה״", "priority": "בינונית", "effort": "נמוך", "when": "דצמבר", "basis": "Craftly, Woof (יחידה במתנה)", "platform": "meta" },
         { "id": "A15", "title": "פייסבוק: מועדון לקוחות עם הטבה בלעדית; מנגנון ״תגיבי אני ← קוד חד-פעמי״ (בדיקת מדיניות Meta); איסוף המלצות בדף; תבנית מענה פומבי", "priority": "נמוכה", "effort": "נמוך", "when": "אחרי ההשקה", "basis": "Mayven (מועדון), Softella, EcoSupp (468 המלצות)", "platform": "organic" },
         { "id": "A16", "title": "Shorts ב-YouTube/TikTok: ״בעיה → הסבר מומחה → קישור״, 3–4 וריאציות הוק; 8–12 פרסומים בחודש בעקביות", "priority": "נמוכה", "effort": "בינוני", "when": "שוטף", "basis": "Wonders (1.7M), Harmony (57K–114K); GOOM ~5.5 בחודש", "platform": "organic" },
-        { "id": "A17", "title": "סריקה חוזרת (שבועית/חודשית): אילו מודעות עדיין פעילות, האם Harmony/GOOM התחילו לפרסם, בלאק פריידיי", "priority": "בינונית", "effort": "נמוך", "when": "נובמבר ואילך", "basis": "הישרדות מודעה = סימן עקיף לרווחיות", "platform": "meta" }
+        { "id": "A17", "title": "סריקה חוזרת (שבועית/חודשית): אילו מודעות עדיין פעילות, האם Harmony/GOOM התחילו לפרסם, בלאק פריידיי; סריקה מפורטת של Woof (~50 מודעות עבריות שטרם נותחו)", "priority": "בינונית", "effort": "נמוך", "when": "נובמבר ואילך", "basis": "הישרדות מודעה = סימן עקיף לרווחיות", "platform": "meta" },
+        { "id": "A18", "title": "ניסוי שפה קטן (אופציונלי): כותרת באנגלית ל-Shorts בעברית במקביל לגרסה בעברית; ניסוי בערבית רק אם יש קהל יעד דובר ערבית ושירות/דף נחיתה מתאימים. עברית נשמרת לטענות, מבצעים וקודי הנחה", "priority": "נמוכה", "effort": "נמוך", "when": "אחרי ההשקה", "basis": "Wonders Teva (רפרנס: 17/23 כותרות באנגלית, 5 מתוך 7 המובילים); Mayven (8 מודעות בערבית, 42–89 ימי ריצה); GOOM (אין הבדל מעורבות בין שפות). ראיה מרפרנס/מדגם קטן בלבד; לא מובטח שיעבוד בנישה", "platform": "organic" }
       ],
 
       "regulatory": {
@@ -445,12 +455,12 @@
       },
 
       "limitations": [
-        { "platform": "meta", "status": "חלקי", "analysed": "13 מותגים; 40 קריאייטיבים מובילים בנישה (5 מותגים מפרסמים), Craftly 9, LUUF 6", "missing": "מעורבות/חשיפות (לא מוצגות בספרייה); מספר הווריאנטים לכל משפחה לא נספר – לא ניתן לאמת כיסוי 30% מהמודעות הגולמיות (במיוחד Mayven ‏~390); חלוקה פעילות/לא פעילות; מודעות בערבית/אנגלית הוצאו; אתר Gmila לא נפתח (תעודה), אתר Mycolivia timeout, דף פייסבוק של Harmony לא זמין" },
-        { "platform": "tiktok", "status": "אורגני בלבד", "analysed": "12 מותגים עם חשבון: 30% העליונים לפי צפיות; עד 12 סרטונים לכל מותג נותחו ויזואלית; נספח יוצרים וקודי הנחה", "missing": "אין מודעות ממומנות מאומתות (ספריית המודעות לא מכסה ישראל; אין Creative Center לישראל); אין נתוני ספנד; אין תמלול עברי; תגובות לא נאספו; מדדי יוצרים לא זמינים; trygmila – אין חשבון; Smiley – נאספו 400 מתוך ~1,312; Craftly – 122 מתוך 148" },
+        { "platform": "meta", "status": "חלקי", "analysed": "13 מותגים, בכל השפות: 40 קריאייטיבים מובילים בנישה בעברית (5 מותגים מפרסמים), Craftly 9, LUUF 6; בנוסף 8 מודעות בערבית (Mayven), 4 (LUUF), 1 מעורבת (Softella); Wonders Teva 13 מתוך ~140", "missing": "מעורבות/חשיפות (לא מוצגות בספרייה); מספר הווריאנטים לכל משפחה לא נספר – לא ניתן לאמת כיסוי 30% מהמודעות הגולמיות (במיוחד Mayven ‏~390); חלוקה פעילות/לא פעילות; פער בין חיפוש מילת מפתח לחיפוש לפי Page ID (LUUF, Softella, Craftly); Woof – ~50 מודעות עבריות לפי מילת מפתח (ללא Page ID) טרם נותחו; Wonders – 13 מנותחות מתוך ~140 (פחות מ-30%); סיווג שפה לפי הקופי הראשי (שם מותג/CTA באנגלית לא נחשבים); אתר Gmila לא נפתח (תעודה), אתר Mycolivia timeout, דף פייסבוק של Harmony לא זמין" },
+        { "platform": "tiktok", "status": "אורגני בלבד", "analysed": "12 מותגים עם חשבון: 30% העליונים לפי צפיות; עד 12 סרטונים לכל מותג נותחו ויזואלית; נספח יוצרים וקודי הנחה", "missing": "אין מודעות ממומנות מאומתות (חיפוש בכל שפה ומדינה בספריית המודעות מאז 2020 וב-Creative Center לא מצא מודעות ל-13 האתרים; הספרייה לא מכסה ישראל); אין נתוני ספנד; אין תמלול עברי; תגובות לא נאספו; מדדי יוצרים לא זמינים; trygmila – אין חשבון; Smiley – נאספו 400 מתוך ~1,312; Craftly – 122 מתוך 148" },
         { "platform": "google", "status": "כיסוי ~20%", "analysed": "13 מפרסמים: סה״כ מודעות ופילוח פורמטים; 24 מודעות מתועדות מתוך יעד 120 באתרי הנישה (~20%); סריקת דפי נחיתה ותגיות אד-טק", "missing": "אין first-shown (אין משך ריצה); אין מעורבות; אין מסנן Shopping; שגיאות 500 בתצוגות; אתרי רפרנס לא נותחו חזותית (0 מודעות מתומללות); mywoof לא נמצא; בדיקת נראות ב-GPT/AI לא בוצעה; בדיקת חיפוש אורגני מצומצמת" },
-        { "platform": "organic", "status": "חלקי", "analysed": "פייסבוק (מדגם 2–5 פוסטים לדף), YouTube (5 ערוצים), פיד אינסטגרם מוטמע של GOOM (30 מתוך 100 פוסטים), נתוני אתרים", "missing": "פייסבוק: אין תאריכים/permalink/צפיות; דף Fill It לא זמין; ל-Smiley ו-Woof אין דף רשמי שנמצא; Threads/Pinterest חסומים" },
+        { "platform": "organic", "status": "חלקי", "analysed": "פייסבוק (מדגם 2–5 פוסטים לדף), YouTube (5 ערוצים), פיד אינסטגרם מוטמע של GOOM (30 מתוך 100 פוסטים; שפת כל 100 הפוסטים סווגה), נתוני אתרים, שפת התוכן (עברית / אנגלית / אחר)", "missing": "פייסבוק: אין תאריכים/permalink/צפיות; דף Fill It לא זמין; ל-Smiley ו-Woof אין דף רשמי שנמצא; Threads/Pinterest חסומים; שפת הדיבור ב-YouTube לא אומתה; אנגלית בפייסבוק עשויה להיות תרגום אוטומטי; שפת התוכן באינסטגרם (10 פרופילים) ובסרטוני TikTok לא נבדקה" },
         { "platform": "instagram", "status": "בהמשך", "analysed": "—", "missing": "אינסטגרם עדיין לא נותח (ההתחברות לא הושלמה): 10 פרופילים, פוסטים, סטוריז, תגובות. מוצג כ״בהמשך״." },
-        { "platform": "general", "status": "כללי", "analysed": "סריקה חד-פעמית ראשונה, 04.10.2026; 7 אתרי נישה (משקל גבוה) + 6 אתרי רפרנס (משקל נמוך)", "missing": "אין נתוני תקציב/הוצאה ורווחיות; קהל משוער, זווית וטון הם הסקה; הנישה המדויקת של המוצר של אייל לא צוינה בבריף; הלוח מציג רק מספרים שמופיעים בדוחות" }
+        { "platform": "general", "status": "כללי", "analysed": "היקף: מ-04.10.2026 מנתחים מודעות ותוכן בכל שפה ובכל מדינה, לא רק עברית (הנחיית אייל). סריקה חד-פעמית ראשונה, 04.10.2026; 7 אתרי נישה (משקל גבוה) + 6 אתרי רפרנס (משקל נמוך)", "missing": "אין נתוני תקציב/הוצאה ורווחיות; קהל משוער, זווית וטון הם הסקה; הנישה המדויקת של המוצר של אייל לא צוינה בבריף; הלוח מציג רק מספרים שמופיעים בדוחות" }
       ]
     }
   ]
