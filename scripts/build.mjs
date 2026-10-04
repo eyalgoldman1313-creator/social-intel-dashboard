@@ -105,9 +105,9 @@ function render(scan, prev, { isLatest, scans }) {
 
   // ----- overview -----
   const nicheMeta = niche.map((b) => scan.meta.brandStats[b.id]);
-  const advertisersMeta = nicheMeta.filter((m) => m.results > 0).length;
+  const advertisersMeta = nicheMeta.filter((m) => m.active || m.results > 0).length;
   const kpi = (n, t, s) => `<div class="kpi"><div class="kpi-n" dir="ltr">${n}</div><div class="kpi-t">${t}</div>${s ? `<div class="kpi-s">${s}</div>` : ''}</div>`;
-  const mostRes = niche.reduce((a, b) => (scan.meta.brandStats[b.id].results > scan.meta.brandStats[a.id].results ? b : a));
+  const mostRes = niche.filter((b) => !scan.meta.brandStats[b.id].inflated).reduce((a, b) => (scan.meta.brandStats[b.id].results > scan.meta.brandStats[a.id].results ? b : a));
   const longest = [...niche].reduce((a, b) => ((scan.meta.brandStats[b.id].longestDays || 0) > (scan.meta.brandStats[a.id].longestDays || 0) ? b : a));
   const topTik = brands.filter((b) => !scan.tiktok.brandStats[b.id].none).reduce((a, b) => (scan.tiktok.brandStats[b.id].topViews > scan.tiktok.brandStats[a.id].topViews ? b : a));
   const topFb = brands.filter((b) => scan.organic.brandStats[b.id]?.fbFollowers).reduce((a, b) => (scan.organic.brandStats[b.id].fbFollowers > scan.organic.brandStats[a.id].fbFollowers ? b : a));
@@ -115,7 +115,7 @@ function render(scan, prev, { isLatest, scans }) {
   const kpis = `<div class="kpis">
     ${kpi(String(brands.length), 'אתרים בסריקה', `${niche.length} נישה · ${ref.length} רפרנס`)}
     ${kpi(`${advertisersMeta}/${niche.length}`, 'מתחרי נישה מפרסמים ב-Meta', 'בכל השפות, ' + scan.date)}
-    ${kpi('~' + num(scan.meta.brandStats[mostRes.id].results), `תוצאות Meta של ${mostRes.name}`, 'הנפח הגבוה בנישה')}
+    ${kpi('~' + num(scan.meta.brandStats[mostRes.id].results), `תוצאות Meta של ${mostRes.name}`, 'התאמת טקסט, לא ספירת מודעות')}
     ${kpi('~' + scan.meta.brandStats[longest.id].longestDays, 'ימי ריצה – המודעה הוותיקה בנישה', `${longest.name}, Meta`)}
     ${kpi(`${ncv.image} / ${ncv.video}`, `תמונה·קרוסלה / וידאו (מתוך ${ncv.total})`, `~${Math.round((ncv.image / ncv.total) * 100)}% / ~${Math.round((ncv.video / ncv.total) * 100)}%`)}
     ${kpi(num(scan.google.nicheCoverage.total), 'מודעות גוגל באתרי הנישה', `מתועדות ${scan.google.nicheCoverage.documented} (~${scan.google.nicheCoverage.documentedPct}%)`)}
@@ -130,7 +130,7 @@ function render(scan, prev, { isLatest, scans }) {
     const g = scan.google.brandStats[b.id] || {};
     const o = scan.organic.brandStats[b.id] || {};
     return `<tr class="grp-${b.group}"><th scope="row">${bdi(b.name)} ${groupBadge(b.group)}</th>
-      ${cell(m.results > 0 ? '~' + num(m.results) : '0', m.results ? '' : 'zero')}
+      ${cell(m.resultsLabel || (m.results > 0 ? '~' + num(m.results) : '0'), m.results || m.resultsLabel ? '' : 'zero')}
       ${cell(t.none ? '—' : num(t.followers), t.none ? 'zero' : '')}
       ${cell(g.notFound ? 'לא נמצא' : g.total ? (g.approx ? '~' : '') + num(g.total) : '0', g.total ? '' : 'zero')}
       ${cell(o.fbFollowers ? num(o.fbFollowers) : o.fbUnavailable ? 'לא זמין' : o.fbNotFound ? 'לא נמצא' : '—', o.fbFollowers ? '' : 'zero')}
@@ -153,33 +153,37 @@ function render(scan, prev, { isLatest, scans }) {
 
   // ----- Meta -----
   const ms = scan.meta.brandStats;
-  const metaResultsItems = [...niche, ...ref].filter((b) => ms[b.id].results > 0).sort((a, b) => ms[b.id].results - ms[a.id].results).map((b) => ({ label: bdi(b.name), value: ms[b.id].results, display: '~' + num(ms[b.id].results), group: b.group, delta: delta('meta', b.id, 'results') }));
-  const zeroMeta = [...niche, ...ref].filter((b) => ms[b.id].results === 0).map((b) => `<span class="pill">${bdi(b.name)}</span>`).join('');
+  const metaResultsItems = [...niche, ...ref].filter((b) => ms[b.id].results > 0 && !ms[b.id].inflated).sort((a, b) => ms[b.id].results - ms[a.id].results).map((b) => ({ label: bdi(b.name), value: ms[b.id].results, display: '~' + num(ms[b.id].results), group: b.group, delta: delta('meta', b.id, 'results') }));
+  const inflatedMeta = [...niche, ...ref].filter((b) => ms[b.id].inflated).map((b) => `<span class="pill">${bdi(b.name)} ${esc(ms[b.id].resultsLabel)}</span>`).join('');
   const longestItems = [...niche, ...ref].filter((b) => ms[b.id].longestDays).sort((a, b) => ms[b.id].longestDays - ms[a.id].longestDays).map((b) => ({ label: bdi(b.name), value: ms[b.id].longestDays, display: '~' + ms[b.id].longestDays, group: b.group }));
   const maxRun = Math.ceil(Math.max(210, ...[...niche, ...ref].map((b) => ms[b.id].longestDays || 0)) / 50) * 50 + 20;
   const dotRows = [...niche, ...ref].filter((b) => ms[b.id].runDays).sort((a, b) => ms[b.id].longestDays - ms[a.id].longestDays).map((b) => `<div class="dot-row"><div class="bar-label">${bdi(b.name)}</div><div class="dot-track">${ms[b.id].runDays.map((d) => `<i class="adot g-${b.group}" style="right:${(d / maxRun) * 100}%" title="${d} ימים"></i>`).join('')}</div><div class="bar-val" dir="ltr">${ms[b.id].runDays.length}</div></div>`).join('');
   const dotChart = `<figure class="chart"><figcaption><b>משך ריצה של כל קריאייטיב שנדגם (ימים)</b>${srcTag('meta', 'Meta Ad Library')}</figcaption>
-    <div class="dots">${dotRows}</div><div class="dot-row axis-row"><div></div><div class="axis">${[0, 100, 200, 300, 400].filter((v) => v < maxRun).map((v) => `<span style="right:${(v / maxRun) * 100}%">${v}</span>`).join('')}</div><div class="bar-val">&nbsp;</div></div>
+    <div class="dots">${dotRows}</div><div class="dot-row axis-row"><div></div><div class="axis">${[0, 100, 200, 300, 400, 500, 600].filter((v) => v < maxRun).map((v) => `<span style="right:${(v / maxRun) * 100}%">${v}</span>`).join('')}</div><div class="bar-val">&nbsp;</div></div>
     <p class="fine">כל נקודה = קריאייטיב/משפחה אחת בדוח המותג. ימי ריצה מתאריך ההתחלה עד 04.10.2026 בהנחה שהמודעה פעילה. העמודה השמאלית = מספר קריאייטיבים במדגם.</p></figure>`;
   const nc = scan.meta.nicheCreatives;
-  const formatSplit = stack({ title: 'פורמט בנישה – 40 קריאייטיבים מובילים', source: srcTag('meta', 'Meta Ad Library · ספירה בדוח ההשוואתי'), segments: [{ label: 'תמונה / כרטיס / קרוסלה', value: nc.image }, { label: 'וידאו', value: nc.video }], total: nc.total });
+  const formatSplit = stack({ title: `פורמט בנישה – ${nc.total} יחידות ניתוח`, source: srcTag('meta', 'Meta Ad Library · ספירה בדוח ההשוואתי'), segments: [{ label: 'תמונה / כרטיס / קרוסלה', value: nc.image }, { label: 'וידאו', value: nc.video }, { label: 'לא תועד', value: nc.fmtUnknown }], total: nc.total });
   const perBrandFmt = niche.filter((b) => ms[b.id].image != null).map((b) => ({ label: bdi(b.name), segs: [ms[b.id].image, ms[b.id].video] }));
   const perBrandStack = `<figure class="chart"><figcaption><b>תמונה / וידאו לפי מתחרה (נישה)</b>${srcTag('meta', 'Meta Ad Library')}</figcaption><div class="bars">${perBrandFmt.map((r) => `<div class="bar-row"><div class="bar-label">${r.label}</div><div class="bar-track mini-stack"><div class="seg s0" style="width:${(r.segs[0] / (r.segs[0] + r.segs[1])) * 100}%"><span dir="ltr">${r.segs[0]}</span></div><div class="seg s1" style="width:${(r.segs[1] / (r.segs[0] + r.segs[1])) * 100}%"><span dir="ltr">${r.segs[1]}</span></div></div><div class="bar-val" dir="ltr">${r.segs[0] + r.segs[1]}</div></div>`).join('')}</div><div class="legend"><span><i class="dot s0"></i>תמונה/קרוסלה</span><span><i class="dot s1"></i>וידאו</span></div></figure>`;
-  const ctaSplit = stack({ title: 'CTA בנישה: רך מול ישיר', source: srcTag('meta', 'Meta Ad Library'), segments: [{ label: 'רך (Learn more / See details / Sign up)', value: nc.ctaSoft }, { label: 'ישיר (Shop / Order now)', value: nc.ctaDirect }, { label: 'לא נראה', value: nc.ctaUnknown }], total: nc.total });
-  const signals = bars({ title: 'מאפיינים ב-40 קריאייטיבי הנישה (מספר קריאייטיבים)', source: srcTag('meta', 'Meta Ad Library · ספירה שלנו בדוח'), max: nc.total, items: [
-    { label: 'הצעה כספית / משלוח חינם בקופי', value: nc.withOffer, display: `${nc.withOffer} (~38%)` },
+  const ctaSplit = stack({ title: 'CTA בנישה: רך מול ישיר', source: srcTag('meta', 'Meta Ad Library'), segments: [{ label: 'רך (Learn more / See details / Sign up)', value: nc.ctaSoft }, { label: 'ישיר (Shop / Order now)', value: nc.ctaDirect }, { label: 'מעורב / לא נראה', value: nc.ctaMixed + nc.ctaUnknown }], total: nc.total });
+  const signals = bars({ title: `מאפיינים ב-${nc.total} יחידות הניתוח בנישה (קריאייטיבים / משפחות)`, source: srcTag('meta', 'Meta Ad Library · ספירה שלנו בדוח'), max: nc.total, items: [
+    { label: 'הצעה כספית / משלוח חינם בקופי', value: nc.withOffer, display: `${nc.withOffer} (~${Math.round((nc.withOffer / nc.total) * 100)}%)` },
     { label: 'מבוססי יוצרים / לקוחות (UGC, עדויות)', value: nc.ugc, display: `~${nc.ugc}` },
     { label: 'מזכירים משלוח חינם', value: nc.freeShipping },
     { label: 'מומחה / מייסד מסביר', value: nc.expert, display: `~${nc.expert}` },
     { label: 'טענת מספר לקוחות', value: nc.customerClaim },
-    { label: 'מבצע חג / עונתי (סוכות)', value: nc.holiday }] });
-  const topics = bars({ title: 'נושאי הצורך בקריאייטיבים (מודעה יכולה לשלב כמה)', source: srcTag('meta', 'Meta Ad Library'), max: 10, items: scan.meta.needTopics.map((t) => ({ label: esc(t.label), value: t.count, display: (t.approx ? '~' : '') + (t.note || t.count) })) });
+    { label: 'מבצע חג / עונתי (סוכות)', value: nc.holiday },
+    { label: 'שימור (מנוי / נאמנות / אפליקציה)', value: nc.retention },
+    { label: 'מתנה ברכישה', value: nc.gift },
+    { label: 'ריטרגטינג עגלה נטושה', value: nc.retargeting },
+    { label: 'ניסיון / החזר כספי (מסגור ״חודש ניסיון״; התחייבות להחזר: 0)', value: nc.trial }] });
+  const topics = bars({ title: 'נושאי הצורך ב-40 הקריאייטיבים העבריים הראשונים (מודעה יכולה לשלב כמה)', source: srcTag('meta', 'Meta Ad Library'), max: 10, items: scan.meta.needTopics.map((t) => ({ label: esc(t.label), value: t.count, display: (t.approx ? '~' : '') + (t.note || t.count) })) });
   const offerTiers = `<ul class="offers">${scan.meta.offerTiers.map((o) => `<li>${groupBadge(o.group)} ${esc(o.text)}</li>`).join('')}</ul>`;
   const metaBrandDocs = brands.map((b) => link(docUrl(D.perBrand[b.id].meta), b.name)).join('');
   const metaPanel = section('meta', 'Meta – מודעות ממומנות', `
     <p class="scope">${esc(scan.meta.scope)}</p>${legend()}
     <div class="grid2">
-      ${bars({ title: 'תוצאות Meta לפי מפרסם', source: srcTag('meta', 'Meta Ad Library'), items: metaResultsItems, note: `<b>0 מודעות לפי Page ID (ישראל + כל המדינות):</b> ${zeroMeta}` })}
+      ${bars({ title: 'תוצאות Meta לפי מפרסם', source: srcTag('meta', 'Meta Ad Library'), items: metaResultsItems, note: `<b>התאמת טקסט – לא ספירת מודעות; אין להשוות נפחים בין מותגים.</b> לא מוצגים בגרף (מנופח): ${inflatedMeta}` })}
       ${bars({ title: 'הריצה הארוכה ביותר (ימים)', source: srcTag('meta', 'Meta Ad Library'), items: longestItems, max: maxRun })}
     </div>
     ${dotChart}
