@@ -3,15 +3,15 @@ import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 export const TEST_MAX = 14;     // days: <= 14 => "במבחן"
-export const WINNER_MIN = 60;   // days: >= 60 => "ותיקה · מנצחת"
+export const WINNER_MIN = 90;   // days: >= 90 => "ותיקה · מנצחת" (same as the Meta bot's `stage`)
 const FMT = { image: 'תמונה', video: 'וידאו', carousel: 'קרוסלה', unknown: 'לא תועד' };
 const SRC_LABEL = { meta: 'Meta', tiktok: 'TikTok', organic: 'אורגני', youtube: 'YouTube', instagram: 'Instagram', facebook: 'Facebook' };
 const plat = (it) => it.plat || it.source;
 const CTYPE = { creator: 'יוצר / UGC', partnership: 'שיתוף פעולה מסומן', organic: 'אורגני' };
 const PHASE = {
   test: ['במבחן', 'ריצה קצרה (עד 14 ימים) – עדיין נבדקת'],
-  running: ['בהרצה', '15–59 ימים'],
-  winner: ['ותיקה · מנצחת', '60+ ימים – המפרסם ממשיך לשלם עליה'],
+  running: ['בינונית', '15–89 ימים'],
+  winner: ['ותיקה · מנצחת', '90+ ימים – המפרסם ממשיך לשלם עליה'],
   organic: ['אורגני', 'פוסט אורגני, לא מודעה ממומנת'],
   na: ['משך לא ידוע', ''],
 };
@@ -23,6 +23,8 @@ export function loadJson(root, rel, fallback) {
 
 export function phaseOf(it) {
   if (it.source !== 'meta') return 'organic';
+  const STAGE = { 'במבחן': 'test', 'בינונית': 'running', 'ותיקה/מנצחת': 'winner' };
+  if (it.stage && STAGE[it.stage]) return STAGE[it.stage];   // the bot's stage is the source of truth
   const d = it.days_active;
   if (d == null) return 'na';
   return d <= TEST_MAX ? 'test' : d >= WINNER_MIN ? 'winner' : 'running';
@@ -58,6 +60,7 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo }) 
     if (it.offer) f.push(`<li class="f-offer"><small>הצעה</small>${esc(oneLine(it.offer, 90))}</li>`);
     if (it.cta) f.push(`<li><small>CTA</small>${esc(it.cta)}</li>`);
     if (it.variants_count != null) f.push(`<li><small>גרסאות</small><b dir="ltr">${it.variants_count}</b></li>`);
+    else if (it.multiple_versions) f.push(`<li><small>גרסאות</small>מרובות</li>`);
     if (it.source !== 'meta') {
       if (it.views != null) f.push(`<li><small>צפיות</small><b dir="ltr">${compact(it.views)}</b></li>`);
       if (it.likes != null) f.push(`<li><small>לייקים</small><b dir="ltr">${compact(it.likes)}</b></li>`);
@@ -68,15 +71,22 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo }) 
   }
 
   function detail(it) {
+    const fam = it.copy_scope === 'family' ? ' (טקסט ברמת משפחת קריאייטיב)' : '';
     const rows = [
-      ['משך ריצה', it.days_active != null ? `${it.days_active} ימים${it.start_date ? ` (מ-${it.start_date})` : ''}` : ''],
-      ['פלטפורמה', it.platform], ['פורמט', FMT[it.format]], ['שפה', it.language], ['הצעה', it.offer], ['CTA', it.cta],
-      ['גרסאות', it.variants_count], ['הוק', it.hook], ['קופי', it.copy_text], ['הערות קריאייטיב', it.creative_notes],
+      ['משך ריצה', it.days_active != null ? `${it.days_active} ימים${it.start_date ? ` (מ-${it.start_date.split('-').reverse().join('.')})` : ''}` : (it.source === 'meta' ? `לא ידוע${it.days_since_start != null ? ` · ${it.days_since_start} ימים מאז ההתחלה` : ''}` : '')],
+      ['שלב', it.source === 'meta' ? (it.stage || 'לא ידוע') : ''],
+      ['פלטפורמה', it.source === 'meta' ? (it.platform || 'לא ידוע') : it.platform], ['פורמט', FMT[it.format]], ['שפה', it.language || it.copy_language],
+      ['הצעה' + fam, it.offer], ['CTA' + fam, it.cta],
+      ['גרסאות', it.variants_count ?? (it.multiple_versions ? 'מרובות (מספר לא ידוע)' : '')],
+      ['הוק', it.hook], ['קופי' + fam, it.copy_text], ['תרגום הקופי', it.copy_text_he], ['הערות קריאייטיב', it.creative_notes],
       ['תאריך פרסום', it.post_date],
     ].filter(([, v]) => v !== '' && v != null);
     const src = it.library_url || it.post_url;
     return `<div class="lb-detail" hidden><h3>${esc(brandName(it.brand))}</h3><div class="lb-chips">${platChip(it)}<span class="tag">${esc(phaseOf(it) === 'organic' ? (CTYPE[it.ctype] || 'אורגני') : PHASE[phaseOf(it)][0])}</span></div>
       <dl>${rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
+      ${it.copy_scope === 'family' ? `<p class="lb-caveat">הקופי, ההצעה וה-CTA מופיעים ברמת משפחת הקריאייטיב כפי שתועדו בדוח – לא אומתו פר-מודעה.${it.copy_note ? ' ' + esc(it.copy_note) + '.' : ''}</p>` : ''}
+      ${it.source === 'meta' ? '<p class="lb-caveat">מעורבות (לייקים/הוצאה) אינה מוצגת בספריית המודעות.</p>' : ''}
+      ${it.landing_url ? `<a class="lb-src" href="${esc(it.landing_url)}" target="_blank" rel="noopener noreferrer">דף נחיתה ↗</a> ` : ''}
       ${src ? `<a class="lb-src" href="${esc(src)}" target="_blank" rel="noopener noreferrer">${it.source === 'meta' ? 'צפייה במודעה בספריית Meta' : 'צפייה בפוסט המקורי'} ↗</a>` : ''}</div>`;
   }
 
@@ -88,7 +98,7 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo }) 
       ${rank ? `<span class="t10-rank" aria-label="מקום ${rank}">${rank}</span>` : ''}
       ${media(it, { big: size === 'lg' })}
       <div class="cr-body">
-        <div class="cr-badges">${platChip(it)}<span class="brand-tag">${esc(brandName(it.brand))}</span></div>
+        <div class="cr-badges">${platChip(it)}${it.source === 'meta' && it.platform ? `<span class="brand-tag">${it.platform === 'Facebook + Instagram' ? 'FB + IG' : esc(it.platform)}</span>` : ''}<span class="brand-tag">${esc(brandName(it.brand))}</span></div>
         ${basis ? `<p class="cr-basis">${esc(basis)}</p>` : ''}
         ${hook ? `<p class="cr-hook">${esc(oneLine(hook, 120))}</p>` : ''}
         ${facts(it)}
@@ -110,7 +120,7 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo }) 
     const winners = ads.filter((i) => phaseOf(i) === 'winner').sort((a, b) => b.days_active - a.days_active);
     const tests = ads.filter((i) => phaseOf(i) === 'test').sort((a, b) => (b.start_date || '').localeCompare(a.start_date || ''));
     const newWeek = ads.filter((i) => i.start_date && asof && (new Date(asof) - new Date(i.start_date)) / 86400000 <= 7).sort((a, b) => b.start_date.localeCompare(a.start_date));
-    const legendPh = `<div class="cr-legend"><span><i class="ph-dot ph-test"></i><b>במבחן</b> עד ${TEST_MAX} ימים</span><span><i class="ph-dot ph-running"></i><b>בהרצה</b> ${TEST_MAX + 1}–${WINNER_MIN - 1}</span><span><i class="ph-dot ph-winner"></i><b>ותיקה · מנצחת</b> ${WINNER_MIN}+ ימים (מפרסם שממשיך לשלם = כנראה עובדת)</span><span><i class="ph-dot ph-organic"></i><b>אורגני</b> לא ממומן</span></div>`;
+    const legendPh = `<div class="cr-legend"><span><i class="ph-dot ph-test"></i><b>במבחן</b> עד ${TEST_MAX} ימים</span><span><i class="ph-dot ph-running"></i><b>בינונית</b> ${TEST_MAX + 1}–${WINNER_MIN - 1}</span><span><i class="ph-dot ph-winner"></i><b>ותיקה · מנצחת</b> ${WINNER_MIN}+ ימים (מפרסם שממשיך לשלם = כנראה עובדת)</span><span><i class="ph-dot ph-organic"></i><b>אורגני</b> לא ממומן</span></div>`;
     if (!items.length) {
       return section('creatives', 'קריאייטיבים חזקים', `<div class="cr-empty"><div class="cr-empty-ic" aria-hidden="true">🖼</div><h3>הגלריה ממתינה לנכסים</h3>
         <p>כאן יופיעו הקריאייטיבים עצמם (תמונה / פריים), עם ימי ריצה, פורמט, הצעה ו-CTA – מסוננים לפי פלטפורמה, פורמט וסטטוס (במבחן / ותיקה).</p>
@@ -133,7 +143,7 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo }) 
       <div class="cr-filters" role="group" aria-label="סינון קריאייטיבים">
         ${sel('f-source', 'פלטפורמה', [...new Set(items.map(plat))].map((k) => [k, k === 'meta' ? 'Meta (ממומן)' : `${SRC_LABEL[k] || k} (אורגני)`]))}
         ${sel('f-format', 'פורמט', [['image', 'תמונה'], ['video', 'וידאו'], ['carousel', 'קרוסלה'], ['unknown', 'לא תועד']])}
-        ${sel('f-phase', 'סטטוס', [['test', 'במבחן'], ['running', 'בהרצה'], ['winner', 'ותיקה · מנצחת'], ['organic', 'אורגני']])}
+        ${sel('f-phase', 'סטטוס', [['test', 'במבחן'], ['running', 'בינונית'], ['winner', 'ותיקה · מנצחת'], ['na', 'משך לא ידוע'], ['organic', 'אורגני / יוצר']])}
         ${sel('f-brand', 'מותג', brandOpts)}
         <label class="sel"><span>מיון</span><select id="f-sort"><option value="days">ימי ריצה – מהארוך</option><option value="days-asc">ימי ריצה – מהקצר</option><option value="new">הכי חדש</option><option value="variants">מספר גרסאות</option><option value="views">צפיות (אורגני)</option></select></label>
         <label class="chk"><input type="checkbox" id="f-img"> רק עם תמונה</label>

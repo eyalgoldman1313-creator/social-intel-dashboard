@@ -10,6 +10,7 @@ import { dirname, join, resolve, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
+const md5 = (s) => createHash('md5').update(s).digest('hex').slice(0, 8);
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const args = process.argv.slice(2);
@@ -52,7 +53,7 @@ function normStatus(v) {
 }
 const numOrNull = (v) => { if (v == null || v === '') return null; const n = Number(String(v).replace(/,/g, '')); return Number.isFinite(n) ? n : null; };
 const str = (v) => (v == null ? '' : String(v).trim());
-const ALIAS = { fillitvitamins: 'fillit', 'fill-it': 'fillit', 'fill it': 'fillit', luuf: 'trygmila', tryluuf: 'trygmila', gmila: 'trygmila', 'gmila / luuf': 'trygmila', harmony: 'by-harmony', byharmony: 'by-harmony', smiley: 'try-smiley', trysmiley: 'try-smiley', woof: 'mywoof', wonders: 'wondersteva', 'wonders teva': 'wondersteva' };
+const ALIAS = { 'wonders-teva': 'wondersteva', 'gmila-luuf': 'trygmila', 'fill-it': 'fillit', fillitvitamins: 'fillit', 'fill-it': 'fillit', 'fill it': 'fillit', luuf: 'trygmila', tryluuf: 'trygmila', gmila: 'trygmila', 'gmila / luuf': 'trygmila', harmony: 'by-harmony', byharmony: 'by-harmony', smiley: 'try-smiley', trysmiley: 'try-smiley', woof: 'mywoof', wonders: 'wondersteva', 'wonders teva': 'wondersteva' };
 function brandId(raw) {
   const r0 = str(raw).toLowerCase(); const r = ALIAS[r0] || r0; if (!r) return '';
   const hit = brands.find((b) => [b.id, b.name, b.heName, b.domain].filter(Boolean).some((x) => x.toLowerCase() === r || r.replace(/^www\./, '').startsWith(x.toLowerCase())));
@@ -83,27 +84,31 @@ for (const source of SOURCES) {
     const libId = str(r.library_id ?? r.ad_id ?? r.post_id ?? r.id);
     const start = normDate(r.start_date ?? r.post_date);
     let days = numOrNull(r.days_active);
-    if (days == null && source === 'meta' && start) days = Math.max(0, Math.round((toDate(asof) - toDate(start)) / 86400000));
-    const id = `${source}-${slug(libId || `${r.brand}-${n}`)}`;
+    const fname = libId ? slug(libId) : `${slug(str(r.brand_slug || r.brand))}-${md5(str(r.file ?? r.post_url ?? r.video_url ?? n))}`;
+    const id = `${source}-${fname}`;
     const it = {
-      id, source, brand: brandId(r.brand), brandRaw: str(r.brand), library_id: libId || null,
-      platform: str(r.platform) || ({ meta: 'Meta', tiktok: 'TikTok', organic: 'אורגני' })[source],
+      id, source, brand: brandId(r.brand_slug || r.brand), brandRaw: str(r.brand), library_id: libId || null,
+      platform: source === 'meta' ? (str(r.platform) === 'שניהם' ? 'Facebook + Instagram' : str(r.platform)) : (str(r.platform) || ({ tiktok: 'TikTok', organic: 'אורגני' })[source]),
       plat: source === 'meta' ? 'meta' : (({ youtube: 'youtube', instagram: 'instagram', ig: 'instagram', facebook: 'facebook', fb: 'facebook', tiktok: 'tiktok' })[str(r.platform).toLowerCase()] || source),
-      format: normFormat(r.format) !== 'unknown' ? normFormat(r.format) : (['tiktok', 'youtube'].includes(str(r.platform).toLowerCase()) || source === 'tiktok' ? 'video' : 'unknown'), // TikTok/YouTube posts are videos by definition start_date: normDate(r.start_date), post_date: normDate(r.post_date), days_active: days,
+      format: normFormat(r.format) !== 'unknown' ? normFormat(r.format) : (['tiktok', 'youtube'].includes(str(r.platform).toLowerCase()) || source === 'tiktok' ? 'video' : 'unknown'), start_date: normDate(r.start_date), post_date: normDate(r.post_date), days_active: days,
       status: normStatus(r.status), copy_text: str(r.copy_text), cta: str(r.cta), offer: str(r.offer), hook: str(r.hook),
       language: str(r.language), days_since_posted: numOrNull(r.days_since_posted),
       creative_notes: str(r.creative_notes), library_url: str(r.library_url) || (source === 'meta' && libId ? `https://www.facebook.com/ads/library/?id=${libId}` : ''),
       post_url: str(r.post_url ?? r.video_url ?? r.url), ctype: source === 'meta' ? 'paid' : (({ 'אורגני': 'organic', organic: 'organic', 'יוצר': 'creator', creator: 'creator', ugc: 'creator', 'שיתוף': 'partnership', partnership: 'partnership', 'שיתוף פעולה': 'partnership' })[str(r.type).trim().toLowerCase()] || 'organic'), variants_count: numOrNull(r.variants_count), family: str(r.family),
       views: r.views ?? null, likes: r.likes ?? null, comments: r.comments ?? null, shares: r.shares ?? null, followers: r.followers ?? null,
+      stage: str(r.stage) || null, days_since_start: numOrNull(r.days_since_start), multiple_versions: !!r.multiple_versions,
+      copy_scope: str(r.copy_scope), copy_note: str(r.copy_note), copy_text_he: str(r.copy_text_he), copy_language: str(r.copy_language),
+      landing_url: str(r.landing_url) ? (/^https?:\/\//i.test(str(r.landing_url)) ? str(r.landing_url) : 'https://' + str(r.landing_url)) : '',
+      data_notes: str(r.data_notes), engagement: r.engagement ?? null,
       image: null, imageMissing: true,
     };
     const f = str(r.file ?? r.image);
     if (f) {
-      const inFile = resolve(dir, f);
+      const inFile = [resolve(dir, f), resolve(dir, str(r.brand_slug), f)].find((x) => existsSync(x) && statSync(x).isFile()) || resolve(dir, f);
       if (existsSync(inFile) && /\.(png|jpe?g|webp|gif|avif)$/i.test(inFile)) {
-        const out = join(root, 'public/creatives', source, `${slug(libId || `${r.brand}-${n}`)}.webp`);
+        const out = join(root, 'public/creatives', source, `${fname}.webp`);
         const ok = compress(inFile, out);
-        if (ok) { it.image = `creatives/${source}/${slug(libId || `${r.brand}-${n}`)}.${ok === 'copied' ? extname(inFile).slice(1).toLowerCase() : 'webp'}`; it.imageMissing = false; withImg++; }
+        if (ok) { it.image = `creatives/${source}/${fname}.${ok === 'copied' ? extname(inFile).slice(1).toLowerCase() : 'webp'}`; it.imageMissing = false; withImg++; }
       } else warnings.push(`${id}: image file missing or unsupported (${f})`);
     } else warnings.push(`${id}: no file`);
     items.push(it);
