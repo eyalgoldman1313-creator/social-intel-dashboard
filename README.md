@@ -1,1 +1,11 @@
-# social-intel-dashboard
+# לוח מודיעין תחרותי – סושיאל ופרסום (Hebrew RTL dashboard)
+
+אתר סטטי, ללא תלויות. `npm run build` קורא את `data/data.json` ומייצר `dist/`.
+
+## עדכון שבועי
+1. פתחו `data/data.json` → מערך `scans`.
+2. העתיקו את האובייקט האחרון, שנו `id` (YYYY-MM-DD), `date`, `statusLabel`, ועדכנו מספרים/קישורי Drive.
+3. `npm run build` ← הדף הראשי מציג את הסריקה האחרונה, מסמן Δ מול הקודמת, והקודמות נשמרות ב-`/archive/<id>/`.
+
+מותגים (`brands`) ואירועים (`events`) מוגדרים פעם אחת. הלוח מציג רק מספרים שמופיעים בדוחות – אין להמציא נתונים.
+פונט: Heebo (Google Fonts CDN, ללא סקריפטים). ללא אנליטיקה/מעקב/עוגיות. `noindex`.

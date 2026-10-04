@@ -1,0 +1,12 @@
+{
+  "name": "social-intel-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "דשבורד מנהלים בעברית (RTL) – ניתוח מתחרים: Meta, TikTok, Google, נראות אורגנית",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && npx --yes serve dist -l 3000"
+  },
+  "engines": { "node": ">=20" }
+}
