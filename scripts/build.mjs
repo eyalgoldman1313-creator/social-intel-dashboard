@@ -2,10 +2,13 @@
 import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { makeRenderer, loadJson } from './creatives.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
 const data = JSON.parse(readFileSync(join(root, 'data/data.json'), 'utf8'));
+const creatives = loadJson(root, 'data/creatives.json', { items: [] });
+const top10 = loadJson(root, 'data/top10.json', { weeks: {} });
 
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });
@@ -143,13 +146,19 @@ function render(scan, prev, { isLatest, scans }) {
     ${['meta', 'tiktok', 'google', 'organic'].map((p) => `<div class="doc-card">${chip(p)}<div>${fullDoc(D.comparative[p], 'דוח השוואתי')}${link(D.folders[p], 'תיקייה')}</div></div>`).join('')}
   </div>`;
 
-  const overview = section('overview', 'סקירה כללית', `${kpis}${matrix}
+  const overview = section('overview', 'סקירה כללית', `${summary}${kpis}${matrix}
     <h3>מה בסריקה</h3>
     <ul class="notes"><li>7 אתרי נישה (משקל גבוה מאוד) ו-6 אתרי רפרנס מחוץ לנישה (משקל נמוך – טרנדים, מבצעים עונתיים, פורמטים).</li>
     <li>4 פלטפורמות נותחו: Meta (מודעות), TikTok (אורגני בלבד), Google (שקיפות מודעות), נראות אורגנית (פייסבוק, YouTube, פיד אינסטגרם מוטמע).</li>
     <li>היקף: מודעות ותוכן נותחו בכל שפה ובכל מדינה (לא רק עברית) – עודכן ב-04.10.2026.</li>
     <li>אינסטגרם עדיין <b>בהמשך</b> – ההתחברות לא הושלמה.</li></ul>
     <h3>הדוחות המלאים בדרייב</h3>${overviewDocs}`);
+
+  // ----- creatives-first panels -----
+  const CR = makeRenderer({ esc, brandName, section });
+  const creativesPanel = CR.galleryPanel({ creatives, brands, scanDate: scan.date, asof: creatives.asof });
+  const top10Panel = CR.top10Panel({ top10, creatives, brands, scanDate: scan.date });
+  const galleryHint = (txt) => `<p class="gal-link"><a href="#creatives" data-go="creatives">🖼 ${txt} ←</a></p>`;
 
   // ----- Meta -----
   const ms = scan.meta.brandStats;
@@ -181,6 +190,7 @@ function render(scan, prev, { isLatest, scans }) {
   const offerTiers = `<ul class="offers">${scan.meta.offerTiers.map((o) => `<li>${groupBadge(o.group)} ${esc(o.text)}</li>`).join('')}</ul>`;
   const metaBrandDocs = brands.map((b) => link(docUrl(D.perBrand[b.id].meta), b.name)).join('');
   const metaPanel = section('meta', 'Meta – מודעות ממומנות', `
+    ${galleryHint('לראות את הקריאייטיבים עצמם – גלריה, ותק ריצה ו-Top 10')}
     <p class="scope">${esc(scan.meta.scope)}</p>${legend()}
     <div class="grid2">
       ${bars({ title: 'תוצאות Meta לפי מפרסם', source: srcTag('meta', 'Meta Ad Library'), items: metaResultsItems, note: `<b>התאמת טקסט – לא ספירת מודעות; אין להשוות נפחים בין מותגים.</b> לא מוצגים בגרף (מנופח): ${inflatedMeta}` })}
@@ -208,6 +218,7 @@ function render(scan, prev, { isLatest, scans }) {
     <h4>סימוני שיתוף ממומן שנצפו</h4>${notesList(scan.tiktok.paidPartnership)}`;
   const tiktokPanel = section('tiktok', 'TikTok – תוכן אורגני בלבד', `
     <div class="callout warn"><b>חשוב:</b> אלה פוסטים אורגניים, לא מודעות ממומנות מאומתות. ספריית המודעות של TikTok לא מכסה ישראל. קריאייטיב אורגני חזק מצביע על כיוון, אך אינו הוכחה לביצועי מודעות.</div>
+    ${galleryHint('לראות את הפוסטים המובילים (פריימים) בגלריה')}
     <p class="scope">${esc(scan.tiktok.scope)}</p>${legend()}
     <div class="grid2">${followers}${topViews}</div>
     ${medians}
@@ -271,6 +282,7 @@ function render(scan, prev, { isLatest, scans }) {
       <ul class="nums">${c.numbers.map((n) => `<li>${esc(n)}</li>`).join('')}</ul>
       <dl><dt>הצעות</dt><dd>${esc(c.offers)}</dd><dt>הוקים</dt><dd>${esc(c.hooks)}</dd><dt>יוצרים</dt><dd>${esc(c.creators)}</dd><dt class="risk">סיכונים</dt><dd class="risk">${esc(c.risks)}</dd></dl>
       <p class="take-line"><b>בשורה התחתונה:</b> ${esc(c.takeaway)}</p>
+      ${creatives.items.some((i) => i.brand === b.id) ? `<button type="button" class="fbtn cr-go" data-go-brand="${esc(b.id)}">🖼 הקריאייטיבים של ${bdi(b.name)} (${creatives.items.filter((i) => i.brand === b.id).length})</button>` : ''}
       <div class="links sm">${['meta', 'tiktok', 'google', 'organic'].map((p) => link(docUrl(docs[p]), PLATFORM_LABEL[p])).join('')}</div></article>`;
   }).join('');
   const compPanel = section('competitors', 'מתחרים', `
@@ -321,8 +333,8 @@ function render(scan, prev, { isLatest, scans }) {
     <p>הנתונים נמצאים בקובץ אחד: <code dir="ltr">data/data.json</code>. כדי להוסיף שבוע, מוסיפים אובייקט חדש בסוף המערך <code dir="ltr">scans</code> (מעתיקים את האחרון ומעדכנים). הלוח יציג את הסריקה האחרונה, יסמן שינויים (Δ) לעומת הקודמת, וישמור ארכיון.</p>
     ${scans.length > 1 ? `<p>סריקות זמינות: ${scans.map((s) => `<a href="${s.id === scans[scans.length - 1].id ? '/' : `/archive/${s.id}/`}">${esc(s.date)}</a>`).join(' · ')}</p>` : '<p class="fine">כרגע קיימת סריקה אחת (סריקה חד-פעמית ראשונה).</p>'}`);
 
-  const tabs = [['overview', 'סקירה כללית'], ['meta', 'Meta'], ['tiktok', 'TikTok'], ['google', 'Google'], ['organic', 'נראות אורגנית'], ['competitors', 'מתחרים'], ['trends', 'מגמות ועונתיות'], ['actions', 'המלצות ליישום'], ['regulatory', 'סיכונים רגולטוריים'], ['limits', 'מגבלות וכיסוי']];
-  const nav = `<nav class="tabs" aria-label="סעיפים"><div class="tabs-in" role="tablist">${tabs.map(([id, t], i) => `<a href="#${id}" role="tab" data-go="${id}"${i === 0 ? ' class="on"' : ''}>${t}</a>`).join('')}</div></nav>`;
+  const tabs = [['creatives', 'קריאייטיבים חזקים'], ['top10', 'Top 10 השבוע'], ['overview', 'סקירה כללית'], ['meta', 'Meta'], ['tiktok', 'TikTok'], ['google', 'Google'], ['organic', 'נראות אורגנית'], ['competitors', 'מתחרים'], ['trends', 'מגמות ועונתיות'], ['actions', 'המלצות ליישום'], ['regulatory', 'סיכונים רגולטוריים'], ['limits', 'מגבלות וכיסוי']];
+  const nav = `<nav class="tabs" aria-label="סעיפים"><div class="tabs-in" role="tablist">${tabs.map(([id, t], i) => `<a href="#${id}" role="tab" data-go="${id}" class="${i === 0 ? 'on ' : ''}${i < 2 ? 'hot' : ''}">${t}</a>`).join('')}</div></nav>`;
 
   return `<!doctype html>
 <html lang="he" dir="rtl">
@@ -342,9 +354,10 @@ function render(scan, prev, { isLatest, scans }) {
 <body>
 ${header}
 <main>
-${summary}
 ${nav}
 <div class="panels">
+${creativesPanel}
+${top10Panel}
 ${overview}
 ${metaPanel}
 ${tiktokPanel}
@@ -356,6 +369,7 @@ ${actionsPanel}
 ${regPanel}
 ${limPanel}
 </div>
+${CR.lightbox}
 </main>
 <footer class="foot"><p>סריקה ראשונה: ${esc(scan.date)} · מקורות ציבוריים, קריאה בלבד · ללא מעקב וללא עוגיות · מבוסס על דוחות Google Drive (ראו ״למסמך המלא״ בכל סעיף).</p></footer>
 <script src="/app.js" defer></script>
