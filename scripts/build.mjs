@@ -25,8 +25,8 @@ cpSync(join(root, 'public'), dist, { recursive: true });
       writeFileSync(join(dist, 'insights', f.replace(/\.md$/, '.html')), `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>תובנות רוחב — מתחרי נישה</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="/style.css"></head><body>
 <div class="ins-bar"><a href="/#top10">→ חזרה ל-Top 10 — מתחרים בנישה</a><a href="/#creatives">קריאייטיבים</a></div>
 <main class="ins-page"><section class="panel"><div class="panel-head"><h2>תובנות רוחב — מתחרי נישה</h2></div>
-<div class="callout"><b>מגבלת נתונים:</b> אין נתוני הוצאה או מעורבות (לייקים/תקציב) למודעות Meta בישראל. ״מה עובד״ מוסק מוותק הריצה, ממספר הגרסאות ומהניתוח בלבד. התוכן מוצג כפי שנכתב בדוח ממאפיין המודעות, ללא שינוי.</div>
-<article class="ins-md" dir="auto">${body}</article></section></main></body></html>`);
+<div class="callout"><b>מגבלת נתונים:</b> אין נתוני הוצאה או מעורבות (לייקים/תקציב) למודעות Meta בישראל. ״מה עובד״ מוסק מוותק הריצה, ממספר הגרסאות ומהניתוח בלבד. התוכן תורגם לעברית מדוח מאפיין המודעות, ללא הוספה או השמטה של עובדות.</div>
+<article class="ins-md" dir="rtl">${body}</article></section></main></body></html>`);
     }
   }
 }

@@ -1,6 +1,7 @@
 // Minimal markdown -> HTML (headings, paragraphs, nested ul/ol, **bold**, `code`). No deps.
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const inline = (s) => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
+const latin = (s) => String(s).replace(/[A-Za-z][A-Za-z0-9.'/+\-]*(?:[ ][A-Za-z0-9][A-Za-z0-9.'/+\-]*)*/g, (m) => '\u0001' + m + '\u0002');
+const inline = (s) => esc(latin(s)).replace(/\u0001/g, '<bdi>').replace(/\u0002/g, '</bdi>').replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
 export function mdToHtml(md) {
   const out = []; const stack = []; let para = [];
   const flush = () => { if (para.length) { out.push(`<p>${inline(para.join(' '))}</p>`); para = []; } };

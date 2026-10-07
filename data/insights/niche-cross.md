@@ -1,78 +1,78 @@
-# Cross-ad insights: image ads from 8 niche supplement competitors (07.10.2026)
+# תובנות רוחב: מודעות תמונה של 8 מתחרי נישה בתחום התוספים (07.10.2026)
 
-**Scope:** 43 Meta image/carousel ads in 34 docs (`queue.json`) plus 3 pilot docs (GOOM 3167, Mycolivia 1446, Mayven 2701).
-The brief said "38 ads". The real count of image ads is 43, because families are grouped into one doc.
-Not covered: 34 video ads and 2 ads with unknown format (Wonders 1458629161864196, 810631195318862).
-**Data limits:**
-- None of the sources had engagement or spend data. "What works" comes from how long an ad has run, how many versions it has, and the analysis.
-- 9 ads were not found in the Ad Library on 07.10.2026. Their copy comes from the dataset and is marked unverified.
+**היקף:** 43 מודעות תמונה/קרוסלה ב-Meta ב-34 מסמכים (`queue.json`), ועוד 3 מסמכי פיילוט (GOOM 3167, Mycolivia 1446, Mayven 2701).
+בתדריך נכתב "38 מודעות". המספר האמיתי של מודעות התמונה הוא 43, כי משפחות מקובצות למסמך אחד.
+לא נכללו: 34 מודעות וידאו ו-2 מודעות בפורמט לא ידוע (Wonders 1458629161864196, 810631195318862).
+**מגבלות נתונים:**
+- באף אחד מהמקורות לא היו נתוני מעורבות או הוצאה. "מה עובד" נגזר ממשך הריצה של המודעה, ממספר הגרסאות שלה ומהניתוח.
+- 9 מודעות לא נמצאו בספריית המודעות ב-07.10.2026. הקופי שלהן לקוח ממאגר הנתונים ומסומן כלא מאומת.
 
-## 1. Hooks
-- **A concrete pain or testimonial beats a feature list.** Examples: a specific moment like "03:12" (night waking), a review wall, and Fill It's "עזבי את מה שאנחנו אומרות", which hands the voice to customers.
-- **Checklists of signs.** "3 סימנים ש…" turns a vague problem into self-diagnosis.
-- **Anti-hype as a trust hook.** "לא בוסט", "אין מוצרי פלא". The brand declares itself honest before it makes its promise.
-- **Ingredient as hero.** EcoSupp (magnesium bis-glycinate), By Harmony (Alpha-GPC), and mushroom maps at Mycolivia and Mycospring.
+## 1. הוקים
+- **כאב קונקרטי או עדות מנצחים רשימת תכונות.** דוגמאות: רגע ספציפי כמו "03:12" (התעוררות בלילה), קיר ביקורות, ו-"עזבי את מה שאנחנו אומרות" של Fill It, שמעביר את הקול ללקוחות.
+- **צ'קליסטים של סימנים.** "3 סימנים ש…" הופך בעיה מעורפלת לאבחון עצמי.
+- **אנטי-הייפ כהוק של אמון.** "לא בוסט", "אין מוצרי פלא". המותג מצהיר על עצמו כישר לפני שהוא מבטיח.
+- **הרכיב כגיבור.** EcoSupp (מגנזיום ביס-גליצינאט), By Harmony (Alpha-GPC), ומפות פטריות אצל Mycolivia ו-Mycospring.
 
-## 2. Offers and urgency
-- **Main offers:** bundles (2+1, a whole kit), a ₪ amount off (₪40), subscriptions (15% at Mycospring and Mayven), free shipping.
-- **Fake urgency is common.** Mayven's "24 שעות" has run for 186 days. Wonders has said "לקראת החגים" since April.
-- **Real urgency is rarer:** Mycolivia's Sukkot sale (40%, Best Sellers) came down on time after 04.10.
-- **Lesson:** a timer that never ends wears down trust and adds consumer-protection risk. Use only real deadlines.
+## 2. הצעות ודחיפות
+- **ההצעות העיקריות:** חבילות (2+1, ערכה שלמה), הנחה בשקלים (₪40), מנויים (15% ב-Mycospring וב-Mayven), משלוח חינם.
+- **דחיפות מזויפת נפוצה.** "24 שעות" של Mayven רץ כבר 186 ימים. Wonders אומרת "לקראת החגים" מאז אפריל.
+- **דחיפות אמיתית נדירה יותר:** מבצע הסוכות של Mycolivia (40%, Best Sellers) ירד בזמן אחרי 04.10.
+- **לקח:** טיימר שלא נגמר שוחק אמון ומוסיף סיכון בתחום הגנת הצרכן. להשתמש רק בדדליינים אמיתיים.
 
-## 3. Claims and regulatory risk
-- **High risk:**
-  - Hair loss and before/after (GOOM, Wonders).
-  - "Healing" mushrooms (Mycolivia, Mycospring).
+## 3. טענות וסיכון רגולטורי
+- **סיכון גבוה:**
+  - נשירת שיער ולפני/אחרי (GOOM, Wonders).
+  - פטריות "מרפאות" (Mycolivia, Mycospring).
   - "בלי תופעות לוואי".
-  - Cognitive or mood claims (By Harmony Think/Calm).
-- **Careful wording that still sells:**
+  - טענות קוגניטיביות או של מצב רוח (By Harmony Think/Calm).
+- **ניסוח זהיר שעדיין מוכר:**
   - EcoSupp "תורמת ל…".
   - By Harmony "מסייע בשמירה על… תקינה".
-  - Both are close to the wording of approved claims.
-- **For Brainy (a children's product):** children plus cognition is the most sensitive combination. Avoid any promise about concentration, learning or grades. Talk about taste, routine, ingredients and a parent's experience.
+  - שניהם קרובים לניסוח של טענות מאושרות.
+- **ל-Brainy (מוצר לילדים):** ילדים ועוד קוגניציה הם השילוב הרגיש ביותר. להימנע מכל הבטחה לגבי ריכוז, למידה או ציונים. לדבר על טעם, שגרה, רכיבים וחוויית ההורה.
 
-## 4. CTAs and landing pages
-- **Learn More is the default.** Shop Now / Order Now are used for retargeting and sales.
-- **Landing page types:**
-  - Product page (most ads).
-  - Blog or advertorial (Wonders → smilenau.com).
-  - Lead form (Mycolivia pilot).
-  - Collection page (Mycolivia Sukkot).
-  - Subscription page.
-- **Multi-version ads rotate destinations.** GOOM 2030, Mycolivia 1398 and Mycospring 1473 sent the same creative to different products. The link observed in each doc is one snapshot.
-- **Affiliate pages** (Einav Avizemer, YasmeenBader) run ads for brands. Influencers are used as advertisers, not just as faces.
+## 4. CTA ודפי נחיתה
+- **Learn More הוא ברירת המחדל.** Shop Now / Order Now משמשים לרימרקטינג ולמבצעים.
+- **סוגי דפי נחיתה:**
+  - דף מוצר (רוב המודעות).
+  - בלוג או אדברטוריאל (Wonders → smilenau.com).
+  - טופס לידים (פיילוט Mycolivia).
+  - דף קולקציה (Mycolivia סוכות).
+  - דף מנוי.
+- **מודעות מרובות גרסאות מחליפות יעדים.** GOOM 2030, Mycolivia 1398 ו-Mycospring 1473 שלחו את אותו קריאייטיב למוצרים שונים. הקישור שתועד בכל מסמך הוא תמונת מצב אחת.
+- **דפי שותפים** (Einav Avizemer, YasmeenBader) מריצים מודעות עבור מותגים. משפיעניות משמשות כמפרסמות, לא רק כפנים.
 
-## 5. Visual styles
-- UGC or story-style photo with a hand-held product, and a review wall/screenshot.
-- Ingredient map or infographic (ingredient → benefit).
-- Before/after (high risk).
-- Bundle photo with a price sticker or "מבצע" badge.
-- Clean lifestyle product cards (Mycospring carousels, EcoSupp).
-- Surreal or conceptual visuals (moon/sleep at By Harmony, high-scoring).
-- **What scores best (8):**
-  - Wonders, two ads: story or blog layout with a strong headline.
-  - By Harmony family: one clear visual idea and calm design.
+## 5. סגנונות ויזואליים
+- צילום UGC או בסגנון סטורי עם מוצר ביד, וקיר/צילום מסך של ביקורות.
+- מפת רכיבים או אינפוגרפיקה (רכיב → תועלת).
+- לפני/אחרי (סיכון גבוה).
+- צילום חבילה עם מדבקת מחיר או תג "מבצע".
+- כרטיסי מוצר נקיים בסגנון לייפסטייל (קרוסלות Mycospring, EcoSupp).
+- ויזואלים סוריאליסטיים או קונספטואליים (ירח/שינה ב-By Harmony, בציון גבוה).
+- **מה מקבל את הציון הגבוה ביותר (8):**
+  - Wonders, שתי מודעות: פריסת סטורי או בלוג עם כותרת חזקה.
+  - משפחת By Harmony: רעיון ויזואלי אחד ברור ועיצוב רגוע.
 
-## 6. Languages
-- Almost everything is in Hebrew, written in feminine forms (to mothers/women).
-- Mayven localizes to Arabic (families A/B/C). The description stayed in Hebrew, so the localization is half-done.
-- Arabic is a real, almost-free opening for Brainy: most competitors don't run in Arabic at all.
+## 6. שפות
+- כמעט הכל בעברית, בלשון נקבה (לאמהות/לנשים).
+- Mayven מתרגמת לערבית (משפחות A/B/C). התיאור נשאר בעברית, כך שהלוקליזציה חלקית.
+- ערבית היא הזדמנות אמיתית וכמעט חינמית ל-Brainy: רוב המתחרים לא מפרסמים בערבית בכלל.
 
-## 7. Seasonality
-- About 90% of ads are evergreen and run for months.
-- Exceptions:
-  - Sukkot and Rosh Hashana (Mycolivia, and Wonders' "holidays").
-  - Sleep and stress themes with no specific date.
-- No back-to-school activity was found, even though it is the natural window for a children's product. That is an open opportunity for Brainy, with careful wording.
+## 7. עונתיות
+- כ-90% מהמודעות הן אוורגרין ורצות חודשים.
+- חריגים:
+  - סוכות וראש השנה (Mycolivia, ו"החגים" של Wonders).
+  - נושאי שינה ולחץ ללא תאריך ספציפי.
+- לא נמצאה פעילות של חזרה לבית הספר, למרות שזה החלון הטבעי למוצר לילדים. זו הזדמנות פתוחה ל-Brainy, בניסוח זהיר.
 
-## 8. Lessons for Brainy (סוכריות ברייני)
-1. **Hook:** a specific moment from a parent's life (morning, the school bag, "אחרי הצהריים"), not a feature.
-2. **Testimonial wall:** "עזבו מה שאנחנו אומרים – תשמעו הורים", using real, approved reviews.
-3. **Anti-hype:** "לא סוכריית פלא. כן: [ingredients], טעם שילדים אוהבים." This builds trust and lowers regulatory risk.
-4. **Claims:** only approved wording ("תורם ל…" on an approved ingredient). No concentration or grades, no before/after, no "no side effects".
-5. **Offer:** a subscription or bundle (month/term), with a real deadline. No permanent "24h".
-6. **Visual:** test UGC (a child's hand plus the pack) against an ingredient map. Keep one clear idea per ad.
-7. **Language:** a full Arabic version (headline, primary text and description, with an Arabic landing page).
-8. **Season:** a back-to-school campaign and holiday gift bundles, both with real end dates.
-9. **Measurement:** track ad lifetime against the competitors' benchmark (60–180 days for winners). Rotate variants inside one family, as Mayven and By Harmony do.
-10. **Closest competitor to watch:** By Harmony Think (Alpha-GPC, cognition, adults). If it moves to children, the space gets tighter.
+## 8. לקחים ל-Brainy (סוכריות ברייני)
+1. **הוק:** רגע ספציפי מחיי ההורה (בוקר, התיק לבית הספר, "אחרי הצהריים"), לא תכונה.
+2. **קיר עדויות:** "עזבו מה שאנחנו אומרים – תשמעו הורים", עם ביקורות אמיתיות ומאושרות.
+3. **אנטי-הייפ:** "לא סוכריית פלא. כן: [רכיבים], טעם שילדים אוהבים." זה בונה אמון ומוריד סיכון רגולטורי.
+4. **טענות:** רק ניסוח מאושר ("תורם ל…" על רכיב מאושר). בלי ריכוז או ציונים, בלי לפני/אחרי, בלי "בלי תופעות לוואי".
+5. **הצעה:** מנוי או חבילה (חודש/מחצית), עם דדליין אמיתי. בלי "24 שעות" קבוע.
+6. **ויזואל:** לבדוק UGC (יד של ילד ועוד האריזה) מול מפת רכיבים. רעיון אחד ברור בכל מודעה.
+7. **שפה:** גרסה מלאה בערבית (כותרת, טקסט ראשי ותיאור, עם דף נחיתה בערבית).
+8. **עונה:** קמפיין חזרה לבית הספר וחבילות מתנה לחגים, שניהם עם תאריכי סיום אמיתיים.
+9. **מדידה:** לעקוב אחר משך חיי המודעה מול הבנצ'מרק של המתחרים (60–180 ימים למנצחות). להחליף גרסאות בתוך משפחה אחת, כמו ש-Mayven ו-By Harmony עושות.
+10. **המתחרה הקרוב ביותר למעקב:** By Harmony Think (Alpha-GPC, קוגניציה, מבוגרים). אם יעבור לילדים, המרחב יצטמצם.

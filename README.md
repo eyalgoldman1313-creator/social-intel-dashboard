@@ -31,4 +31,4 @@
 
 ## אפיוני מודעות בכמות + תובנות רוחב
 - `data/specs.json` ממפה **כל** מזהה במשפחת מודעות לאותו מסמך (לפי `ids` ב-`/workspace/social/ad-specs/queue.json`). שם קובץ: `meta-<brand>-<primary_id>.html`. לווידאו: `tiktok-<brand>-<id>-spec.html` / `-nully.html` עם מפתח = מזהה הווידאו.
-- תובנות: קובצי Markdown ב-`data/insights/*.md` מוצגים כ-`/insights/<name>` (ממיר פשוט `scripts/md.mjs`). `niche-cross.md` מקושר מ-Top 10 נישה.
+- תובנות: קובצי Markdown ב-`data/insights/*.md` מוצגים כ-`/insights/<name>` (ממיר פשוט `scripts/md.mjs`, עוטף מונחים לטיניים ב-bdi). `niche-cross.md` הוא התרגום לעברית; המקור באנגלית ב-`data/insights-src/niche-cross.en.md` (לא מוצג).
