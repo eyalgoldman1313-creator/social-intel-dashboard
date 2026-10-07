@@ -28,3 +28,7 @@
 ## Top 10 — מתחרים בנישה
 - בכל שבוע ב-`data/top10.json` נשמרים גם `niche` (עד 10 מודעות Meta) ו-`nicheBrands` – המותגים עם `"group": "niche"` ב-`data/data.json`.
 - הדירוג זהה ל-Top 10 הראשי (`rankTop10` ב-`scripts/creatives.mjs`) ומחושב ב-`import-creatives.mjs` (העדכון היומי). אם בצילום של השבוע האחרון אין `niche`, ה-build מחשב אותו מ-`creatives.json`. כשיש פחות מ-10 מודעות שעומדות בתנאים, מוצג מה שקיים עם הערה.
+
+## אפיוני מודעות בכמות + תובנות רוחב
+- `data/specs.json` ממפה **כל** מזהה במשפחת מודעות לאותו מסמך (לפי `ids` ב-`/workspace/social/ad-specs/queue.json`). שם קובץ: `meta-<brand>-<primary_id>.html`. לווידאו: `tiktok-<brand>-<id>-spec.html` / `-nully.html` עם מפתח = מזהה הווידאו.
+- תובנות: קובצי Markdown ב-`data/insights/*.md` מוצגים כ-`/insights/<name>` (ממיר פשוט `scripts/md.mjs`). `niche-cross.md` מקושר מ-Top 10 נישה.

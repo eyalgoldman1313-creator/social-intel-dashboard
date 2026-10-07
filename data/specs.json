@@ -1,16 +1,328 @@
 {
-  "_doc": "מיפוי מזהה מודעה/וידאו -> דפי אפיון. קבצים ב-specs/, מוגשים ב-/specs/<file>. ראו README.",
-  "items": {
-    "3167033313596218": [{ "label": "אפיון", "file": "meta-goom-3167033313596218.html" }],
-    "2701057770261679": [{ "label": "אפיון", "file": "meta-mayven-2701057770261679.html" }],
-    "1446078710401700": [{ "label": "אפיון", "file": "meta-mycolivia-1446078710401700.html" }],
-    "7509433751793913106": [{ "label": "אפיון", "file": "tiktok-goom-7509433751793913106-spec.html" }, { "label": "תסריט ל-Nully", "file": "tiktok-goom-7509433751793913106-nully.html" }],
-    "7464276663665216775": [{ "label": "אפיון", "file": "tiktok-goom-7464276663665216775-spec.html" }, { "label": "תסריט ל-Nully", "file": "tiktok-goom-7464276663665216775-nully.html" }],
-    "7237048286278978817": [{ "label": "אפיון", "file": "tiktok-ecosupp-7237048286278978817-spec.html" }, { "label": "תסריט ל-Nully", "file": "tiktok-ecosupp-7237048286278978817-nully.html" }]
-  },
-  "mailers": [
-    { "brand": "EcoSupp", "title": "איך הגוף שלנו עובד בזמן השינה?", "file": "mailer-ecosupp.html" },
-    { "brand": "Fillit", "title": "הבריאות שלך היא השקעה לטווח ארוך", "file": "mailer-fillit.html" },
-    { "brand": "Mycospring", "title": "שאלנו את מי שמדברות איתכם כל יום", "file": "mailer-mycospring.html" }
+ "_doc": "מיפוי מזהה מודעה/וידאו -> דפי אפיון. קבצים ב-specs/, מוגשים ב-/specs/<file>. ראו README.",
+ "items": {
+  "3167033313596218": [
+   {
+    "label": "אפיון",
+    "file": "meta-goom-3167033313596218.html"
+   }
+  ],
+  "2701057770261679": [
+   {
+    "label": "אפיון",
+    "file": "meta-mayven-2701057770261679.html"
+   }
+  ],
+  "1446078710401700": [
+   {
+    "label": "אפיון",
+    "file": "meta-mycolivia-1446078710401700.html"
+   }
+  ],
+  "7509433751793913106": [
+   {
+    "label": "אפיון",
+    "file": "tiktok-goom-7509433751793913106-spec.html"
+   },
+   {
+    "label": "תסריט ל-Nully",
+    "file": "tiktok-goom-7509433751793913106-nully.html"
+   }
+  ],
+  "7464276663665216775": [
+   {
+    "label": "אפיון",
+    "file": "tiktok-goom-7464276663665216775-spec.html"
+   },
+   {
+    "label": "תסריט ל-Nully",
+    "file": "tiktok-goom-7464276663665216775-nully.html"
+   }
+  ],
+  "7237048286278978817": [
+   {
+    "label": "אפיון",
+    "file": "tiktok-ecosupp-7237048286278978817-spec.html"
+   },
+   {
+    "label": "תסריט ל-Nully",
+    "file": "tiktok-ecosupp-7237048286278978817-nully.html"
+   }
+  ],
+  "1849819722546965": [
+   {
+    "label": "אפיון",
+    "file": "meta-wondersteva-1849819722546965.html"
+   }
+  ],
+  "1110000457458125": [
+   {
+    "label": "אפיון",
+    "file": "meta-wondersteva-1110000457458125.html"
+   }
+  ],
+  "1526011919561216": [
+   {
+    "label": "אפיון",
+    "file": "meta-mayven-1526011919561216.html"
+   }
+  ],
+  "2030139967843901": [
+   {
+    "label": "אפיון",
+    "file": "meta-goom-2030139967843901.html"
+   }
+  ],
+  "1927825494522210": [
+   {
+    "label": "אפיון",
+    "file": "meta-mycolivia-1927825494522210.html"
+   }
+  ],
+  "1485417696703201": [
+   {
+    "label": "אפיון",
+    "file": "meta-wondersteva-1485417696703201.html"
+   }
+  ],
+  "802342609477316": [
+   {
+    "label": "אפיון",
+    "file": "meta-mayven-802342609477316.html"
+   }
+  ],
+  "4298407990419608": [
+   {
+    "label": "אפיון",
+    "file": "meta-wondersteva-4298407990419608.html"
+   }
+  ],
+  "3126536727548124": [
+   {
+    "label": "אפיון",
+    "file": "meta-mycospring-3126536727548124.html"
+   }
+  ],
+  "870480272771882": [
+   {
+    "label": "אפיון",
+    "file": "meta-mayven-870480272771882.html"
+   }
+  ],
+  "1473549080742218": [
+   {
+    "label": "אפיון",
+    "file": "meta-mycospring-1473549080742218.html"
+   }
+  ],
+  "1612888416477651": [
+   {
+    "label": "אפיון",
+    "file": "meta-ecosupp-1612888416477651.html"
+   }
+  ],
+  "1811596686475967": [
+   {
+    "label": "אפיון",
+    "file": "meta-mycospring-1811596686475967.html"
+   }
+  ],
+  "1603490764684158": [
+   {
+    "label": "אפיון",
+    "file": "meta-mayven-1603490764684158.html"
+   }
+  ],
+  "1461267605689035": [
+   {
+    "label": "אפיון",
+    "file": "meta-mayven-1461267605689035.html"
+   }
+  ],
+  "27438977599090018": [
+   {
+    "label": "אפיון",
+    "file": "meta-mycolivia-27438977599090018.html"
+   }
+  ],
+  "1047909297705233": [
+   {
+    "label": "אפיון",
+    "file": "meta-mayven-1047909297705233.html"
+   }
+  ],
+  "1998827250744233": [
+   {
+    "label": "אפיון",
+    "file": "meta-mayven-1047909297705233.html"
+   }
+  ],
+  "27607515932191118": [
+   {
+    "label": "אפיון",
+    "file": "meta-mayven-1047909297705233.html"
+   }
+  ],
+  "2248001762623995": [
+   {
+    "label": "אפיון",
+    "file": "meta-fillit-2248001762623995.html"
+   }
+  ],
+  "1391654222877665": [
+   {
+    "label": "אפיון",
+    "file": "meta-fillit-1391654222877665.html"
+   }
+  ],
+  "1394885005864076": [
+   {
+    "label": "אפיון",
+    "file": "meta-fillit-1391654222877665.html"
+   }
+  ],
+  "1990675184984045": [
+   {
+    "label": "אפיון",
+    "file": "meta-fillit-1990675184984045.html"
+   }
+  ],
+  "1577699003746614": [
+   {
+    "label": "אפיון",
+    "file": "meta-mayven-1577699003746614.html"
+   }
+  ],
+  "1393736352263629": [
+   {
+    "label": "אפיון",
+    "file": "meta-ecosupp-1393736352263629.html"
+   }
+  ],
+  "1614043736869362": [
+   {
+    "label": "אפיון",
+    "file": "meta-ecosupp-1614043736869362.html"
+   }
+  ],
+  "2424233974733476": [
+   {
+    "label": "אפיון",
+    "file": "meta-ecosupp-2424233974733476.html"
+   }
+  ],
+  "2832213563845240": [
+   {
+    "label": "אפיון",
+    "file": "meta-ecosupp-2832213563845240.html"
+   }
+  ],
+  "4520609871526236": [
+   {
+    "label": "אפיון",
+    "file": "meta-ecosupp-4520609871526236.html"
+   }
+  ],
+  "1561232668517208": [
+   {
+    "label": "אפיון",
+    "file": "meta-by-harmony-1561232668517208.html"
+   }
+  ],
+  "1634782284645292": [
+   {
+    "label": "אפיון",
+    "file": "meta-by-harmony-1561232668517208.html"
+   }
+  ],
+  "1867099687601524": [
+   {
+    "label": "אפיון",
+    "file": "meta-by-harmony-1561232668517208.html"
+   }
+  ],
+  "2595606210880723": [
+   {
+    "label": "אפיון",
+    "file": "meta-by-harmony-1561232668517208.html"
+   }
+  ],
+  "2271234116784124": [
+   {
+    "label": "אפיון",
+    "file": "meta-by-harmony-2271234116784124.html"
+   }
+  ],
+  "1631213701699139": [
+   {
+    "label": "אפיון",
+    "file": "meta-ecosupp-1631213701699139.html"
+   }
+  ],
+  "1398248515165290": [
+   {
+    "label": "אפיון",
+    "file": "meta-mycolivia-1398248515165290.html"
+   }
+  ],
+  "1082131837564556": [
+   {
+    "label": "אפיון",
+    "file": "meta-fillit-1082131837564556.html"
+   }
+  ],
+  "1432348698857507": [
+   {
+    "label": "אפיון",
+    "file": "meta-fillit-1432348698857507.html"
+   }
+  ],
+  "1011049791958224": [
+   {
+    "label": "אפיון",
+    "file": "meta-mycospring-1011049791958224.html"
+   }
+  ],
+  "1614888170263566": [
+   {
+    "label": "אפיון",
+    "file": "meta-mycospring-1011049791958224.html"
+   }
+  ],
+  "1781852283056573": [
+   {
+    "label": "אפיון",
+    "file": "meta-mycospring-1011049791958224.html"
+   }
+  ],
+  "1537012781523633": [
+   {
+    "label": "אפיון",
+    "file": "meta-mycolivia-1537012781523633.html"
+   }
+  ],
+  "3191604201037116": [
+   {
+    "label": "אפיון",
+    "file": "meta-mycolivia-1537012781523633.html"
+   }
   ]
+ },
+ "mailers": [
+  {
+   "brand": "EcoSupp",
+   "title": "איך הגוף שלנו עובד בזמן השינה?",
+   "file": "mailer-ecosupp.html"
+  },
+  {
+   "brand": "Fillit",
+   "title": "הבריאות שלך היא השקעה לטווח ארוך",
+   "file": "mailer-fillit.html"
+  },
+  {
+   "brand": "Mycospring",
+   "title": "שאלנו את מי שמדברות איתכם כל יום",
+   "file": "mailer-mycospring.html"
+  }
+ ]
 }

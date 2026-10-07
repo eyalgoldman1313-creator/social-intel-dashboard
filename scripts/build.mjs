@@ -2,6 +2,7 @@
 import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { mdToHtml } from './md.mjs';
 import { makeRenderer, loadJson, rankTop10, nicheIds } from './creatives.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -14,6 +15,21 @@ const top10 = loadJson(root, 'data/top10.json', { weeks: {} });
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });
 cpSync(join(root, 'public'), dist, { recursive: true });
+// insights pages: data/insights/*.md -> dist/insights/<name>.html (styled like the dashboard)
+{
+  const idir = join(root, 'data/insights');
+  if (existsSync(idir)) {
+    mkdirSync(join(dist, 'insights'), { recursive: true });
+    for (const f of readdirSync(idir).filter((f) => f.endsWith('.md'))) {
+      const body = mdToHtml(readFileSync(join(idir, f), 'utf8'));
+      writeFileSync(join(dist, 'insights', f.replace(/\.md$/, '.html')), `<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>תובנות רוחב — מתחרי נישה</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap"><link rel="stylesheet" href="/style.css"></head><body>
+<div class="ins-bar"><a href="/#top10">→ חזרה ל-Top 10 — מתחרים בנישה</a><a href="/#creatives">קריאייטיבים</a></div>
+<main class="ins-page"><section class="panel"><div class="panel-head"><h2>תובנות רוחב — מתחרי נישה</h2></div>
+<div class="callout"><b>מגבלת נתונים:</b> אין נתוני הוצאה או מעורבות (לייקים/תקציב) למודעות Meta בישראל. ״מה עובד״ מוסק מוותק הריצה, ממספר הגרסאות ומהניתוח בלבד. התוכן מוצג כפי שנכתב בדוח ממאפיין המודעות, ללא שינוי.</div>
+<article class="ins-md" dir="auto">${body}</article></section></main></body></html>`);
+    }
+  }
+}
 // spec pages: copy specs/*.html to dist/specs/, injecting a small back-to-dashboard bar (content untouched)
 {
   const sd = join(root, 'specs');

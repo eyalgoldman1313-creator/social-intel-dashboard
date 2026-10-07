@@ -191,7 +191,7 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
       const n = w.niche || [];
       const names = (w.nicheBrands || []).map(brandName).join(', ');
       const empty = n.length ? Math.max(0, 10 - n.length) : 0;
-      return `<div class="t10-niche"><h3 class="gal-h">Top 10 — מתחרים בנישה</h3><p class="fine">רק מודעות Meta של מתחרי הנישה${names ? ` (${esc(names)})` : ''}. אותה שיטת דירוג: ותק ריצה, שוברי שוויון גרסאות, עד 2 למותג.${n.length < 10 ? ` <b>רק ${n.length} מודעות נישה עומדות בתנאים השבוע – מוצג מה שקיים.</b>` : ''}</p>
+      return `<div class="t10-niche"><h3 class="gal-h">Top 10 — מתחרים בנישה</h3><p class="ins-link"><a href="/insights/niche-cross" target="_blank" rel="noopener">💡 תובנות רוחב — מתחרי נישה (43 מודעות תמונה) ←</a></p><p class="fine">רק מודעות Meta של מתחרי הנישה${names ? ` (${esc(names)})` : ''}. אותה שיטת דירוג: ותק ריצה, שוברי שוויון גרסאות, עד 2 למותג.${n.length < 10 ? ` <b>רק ${n.length} מודעות נישה עומדות בתנאים השבוע – מוצג מה שקיים.</b>` : ''}</p>
         <div class="t10-cards cr-list t10-grid">${n.map((i) => card(i, { size: 'lg', rank: i.rank, basis: `דירוג לפי: ותק ${i.days_active} ימים${i.variants_count != null ? ` · ${i.variants_count} גרסאות` : ''}` })).join('')}${Array.from({ length: empty }, (_, k) => `<div class="t10-empty"><span class="t10-rank">${n.length + k + 1}</span><div class="cr-ph"><div class="cr-ph-ic" aria-hidden="true">🖼</div><b>אין מספיק מודעות נישה</b></div></div>`).join('')}</div></div>`;
     };
     const block = (w, on) => {
