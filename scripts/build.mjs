@@ -42,6 +42,8 @@ cpSync(join(root, 'public'), dist, { recursive: true });
       h = /<body[^>]*>/i.test(h) ? h.replace(/<body[^>]*>/i, (m) => m + bar) : bar + h;
       if (!/name="robots"/.test(h)) h = h.replace(/<head[^>]*>/i, (m) => m + '<meta name="robots" content="noindex, nofollow">');
       writeFileSync(join(dist, 'specs', f), h);
+      // unmodified copy (no header bar) of the same doc, used to sync the bots' Drive copies
+      mkdirSync(join(dist, 'specs', 'raw'), { recursive: true }); writeFileSync(join(dist, 'specs', 'raw', f), readFileSync(join(sd, f)));
     }
   }
 }
