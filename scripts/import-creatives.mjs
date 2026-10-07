@@ -10,6 +10,7 @@ import { dirname, join, resolve, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
+import { rankTop10, nicheIds } from './creatives.mjs';
 const md5 = (s) => createHash('md5').update(s).digest('hex').slice(0, 8);
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -123,17 +124,8 @@ writeFileSync(join(root, 'data/creatives.json'), JSON.stringify({ generatedAt: n
 // ---------- weekly Top 10 snapshot ----------
 const wk = isoWeek(asof);
 const METHOD = 'דירוג לפי ותק הריצה (ימים פעילה) כמדד לביצועים, כי נתוני הוצאה/מעורבות אינם זמינים למודעות Meta בישראל. שוברי שוויון: מספר גרסאות/שכפולים. עד 2 קריאייטיבים לכל מותג, משפחה אחת נספרת פעם אחת. קריאייטיבים עם תמונה מדורגים לפני כאלה בלי תמונה. ותק הוא אינדיקציה, לא הוכחה לרווחיות.';
-const per = new Map(); const fam = new Set(); const top = [];
-const meta = items.filter((i) => i.source === 'meta' && i.status !== 'inactive' && i.days_active != null);
-const order = (arr) => [...arr].sort((a, b) => b.days_active - a.days_active || (b.variants_count ?? 0) - (a.variants_count ?? 0));
-for (const it of [...order(meta.filter((i) => i.image)), ...order(meta.filter((i) => !i.image))]) {
-  if (top.length >= 10) break;
-  const fk = it.family ? `${it.brand}|${it.family}` : null;
-  if (fk && fam.has(fk)) continue;
-  if ((per.get(it.brand) || 0) >= 2) continue;
-  per.set(it.brand, (per.get(it.brand) || 0) + 1); if (fk) fam.add(fk);
-  top.push({ rank: top.length + 1, ...it });
-}
+const top = rankTop10(items);
+const niche = rankTop10(items, { brandIds: nicheIds(brands) });
 const byEng = (a, b) => (numOrNull(b.views) ?? -1) - (numOrNull(a.views) ?? -1) || (numOrNull(b.likes) ?? -1) - (numOrNull(a.likes) ?? -1);
 const topBy = (arr, basis) => arr.filter((i) => i.image && (numOrNull(i.views) != null || numOrNull(i.likes) != null)).sort(byEng).slice(0, 5).map((it, k) => ({ rank: k + 1, basis: numOrNull(it.views) != null ? 'views' : 'likes', ...it }));
 const strips = [
@@ -142,9 +134,9 @@ const strips = [
 ].filter((s) => s.items.length);
 const tpath = join(root, 'data/top10.json');
 const prev = existsSync(tpath) ? JSON.parse(readFileSync(tpath, 'utf8')) : { weeks: {} };
-prev.weeks[wk.key] = { key: wk.key, week: wk.week, start: wk.start, end: wk.end, asof, generatedAt: new Date().toISOString(), method: METHOD, basis: 'ותק ריצה (ימים פעילה), אח״כ מספר גרסאות', items: top, strips };
+prev.weeks[wk.key] = { key: wk.key, week: wk.week, start: wk.start, end: wk.end, asof, generatedAt: new Date().toISOString(), method: METHOD, basis: 'ותק ריצה (ימים פעילה), אח״כ מספר גרסאות', items: top, niche, nicheBrands: nicheIds(brands), strips };
 writeFileSync(tpath, JSON.stringify(prev, null, 1) + '\n');
-console.log(`top10 ${wk.key}: ${top.length} ads (${top.filter((t) => t.image).length} with image), organic strips ${strips.map((s) => s.key + ':' + s.items.length).join(' ')}`);
+console.log(`top10 ${wk.key}: niche ${niche.length}, ${top.length} ads (${top.filter((t) => t.image).length} with image), organic strips ${strips.map((s) => s.key + ':' + s.items.length).join(' ')}`);
 if (warnings.length) console.log('warnings:\n  ' + warnings.slice(0, 40).join('\n  ') + (warnings.length > 40 ? `\n  …+${warnings.length - 40}` : ''));
 const unknown = [...new Set(items.map((i) => i.brand).filter((b) => !brands.some((x) => x.id === b)))];
 if (unknown.length) console.log('! brands not in data.json (shown by raw name):', unknown.join(', '));

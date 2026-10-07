@@ -16,6 +16,24 @@ const PHASE = {
   na: ['משך לא ידוע', ''],
 };
 
+// Shared Top 10 ranking (used by import-creatives.mjs and as a build fallback): Meta ads, longest-running first,
+// tie-break variants, max 2 per brand, one per creative family, items with image first.
+export function rankTop10(items, { brandIds = null, max = 10 } = {}) {
+  const per = new Map(); const fam = new Set(); const top = [];
+  const meta = items.filter((i) => i.source === 'meta' && i.status !== 'inactive' && i.days_active != null && (!brandIds || brandIds.includes(i.brand)));
+  const order = (arr) => [...arr].sort((a, b) => b.days_active - a.days_active || (b.variants_count ?? 0) - (a.variants_count ?? 0));
+  for (const it of [...order(meta.filter((i) => i.image)), ...order(meta.filter((i) => !i.image))]) {
+    if (top.length >= max) break;
+    const fk = it.family ? `${it.brand}|${it.family}` : null;
+    if (fk && fam.has(fk)) continue;
+    if ((per.get(it.brand) || 0) >= 2) continue;
+    per.set(it.brand, (per.get(it.brand) || 0) + 1); if (fk) fam.add(fk);
+    top.push({ rank: top.length + 1, ...it });
+  }
+  return top;
+}
+export const nicheIds = (brands) => brands.filter((b) => b.group === 'niche').map((b) => b.id);
+
 export function loadJson(root, rel, fallback) {
   const p = join(root, rel);
   return existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : fallback;
@@ -169,6 +187,13 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
       return section('top10', 'Top 10 – עשרת המובילים השבוע', `<p class="scope">סטוריבורד שבועי של עשר המודעות המובילות: הקריאייטיב עצמו + מדדים מובילים. יתמלא אוטומטית אחרי ייבוא הקריאייטיבים (<code dir="ltr">node scripts/import-creatives.mjs</code>).</p><div class="t10-grid">${ph}</div>`);
     }
     const latest = weeks[weeks.length - 1];
+    const nicheBlock = (w) => {
+      const n = w.niche || [];
+      const names = (w.nicheBrands || []).map(brandName).join(', ');
+      const empty = n.length ? Math.max(0, 10 - n.length) : 0;
+      return `<div class="t10-niche"><h3 class="gal-h">Top 10 — מתחרים בנישה</h3><p class="fine">רק מודעות Meta של מתחרי הנישה${names ? ` (${esc(names)})` : ''}. אותה שיטת דירוג: ותק ריצה, שוברי שוויון גרסאות, עד 2 למותג.${n.length < 10 ? ` <b>רק ${n.length} מודעות נישה עומדות בתנאים השבוע – מוצג מה שקיים.</b>` : ''}</p>
+        <div class="t10-cards cr-list t10-grid">${n.map((i) => card(i, { size: 'lg', rank: i.rank, basis: `דירוג לפי: ותק ${i.days_active} ימים${i.variants_count != null ? ` · ${i.variants_count} גרסאות` : ''}` })).join('')}${Array.from({ length: empty }, (_, k) => `<div class="t10-empty"><span class="t10-rank">${n.length + k + 1}</span><div class="cr-ph"><div class="cr-ph-ic" aria-hidden="true">🖼</div><b>אין מספיק מודעות נישה</b></div></div>`).join('')}</div></div>`;
+    };
     const block = (w, on) => {
       const empty = Math.max(0, 10 - w.items.length);
       const basisOf = (i, s) => (i.basis === 'likes' ? `לייקים ${compact(i.likes)}` : `צפיות ${compact(i.views)}`);
@@ -176,6 +201,7 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
       return `<div class="t10-week" data-week="${esc(w.key)}"${on ? '' : ' hidden'}>
         ${w.items.length ? '' : '<div class="cr-empty"><div class="cr-empty-ic" aria-hidden="true">🖼</div><h3>דירוג מודעות Meta ממתין לנכסים</h3><p>עשרת המודעות הממומנות יופיעו כאן כשיובאו קריאייטיבי Meta עם תאריכי התחלה. מתחת – תוכן אורגני מוביל, מסומן בנפרד.</p></div>'}
         <div class="t10-cards cr-list t10-grid"${w.items.length ? '' : ' hidden'}>${w.items.map((i) => card(i, { size: 'lg', rank: i.rank, basis: `דירוג לפי: ותק ${i.days_active} ימים${i.variants_count != null ? ` · ${i.variants_count} גרסאות` : ''}` })).join('')}${(w.items.length ? Array.from({ length: empty }, (_, k) => `<div class="t10-empty"><span class="t10-rank">${w.items.length + k + 1}</span><div class="cr-ph"><div class="cr-ph-ic" aria-hidden="true">🖼</div><b>אין מספיק מודעות עדיין</b></div></div>`) : []).join('')}</div>
+        ${nicheBlock(w)}
         ${org}<p class="fine">צילום מצב שנוצר ב-${esc(fmtD(w.asof))}.</p></div>`;
     };
     const weekSel = weeks.length > 1 ? `<label class="sel"><span>שבוע</span><select id="t10-week">${[...weeks].reverse().map((w) => `<option value="${esc(w.key)}">שבוע ${w.week} · ${fmtD(w.start)}–${fmtD(w.end)}</option>`).join('')}</select></label>` : '';

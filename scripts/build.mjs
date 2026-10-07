@@ -2,7 +2,7 @@
 import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { makeRenderer, loadJson } from './creatives.mjs';
+import { makeRenderer, loadJson, rankTop10, nicheIds } from './creatives.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
@@ -174,6 +174,9 @@ function render(scan, prev, { isLatest, scans }) {
   const mailers = specs.mailers || [];
   const mailersPanel = section('mailers', 'מיילרים', mailers.length ? `<p class="scope">ניתוחי מיילים שיווקיים של מתחרים – כל ניתוח נפתח כדף באתר.</p><div class="mailer-grid">${mailers.map((m) => `<a class="mailer-card" href="/specs/${esc(m.file.replace(/\.html$/, ''))}" target="_blank" rel="noopener"><span class="brand-tag">${esc(m.brand)}</span><h3>${esc(m.title)}</h3><span class="spec-tag">📄 ניתוח המייל ←</span></a>`).join('')}</div>` : '<p class="fine">אין עדיין ניתוחי מיילרים.</p>');
   const creativesPanel = CR.galleryPanel({ creatives, brands, scanDate: scan.date, asof: creatives.asof });
+  // niche Top 10: fallback for snapshots made before the niche list existed (latest week only, from current creatives)
+  { const ws = Object.values(top10.weeks || {}).sort((a, b) => a.key.localeCompare(b.key)); const lw = ws[ws.length - 1];
+    if (lw && !lw.niche) { lw.nicheBrands = nicheIds(brands); lw.niche = rankTop10(creatives.items || [], { brandIds: lw.nicheBrands }); } }
   const top10Panel = CR.top10Panel({ top10, creatives, brands, scanDate: scan.date });
   const galleryHint = (txt) => `<p class="gal-link"><a href="#creatives" data-go="creatives">🖼 ${txt} ←</a></p>`;
 

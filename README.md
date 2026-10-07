@@ -24,3 +24,7 @@
   - `mailers`: מערך `{ brand, title, file }` – מוצג בלשונית **מיילרים**.
 - הוספת אפיון חדש: (1) העתיקו את הקובץ ל-`specs/` בשם `meta-<brand>-<id>.html` / `tiktok-<brand>-<id>-spec.html` / `-nully.html` / `mailer-<brand>.html`; (2) הוסיפו רשומה ב-`data/specs.json`; (3) `npm run build` ובדקו ש-`data-spec="1"` מופיע; commit + push ל-main.
 - כרטיסים עם אפיון מקבלים תגית סגולה בגלריה וב-Top 10, ויש סינון "עם אפיון" בגלריה. מזהה ללא כרטיס תואם פשוט לא יוצג (בדקו ב-`data/creatives.json`).
+
+## Top 10 — מתחרים בנישה
+- בכל שבוע ב-`data/top10.json` נשמרים גם `niche` (עד 10 מודעות Meta) ו-`nicheBrands` – המותגים עם `"group": "niche"` ב-`data/data.json`.
+- הדירוג זהה ל-Top 10 הראשי (`rankTop10` ב-`scripts/creatives.mjs`) ומחושב ב-`import-creatives.mjs` (העדכון היומי). אם בצילום של השבוע האחרון אין `niche`, ה-build מחשב אותו מ-`creatives.json`. כשיש פחות מ-10 מודעות שעומדות בתנאים, מוצג מה שקיים עם הערה.
