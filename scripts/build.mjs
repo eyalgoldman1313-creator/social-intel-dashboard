@@ -126,7 +126,7 @@ function render(scan, prev, { isLatest, scans }) {
   const header = `<header class="top">
     <div class="top-in">
       <div><p class="eyebrow">${esc(data.site.subtitle)}</p><h1>${esc(data.site.title)}</h1>
-      <p class="updated"><span class="live"></span> עודכן לאחרונה: <b>${esc(scan.date)}</b> / ${esc(scan.statusLabel)}${isLatest ? '' : ' · <b>ארכיון</b>'}</p>
+      <p class="updated"><span class="live"></span> עודכן לאחרונה: <b>${esc(scan.date)}</b> / ${esc(scan.statusLabel)}${isLatest ? '' : ' · <b>ארכיון</b>'} <a class="info-i" href="#limits" title="מגבלות וכיסוי" aria-label="מגבלות וכיסוי">i</a></p>
       ${scanSwitch}</div>
       <div class="events">${events}</div>
     </div></header>`;
@@ -135,7 +135,7 @@ function render(scan, prev, { isLatest, scans }) {
     <div class="summary-in"><h2 id="status-h">תמונת מצב</h2>
     <div class="summary-grid"><div><h3>7 מסקנות מרכזיות</h3><ol class="takes">${takeaways}</ol></div>
     <div><h3>5 פעולות מומלצות לפי עדיפות</h3><ol class="acts">${actions}</ol></div></div>
-    <p class="fine">המלצות = הסקה על בסיס תצפיות בדוחות, לא תוצאות שנמדדו. סריקה חד-פעמית; ראו ״מגבלות וכיסוי״.</p></div></section>`;
+    <p class="fine">המלצות = הסקה על בסיס תצפיות בדוחות, לא תוצאות שנמדדו. סריקה חד-פעמית; ראו <a href="#limits">״מגבלות וכיסוי״</a>.</p></div></section>`;
 
   // ----- overview -----
   const nicheMeta = niche.map((b) => scan.meta.brandStats[b.id]);
@@ -341,23 +341,25 @@ function render(scan, prev, { isLatest, scans }) {
     <h3>מגמות שוק</h3>${notesList(S.trends)}`,
     { docs: fullDoc(D.comparative.meta, 'Meta – מגמות') + fullDoc(D.comparative.google, 'Google – מגמות') });
 
+  // ----- Regulatory (subsection of actions; #regulatory still lands here) -----
+  const R = scan.regulatory;
+  const regRows = R.observed.map((o) => `<tr><th scope="row">${bdi(brandById[o.brand].name)} ${groupBadge(brandById[o.brand].group)}</th><td class="txt">${esc(o.claim)}</td><td><span class="tag lv">${esc(o.level)}</span></td><td>${chip(o.platform)}</td></tr>`).join('');
+  const regBlock = `<div class="risk-block" id="regulatory">
+    <div class="panel-head"><h3><span class="tag risk-tag">סיכון</span> סיכונים רגולטוריים – טענות בריאות</h3><div class="panel-docs">${fullDoc(D.comparative.tiktok, 'TikTok – סיכונים') + fullDoc(D.comparative.meta, 'Meta') + fullDoc(D.comparative.google, 'Google')}</div></div>
+    <div class="callout warn">${esc(R.intro)}</div>
+    <div class="tablewrap"><table class="matrix"><caption>טענות שנצפו אצל מתחרים – לא להעתיק</caption><thead><tr><th>מתחרה</th><th>טענה / פרקטיקה</th><th>רמת סיכון</th><th>מקור</th></tr></thead><tbody>${regRows}</tbody></table></div>
+    <h3>כללי עבודה בטוחים יותר לחנות של אייל</h3>${notesList(R.guidelines)}
+  </div>`;
+
   // ----- Actions -----
   const actRows = scan.actionsFull.map((a) => `<tr data-pr="${esc(a.priority)}"><th scope="row" dir="ltr">${esc(a.id)}</th><td class="txt"><b>${esc(a.title)}</b><br><small>על בסיס: ${esc(a.basis)}</small></td><td><span class="tag pr-${esc(a.priority)}">${esc(a.priority)}</span></td><td>${esc(a.effort)}</td><td>${esc(a.when)}</td><td>${chip(a.platform)}</td></tr>`).join('');
   const actionsPanel = section('actions', 'המלצות ליישום', `
     <p class="scope">רשימת פעולות לחנות של אייל (תוסף תזונה נישתי, Shopify). עדיפות מבוססת על הדוחות; <b>הערכת המאמץ היא שלנו</b> (לא מהדוחות). ספי תקציב ו-KPI ייקבעו לפי מחיר המוצר והמרווח (לא ידועים).</p>
     <div class="filters" role="group"><button class="fbtn on" data-pfilter="all">הכל</button><button class="fbtn" data-pfilter="גבוהה">עדיפות גבוהה</button><button class="fbtn" data-pfilter="בינונית">בינונית</button><button class="fbtn" data-pfilter="נמוכה">נמוכה</button></div>
     <div class="tablewrap"><table class="matrix" id="acts"><thead><tr><th>#</th><th>פעולה</th><th>עדיפות</th><th>מאמץ</th><th>מתי</th><th>פלטפורמה</th></tr></thead><tbody>${actRows}</tbody></table></div>
-    <p class="fine">⚠ כל טענת בריאות במודעה צריכה בדיקה רגולטורית – ראו ״סיכונים רגולטוריים״.</p>`,
+    <p class="fine">⚠ כל טענת בריאות במודעה צריכה בדיקה רגולטורית – ראו <a href="#regulatory">״סיכונים רגולטוריים״</a>.</p>
+    ${regBlock}`,
     { docs: fullDoc(D.comparative.meta, 'Meta – המלצות') + fullDoc(D.comparative.tiktok, 'TikTok – המלצות') + fullDoc(D.comparative.google, 'Google – המלצות') });
-
-  // ----- Regulatory -----
-  const R = scan.regulatory;
-  const regRows = R.observed.map((o) => `<tr><th scope="row">${bdi(brandById[o.brand].name)} ${groupBadge(brandById[o.brand].group)}</th><td class="txt">${esc(o.claim)}</td><td><span class="tag lv">${esc(o.level)}</span></td><td>${chip(o.platform)}</td></tr>`).join('');
-  const regPanel = section('regulatory', 'סיכונים רגולטוריים – טענות בריאות', `
-    <div class="callout warn">${esc(R.intro)}</div>
-    <div class="tablewrap"><table class="matrix"><caption>טענות שנצפו אצל מתחרים – לא להעתיק</caption><thead><tr><th>מתחרה</th><th>טענה / פרקטיקה</th><th>רמת סיכון</th><th>מקור</th></tr></thead><tbody>${regRows}</tbody></table></div>
-    <h3>כללי עבודה בטוחים יותר לחנות של אייל</h3>${notesList(R.guidelines)}`,
-    { docs: fullDoc(D.comparative.tiktok, 'TikTok – סיכונים') + fullDoc(D.comparative.meta, 'Meta') + fullDoc(D.comparative.google, 'Google') });
 
   // ----- Limitations -----
   const stClass = (s) => (s === 'בהמשך' ? 'soon' : s.includes('~20') || s.includes('חלקי') || s.includes('אורגני בלבד') ? 'part' : 'info');
@@ -369,8 +371,16 @@ function render(scan, prev, { isLatest, scans }) {
     <p>הנתונים נמצאים בקובץ אחד: <code dir="ltr">data/data.json</code>. כדי להוסיף שבוע, מוסיפים אובייקט חדש בסוף המערך <code dir="ltr">scans</code> (מעתיקים את האחרון ומעדכנים). הלוח יציג את הסריקה האחרונה, יסמן שינויים (Δ) לעומת הקודמת, וישמור ארכיון.</p>
     ${scans.length > 1 ? `<p>סריקות זמינות: ${scans.map((s) => `<a href="${s.id === scans[scans.length - 1].id ? '/' : `/archive/${s.id}/`}">${esc(s.date)}</a>`).join(' · ')}</p>` : '<p class="fine">כרגע קיימת סריקה אחת (סריקה חד-פעמית ראשונה).</p>'}`);
 
-  const tabs = [['creatives', 'קריאייטיבים חזקים'], ['top10', 'Top 10 השבוע'], ['mailers', 'מיילרים'], ['overview', 'סקירה כללית'], ['meta', 'Meta'], ['tiktok', 'TikTok'], ['google', 'Google'], ['organic', 'נראות אורגנית'], ['competitors', 'מתחרים'], ['trends', 'מגמות ועונתיות'], ['actions', 'המלצות ליישום'], ['regulatory', 'סיכונים רגולטוריים'], ['limits', 'מגבלות וכיסוי']];
-  const nav = `<nav class="tabs" aria-label="סעיפים"><div class="tabs-in" role="tablist">${tabs.map(([id, t], i) => `<a href="#${id}" role="tab" data-go="${id}" class="${i === 0 ? 'on ' : ''}${i < 2 ? 'hot' : ''}">${t}</a>`).join('')}</div></nav>`;
+  // Importance order. First item is the default tab. regulatory lives inside actions; limits is opened from the header/footer (#limits), not the nav.
+  // Known ids are re-sorted so a later edit that appends or reshuffles this list keeps the order. New ids stay at the end.
+  const TAB_ORDER = ['top10', 'creatives', 'overview', 'trends', 'competitors', 'meta', 'tiktok', 'google', 'organic', 'actions', 'mailers'];
+  const HIDDEN_NAV = new Set(['regulatory', 'limits']);
+  const HOT = new Set(['top10', 'creatives']);
+  const tabs = [['top10', 'Top 10 השבוע'], ['creatives', 'קריאייטיבים חזקים'], ['overview', 'סקירה כללית'], ['trends', 'מגמות ועונתיות'], ['competitors', 'מתחרים'], ['meta', 'Meta'], ['tiktok', 'TikTok'], ['google', 'Google'], ['organic', 'נראות אורגנית'], ['actions', 'המלצות ליישום'], ['mailers', 'מיילרים']]
+    .filter(([id]) => !HIDDEN_NAV.has(id))
+    .sort((a, b) => (TAB_ORDER.indexOf(a[0]) < 0 ? 1000 : TAB_ORDER.indexOf(a[0])) - (TAB_ORDER.indexOf(b[0]) < 0 ? 1000 : TAB_ORDER.indexOf(b[0])));
+  const panelById = { top10: top10Panel, creatives: creativesPanel, overview, trends: seasonPanel, competitors: compPanel, meta: metaPanel, tiktok: tiktokPanel, google: googlePanel, organic: organicPanel, actions: actionsPanel, mailers: mailersPanel };
+  const nav = `<nav class="tabs" aria-label="סעיפים"><div class="tabs-in" role="tablist">${tabs.map(([id, t]) => `<a href="#${id}" role="tab" data-go="${id}" class="${id === 'top10' ? 'on ' : ''}${HOT.has(id) ? 'hot' : ''}">${t}</a>`).join('')}</div></nav>`;
 
   return `<!doctype html>
 <html lang="he" dir="rtl">
@@ -392,23 +402,12 @@ ${header}
 <main>
 ${nav}
 <div class="panels">
-${creativesPanel}
-${top10Panel}
-${mailersPanel}
-${overview}
-${metaPanel}
-${tiktokPanel}
-${googlePanel}
-${organicPanel}
-${compPanel}
-${seasonPanel}
-${actionsPanel}
-${regPanel}
+${tabs.map(([id]) => panelById[id] || '').join('\n')}
 ${limPanel}
 </div>
 ${CR.lightbox}
 </main>
-<footer class="foot"><p>סריקה ראשונה: ${esc(scan.date)} · מקורות ציבוריים, קריאה בלבד · ללא מעקב וללא עוגיות · מבוסס על דוחות Google Drive (ראו ״למסמך המלא״ בכל סעיף).</p></footer>
+<footer class="foot"><p>סריקה ראשונה: ${esc(scan.date)} · מקורות ציבוריים, קריאה בלבד · ללא מעקב וללא עוגיות · מבוסס על דוחות Google Drive (ראו ״למסמך המלא״ בכל סעיף).</p><p><a href="#limits">מגבלות וכיסוי</a></p></footer>
 <script src="/app.js" defer></script>
 </body></html>`;
 }
