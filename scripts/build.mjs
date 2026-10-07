@@ -3,6 +3,7 @@ import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync, rea
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { mdToHtml } from './md.mjs';
+import { fixLinks } from './fix-external-links.mjs';
 import { makeRenderer, loadJson, rankTop10, nicheIds } from './creatives.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -422,4 +423,11 @@ scans.slice(0, -1).forEach((s, i) => {
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, 'index.html'), render(s, prevOf(i), { isLatest: false, scans }));
 });
+// external links: new tab + normalized Meta Ad Library URLs, on every generated page (specs, insights, dashboard)
+{
+  const walk = (d) => readdirSync(d, { withFileTypes: true }).flatMap((e) => e.isDirectory() ? walk(join(d, e.name)) : e.name.endsWith('.html') ? [join(d, e.name)] : []);
+  let L = 0, F = 0;
+  for (const p of walk(dist)) { const src = readFileSync(p, 'utf8'); const r = fixLinks(src); if (r.html !== src) { writeFileSync(p, r.html); L += r.links; F += r.fb; } }
+  console.log(`external links fixed in dist: ${L} (Meta library URLs normalized: ${F})`);
+}
 console.log(`built ${scans.length} scan page(s) → dist/`);

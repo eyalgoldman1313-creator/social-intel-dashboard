@@ -35,3 +35,6 @@
 
 ## אפיוני וידאו – סנכרון
 `node scripts/sync-video-specs.mjs [/workspace/social/video-specs]` סורק `<brand>/<id>_spec[-v2].html` ו-`<id>_script_nully[-v2].html` (מעדיף -v2, מדלג על pilot/fullrun), מעתיק ל-`specs/` ומוסיף ל-`data/specs.json` תגיות 'אפיון' + 'תסריט ל-Nully' (מזהה 19 ספרות = TikTok, 15–16 = Meta). אפיון תמונה קיים נשמר והווידאו נוסף כ-'אפיון וידאו'. בטוח להרצה חוזרת; מדפיס מזהים ללא כרטיס. אחר כך build, commit, push.
+
+## קישורים חיצוניים
+ה-build מריץ `fixLinks` (`scripts/fix-external-links.mjs`) על כל דף ב-`dist/`: כל קישור http(s) חיצוני מקבל `target="_blank" rel="noopener noreferrer"`, וקישורי ספריית המודעות של Meta מנורמלים ל-`https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ALL&id=<id>&media_type=all`. לתיקון קבצי מקור: `node scripts/fix-external-links.mjs <folder> [...]` (בטוח להרצה חוזרת).
