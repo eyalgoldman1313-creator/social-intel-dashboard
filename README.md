@@ -32,3 +32,6 @@
 ## אפיוני מודעות בכמות + תובנות רוחב
 - `data/specs.json` ממפה **כל** מזהה במשפחת מודעות לאותו מסמך (לפי `ids` ב-`/workspace/social/ad-specs/queue.json`). שם קובץ: `meta-<brand>-<primary_id>.html`. לווידאו: `tiktok-<brand>-<id>-spec.html` / `-nully.html` עם מפתח = מזהה הווידאו.
 - תובנות: קובצי Markdown ב-`data/insights/*.md` מוצגים כ-`/insights/<name>` (ממיר פשוט `scripts/md.mjs`, עוטף מונחים לטיניים ב-bdi). `niche-cross.md` הוא התרגום לעברית; המקור באנגלית ב-`data/insights-src/niche-cross.en.md` (לא מוצג).
+
+## אפיוני וידאו – סנכרון
+`node scripts/sync-video-specs.mjs [/workspace/social/video-specs]` סורק `<brand>/<id>_spec[-v2].html` ו-`<id>_script_nully[-v2].html` (מעדיף -v2, מדלג על pilot/fullrun), מעתיק ל-`specs/` ומוסיף ל-`data/specs.json` תגיות 'אפיון' + 'תסריט ל-Nully' (מזהה 19 ספרות = TikTok, 15–16 = Meta). אפיון תמונה קיים נשמר והווידאו נוסף כ-'אפיון וידאו'. בטוח להרצה חוזרת; מדפיס מזהים ללא כרטיס. אחר כך build, commit, push.
