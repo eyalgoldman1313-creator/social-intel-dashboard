@@ -306,7 +306,7 @@ function render(scan, prev, { isLatest, scans }) {
       <div class="links sm">${['meta', 'tiktok', 'google', 'organic'].map((p) => link(docUrl(docs[p]), PLATFORM_LABEL[p])).join('')}</div></article>`;
   }).join('');
   const compPanel = section('competitors', 'מתחרים', `
-    <div class="filters" role="group" aria-label="סינון"><button class="fbtn on" data-filter="all">הכל (13)</button><button class="fbtn" data-filter="niche">נישה (7)</button><button class="fbtn" data-filter="reference">רפרנס (6)</button></div>
+    <div class="filters" role="group" aria-label="סינון"><button class="fbtn on" data-filter="all">הכל (${brands.length})</button><button class="fbtn" data-filter="niche">נישה (${brands.filter((b) => b.group === 'niche').length})</button><button class="fbtn" data-filter="reference">רפרנס (${brands.filter((b) => b.group === 'reference').length})</button></div>
     <div class="cards" id="cards">${cards}</div>
     <p class="fine">מספרים בכרטיסים לקוחים מהדוחות; מקור כל נתון מצוין לפי פלטפורמה (Meta / Google / TikTok / פייסבוק). נישה = משקל גבוה; רפרנס = השראה לטרנדים בלבד.</p>`);
 

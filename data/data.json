@@ -25,7 +25,7 @@
     { "id": "fillit", "name": "Fill It", "heName": "פיל איט", "domain": "fillitvitamins.com", "group": "niche", "category": "ויטמינים (שיער, בטן, יופי)" },
     { "id": "mycospring", "name": "Mycospring", "heName": "מיקוספרינג", "domain": "mycospring.com", "group": "niche", "category": "פטריות מרפא + קו יופי" },
     { "id": "try-smiley", "name": "Smiley", "heName": "סמיילי", "domain": "try-smiley.com", "group": "reference", "category": "הלבנת שיניים" },
-    { "id": "wondersteva", "name": "Wonders Teva", "heName": "וונדרס טבע", "domain": "wondersteva.co.il", "group": "reference", "category": "משיכת שמן (Oil pulling)" },
+    { "id": "wondersteva", "name": "Wonders Teva", "heName": "וונדרס טבע", "domain": "wondersteva.co.il", "group": "niche", "category": "משיכת שמן (Oil pulling)" },
     { "id": "softella", "name": "Softella", "heName": "סופטלה", "domain": "softella-il.com", "group": "reference", "category": "מוצרי ניקיון לבית" },
     { "id": "mywoof", "name": "Woof", "heName": "ווף", "domain": "mywoof-il.com", "group": "reference", "category": "תוספים לכלבים" },
     { "id": "craftly", "name": "Craftly", "heName": "קראפטלי", "domain": "craftly.co.il", "group": "reference", "category": "ערכות יצירה" },
