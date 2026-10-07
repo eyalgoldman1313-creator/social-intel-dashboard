@@ -24,7 +24,9 @@ export function fixLinks(html) {
     if (t !== tag) links++;
     return t;
   });
-  return { html: out, links, fb };
+  // plain-text occurrences (e.g. inside <code>) of the old short form
+  const out2 = out.replace(/https?:\/\/(?:www\.|m\.)?facebook\.com\/ads\/library\/?\?id=(\d+)(?![\d&])/g, (m, id) => { fb++; return fbLib(id); });
+  return { html: out2, links, fb };
 }
 function walk(dir) { return readdirSync(dir).flatMap((f) => { const p = join(dir, f); return statSync(p).isDirectory() ? walk(p) : p.endsWith('.html') ? [p] : []; }); }
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
