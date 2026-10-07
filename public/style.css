@@ -219,3 +219,11 @@ table.matrix{border-collapse:collapse;width:100%;min-width:560px;font-size:.88re
 .ins-page{max-width:900px;margin:20px auto;padding:0 16px}
 .ins-md{line-height:1.7}.ins-md h2{font-size:1.25rem}.ins-md h3{margin-top:1.4em;color:#5b21b6}.ins-md li{margin:4px 0}
 .ins-link a{display:inline-block;background:#ede9fe;color:#5b21b6;border:1px solid #c4b5fd;border-radius:999px;padding:4px 14px;font-weight:700;text-decoration:none}
+a.info-i{display:inline-grid;place-items:center;width:1.35rem;height:1.35rem;margin-inline-start:8px;border-radius:50%;border:1.5px solid currentColor;font-style:italic;font-weight:800;font-size:.78rem;line-height:1;text-decoration:none;vertical-align:middle}
+.top a.info-i{color:#fff}
+.top a.info-i:hover,.top a.info-i:focus-visible{background:rgba(255,255,255,.16)}
+.risk-block{margin-top:28px;padding-top:16px;border-top:2px solid #fecaca;scroll-margin-top:76px}
+.risk-block>.panel-head{border-bottom-color:#fecaca}
+.risk-block>.panel-head h3{font-size:1.25rem;margin:0}
+.tag.risk-tag{background:#fee2e2;color:#991b1b;margin-inline-end:8px}
+#limits{scroll-margin-top:76px}

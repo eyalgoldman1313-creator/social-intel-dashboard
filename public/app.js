@@ -1,14 +1,23 @@
 (function () {
   var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
   var links = Array.prototype.slice.call(document.querySelectorAll('[data-go]'));
+  var DEFAULT = 'top10';
   function show(id) {
-    if (!document.getElementById(id) || !document.getElementById(id).classList.contains('panel')) id = 'creatives';
-    panels.forEach(function (p) { p.classList.toggle('on', p.id === id); });
-    links.forEach(function (l) { l.classList.toggle('on', l.getAttribute('data-go') === id); });
+    var el = id ? document.getElementById(id) : null;
+    var panel = el && el.classList.contains('panel') ? el : null;
+    var scroll = null;
+    // #regulatory is a subsection inside המלצות ליישום, not its own tab.
+    if (id === 'regulatory' && el) { panel = el.closest('.panel'); scroll = el; }
+    if (panel && panel.id === 'limits') scroll = panel;
+    if (!panel) panel = document.getElementById(DEFAULT);
+    var pid = panel.id;
+    panels.forEach(function (p) { p.classList.toggle('on', p.id === pid); });
+    links.forEach(function (l) { l.classList.toggle('on', l.getAttribute('data-go') === pid); });
     var on = document.querySelector('.tabs a.on');
     if (on && on.scrollIntoView) on.scrollIntoView({ inline: 'center', block: 'nearest' });
+    if (scroll && scroll.scrollIntoView) scroll.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-  function fromHash() { show((location.hash || '#creatives').slice(1)); }
+  function fromHash() { show((location.hash || ('#' + DEFAULT)).slice(1)); }
   links.forEach(function (l) {
     l.addEventListener('click', function (e) {
       e.preventDefault();
@@ -21,6 +30,31 @@
   });
   window.addEventListener('hashchange', fromHash);
   fromHash();
+
+  // Arrow keys follow the tablist DOM order (RTL: ArrowLeft = next, ArrowRight = previous).
+  document.addEventListener('keydown', function (e) {
+    var key = e.key;
+    if (key !== 'ArrowLeft' && key !== 'ArrowRight' && key !== 'Home' && key !== 'End') return;
+    if (document.body.classList.contains('lb-open')) return;
+    var cur = e.target && e.target.closest ? e.target.closest('.tabs a[role="tab"]') : null;
+    if (!cur) return;
+    var list = Array.prototype.slice.call(document.querySelectorAll('.tabs a[role="tab"]'));
+    var i = list.indexOf(cur);
+    if (i < 0) return;
+    var n = i;
+    if (key === 'Home') n = 0;
+    else if (key === 'End') n = list.length - 1;
+    else {
+      var forward = document.documentElement.getAttribute('dir') === 'rtl' ? key === 'ArrowLeft' : key === 'ArrowRight';
+      n = (i + (forward ? 1 : -1) + list.length) % list.length;
+    }
+    e.preventDefault();
+    var dest = list[n];
+    var go = dest.getAttribute('data-go');
+    history.replaceState(null, '', '#' + go);
+    show(go);
+    dest.focus();
+  });
 
   // generic filter buttons
   function wire(attr, apply) {
