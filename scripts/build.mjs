@@ -1,5 +1,5 @@
 // Static site generator: data/data.json -> dist/*.html  (zero dependencies)
-import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { makeRenderer, loadJson } from './creatives.mjs';
@@ -8,11 +8,26 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
 const data = JSON.parse(readFileSync(join(root, 'data/data.json'), 'utf8'));
 const creatives = loadJson(root, 'data/creatives.json', { items: [] });
+const specs = loadJson(root, 'data/specs.json', { items: {}, mailers: [] });
 const top10 = loadJson(root, 'data/top10.json', { weeks: {} });
 
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });
 cpSync(join(root, 'public'), dist, { recursive: true });
+// spec pages: copy specs/*.html to dist/specs/, injecting a small back-to-dashboard bar (content untouched)
+{
+  const sd = join(root, 'specs');
+  if (existsSync(sd)) {
+    mkdirSync(join(dist, 'specs'), { recursive: true });
+    const bar = '<div style="position:sticky;top:0;z-index:9999;background:#0f172a;color:#fff;font:600 14px Heebo,Arial,sans-serif;padding:8px 16px;display:flex;gap:16px;align-items:center;direction:rtl"><a href="/#creatives" style="color:#fff;text-decoration:none">→ חזרה ללוח המודיעין</a><a href="/#mailers" style="color:#cbd5e1;text-decoration:none">מיילרים</a><span style="opacity:.6;font-weight:400">דף אפיון</span></div>';
+    for (const f of readdirSync(sd).filter((f) => f.endsWith('.html'))) {
+      let h = readFileSync(join(sd, f), 'utf8');
+      h = /<body[^>]*>/i.test(h) ? h.replace(/<body[^>]*>/i, (m) => m + bar) : bar + h;
+      if (!/name="robots"/.test(h)) h = h.replace(/<head[^>]*>/i, (m) => m + '<meta name="robots" content="noindex, nofollow">');
+      writeFileSync(join(dist, 'specs', f), h);
+    }
+  }
+}
 
 // ---------- helpers ----------
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -155,7 +170,9 @@ function render(scan, prev, { isLatest, scans }) {
     <h3>הדוחות המלאים בדרייב</h3>${overviewDocs}`);
 
   // ----- creatives-first panels -----
-  const CR = makeRenderer({ esc, brandName, section });
+  const CR = makeRenderer({ esc, brandName, section, specs: specs.items || {} });
+  const mailers = specs.mailers || [];
+  const mailersPanel = section('mailers', 'מיילרים', mailers.length ? `<p class="scope">ניתוחי מיילים שיווקיים של מתחרים – כל ניתוח נפתח כדף באתר.</p><div class="mailer-grid">${mailers.map((m) => `<a class="mailer-card" href="/specs/${esc(m.file.replace(/\.html$/, ''))}" target="_blank" rel="noopener"><span class="brand-tag">${esc(m.brand)}</span><h3>${esc(m.title)}</h3><span class="spec-tag">📄 ניתוח המייל ←</span></a>`).join('')}</div>` : '<p class="fine">אין עדיין ניתוחי מיילרים.</p>');
   const creativesPanel = CR.galleryPanel({ creatives, brands, scanDate: scan.date, asof: creatives.asof });
   const top10Panel = CR.top10Panel({ top10, creatives, brands, scanDate: scan.date });
   const galleryHint = (txt) => `<p class="gal-link"><a href="#creatives" data-go="creatives">🖼 ${txt} ←</a></p>`;
@@ -333,7 +350,7 @@ function render(scan, prev, { isLatest, scans }) {
     <p>הנתונים נמצאים בקובץ אחד: <code dir="ltr">data/data.json</code>. כדי להוסיף שבוע, מוסיפים אובייקט חדש בסוף המערך <code dir="ltr">scans</code> (מעתיקים את האחרון ומעדכנים). הלוח יציג את הסריקה האחרונה, יסמן שינויים (Δ) לעומת הקודמת, וישמור ארכיון.</p>
     ${scans.length > 1 ? `<p>סריקות זמינות: ${scans.map((s) => `<a href="${s.id === scans[scans.length - 1].id ? '/' : `/archive/${s.id}/`}">${esc(s.date)}</a>`).join(' · ')}</p>` : '<p class="fine">כרגע קיימת סריקה אחת (סריקה חד-פעמית ראשונה).</p>'}`);
 
-  const tabs = [['creatives', 'קריאייטיבים חזקים'], ['top10', 'Top 10 השבוע'], ['overview', 'סקירה כללית'], ['meta', 'Meta'], ['tiktok', 'TikTok'], ['google', 'Google'], ['organic', 'נראות אורגנית'], ['competitors', 'מתחרים'], ['trends', 'מגמות ועונתיות'], ['actions', 'המלצות ליישום'], ['regulatory', 'סיכונים רגולטוריים'], ['limits', 'מגבלות וכיסוי']];
+  const tabs = [['creatives', 'קריאייטיבים חזקים'], ['top10', 'Top 10 השבוע'], ['mailers', 'מיילרים'], ['overview', 'סקירה כללית'], ['meta', 'Meta'], ['tiktok', 'TikTok'], ['google', 'Google'], ['organic', 'נראות אורגנית'], ['competitors', 'מתחרים'], ['trends', 'מגמות ועונתיות'], ['actions', 'המלצות ליישום'], ['regulatory', 'סיכונים רגולטוריים'], ['limits', 'מגבלות וכיסוי']];
   const nav = `<nav class="tabs" aria-label="סעיפים"><div class="tabs-in" role="tablist">${tabs.map(([id, t], i) => `<a href="#${id}" role="tab" data-go="${id}" class="${i === 0 ? 'on ' : ''}${i < 2 ? 'hot' : ''}">${t}</a>`).join('')}</div></nav>`;
 
   return `<!doctype html>
@@ -358,6 +375,7 @@ ${nav}
 <div class="panels">
 ${creativesPanel}
 ${top10Panel}
+${mailersPanel}
 ${overview}
 ${metaPanel}
 ${tiktokPanel}

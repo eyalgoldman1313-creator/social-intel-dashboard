@@ -54,7 +54,7 @@
   function applyGallery(reset) {
     if (!grid) return;
     if (reset === true) shown = PAGE;
-    var f = { source: $('f-source').value, format: $('f-format').value, phase: $('f-phase').value, brand: $('f-brand').value, img: $('f-img').checked, sort: $('f-sort').value };
+    var f = { source: $('f-source').value, format: $('f-format').value, phase: $('f-phase').value, brand: $('f-brand').value, img: $('f-img').checked, spec: $('f-spec') && $('f-spec').checked, sort: $('f-sort').value };
     var cards = Array.prototype.slice.call(grid.querySelectorAll('.cr'));
     cards.sort(function (a, b) {
       var A = a.dataset, B = b.dataset;
@@ -68,7 +68,7 @@
     cards.forEach(function (c) {
       grid.appendChild(c);
       var d = c.dataset;
-      var ok = (!f.source || d.plat === f.source) && (!f.format || d.format === f.format) && (!f.phase || d.phase === f.phase) && (!f.brand || d.brand === f.brand) && (!f.img || c.querySelector('.cr-media img'));
+      var ok = (!f.source || d.plat === f.source) && (!f.format || d.format === f.format) && (!f.phase || d.phase === f.phase) && (!f.brand || d.brand === f.brand) && (!f.img || c.querySelector('.cr-media img')) && (!f.spec || d.spec === '1');
       if (ok) n++;
       c.style.display = ok && n <= shown ? '' : 'none';
     });
@@ -77,7 +77,7 @@
     var cnt = $('cr-count'); if (cnt) cnt.textContent = Math.min(n, shown) + ' מתוך ' + n;
     var none = $('cr-none'); if (none) none.hidden = n > 0;
   }
-  ['f-source', 'f-format', 'f-phase', 'f-brand', 'f-img', 'f-sort'].forEach(function (id) { var el = $(id); if (el) el.addEventListener('change', function () { applyGallery(true); }); });
+  ['f-source', 'f-format', 'f-phase', 'f-brand', 'f-img', 'f-spec', 'f-sort'].forEach(function (id) { var el = $(id); if (el) el.addEventListener('change', function () { applyGallery(true); }); });
   if ($('cr-more')) $('cr-more').addEventListener('click', function () { shown += PAGE; applyGallery(); });
   applyGallery();
   document.querySelectorAll('[data-go-brand]').forEach(function (b) {

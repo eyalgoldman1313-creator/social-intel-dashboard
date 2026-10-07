@@ -30,7 +30,9 @@ export function phaseOf(it) {
   return d <= TEST_MAX ? 'test' : d >= WINNER_MIN ? 'winner' : 'running';
 }
 
-export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo }) {
+export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, specs = {} }) {
+  const specOf = (it) => { const ids = [it.library_id, ...(String(it.post_url || it.video_url || '').match(/\d{15,}/g) || [])].filter(Boolean); for (const k of ids) if (specs[k]) return specs[k]; return null; };
+  const specLinks = (sp) => sp ? `<div class="cr-specs">${sp.map((x) => `<a class="spec-tag" href="/specs/${esc(x.file.replace(/\.html$/, ''))}" target="_blank" rel="noopener">📄 ${esc(x.label)}</a>`).join('')}</div>` : '';
   const compact = (v) => {
     if (v == null || v === '') return '';
     const n = Number(String(v).replace(/,/g, ''));
@@ -94,11 +96,13 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo }) 
     const ph = phaseOf(it);
     const hook = it.hook || oneLine(it.copy_text, 110);
     const src = it.library_url || it.post_url;
-    return `<article class="cr ${size}" data-id="${esc(it.id)}" data-source="${esc(it.source)}" data-plat="${esc(plat(it))}" data-format="${esc(it.format)}" data-phase="${ph}" data-brand="${esc(it.brand)}" data-run="${it.days_active ?? -1}" data-variants="${it.variants_count ?? 0}" data-views="${Number(String(it.views ?? '').replace(/,/g, '')) || 0}" data-start="${esc(it.start_date || it.post_date || '')}">
+    const sp = specOf(it);
+    return `<article class="cr ${size}" data-spec="${sp ? 1 : 0}" data-id="${esc(it.id)}" data-source="${esc(it.source)}" data-plat="${esc(plat(it))}" data-format="${esc(it.format)}" data-phase="${ph}" data-brand="${esc(it.brand)}" data-run="${it.days_active ?? -1}" data-variants="${it.variants_count ?? 0}" data-views="${Number(String(it.views ?? '').replace(/,/g, '')) || 0}" data-start="${esc(it.start_date || it.post_date || '')}">
       ${rank ? `<span class="t10-rank" aria-label="מקום ${rank}">${rank}</span>` : ''}
       ${media(it, { big: size === 'lg' })}
       <div class="cr-body">
         <div class="cr-badges">${platChip(it)}${it.source === 'meta' && it.platform ? `<span class="brand-tag">${it.platform === 'Facebook + Instagram' ? 'FB + IG' : esc(it.platform)}</span>` : ''}<span class="brand-tag">${esc(brandName(it.brand))}</span></div>
+        ${specLinks(sp)}
         ${basis ? `<p class="cr-basis">${esc(basis)}</p>` : ''}
         ${hook ? `<p class="cr-hook">${esc(oneLine(hook, 120))}</p>` : ''}
         ${facts(it)}
@@ -147,6 +151,7 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo }) 
         ${sel('f-brand', 'מותג', brandOpts)}
         <label class="sel"><span>מיון</span><select id="f-sort"><option value="days">ימי ריצה – מהארוך</option><option value="days-asc">ימי ריצה – מהקצר</option><option value="new">הכי חדש</option><option value="variants">מספר גרסאות</option><option value="views">צפיות (אורגני)</option></select></label>
         <label class="chk"><input type="checkbox" id="f-img"> רק עם תמונה</label>
+        <label class="chk"><input type="checkbox" id="f-spec"> עם אפיון</label>
         <span class="cr-count fine" id="cr-count" aria-live="polite"></span>
       </div>
       <div class="cr-grid cr-list" id="cr-grid">${items.map((i) => card(i)).join('')}</div>
@@ -180,5 +185,5 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo }) 
       ${weeks.slice().reverse().map((w, k) => block(w, k === 0)).join('')}`);
   }
 
-  return { galleryPanel, top10Panel, card, lightbox };
+  return { galleryPanel, top10Panel, card, lightbox, specOf };
 }

@@ -1,0 +1,16 @@
+{
+  "_doc": "מיפוי מזהה מודעה/וידאו -> דפי אפיון. קבצים ב-specs/, מוגשים ב-/specs/<file>. ראו README.",
+  "items": {
+    "3167033313596218": [{ "label": "אפיון", "file": "meta-goom-3167033313596218.html" }],
+    "2701057770261679": [{ "label": "אפיון", "file": "meta-mayven-2701057770261679.html" }],
+    "1446078710401700": [{ "label": "אפיון", "file": "meta-mycolivia-1446078710401700.html" }],
+    "7509433751793913106": [{ "label": "אפיון", "file": "tiktok-goom-7509433751793913106-spec.html" }, { "label": "תסריט ל-Nully", "file": "tiktok-goom-7509433751793913106-nully.html" }],
+    "7464276663665216775": [{ "label": "אפיון", "file": "tiktok-goom-7464276663665216775-spec.html" }, { "label": "תסריט ל-Nully", "file": "tiktok-goom-7464276663665216775-nully.html" }],
+    "7237048286278978817": [{ "label": "אפיון", "file": "tiktok-ecosupp-7237048286278978817-spec.html" }, { "label": "תסריט ל-Nully", "file": "tiktok-ecosupp-7237048286278978817-nully.html" }]
+  },
+  "mailers": [
+    { "brand": "EcoSupp", "title": "איך הגוף שלנו עובד בזמן השינה?", "file": "mailer-ecosupp.html" },
+    { "brand": "Fillit", "title": "הבריאות שלך היא השקעה לטווח ארוך", "file": "mailer-fillit.html" },
+    { "brand": "Mycospring", "title": "שאלנו את מי שמדברות איתכם כל יום", "file": "mailer-mycospring.html" }
+  ]
+}

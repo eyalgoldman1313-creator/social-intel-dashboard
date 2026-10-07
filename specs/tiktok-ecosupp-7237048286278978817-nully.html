@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>תסריט Nully – לפי EcoSupp (“קבלו עובדה”) – התאמה לסוכריות ברייני של NULLY – faceless חינוכי על מה שיש במארז, ~25 ש׳, 9:16</title>
+<style>:root{
+  --font:"Heebo","Assistant","Rubik","Noto Sans Hebrew","Segoe UI",Arial,sans-serif;
+  --mono:ui-monospace,"Cascadia Code",Consolas,monospace;
+  --bg:#f6f7f9;--surface:#fff;--text:#1c2330;--muted:#5b6475;--border:#e3e6ec;
+  --primary:#2f4e9e;--primary-soft:#eaf0fc;
+  --info:#1f6feb;--info-bg:#eef5ff;--ok:#1a7f37;--ok-bg:#eaf7ee;
+  --warn:#9a6700;--warn-bg:#fff7e0;--danger:#b42318;--danger-bg:#fdecec;
+  --fs-sm:.875rem;--fs-base:1.0625rem;--fs-lg:1.25rem;--fs-h2:1.5rem;--fs-h1:2rem;
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;
+  --radius:12px;--measure:72ch;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 var(--fs-base)/1.7 var(--font)}
+.doc{max-inline-size:960px;margin-inline:auto;padding:var(--s6) var(--s4) var(--s7)}
+.doc p,.doc li{max-inline-size:var(--measure)}
+h1,h2,h3{line-height:1.3;margin-block:0 var(--s3);text-wrap:balance}
+h1{font-size:var(--fs-h1)} h2{font-size:var(--fs-h2);color:var(--primary)} h3{font-size:var(--fs-lg)}
+p{margin-block:0 var(--s4)}
+ul,ol{padding-inline-start:var(--s5);margin-block:0 var(--s4)}
+a{color:var(--primary);text-underline-offset:3px}
+code,.ltr{direction:ltr;unicode-bidi:isolate;font-family:var(--mono);font-size:.9em}
+.num{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted);font-size:var(--fs-sm)}
+section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:var(--s5);margin-block-end:var(--s5);scroll-margin-block-start:var(--s4)}
+.title-block{border-block-end:3px solid var(--primary);padding-block-end:var(--s4);margin-block-end:var(--s5)}
+.meta{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s4);color:var(--muted);font-size:var(--fs-sm)}
+.tldr{background:var(--primary-soft);border-inline-start:4px solid var(--primary)}
+.toc ol{columns:2 220px;margin:0}
+.callout{border-inline-start:4px solid;border-radius:8px;padding:var(--s3) var(--s4);margin-block:var(--s4)}
+.callout>strong:first-child{display:block;margin-block-end:var(--s1)}
+.callout.insight{border-color:var(--info);background:var(--info-bg)}
+.callout.warning{border-color:var(--warn);background:var(--warn-bg)}
+.callout.action{border-color:var(--ok);background:var(--ok-bg)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--s3);margin-block:var(--s4)}
+.kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:var(--s4)}
+.kpi b{display:block;font-size:1.75rem;line-height:1.2;font-variant-numeric:tabular-nums}
+.kpi span{color:var(--muted);font-size:var(--fs-sm)}
+.badge{display:inline-block;padding:2px 10px;border-radius:999px;font-size:var(--fs-sm);background:var(--primary-soft);color:var(--primary);white-space:nowrap}
+.p-high{background:var(--danger-bg);color:var(--danger)} .p-med{background:var(--warn-bg);color:var(--warn)} .p-low{background:var(--ok-bg);color:var(--ok)}
+.table-wrap{overflow-x:auto;max-height:70vh;border:1px solid var(--border);border-radius:8px;margin-block:var(--s4)}
+table{inline-size:100%;border-collapse:collapse;font-size:1rem}
+th,td{padding:var(--s2) var(--s3);text-align:start;vertical-align:top;border-block-end:1px solid var(--border)}
+thead th{position:sticky;inset-block-start:0;background:var(--thead-bg);font-weight:600}
+.checklist{list-style:none;padding:0}
+.checklist li{padding-inline-start:1.8em;position:relative}
+.checklist li::before{content:"☐";position:absolute;inset-inline-start:0}
+.checklist li.done::before{content:"☑";color:var(--ok)}
+details{border:1px solid var(--border);border-radius:8px;padding:var(--s3) var(--s4);margin-block:var(--s3)}
+summary{cursor:pointer;font-weight:600}
+:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
+@media (max-width:640px){
+  .doc{padding:var(--s4) var(--s3)} section{padding:var(--s4)}
+  h1{font-size:1.6rem} h2{font-size:1.3rem}
+  table.stack thead{display:none}
+  table.stack tr{display:block;border-block-end:2px solid var(--border);padding-block:var(--s2)}
+  table.stack td{display:flex;gap:var(--s3);border:0;padding-block:var(--s1)}
+  table.stack td::before{content:attr(data-label);flex:0 0 40%;color:var(--muted);font-weight:600}
+}
+@media print{
+  body{background:var(--surface);font-size:11pt} section{border:0;padding:0;break-inside:avoid-page}
+  .toc,.no-print{display:none} details{border:0} details>*{display:block}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;direction:ltr}
+}
+/* ---- Semantic colour system (fixed meaning per role) ---- */
+:root{
+  --key:#8a5a00;--key-bg:#fdf3d7;--key-ac:#a87510;          /* נתון מפתח */
+  --unique:#5e3a8c;--unique-bg:#f2ecfa;--unique-ac:#8b6bbf; /* ייחודיות */
+  --compare:#0e5c66;--compare-bg:#e3f3f4;--compare-ac:#3a9aa6;/* השוואה */
+  --action:#1f6338;--action-bg:#e6f4eb;--action-ac:#3f9a63; /* המלצה/פעולה */
+  --risk:#9b2c22;--risk-bg:#fcebe8;--risk-ac:#d0614f;       /* סיכון */
+  --insight:#2a4f8f;--insight-bg:#e8effb;--insight-ac:#5b84cc;/* תובנה */
+  --up:#1a6b34;--up-bg:#e6f4ea;--down:#a12a1f;--down-bg:#fcebe8; /* שינוי +/− */
+}
+.key{--c:var(--key);--c-bg:var(--key-bg);--c-ac:var(--key-ac);--lbl:"◆ נתון מפתח"}
+.unique{--c:var(--unique);--c-bg:var(--unique-bg);--c-ac:var(--unique-ac);--lbl:"★ ייחודיות"}
+.compare{--c:var(--compare);--c-bg:var(--compare-bg);--c-ac:var(--compare-ac);--lbl:"⇄ השוואה"}
+.action{--c:var(--action);--c-bg:var(--action-bg);--c-ac:var(--action-ac);--lbl:"➜ המלצה"}
+.risk,.warning{--c:var(--risk);--c-bg:var(--risk-bg);--c-ac:var(--risk-ac);--lbl:"⚠ סיכון"}
+.insight{--c:var(--insight);--c-bg:var(--insight-bg);--c-ac:var(--insight-ac);--lbl:"💡 תובנה"}
+mark{background:var(--c-bg,var(--key-bg));color:var(--c,var(--key));font-weight:600;padding:0 .25em;border-radius:4px;
+  box-shadow:inset 0 -2px 0 var(--c-ac,var(--key-ac));-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.delta{font-weight:600;font-variant-numeric:tabular-nums;padding:0 .3em;border-radius:4px;white-space:nowrap;unicode-bidi:isolate}
+.delta.up{color:var(--up);background:var(--up-bg)} .delta.up::before{content:"▲ "}
+.delta.down{color:var(--down);background:var(--down-bg)} .delta.down::before{content:"▼ "}
+.callout[class*=" "]{border-color:var(--c-ac);background:var(--c-bg)}
+.callout>strong:first-child{color:var(--c,inherit)}
+.callout.tag::before{content:var(--lbl);display:block;font-size:var(--fs-sm);font-weight:700;color:var(--c);margin-block-end:var(--s1)}
+.kpi[class*=" "]{border-block-start:4px solid var(--c-ac)} .kpi[class*=" "] b{color:var(--c)}
+.kpi[class*=" "]::before{content:var(--lbl);display:block;font-size:var(--fs-sm);color:var(--c);font-weight:600}
+td.key,td.unique,td.compare,td.action,td.risk,td.insight,tr.key>td,tr.compare>td,tr.unique>td{background:var(--c-bg);color:var(--c)}
+td.key,td.unique,td.compare,td.action,td.risk,td.insight{font-weight:600}
+tr.compare>td:first-child,tr.unique>td:first-child,tr.key>td:first-child{box-shadow:inset -4px 0 0 var(--c-ac)} /* RTL start edge */
+th.us,td.us{background:var(--unique-bg)} /* "our product" column in vs tables */
+section.accent{border-block-start:4px solid var(--c-ac)} section.accent>h2{color:var(--c)}
+.legend{display:flex;flex-wrap:wrap;gap:var(--s2);align-items:center;font-size:var(--fs-sm);margin-block:var(--s3) var(--s5)}
+.legend>b{margin-inline-end:var(--s2)}
+.legend span{background:var(--c-bg);color:var(--c);border-inline-start:3px solid var(--c-ac);padding:2px 10px;border-radius:6px}
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  mark{box-shadow:none;border-block-end:1.5px solid var(--c-ac,var(--key-ac))}
+}
+
+/* ---- v2 extensions (tokens only) ---- */
+:root{--thead-bg:#f0f2f6}
+html[dir="rtl"] body{letter-spacing:normal;word-spacing:.05em}
+code{overflow-wrap:anywhere}
+table.stack td>.cell{min-inline-size:0;flex:1 1 auto}
+figure{margin:0}
+.media{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:var(--s5);align-items:start}
+.media img{display:block;inline-size:100%;block-size:auto;border-radius:var(--radius);border:1px solid var(--border)}
+.media figcaption{margin-block-start:var(--s2)}
+table.metrics td:first-child{color:var(--muted);inline-size:38%}
+td.time{white-space:nowrap;font-weight:600;color:var(--primary)}
+.meta .badge{font-size:var(--fs-sm)}
+.tldr ul{margin-block-end:0}
+.tldr li{margin-block-end:var(--s2)}
+.tldr li ul{margin-block:var(--s1) 0}
+.toc li li{break-inside:avoid}
+.toc ol ol{list-style:none;columns:auto;padding-inline-start:var(--s4);font-size:var(--fs-sm)}
+.part>h2{padding-block-end:var(--s2);border-block-end:1px solid var(--border);margin-block-end:var(--s2)}
+.item{padding-block:var(--s4);border-block-start:1px solid var(--border);scroll-margin-block-start:var(--s4)}
+.part>h2+.item{border-block-start:0}
+.item>:last-child{margin-block-end:0}
+.item h3 .n::after{content:"."}
+.item.accent{border-inline-start:4px solid var(--c-ac);padding-inline-start:var(--s4);border-block-start:0;margin-block-start:var(--s2)}
+.item.accent>h3{color:var(--c)}
+.score{font-size:2.5rem;font-weight:800;line-height:1.2;color:var(--key);font-variant-numeric:tabular-nums}
+.badge.reg{background:var(--risk-bg);color:var(--risk);border:1px solid var(--risk-ac);margin-inline-start:var(--s1)}
+.unc{background:var(--warn-bg);border-block-end:2px dotted var(--warn);padding-inline:2px}
+.legend .unc{border-inline-start:0;color:var(--text);background:var(--warn-bg)}
+.facts{columns:2 260px;column-gap:var(--s6)}
+.facts li{break-inside:avoid}
+.callout p:last-child,.callout ul:last-child{margin-block-end:0}
+details>summary{margin-block-end:var(--s2)}
+details h3{font-size:1.0625rem;margin-block:var(--s4) var(--s2)}
+@media (max-width:720px){.media{grid-template-columns:1fr}.media figure{max-inline-size:220px;margin-inline:auto}}
+@media (max-width:640px){table.stack td.time{white-space:normal}.facts{columns:1}
+  table.stack.metrics td::before{content:none}
+  table.stack.metrics td:first-child{inline-size:auto;font-size:var(--fs-sm);font-weight:600;padding-block-end:0}}
+@media print{.media{grid-template-columns:180px 1fr}.table-wrap{max-height:none;overflow:visible}}
+.table-wrap.full{max-height:none}
+</style>
+</head>
+<body><main class="doc">
+<header class="title-block"><h1>תסריט <bdi>Nully</bdi> – לפי <bdi>EcoSupp</bdi> (“קבלו עובדה”)</h1><p>התאמה לסוכריות ברייני של <bdi>NULLY</bdi> – <bdi>faceless</bdi> חינוכי על מה שיש במארז, <bdi>~25</bdi> ש׳, 9:16</p><div class="meta"><span data-v2="added">עודכן: 07.10.2026</span><span><span data-v2="added">סרטון מקור: </span><code>7237048286278978817</code></span><span class="badge"><bdi>NULLY</bdi> ברייני</span><span class="badge"><bdi>Faceless</bdi> חינוכי</span><span class="badge">9:16 · ~25 ש׳</span><span class="badge p-low" data-v2="added">גרסה 2 – עיצוב מחודש</span></div></header><div class="legend" data-v2="added" aria-label="מקרא צבעים"><b>מקרא צבעים:</b><span class="key">◆ נתון מפתח</span><span class="action">➜ המלצה</span><span class="risk">⚠ סיכון</span><span class="insight">💡 תובנה</span><span class="badge reg lg">טעון בדיקה רגולטורית</span></div><section class="tldr" id="tldr"><h2 data-v2="added">השורה התחתונה</h2><ul><li><strong data-v2="added">מה זה: </strong><span data-v2="dup">התאמה לסוכריות ברייני של <bdi>NULLY</bdi> – <bdi>faceless</bdi> חינוכי על מה שיש במארז, <bdi>~25</bdi> ש׳, 9:16</span></li><li><strong data-v2="added">פעולה מומלצת – רעיון לבדיקת <bdi>A/B</bdi> עבור <bdi>Nully</bdi>:</strong><div data-v2="dup"><ul><li><b><bdi>A</bdi>:</b> פתיחה “קבלו עובדה”.</li><li><b><bdi>B</bdi>:</b> פתיחה “3 דברים שאין בסוכרייה הזו”.</li><li><bdi>KPI</bdi>: שימור 3 ש׳, שמירות ושיתופים.</li></ul></div></li><li><strong data-v2="added">לפני הפקה – מחיר: </strong><span data-v2="dup">יש לאמת איזה מחיר מוצג ללקוח לפני שימוש במחיר בסרטון.</span></li><li><strong data-v2="added">לפני הפקה – רגולציה: </strong><span data-v2="dup">לא להעתיק את מבנה הטענות של המקור (מערכת עצבים, שינה, מלטונין). לא לייחס פעולה ל-ALPHA-GPC® או לוויטמינים – רק להזכירם כרכיבים. “לריכוז”, “ללא סוכר מוסף”, “מתאים מגיל 5” <span class="badge reg">טעון בדיקה רגולטורית</span>.</span></li></ul><p class="muted" data-v2="added"><a href="#scenes">מעבר לטבלת הסצנות</a></p></section><div class="kpis" data-v2="added"><div class="kpi key"><b data-v2="dup">~25 ש׳</b><span>אורך מתוכנן</span></div><div class="kpi"><b data-v2="dup">220 ₪</b><span>“רק אני” (לאמת)</span></div><div class="kpi"><b class="num" data-v2="dup">9</b><span>סצנות</span></div></div><div class="callout insight"><strong>הערת החלפה:</strong> מבוסס על סרטון <bdi>EcoSupp</bdi> שהחליף את מודעת <bdi>Meta</bdi> <bdi>1287638459563997</bdi> (<bdi>GOOM Flow</bdi>), שהורדת הווידאו שלה נכשלה.</div><nav class="toc no-print" data-v2="added" aria-label="תוכן עניינים"><section><h2>תוכן עניינים</h2><ol><li><a href="#tldr">השורה התחתונה</a></li><li><a href="#product">פרטי המוצר – מה מותר לומר</a></li><li><a href="#p1">חלק א׳ – קריאייטיב, קהל ודמות</a><ol><li><a href="#s1">1. קריאייטיב (פורמט/סגנון)</a></li><li><a href="#s2">2. קהל יעד</a></li><li><a href="#s3">3. דמות/פרזנטור</a></li></ol></li><li><a href="#p2">חלק ב׳ – מבנה המסר: מה-Hook עד ה-CTA</a><ol><li><a href="#s4">4. <bdi>Hook</bdi> (3 שניות ראשונות)</a></li><li><a href="#s5">5. הצורך/הבעיה</a></li><li><a href="#s6">6. הפתרון</a></li><li><a href="#s7">7. התועלת/ההבטחה</a></li><li><a href="#s8">8. חיזוק/הוכחה</a></li><li><a href="#s9">9. ההצעה</a></li><li><a href="#s10">10. <bdi>CTA</bdi></a></li></ol></li><li><a href="#p3">חלק ג׳ – ביצוע: קצב, שמע, טקסט, פורמט ועונתיות</a><ol><li><a href="#s11">11. פירוק לפי שניות וקצב חיתוכים</a></li><li><a href="#s12">12. שמע (קריינות/מוזיקה/טרנד, עובד בלי סאונד?)</a></li><li><a href="#s13">13. טקסט על המסך</a></li><li><a href="#s14">14. פורמט ושימור</a></li><li><a href="#s15">15. עונתיות</a></li></ol></li><li><a href="#p4">חלק ד׳ – בדיקה ותסריט מלא</a><ol><li><a href="#s16">16. רעיון לבדיקת <bdi>A/B</bdi> עבור <bdi>Nully</bdi></a></li><li><a href="#scenes">★ טבלת סצנות – תסריט מלא</a></li></ol></li><li><a href="#regulation">הערות רגולציה</a></li><li><a href="#appendix">נספח – פרטים טכניים</a></li></ol></section></nav><section id="product"><h2 data-v2="added">פרטי המוצר – מה מותר לומר</h2><h3>מה מותר לומר (מופיע בעמוד המוצר):</h3><ul class="facts"><li>"<bdi>NULLY</bdi> ברייני — סוכריות על מקל לריכוז" <span class="badge reg">טעון בדיקה רגולטורית</span></li><li>"סוכריות מציצה קשיחות בטעמי פירות, המכילות קומפלקס ויטמינים, סיבים תזונתיים ו-ALPHA-GPC®"</li><li>"30 מנות אישיות במארז, משקל נטו 240 גרם"</li><li>ללא סוכר מוסף <span class="badge reg">טעון בדיקה רגולטורית</span></li><li>טבעוני</li><li>ללא גלוטן</li><li>ללא צבעי מאכל</li><li>30 מנות ארוזות אישית</li><li>מתאים מגיל 5 <span class="badge reg">טעון בדיקה רגולטורית</span></li><li>סוג מוצר: תוסף תזונה.</li></ul><h3>מחירים בעמוד:</h3><ul class="facts"><li>"רק אני" 220 ₪ (מחיר משווה 365 ₪)</li><li>"זוגי" 400 ₪ (730 ₪)</li><li>"משפחתי" 540 ₪ (1,095 ₪).</li></ul><p><span class="muted">בשדה <bdi>onetimePrice</bdi> מופיעים 290/580/870 ₪ – ייתכן ש-220 ₪ הוא מחיר מנוי; יש לאמת איזה מחיר מוצג ללקוח לפני שימוש במחיר בסרטון.</span></p><div class="callout risk"><strong>לא להשתמש</strong> (מופיע רק בדף הבית, לא בעמוד המוצר): "8 שעות של פוקוס", "ספיגה מהירה פי 36", "87%...", תקני <bdi>GMP/ISO/HACCP</bdi>, "ביטול בכל עת". שימו לב גם לסתירה: עמוד המוצר "ללא צבעי מאכל" מול דף הבית "צבעי מאכל טבעיים".</div></section><section class="part" id="p1"><h2 data-v2="added">חלק א׳ – קריאייטיב, קהל ודמות</h2><div class="item" id="s1"><h3><span class="n">1</span> קריאייטיב (פורמט/סגנון)</h3><p><bdi>Faceless</bdi>: ידיים, מארז <bdi>NULLY</bdi> ברייני ומנות ארוזות אישית על משטח עץ בהיר; תיבות טקסט מעוגלות בצבעי המותג; כל “עובדה” = עובדה מעמוד המוצר בלבד (הרכב/תכונות), לא טענות פעולה.</p></div><div class="item" id="s2"><h3><span class="n">2</span> קהל יעד</h3><p>הורים וצעירים מודעי-רכיבים שקוראים תוויות; טבעונים; מי שמחפש תוסף ללא גלוטן/צבעי מאכל.</p></div><div class="item" id="s3"><h3><span class="n">3</span> דמות/פרזנטור</h3><p>ללא פרזנטור; קריינות <bdi>VO</bdi> רגועה. הידיים והמוצר הם הדמות.</p></div></section><section class="part" id="p2"><h2 data-v2="added">חלק ב׳ – מבנה המסר: מה-Hook עד ה-CTA</h2><div class="item" id="s4"><h3><span class="n">4</span> <bdi>Hook</bdi> (3 שניות ראשונות)</h3><p>“קבלו עובדה: מה יש בתוך סוכרייה אחת של <bdi>NULLY</bdi>?” – תקריב יד מסובבת סוכרייה על מקל מול המצלמה.</p></div><div class="item" id="s5"><h3><span class="n">5</span> הצורך/הבעיה</h3><p>“הרבה תוספים מגיעים עם רשימת רכיבים שאי אפשר להבין” – כאב של שקיפות/תווית, לא בעיה בריאותית.</p></div><div class="item" id="s6"><h3><span class="n">6</span> הפתרון</h3><p><bdi>NULLY</bdi> ברייני: סוכריות מציצה קשיחות בטעמי פירות, עם קומפלקס ויטמינים, סיבים תזונתיים ו-ALPHA-GPC®.</p></div><div class="item" id="s7"><h3><span class="n">7</span> התועלת/ההבטחה</h3><p>מה <b>אין</b> בה: סוכר מוסף <span class="badge reg">טעון בדיקה רגולטורית</span>, גלוטן, צבעי מאכל; טבעונית; מתאימה מגיל 5 <span class="badge reg">טעון בדיקה רגולטורית</span>.</p></div><div class="item" id="s8"><h3><span class="n">8</span> חיזוק/הוכחה</h3><p>עובדות מוחשיות מהתווית/העמוד: 30 מנות ארוזות אישית, 240 גרם נטו. “סוכריות על מקל לריכוז” – רק כשם המוצר <span class="badge reg">טעון בדיקה רגולטורית</span>.</p></div><div class="item" id="s9"><h3><span class="n">9</span> ההצעה</h3><p>כיתוב: “רק אני” 220 ₪ במקום 365 ₪ (לאמת מחיר תצוגה); זוגי/משפחתי משתלמים יותר.</p></div><div class="item" id="s10"><h3><span class="n">10</span> <bdi>CTA</bdi></h3><p>בסרטון: “לפני שמתחילים כל תוסף תזונה, שווה להתייעץ עם גורם מקצועי.” בכיתוב: “יש עוד עובדות – הלינק בביו ☺️”.</p></div></section><section class="part" id="p3"><h2 data-v2="added">חלק ג׳ – ביצוע: קצב, שמע, טקסט, פורמט ועונתיות</h2><div class="item" id="s11"><h3><span class="n">11</span> פירוק לפי שניות וקצב חיתוכים</h3><p>~25 ש׳; שוט ממוצע ~3 ש׳, תיבת טקסט מתחלפת כל ~2 ש׳; מעבר הבזק אחד באמצע.</p></div><div class="item" id="s12"><h3><span class="n">12</span> שמע (קריינות/מוזיקה/טרנד, עובד בלי סאונד?)</h3><p><bdi>VO</bdi> רגוע + מצע מוזיקלי שקט/<bdi>ASMR</bdi> של פתיחת עטיפה. עובד במלואו בלי סאונד (כל משפט בתיבת טקסט).</p></div><div class="item" id="s13"><h3><span class="n">13</span> טקסט על המסך</h3><p>תיבות לבנות מעוגלות בראש המסך, טקסט מודגש בצבע המותג, 2–6 מילים.</p></div><div class="item" id="s14"><h3><span class="n">14</span> פורמט ושימור</h3><p>9:16, <bdi>22–27</bdi> ש׳; שימור: הבטחת “עובדה”, <bdi>ASMR</bdi> עטיפה/מציצה, “ומה אין בה?” כטוויסט באמצע, סדרה (“עובדה #1”).</p></div><div class="item" id="s15"><h3><span class="n">15</span> עונתיות</h3><p>אוורגרין – להשיק כסדרה קבועה (פרק בשבוע) החל מעכשיו; פרק “מה יש במארז משפחתי” לקראת בלאק פריידיי/חנוכה.</p></div></section><section class="part" id="p4"><h2 data-v2="added">חלק ד׳ – בדיקה ותסריט מלא</h2><div class="item accent action" id="s16"><h3><span class="n">16</span> רעיון לבדיקת <bdi>A/B</bdi> עבור <bdi>Nully</bdi></h3><ul><li><b><bdi>A</bdi>:</b> פתיחה “קבלו עובדה”.</li><li><b><bdi>B</bdi>:</b> פתיחה “3 דברים שאין בסוכרייה הזו”.</li><li><bdi>KPI</bdi>: שימור 3 ש׳, שמירות ושיתופים.</li></ul></div><div class="item" id="scenes"><h3>★ טבלת סצנות – תסריט מלא</h3><div class="table-wrap full"><table class="stack scenes"><thead><tr><th scope="col">זמן</th><th scope="col">ויזואל</th><th scope="col">טקסט על המסך</th><th scope="col">קריינות/דיאלוג</th></tr></thead><tbody><tr><td data-label="זמן" class="time num"><div class="cell"><bdi>0–1.5</bdi></div></td><td data-label="ויזואל"><div class="cell">תקריב: יד מסובבת סוכרייה על מקל של <bdi>NULLY</bdi> מול המצלמה</div></td><td data-label="טקסט על המסך"><div class="cell">קבלו עובדה</div></td><td data-label="קריינות/דיאלוג"><div class="cell">קבלו עובדה:</div></td></tr><tr><td data-label="זמן" class="time num"><div class="cell"><bdi>1.5–3.5</bdi></div></td><td data-label="ויזואל"><div class="cell">היד מניחה את המארז על משטח עץ, ליד כוס מים וצמח</div></td><td data-label="טקסט על המסך"><div class="cell">מה יש בסוכרייה אחת?</div></td><td data-label="קריינות/דיאלוג"><div class="cell">מה בעצם יש בתוך סוכרייה אחת של <bdi>NULLY</bdi> ברייני?</div></td></tr><tr><td data-label="זמן" class="time num"><div class="cell"><bdi>3.5–6.5</bdi></div></td><td data-label="ויזואל"><div class="cell">תקריב פתיחת עטיפה אישית (<bdi>ASMR</bdi>)</div></td><td data-label="טקסט על המסך"><div class="cell">סוכריית מציצה קשיחה / בטעמי פירות</div></td><td data-label="קריינות/דיאלוג"><div class="cell">זו סוכריית מציצה קשיחה, בטעמי פירות</div></td></tr><tr><td data-label="זמן" class="time num"><div class="cell"><bdi>6.5–10</bdi></div></td><td data-label="ויזואל"><div class="cell">הסוכרייה מוחזקת ליד התווית</div></td><td data-label="טקסט על המסך"><div class="cell">קומפלקס ויטמינים / סיבים תזונתיים / <bdi>ALPHA-GPC®</bdi></div></td><td data-label="קריינות/דיאלוג"><div class="cell">שמכילה קומפלקס ויטמינים, סיבים תזונתיים ו-ALPHA-GPC®.</div></td></tr><tr><td data-label="זמן" class="time num"><div class="cell"><bdi>10–11</bdi></div></td><td data-label="ויזואל"><div class="cell">מעבר הבזק לבן</div></td><td data-label="טקסט על המסך"><div class="cell">ומה אין בה?</div></td><td data-label="קריינות/דיאלוג"><div class="cell">ומה אין בה?</div></td></tr><tr><td data-label="זמן" class="time num"><div class="cell"><bdi>11–15.5</bdi></div></td><td data-label="ויזואל"><div class="cell">ידיים מסדרות מנות ארוזות בשורה</div></td><td data-label="טקסט על המסך"><div class="cell">בלי סוכר מוסף / בלי גלוטן / בלי צבעי מאכל</div></td><td data-label="קריינות/דיאלוג"><div class="cell">בלי סוכר מוסף, בלי גלוטן ובלי צבעי מאכל.</div></td></tr><tr><td data-label="זמן" class="time num"><div class="cell"><bdi>15.5–18</bdi></div></td><td data-label="ויזואל"><div class="cell">תקריב תווית המארז</div></td><td data-label="טקסט על המסך"><div class="cell">טבעונית / מתאימה מגיל 5</div></td><td data-label="קריינות/דיאלוג"><div class="cell">היא טבעונית, ומתאימה מגיל 5.</div></td></tr><tr><td data-label="זמן" class="time num"><div class="cell"><bdi>18–21.5</bdi></div></td><td data-label="ויזואל"><div class="cell">שוט רחב: 30 מנות פרוסות על השיש</div></td><td data-label="טקסט על המסך"><div class="cell">30 מנות ארוזות אישית / 240 גרם</div></td><td data-label="קריינות/דיאלוג"><div class="cell">במארז 30 מנות, כל אחת ארוזה אישית.</div></td></tr><tr><td data-label="זמן" class="time num"><div class="cell"><bdi>21.5–25</bdi></div></td><td data-label="ויזואל"><div class="cell">מארז במרכז, יד מניחה סוכרייה לידו</div></td><td data-label="טקסט על המסך"><div class="cell">שווה להתייעץ / עם גורם מקצועי</div></td><td data-label="קריינות/דיאלוג"><div class="cell">ולפני שמתחילים כל תוסף תזונה – שווה להתייעץ עם גורם מקצועי.</div></td></tr></tbody></table></div></div></section><div class="callout risk" id="regulation"><strong>הערות רגולציה:</strong> לא להעתיק את מבנה הטענות של המקור (מערכת עצבים, שינה, מלטונין). לא לייחס פעולה ל-ALPHA-GPC® או לוויטמינים – רק להזכירם כרכיבים. “לריכוז”, “ללא סוכר מוסף”, “מתאים מגיל 5” <span class="badge reg">טעון בדיקה רגולטורית</span>.</div><section id="appendix"><h2 data-v2="added">נספח – פרטים טכניים</h2><details><summary data-v2="added">מקור הנתונים ומתודולוגיה</summary><p><strong>מקור פרטי המוצר:</strong> <code>/workspace/nully-dashboard/data/snapshots/latest.json</code> (קריאה בלבד) – עמוד המוצר <bdi>nully-brainy</bdi>.</p><p>הופק ב-07.10.2026 · פיילוט מפרטי וידאו עבור <bdi>Nully</bdi> · ניתוח ידני של פריימים (כל ~1 שנייה + זיהוי חיתוכים ב-ffmpeg) ותמלול <bdi>faster-whisper</bdi> (<bdi>medium</bdi>, <bdi>he</bdi>).</p></details></section>
+</main></body></html>
