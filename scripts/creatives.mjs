@@ -72,7 +72,7 @@ export function phaseOf(it) {
   return d <= TEST_MAX ? 'test' : d >= WINNER_MIN ? 'winner' : 'running';
 }
 
-export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, specs = {} }) {
+export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, specs = {}, driveLinks = {} }) {
   const specOf = (it) => { const ids = [it.library_id, ...(String(it.post_url || it.video_url || '').match(/\d{15,}/g) || [])].filter(Boolean); for (const k of ids) if (specs[k]) return specs[k]; return null; };
   const specLinks = (sp) => sp ? `<div class="cr-specs">${sp.map((x) => `<a class="spec-tag" href="/specs/${esc(x.file.replace(/\.html$/, ''))}" target="_blank" rel="noopener">📄 ${esc(x.label)}</a>`).join('')}</div>` : '';
   const compact = (v) => {
@@ -151,6 +151,7 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
         ${facts(it)}
         ${it.creative_notes ? `<p class="cr-note">${esc(oneLine(it.creative_notes, size === 'lg' ? 220 : 130))}</p>` : ''}
         ${src ? `<a class="cr-src" href="${esc(src)}" target="_blank" rel="noopener noreferrer">${it.source === 'meta' ? 'המודעה בספריית Meta' : 'הפוסט המקורי'} ↗</a>` : ''}
+        ${driveLinks[it.id] ? `<div class="cr-drive" dir="rtl">${driveLinks[it.id].spec ? `<a href="${esc(driveLinks[it.id].spec)}" target="_blank" rel="noopener">📄 אפיון ב-Drive ↗</a>` : ''}${driveLinks[it.id].script ? `<a href="${esc(driveLinks[it.id].script)}" target="_blank" rel="noopener">🎬 תסריט ל-Nully ב-Drive ↗</a>` : ''}</div>` : ''}
       </div>${detail(it)}</article>`;
   }
 

@@ -273,3 +273,5 @@ a.info-i{display:inline-grid;place-items:center;width:1.35rem;height:1.35rem;mar
   .ml-toolbar select{field-sizing:fixed;font-size:13px;height:36px;min-block-size:36px;padding-block:0;padding-inline:6px;inline-size:100%;min-inline-size:0;max-inline-size:100%}
   .ml-count{grid-column:1 / -1;font-size:12px;line-height:1.2}
 }
+
+.cr-drive{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:4px;font-size:.75rem;font-weight:600}.cr-drive a{text-decoration:none}

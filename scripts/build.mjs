@@ -199,7 +199,7 @@ function render(scan, prev, { isLatest, scans }) {
     <h3>הדוחות המלאים בדרייב</h3>${overviewDocs}`);
 
   // ----- creatives-first panels -----
-  const CR = makeRenderer({ esc, brandName, section, specs: specs.items || {} });
+  const CR = makeRenderer({ esc, brandName, section, specs: specs.items || {}, driveLinks: loadJson(root, 'data/drive-links.json', {}) });
   const mailers = specs.mailers || [];
   const NICHE_MAILER = ['by harmony', 'goom', 'ecosupp', 'mycolivia', 'mayven', 'fill it', 'mycospring', 'wonders teva', 'tevakid'];
   const mailerCard = (m) => {
