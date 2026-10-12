@@ -5,6 +5,30 @@ import { join } from 'node:path';
 export const TEST_MAX = 14;     // days: <= 14 => "במבחן"
 export const WINNER_MIN = 90;   // days: >= 90 => "ותיקה · מנצחת" (same as the Meta bot's `stage`)
 const FMT = { image: 'תמונה', video: 'וידאו', carousel: 'קרוסלה', unknown: 'לא תועד' };
+const VIDEO_FMT = new Set(['video', 'וידאו', 'סרטון', 'reel', 'reels']);
+const IMAGE_FMT = new Set(['image', 'static', 'photo', 'תמונה', 'carousel', 'קרוסלה', 'album']);
+
+// video | image | unknown. Explicit format wins. Missing/unknown is inferred from URLs,
+// durations, and notes that name the asset; anything still unclear stays unknown and is
+// shown only under הכל. Carousel is a still-image format (same bucket as תמונה/קרוסלה in the Meta charts).
+export function mediaKind(it) {
+  if (!it || typeof it !== 'object') return 'unknown';
+  const fmt = String(it.format ?? it.media_type ?? it.mediaType ?? '').trim().toLowerCase();
+  if (VIDEO_FMT.has(fmt)) return 'video';
+  if (IMAGE_FMT.has(fmt)) return 'image';
+  if (fmt && fmt !== 'unknown' && fmt !== 'לא תועד') return 'unknown';
+  const url = [it.video_url, it.videoUrl, it.post_url, it.url].filter(Boolean).join(' ');
+  const notes = [it.creative_notes, it.data_notes].filter(Boolean).join('\n');
+  const dur = [it.duration, it.video_duration, it.videoDuration, it.duration_sec, it.length]
+    .map((v) => Number(v)).find((n) => Number.isFinite(n) && n > 0);
+  const plat = String(it.plat || it.platform || '').toLowerCase();
+  if (it.video_url || it.videoUrl || dur) return 'video';
+  if (/\/reel\/|tiktok\.com|youtube\.com|youtu\.be/i.test(url)) return 'video';
+  if (it.source === 'tiktok' || plat === 'tiktok' || plat === 'youtube') return 'video';
+  if (/וידאו\/ריל|פוסט וידאו|ריל שנראה|סרטון/.test(notes)) return 'video';
+  if (/\(תמונה\)|\(קרוסלה\)|צילום מוצר|גרפיק|יצירת אמנות/.test(notes)) return 'image';
+  return 'unknown';
+}
 const SRC_LABEL = { meta: 'Meta', tiktok: 'TikTok', organic: 'אורגני', youtube: 'YouTube', instagram: 'Instagram', facebook: 'Facebook' };
 const plat = (it) => it.plat || it.source;
 const CTYPE = { creator: 'יוצר / UGC', partnership: 'שיתוף פעולה מסומן', organic: 'אורגני' };
@@ -115,7 +139,8 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
     const hook = it.hook || oneLine(it.copy_text, 110);
     const src = it.library_url || it.post_url;
     const sp = specOf(it);
-    return `<article class="cr ${size}" data-spec="${sp ? 1 : 0}" data-id="${esc(it.id)}" data-source="${esc(it.source)}" data-plat="${esc(plat(it))}" data-format="${esc(it.format)}" data-phase="${ph}" data-brand="${esc(it.brand)}" data-run="${it.days_active ?? -1}" data-variants="${it.variants_count ?? 0}" data-views="${Number(String(it.views ?? '').replace(/,/g, '')) || 0}" data-start="${esc(it.start_date || it.post_date || '')}">
+    const kind = mediaKind(it);
+    return `<article class="cr ${size}" data-spec="${sp ? 1 : 0}" data-id="${esc(it.id)}" data-source="${esc(it.source)}" data-plat="${esc(plat(it))}" data-format="${esc(it.format)}" data-media="${kind}" data-phase="${ph}" data-brand="${esc(it.brand)}" data-run="${it.days_active ?? -1}" data-variants="${it.variants_count ?? 0}" data-views="${Number(String(it.views ?? '').replace(/,/g, '')) || 0}" data-start="${esc(it.start_date || it.post_date || '')}">
       ${rank ? `<span class="t10-rank" aria-label="מקום ${rank}">${rank}</span>` : ''}
       ${media(it, { big: size === 'lg' })}
       <div class="cr-body">
