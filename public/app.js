@@ -187,12 +187,27 @@
     });
   }
 
-  // live countdowns (client clock, Israel date)
-  document.querySelectorAll('[data-days]').forEach(function (el) {
-    var d = new Date(el.getAttribute('data-days') + 'T00:00:00+03:00');
-    var n = Math.ceil((d - new Date()) / 86400000);
-    el.textContent = n > 0 ? n : 0;
-  });
+  // Rolling 120-day commerce calendar (Asia/Jerusalem). Recomputed on load so a
+  // deploy is not required when the civil date changes.
+  function renderCommerceEvents() {
+    if (!window.CommerceEvents) return;
+    var dataEl = document.getElementById('commerce-events');
+    if (!dataEl) return;
+    var events;
+    try { events = JSON.parse(dataEl.textContent); } catch (e) { return; }
+    var today = window.CommerceEvents.israelToday(new Date());
+    var featured = window.matchMedia('(max-width: 520px)').matches ? 2 : 3;
+    var board = document.querySelector('[data-event-board]');
+    if (board) {
+      board.innerHTML = window.CommerceEvents.renderBoard(events, today, { featured: featured });
+      window.CommerceEvents.mountBoard(board);
+    }
+    var cards = document.querySelector('[data-event-cards]');
+    if (cards) cards.innerHTML = window.CommerceEvents.renderCards(events, today);
+  }
+  renderCommerceEvents();
+  var eventMq = window.matchMedia('(max-width: 520px)');
+  if (eventMq.addEventListener) eventMq.addEventListener('change', renderCommerceEvents);
 
   // Media-type filter (הכל / וידאו / תמונה) for every panel that lists creative cards.
   // Injected for any current or future section that renders .cr[data-media=video|image].
