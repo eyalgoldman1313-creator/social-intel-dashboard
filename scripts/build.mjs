@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
 import { mdToHtml } from './md.mjs';
 import { fixLinks } from './fix-external-links.mjs';
-import { makeRenderer, loadJson, rankTop10, nicheIds } from './creatives.mjs';
+import { makeRenderer, loadJson, loadDriveLinks, rankTop10, nicheIds } from './creatives.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
@@ -35,10 +35,14 @@ const commerceEvents = JSON.parse(readFileSync(join(root, 'data/events.json'), '
 const creatives = loadJson(root, 'data/creatives.json', { items: [] });
 const specs = loadJson(root, 'data/specs.json', { items: {}, mailers: [] });
 const top10 = loadJson(root, 'data/top10.json', { weeks: {} });
-{ // image health: never let cards go blank silently
-  const { checkImages } = await import('./check-images.mjs');
-  for (const [tab, o] of Object.entries(checkImages(root))) if (o.missing.length + o.remote.length + o.broken.length)
-    console.warn(`! images[${tab}]: ${o.missing.length} missing, ${o.remote.length} remote/expiring, ${o.broken.length} broken of ${o.total} – run scripts/fetch-ad-images.mjs`);
+const driveLinks = loadDriveLinks(root);
+{ // image health: never let cards go blank silently. The checker landed in build.mjs before its module.
+  const checker = join(root, 'scripts/check-images.mjs');
+  if (existsSync(checker)) {
+    const { checkImages } = await import('./check-images.mjs');
+    for (const [tab, o] of Object.entries(checkImages(root))) if (o.missing.length + o.remote.length + o.broken.length)
+      console.warn(`! images[${tab}]: ${o.missing.length} missing, ${o.remote.length} remote/expiring, ${o.broken.length} broken of ${o.total} – run scripts/fetch-ad-images.mjs`);
+  }
 }
 
 rmSync(dist, { recursive: true, force: true });
@@ -212,7 +216,7 @@ function render(scan, prev, { isLatest, scans }) {
     <h3>הדוחות המלאים בדרייב</h3>${overviewDocs}`);
 
   // ----- creatives-first panels -----
-  const CR = makeRenderer({ esc, brandName, section, specs: specs.items || {} });
+  const CR = makeRenderer({ esc, brandName, section, specs: specs.items || {}, driveLinks });
   const mailers = specs.mailers || [];
   const NICHE_MAILER = ['by harmony', 'goom', 'ecosupp', 'mycolivia', 'mayven', 'fill it', 'mycospring', 'wonders teva', 'tevakid'];
   const mailerCard = (m) => {

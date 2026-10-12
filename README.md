@@ -25,6 +25,24 @@
 - שדות נתמכים ב-index.json: `brand, library_id, file, format, platform, start_date, days_active, status, copy_text, cta, offer, creative_notes, library_url, variants_count, family` (Meta); `brand, video_url|post_url, file, post_date, days_since_posted, views, likes, comments, shares, type, hook, creative_notes, language` (TikTok/אורגני).
 - דירוג Top 10 של מודעות Meta: ותק ריצה, אח״כ מספר גרסאות (עד 2 למותג). תוכן אורגני מדורג בנפרד לפי צפיות ומסומן בבירור.
 
+## קישורי Drive על כרטיסי קריאייטיב (`data/drive-links.json`)
+
+הקובץ ממפה כל כרטיס לשני קישורים אופציונליים, **מסמך אפיון** ו**תסריט Nully**, שמופיעים מתחת לקישור ספריית Meta / הפוסט המקורי (גלריה, רצועות, Top 10, וגם בהגדלה). שדה בלי URL לא מרונדר. קובץ חסר או ריק — ה-build עובר בלי קישורים. אין לשנות מפתחות קיימים; להוסיף רק רשומות חדשות.
+
+```json
+{
+  "<cardId>": {
+    "spec": "https://drive.google.com/...",
+    "script": "https://drive.google.com/..."
+  }
+}
+```
+
+- המפתח = `items[].id` ב-`data/creatives.json` (גם `data-id` על הכרטיס, ואותו ערך ב-`data/top10.json`). דוגמה: `meta-1287638459563997`.
+- `spec` → «מסמך אפיון». `script` → «תסריט Nully». כל שדה אופציונלי. רק `http://` / `https://`.
+- אם שדה חסר בקובץ, `spec_url` / `script_url` על רשומת הכרטיס ממלאים אותו. URL תקין בקובץ גובר.
+- צורת ה-id (`scripts/import-creatives.mjs`): `{source}-{slug}` כאשר `source` הוא `meta` | `tiktok` | `organic` | `google`. ל-Meta/Google יש `library_id` (`google-cr…`). ל-TikTok/אורגני בדרך כלל `{source}-{brand}-{8 תווי md5}` — לא המספר שב-URL, ולא המפתח ב-`data/specs.json`.
+
 ## דפי אפיון (אפיון / תסריט ל-Nully / מיילרים) – לבוטים
 - קבצי HTML מלאים נשמרים ב-`specs/` (רק גרסת v2/האחרונה). ה-build מעתיק אותם ל-`dist/specs/` ומוסיף פס עליון "חזרה ללוח" – התוכן עצמו לא משתנה. כתובת: `/specs/<שם-קובץ-בלי-.html>` (cleanUrls).
 - המיפוי ב-`data/specs.json`:

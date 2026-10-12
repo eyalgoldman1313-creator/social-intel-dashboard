@@ -63,6 +63,34 @@ export function loadJson(root, rel, fallback) {
   return existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : fallback;
 }
 
+// data/drive-links.json — keyed by the card's stable id (creatives.json items[].id).
+//   { "<id>": { "spec"?: "https://...", "script"?: "https://..." } }
+// Missing file, empty file, or a card with no entry → no links, build still succeeds.
+// Inline spec_url/script_url on the card fills only a field the file does not set.
+const DRIVE_URL = /^https?:\/\/\S+$/i;
+export function loadDriveLinks(root) {
+  const p = join(root, 'data/drive-links.json');
+  if (!existsSync(p)) return {};
+  const raw = readFileSync(p, 'utf8').replace(/^\uFEFF/, '').trim();
+  if (!raw) return {};
+  const data = JSON.parse(raw);
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return {};
+  return data;
+}
+function httpUrl(v) {
+  const s = String(v ?? '').trim();
+  return DRIVE_URL.test(s) ? s : '';
+}
+export function driveUrls(it, driveLinks = {}) {
+  if (!it || typeof it !== 'object') return { spec: '', script: '' };
+  const row = (it.id && driveLinks && typeof driveLinks === 'object' && !Array.isArray(driveLinks)) ? driveLinks[it.id] : null;
+  const file = row && typeof row === 'object' && !Array.isArray(row) ? row : {};
+  return {
+    spec: httpUrl(file.spec) || httpUrl(it.spec_url),
+    script: httpUrl(file.script) || httpUrl(it.script_url),
+  };
+}
+
 export function phaseOf(it) {
   if (it.source !== 'meta') return 'organic';
   const STAGE = { 'במבחן': 'test', 'בינונית': 'running', 'ותיקה/מנצחת': 'winner' };
@@ -72,7 +100,19 @@ export function phaseOf(it) {
   return d <= TEST_MAX ? 'test' : d >= WINNER_MIN ? 'winner' : 'running';
 }
 
-export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, specs = {} }) {
+export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, specs = {}, driveLinks = {} }) {
+  const DRIVE_IC = {
+    spec: '<svg class="drv-ic" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M3.2 1.4h6.2L13 5.1V14.2a.6.6 0 0 1-.6.6H3.8a.6.6 0 0 1-.6-.6V2a.6.6 0 0 1 .6-.6zm.8 1.2v11h7.4V5.6H9.2V2.6H4zm5.6.9v1.7h1.6L9.6 3.5zM5.4 8h5.2v1.1H5.4zm0 2.3h5.2V11.4H5.4z"/></svg>',
+    script: '<svg class="drv-ic" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M1.8 3.1h8.4v1.25H1.8zm0 2.9h12.4v1.25H1.8zm0 2.9h12.4v1.25H1.8zm0 2.9H9.2v1.25H1.8z"/></svg>',
+  };
+  // Under the Meta / post link on every card, and again in the lightbox detail.
+  const driveBlock = (it) => {
+    const { spec, script } = driveUrls(it, driveLinks);
+    const pills = [];
+    if (spec) pills.push(`<a class="drv-pill drv-spec" href="${esc(spec)}" target="_blank" rel="noopener noreferrer" data-stop>${DRIVE_IC.spec}<span>מסמך אפיון</span></a>`);
+    if (script) pills.push(`<a class="drv-pill drv-script" href="${esc(script)}" target="_blank" rel="noopener noreferrer" data-stop>${DRIVE_IC.script}<span>תסריט <bdi dir="ltr">Nully</bdi></span></a>`);
+    return pills.length ? `<div class="cr-drive" dir="rtl">${pills.join('')}</div>` : '';
+  };
   const specOf = (it) => { const ids = [it.library_id, ...(String(it.post_url || it.video_url || '').match(/\d{15,}/g) || [])].filter(Boolean); for (const k of ids) if (specs[k]) return specs[k]; return null; };
   const specLinks = (sp) => sp ? `<div class="cr-specs">${sp.map((x) => `<a class="spec-tag" href="/specs/${esc(x.file.replace(/\.html$/, ''))}" target="_blank" rel="noopener">📄 ${esc(x.label)}</a>`).join('')}</div>` : '';
   const compact = (v) => {
@@ -132,7 +172,8 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
       ${it.copy_scope === 'family' ? `<p class="lb-caveat">הקופי, ההצעה וה-CTA מופיעים ברמת משפחת הקריאייטיב כפי שתועדו בדוח – לא אומתו פר-מודעה.${it.copy_note ? ' ' + esc(it.copy_note) + '.' : ''}</p>` : ''}
       ${it.source === 'meta' ? '<p class="lb-caveat">מעורבות (לייקים/הוצאה) אינה מוצגת בספריית המודעות.</p>' : ''}
       ${it.landing_url ? `<a class="lb-src" href="${esc(it.landing_url)}" target="_blank" rel="noopener noreferrer">דף נחיתה ↗</a> ` : ''}
-      ${src ? `<a class="lb-src" href="${esc(src)}" target="_blank" rel="noopener noreferrer">${it.source === 'meta' ? 'צפייה במודעה בספריית Meta' : 'צפייה בפוסט המקורי'} ↗</a>` : ''}</div>`;
+      ${src ? `<a class="lb-src" href="${esc(src)}" target="_blank" rel="noopener noreferrer">${it.source === 'meta' ? 'צפייה במודעה בספריית Meta' : 'צפייה בפוסט המקורי'} ↗</a>` : ''}
+      ${driveBlock(it)}</div>`;
   }
 
   function card(it, { size = '', rank, basis } = {}) {
@@ -141,6 +182,9 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
     const src = it.library_url || it.post_url;
     const sp = specOf(it);
     const kind = mediaKind(it);
+    const srcLink = src ? `<a class="cr-src" href="${esc(src)}" target="_blank" rel="noopener noreferrer">${it.source === 'meta' ? 'המודעה בספריית Meta' : 'הפוסט המקורי'} ↗</a>` : '';
+    const drives = driveBlock(it);
+    const links = (srcLink || drives) ? `<div class="cr-links">${srcLink}${drives}</div>` : '';
     return `<article class="cr ${size}" data-spec="${sp ? 1 : 0}" data-id="${esc(it.id)}" data-source="${esc(it.source)}" data-plat="${esc(plat(it))}" data-format="${esc(it.format)}" data-media="${kind}" data-phase="${ph}" data-brand="${esc(it.brand)}" data-run="${it.days_active ?? -1}" data-variants="${it.variants_count ?? 0}" data-views="${Number(String(it.views ?? '').replace(/,/g, '')) || 0}" data-start="${esc(it.start_date || it.post_date || '')}">
       ${rank ? `<span class="t10-rank" aria-label="מקום ${rank}">${rank}</span>` : ''}
       ${media(it, { big: size === 'lg' })}
@@ -151,7 +195,7 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
         ${hook ? `<p class="cr-hook">${esc(oneLine(hook, 120))}</p>` : ''}
         ${facts(it)}
         ${it.creative_notes ? `<p class="cr-note">${esc(oneLine(it.creative_notes, size === 'lg' ? 220 : 130))}</p>` : ''}
-        ${src ? `<a class="cr-src" href="${esc(src)}" target="_blank" rel="noopener noreferrer">${it.source === 'meta' ? 'המודעה בספריית Meta' : 'הפוסט המקורי'} ↗</a>` : ''}
+        ${links}
       </div>${detail(it)}</article>`;
   }
 
