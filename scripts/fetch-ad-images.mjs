@@ -83,5 +83,7 @@ if (existsSync(tpath)) {
   for (const w of Object.values(t.weeks || {})) for (const arr of [w.items, w.niche, ...(w.strips || []).map((s) => s.items)]) for (const x of arr || []) { const s = byId.get(x.id); if (s?.image && !x.image) { x.image = s.image; x.imageMissing = false; if (x.format === 'unknown') x.format = s.format; } }
   writeFileSync(tpath, JSON.stringify(t, null, 1) + '\n');
 }
-writeFileSync(join(root, 'data/missing-images.tsv'), 'id\tlibrary_url\treason\n' + fails.join('\n') + (fails.length ? '\n' : ''));
+const tsv = join(root, 'data/missing-images.tsv'); const still = new Set(data.items.filter((i) => !i.image).map((i) => i.id)); const mine = new Set(todo.map((i) => i.id));
+const keep = existsSync(tsv) ? readFileSync(tsv, 'utf8').split('\n').slice(1).filter((l) => l && !mine.has(l.split('\t')[0]) && still.has(l.split('\t')[0])) : [];
+writeFileSync(tsv, 'id\tlibrary_url\treason\n' + [...keep, ...fails].join('\n') + (keep.length + fails.length ? '\n' : ''));
 console.log(`fixed ${fixed}, still missing ${fails.length} (data/missing-images.tsv)`);
