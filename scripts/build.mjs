@@ -35,6 +35,11 @@ const commerceEvents = JSON.parse(readFileSync(join(root, 'data/events.json'), '
 const creatives = loadJson(root, 'data/creatives.json', { items: [] });
 const specs = loadJson(root, 'data/specs.json', { items: {}, mailers: [] });
 const top10 = loadJson(root, 'data/top10.json', { weeks: {} });
+const { siteDates, fmtIL, fmtILTime } = await import('./dates.mjs');
+const SD = siteDates({ root, data, creatives, top10 });
+const UPDATED = fmtIL(SD.updated), BUILT = `${fmtIL(SD.built)} ${fmtILTime(SD.built)}`;
+console.log(`dates: updated ${UPDATED} (from ${SD.updatedSrc}), built ${BUILT} Israel time`);
+{ const { checkDates } = await import('./check-dates.mjs'); for (const w of checkDates({ root, data, sd: SD })) console.warn('! dates: ' + w); }
 const driveLinks = loadDriveLinks(root);
 { // image health: never let cards go blank silently. The checker landed in build.mjs before its module.
   const checker = join(root, 'scripts/check-images.mjs');
@@ -156,7 +161,7 @@ function render(scan, prev, { isLatest, scans }) {
   const header = `<header class="top">
     <div class="top-in">
       <div><p class="eyebrow">${esc(data.site.subtitle)}</p><h1>${esc(data.site.title)}</h1>
-      <p class="updated"><span class="live"></span> עודכן לאחרונה: <b>${esc(scan.date)}</b> / ${esc(scan.statusLabel)}${isLatest ? '' : ' · <b>ארכיון</b>'} <a class="info-i" href="#limits" title="מגבלות וכיסוי" aria-label="מגבלות וכיסוי">i</a></p>
+      <p class="updated"><span class="live"></span> ${isLatest ? `עודכן לאחרונה: <b data-updated>${esc(UPDATED)}</b> / ${esc(SD.label)}<span class="upd-src" title="נבנה ${esc(BUILT)} (שעון ישראל) · סריקת בסיס ${esc(scan.date)}"></span>` : `סריקה מ-<b>${esc(scan.date)}</b> · <b>ארכיון</b>`} <a class="info-i" href="#limits" title="מגבלות וכיסוי" aria-label="מגבלות וכיסוי">i</a></p>
       ${scanSwitch}</div>
       <div class="event-board" data-event-board>${eventBoard}</div>
     </div></header>`;
@@ -165,7 +170,7 @@ function render(scan, prev, { isLatest, scans }) {
     <div class="summary-in"><h2 id="status-h">תמונת מצב</h2>
     <div class="summary-grid"><div><h3>7 מסקנות מרכזיות</h3><ol class="takes">${takeaways}</ol></div>
     <div><h3>5 פעולות מומלצות לפי עדיפות</h3><ol class="acts">${actions}</ol></div></div>
-    <p class="fine">המלצות = הסקה על בסיס תצפיות בדוחות, לא תוצאות שנמדדו. סריקה חד-פעמית; ראו <a href="#limits">״מגבלות וכיסוי״</a>.</p></div></section>`;
+    <p class="fine">המלצות = הסקה על בסיס תצפיות בדוחות, לא תוצאות שנמדדו. ${esc(SD.label)} (סריקת בסיס ${esc(scan.date)}); ראו <a href="#limits">״מגבלות וכיסוי״</a>.</p></div></section>`;
 
   // ----- overview -----
   const nicheMeta = niche.map((b) => scan.meta.brandStats[b.id]);
@@ -178,7 +183,7 @@ function render(scan, prev, { isLatest, scans }) {
   const ncv = scan.meta.nicheCreatives;
   const kpis = `<div class="kpis">
     ${kpi(String(brands.length), 'אתרים בסריקה', `${niche.length} נישה · ${ref.length} רפרנס`)}
-    ${kpi(`${advertisersMeta}/${niche.length}`, 'מתחרי נישה מפרסמים ב-Meta', 'בכל השפות, ' + scan.date)}
+    ${kpi(`${advertisersMeta}/${niche.length}`, 'מתחרי נישה מפרסמים ב-Meta', 'בכל השפות, סריקת בסיס ' + scan.date)}
     ${kpi('~' + num(scan.meta.brandStats[mostRes.id].results), `תוצאות Meta של ${mostRes.name}`, 'התאמת טקסט, לא ספירת מודעות')}
     ${kpi('~' + scan.meta.brandStats[longest.id].longestDays, 'ימי ריצה – המודעה הוותיקה בנישה', `${longest.name}, Meta`)}
     ${kpi(`${ncv.image} / ${ncv.video}`, `תמונה·קרוסלה / וידאו (מתוך ${ncv.total})`, `~${Math.round((ncv.image / ncv.total) * 100)}% / ~${Math.round((ncv.video / ncv.total) * 100)}%`)}
@@ -211,7 +216,7 @@ function render(scan, prev, { isLatest, scans }) {
     <h3>מה בסריקה</h3>
     <ul class="notes"><li>7 אתרי נישה (משקל גבוה מאוד) ו-6 אתרי רפרנס מחוץ לנישה (משקל נמוך – טרנדים, מבצעים עונתיים, פורמטים).</li>
     <li>4 פלטפורמות נותחו: Meta (מודעות), TikTok (אורגני בלבד), Google (שקיפות מודעות), נראות אורגנית (פייסבוק, YouTube, פיד אינסטגרם מוטמע).</li>
-    <li>היקף: מודעות ותוכן נותחו בכל שפה ובכל מדינה (לא רק עברית) – עודכן ב-04.10.2026.</li>
+    <li>היקף: מודעות ותוכן נותחו בכל שפה ובכל מדינה (לא רק עברית) – בתוקף מ-${esc(scan.date)}.</li>
     <li>אינסטגרם עדיין <b>בהמשך</b> – ההתחברות לא הושלמה.</li></ul>
     <h3>הדוחות המלאים בדרייב</h3>${overviewDocs}`);
 
@@ -419,7 +424,7 @@ function render(scan, prev, { isLatest, scans }) {
     <div class="lim-grid">${limCards}</div>
     <h3>הוספת סריקה שבועית</h3>
     <p>הנתונים נמצאים בקובץ אחד: <code dir="ltr">data/data.json</code>. כדי להוסיף שבוע, מוסיפים אובייקט חדש בסוף המערך <code dir="ltr">scans</code> (מעתיקים את האחרון ומעדכנים). הלוח יציג את הסריקה האחרונה, יסמן שינויים (Δ) לעומת הקודמת, וישמור ארכיון.</p>
-    ${scans.length > 1 ? `<p>סריקות זמינות: ${scans.map((s) => `<a href="${s.id === scans[scans.length - 1].id ? '/' : `/archive/${s.id}/`}">${esc(s.date)}</a>`).join(' · ')}</p>` : '<p class="fine">כרגע קיימת סריקה אחת (סריקה חד-פעמית ראשונה).</p>'}`);
+    ${scans.length > 1 ? `<p>סריקות זמינות: ${scans.map((s) => `<a href="${s.id === scans[scans.length - 1].id ? '/' : `/archive/${s.id}/`}">${esc(s.date)}</a>`).join(' · ')}</p>` : '<p class="fine">כרגע קיימת סריקה אחת (סריקת בסיס ' + esc(scan.date) + ', ומאז ' + esc(SD.label) + ').</p>'}`);
 
   // Importance order. First item is the default tab. regulatory lives inside actions; limits is opened from the header/footer (#limits), not the nav.
   // Known ids are re-sorted so a later edit that appends or reshuffles this list keeps the order. New ids stay at the end.
@@ -439,7 +444,7 @@ function render(scan, prev, { isLatest, scans }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <meta name="color-scheme" content="light">
-<title>${esc(data.site.title)} · ${esc(scan.date)}</title>
+<title>${esc(data.site.title)} · ${esc(UPDATED)}</title>
 <meta name="description" content="דשבורד מנהלים בעברית: ניתוח מתחרים בנישת תוספי התזונה – Meta, TikTok, Google, נראות אורגנית.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -457,7 +462,7 @@ ${limPanel}
 </div>
 ${CR.lightbox}
 </main>
-<footer class="foot"><p>סריקה ראשונה: ${esc(scan.date)} · מקורות ציבוריים, קריאה בלבד · ללא מעקב וללא עוגיות · מבוסס על דוחות Google Drive (ראו ״למסמך המלא״ בכל סעיף).</p><p><a href="#limits">מגבלות וכיסוי</a></p></footer>
+<footer class="foot"><p>${esc(SD.label)} · עודכן לאחרונה: ${esc(UPDATED)} · נבנה ${esc(BUILT)} (שעון ישראל) · סריקת בסיס: ${esc(scan.date)} · מקורות ציבוריים, קריאה בלבד · ללא מעקב וללא עוגיות · מבוסס על דוחות Google Drive (ראו ״למסמך המלא״ בכל סעיף).</p><p><a href="#limits">מגבלות וכיסוי</a></p></footer>
 <script type="application/json" id="commerce-events">${JSON.stringify(commerceEvents).replace(/</g, '\\u003c')}</script>
 <script src="/events.js" defer></script>
 <script src="/mailer-sort.js" defer></script>

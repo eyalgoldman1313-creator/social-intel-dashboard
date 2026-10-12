@@ -227,7 +227,7 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
     const noAds = ads.length ? '' : `<div class="callout soon"><b>קריאייטיבי Meta ממומנים – בדרך.</b> הרצועות ״מנצחות מוכחות״ ו״בדיקות חדשות״ ייפתחו כשייובאו מודעות Meta עם תאריכי התחלה. עד אז הגלריה מציגה רק תוכן אורגני / יוצרים (TikTok, YouTube, Instagram) – אלה אינם מודעות ממומנות ואין להם ״ימי ריצה״.</div>`;
     const missing = items.length - withImg;
     return section('creatives', 'קריאייטיבים חזקים', `
-      <details class="howto"><summary>איך קוראים את הגלריה</summary><p class="scope">הקריאייטיבים עצמם – לפי ותק ריצה. מודעה ממומנת שרצה זמן רב = המפרסם ממשיך לשלם עליה, ולכן היא מועמדת ל״מנצחת״. מודעה קצרה (עד ${TEST_MAX} ימים) = ככל הנראה במבחן. נכון ל-${esc(asof || scanDate)}; ימי ריצה מתאריך ההתחלה בהנחה שהמודעה פעילה. אין נתוני הוצאה או מעורבות למודעות Meta בישראל.</p>${legendPh}</details>
+      <details class="howto"><summary>איך קוראים את הגלריה</summary><p class="scope">הקריאייטיבים עצמם – לפי ותק ריצה. מודעה ממומנת שרצה זמן רב = המפרסם ממשיך לשלם עליה, ולכן היא מועמדת ל״מנצחת״. מודעה קצרה (עד ${TEST_MAX} ימים) = ככל הנראה במבחן. נכון ל-${esc(asof ? asof.split('-').reverse().join('.') : scanDate)}; ימי ריצה מתאריך ההתחלה בהנחה שהמודעה פעילה. אין נתוני הוצאה או מעורבות למודעות Meta בישראל.</p>${legendPh}</details>
       ${noAds}${stats}
       ${strip('מנצחות מוכחות – הריצות הארוכות ביותר', `${WINNER_MIN}+ ימים פעילות`, winners, 'strip-winners')}
       ${strip('בדיקות חדשות', newWeek.length ? 'התחילו ב-7 הימים האחרונים' : `קצרות (עד ${TEST_MAX} ימים) – מועמדות ל״במבחן״`, newWeek.length ? newWeek : tests, 'strip-tests')}
