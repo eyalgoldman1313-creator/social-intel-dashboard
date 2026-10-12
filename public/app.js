@@ -3,6 +3,7 @@
   var links = Array.prototype.slice.call(document.querySelectorAll('[data-go]'));
   var DEFAULT = 'top10';
   var mlState = { sort: 'date-desc', brand: '' };
+  var ML_KEY = 'mailer-toolbar-v1';
   function show(id) {
     var el = id ? document.getElementById(id) : null;
     var panel = el && el.classList.contains('panel') ? el : null;
@@ -349,7 +350,6 @@
   wireMailers();
   syncMailers();
 
-  var ML_KEY = 'mailer-toolbar-v1';
   function loadMailers() {
     var fallback = { sort: 'date-desc', brand: '' };
     if (!window.MailerSort) return fallback;
