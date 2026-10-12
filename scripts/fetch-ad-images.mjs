@@ -53,7 +53,7 @@ async function google(it) {
   if (!it.library_url) return { err: 'no library_url' };
   const p = await ctx.newPage();
   try {
-    await p.goto(it.library_url, { waitUntil: 'domcontentloaded', timeout: 45000 }); await p.waitForSelector('creative', { timeout: 20000 }).catch(() => {}); await p.waitForTimeout(3500);
+    await p.goto(it.library_url, { waitUntil: 'domcontentloaded', timeout: 45000 }); await p.waitForFunction(() => [...document.querySelectorAll('creative')].some((e) => { const r = e.getBoundingClientRect(); return r.width > 60 && r.height > 40; }), null, { timeout: 25000 }).catch(() => {}); await p.waitForTimeout(2500);
     const clip = await p.evaluate(() => { for (const e of document.querySelectorAll('creative .creative-container, creative')) { const r = e.getBoundingClientRect(); if (r.width > 60 && r.height > 40 && r.x > 0 && r.x + r.width < 1280) return { x: r.x, y: r.y, width: r.width, height: r.height }; } return null; });
     if (!clip) return { err: 'no visible creative (removed / region-limited?)' };
     await p.screenshot({ path: out, clip }); return { file: out };
