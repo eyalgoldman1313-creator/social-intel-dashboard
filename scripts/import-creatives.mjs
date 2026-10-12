@@ -105,7 +105,7 @@ for (const source of SOURCES) {
     };
     const f = str(r.file ?? r.image);
     if (f) {
-      const inFile = [resolve(dir, f), resolve(dir, str(r.brand_slug), f)].find((x) => existsSync(x) && statSync(x).isFile()) || resolve(dir, f);
+      const inFile = [resolve(dir, f), resolve(dir, str(r.brand_slug), f), resolve(dir, 'img', f)].find((x) => existsSync(x) && statSync(x).isFile()) || resolve(dir, f);
       if (existsSync(inFile) && /\.(png|jpe?g|webp|gif|avif)$/i.test(inFile)) {
         const out = join(root, 'public/creatives', source, `${fname}.webp`);
         const ok = compress(inFile, out);
