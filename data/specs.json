@@ -752,67 +752,145 @@
     {
       "brand": "Fill It",
       "title": "הפרק הבא של fillit מתחיל ממש בקרוב (12.10)",
-      "file": "mailer-fillit-2026-10-12.html"
+      "file": "mailer-fillit-2026-10-12.html",
+      "score": "6",
+      "date": "12.10.2026",
+      "img": "/mailers/mailer-fillit-2026-10-12.webp",
+      "offer": "אין הצעה",
+      "hook": "טיזר: עידן חדש מגיע",
+      "cta": "למעבר לאתר"
     },
     {
       "brand": "Mayven",
       "title": "מוכנה לתוספת מרעננת לשגרה שלך? 🍍🥒🍏 (11.10)",
-      "file": "mailer-mayven-2026-10-11.html"
+      "file": "mailer-mayven-2026-10-11.html",
+      "score": "5.5",
+      "date": "11.10.2026",
+      "img": "/mailers/mailer-mayven-2026-10-11.webp",
+      "offer": "אין הצעה",
+      "hook": "טיזר Coming soon 13.10",
+      "cta": "ללא CTA"
     },
     {
       "brand": "Smiley",
       "title": "חיוך מושלם רואים מרחוק, ומריחים מקרוב. (10.10)",
-      "file": "mailer-smiley-2026-10-10.html"
+      "file": "mailer-smiley-2026-10-10.html",
+      "score": "8",
+      "date": "10.10.2026",
+      "img": "/mailers/mailer-smiley-2026-10-10.webp",
+      "offer": "30% הנחה + משלוח חינם",
+      "hook": "חיוך מושלם רואים מרחוק",
+      "cta": "אני רוצה חיוך מושלם"
     },
     {
       "brand": "Fill It",
       "title": "נמאס לך מתוספים שלא באמת עובדים? 🛑 (9.10)",
-      "file": "mailer-fillit-2026-10-09.html"
+      "file": "mailer-fillit-2026-10-09.html",
+      "score": "6",
+      "date": "09.10.2026",
+      "img": "/mailers/mailer-fillit-2026-10-09.webp",
+      "offer": "₪30 + 300 נקודות",
+      "hook": "למה לא משקיעה בתוספים?",
+      "cta": "2 כפתורים, ראש וסוף"
     },
     {
       "brand": "Fill It",
       "title": "3 סיבות למה דווקא Fillit (8.10)",
-      "file": "mailer-fillit-2026-10-08.html"
+      "file": "mailer-fillit-2026-10-08.html",
+      "score": "7.5",
+      "date": "08.10.2026",
+      "img": "/mailers/mailer-fillit-2026-10-08.webp",
+      "offer": "ללא הנחה",
+      "hook": "3 סיבות + ביקורות",
+      "cta": "לכל הפורמולות באתר"
     },
     {
       "brand": "Mycospring",
       "title": "מה הגוף שלכם עושה עם הסוכר שאתם אוכלים? (8.10)",
-      "file": "mailer-mycospring-2026-10-08.html"
+      "file": "mailer-mycospring-2026-10-08.html",
+      "score": "8",
+      "date": "08.10.2026",
+      "img": "/mailers/mailer-mycospring-2026-10-08.webp",
+      "offer": "מארזים במחיר מוזל",
+      "hook": "מה הגוף עושה עם הסוכר",
+      "cta": "קנייה ליד כל מוצר"
     },
     {
       "brand": "Fill It",
       "title": "הבריאות שלך היא השקעה לטווח ארוך 🔬 (7.10)",
-      "file": "mailer-fillit-2026-10-07.html"
+      "file": "mailer-fillit-2026-10-07.html",
+      "score": "5.5",
+      "date": "07.10.2026",
+      "img": "/mailers/mailer-fillit-2026-10-07.webp",
+      "offer": "300 נקודות + ₪30",
+      "hook": "קונות › צוברות › מממשות",
+      "cta": "למימוש 300 נקודות"
     },
     {
       "brand": "Smiley",
       "title": "אם אתם כבר לועסים מסטיק - למה לא אחד שמלבין את השיניים? (6.10)",
-      "file": "mailer-smiley-2026-10-06.html"
+      "file": "mailer-smiley-2026-10-06.html",
+      "score": "8",
+      "date": "06.10.2026",
+      "img": "/mailers/mailer-smiley-2026-10-06.webp",
+      "offer": "1+1 + 30 ימי ניסיון",
+      "hook": "מסטיק שמלבין שיניים",
+      "cta": "אני רוצה לנסות"
     },
     {
       "brand": "EcoSupp",
       "title": "ברוכים הבאים לעולם המופלא של אקוסאפ (4.10)",
-      "file": "mailer-ecosupp-2026-10-04.html"
+      "file": "mailer-ecosupp-2026-10-04.html",
+      "score": "7",
+      "date": "04.10.2026",
+      "img": "/mailers/mailer-ecosupp-2026-10-04.webp",
+      "offer": "10% במועדון ללא עלות",
+      "hook": "Welcome עם קונפטי",
+      "cta": "קחו אותי לחנות"
     },
     {
       "brand": "Fill It",
       "title": "ברוכה הבאה ל-Fillit! הנה משהו קטן להתחלה... 🎁 (4.10)",
-      "file": "mailer-fillit-2026-10-04.html"
+      "file": "mailer-fillit-2026-10-04.html",
+      "score": "7",
+      "date": "04.10.2026",
+      "img": "/mailers/mailer-fillit-2026-10-04.webp",
+      "offer": "₪30 + 300 נקודות",
+      "hook": "ברוכה הבאה ל-Fillit",
+      "cta": "300 נקודות מחכות לך"
     },
     {
       "brand": "EcoSupp",
       "title": "איך הגוף שלנו עובד בזמן השינה?",
-      "file": "mailer-ecosupp.html"
+      "file": "mailer-ecosupp.html",
+      "score": "8",
+      "date": "06.10.2026",
+      "img": "/mailers/mailer-ecosupp.webp",
+      "offer": "₪60 + 10% + משלוח חינם",
+      "hook": "איך הגוף עובד בשינה",
+      "cta": "אני רוצה לנצל את ההטבה"
     },
     {
       "brand": "Fill It",
       "title": "הבריאות שלך היא השקעה לטווח ארוך",
-      "file": "mailer-fillit.html"
+      "file": "mailer-fillit.html",
+      "score": "6.5",
+      "date": "05.10.2026",
+      "img": "/mailers/mailer-fillit.webp",
+      "offer": "300 נקודות מתנה",
+      "hook": "בודקת קרם? גם תוספים",
+      "cta": "300 נקודות מחכות לך"
     },
     {
       "brand": "Mycospring",
       "title": "שאלנו את מי שמדברות איתכם כל יום",
-      "file": "mailer-mycospring.html"
+      "file": "mailer-mycospring.html",
+      "score": "7.5",
+      "date": "05.10.2026",
+      "img": "/mailers/mailer-mycospring.webp",
+      "offer": "אין מבצע",
+      "hook": "הכירו את היועצות",
+      "cta": "קנו עכשיו / וואטסאפ"
     }
   ]
 }

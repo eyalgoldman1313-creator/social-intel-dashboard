@@ -193,7 +193,13 @@ function render(scan, prev, { isLatest, scans }) {
   // ----- creatives-first panels -----
   const CR = makeRenderer({ esc, brandName, section, specs: specs.items || {} });
   const mailers = specs.mailers || [];
-  const mailersPanel = section('mailers', 'מיילרים', mailers.length ? `<p class="scope">ניתוחי מיילים שיווקיים של מתחרים – כל ניתוח נפתח כדף באתר.</p><div class="mailer-grid">${mailers.map((m) => `<a class="mailer-card" href="/specs/${esc(m.file.replace(/\.html$/, ''))}" target="_blank" rel="noopener"><span class="brand-tag">${esc(m.brand)}</span><h3>${esc(m.title)}</h3><span class="spec-tag">📄 ניתוח המייל ←</span></a>`).join('')}</div>` : '<p class="fine">אין עדיין ניתוחי מיילרים.</p>');
+  const NICHE_MAILER = ['by harmony', 'goom', 'ecosupp', 'mycolivia', 'mayven', 'fill it', 'mycospring', 'wonders teva', 'tevakid'];
+  const mailerCard = (m) => {
+    const niche = NICHE_MAILER.includes(String(m.brand).toLowerCase());
+    const ind = [['🎁', 'הצעה', m.offer], ['🪝', 'הוק', m.hook], ['👆', 'CTA', m.cta]].filter((x) => x[2]);
+    return `<a class="mailer-card" href="/specs/${esc(m.file.replace(/\.html$/, ''))}" target="_blank" rel="noopener">${m.img ? `<div class="ml-thumb"><img src="${esc(m.img)}" alt="צילום ראש המייל: ${esc(m.title)}" loading="lazy" width="600" height="720"></div>` : ''}<div class="ml-body"><div class="ml-tags"><span class="brand-tag ${niche ? 'bt-niche' : 'bt-ref'}">${esc(m.brand)}</span>${m.score ? `<span class="ml-score"><bdi dir="ltr">${esc(m.score)}/10</bdi></span>` : ''}${m.date ? `<span class="ml-date"><bdi dir="ltr">${esc(m.date)}</bdi></span>` : ''}</div><h3>${esc(m.title)}</h3>${ind.length ? `<ul class="ml-ind">${ind.map(([ic, l, v]) => `<li><span class="ml-ic" aria-hidden="true">${ic}</span><b>${l}</b><span>${esc(v)}</span></li>`).join('')}</ul>` : ''}<span class="spec-tag">📄 ניתוח המייל ←</span></div></a>`;
+  };
+  const mailersPanel = section('mailers', 'מיילרים', mailers.length ? `<p class="scope">ניתוחי מיילים שיווקיים של מתחרים – כל ניתוח נפתח כדף באתר.</p><div class="ml-legend"><span class="brand-tag bt-niche">מתחרה נישה</span><span class="brand-tag bt-ref">מתחרה רגיל / רפרנס</span><span class="ml-score">ציון /10</span><span class="ml-date">תאריך שליחה</span></div><div class="mailer-grid">${mailers.map(mailerCard).join('')}</div>` : '<p class="fine">אין עדיין ניתוחי מיילרים.</p>');
   const creativesPanel = CR.galleryPanel({ creatives, brands, scanDate: scan.date, asof: creatives.asof });
   // niche Top 10: fallback for snapshots made before the niche list existed (latest week only, from current creatives)
   { const ws = Object.values(top10.weeks || {}).sort((a, b) => a.key.localeCompare(b.key)); const lw = ws[ws.length - 1];
