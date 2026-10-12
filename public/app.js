@@ -2,6 +2,7 @@
   var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
   var links = Array.prototype.slice.call(document.querySelectorAll('[data-go]'));
   var DEFAULT = 'top10';
+  var mlState = { sort: 'date-desc', brand: '' };
   function show(id) {
     var el = id ? document.getElementById(id) : null;
     var panel = el && el.classList.contains('panel') ? el : null;
@@ -17,14 +18,25 @@
     if (on && on.scrollIntoView) on.scrollIntoView({ inline: 'center', block: 'nearest' });
     if (scroll && scroll.scrollIntoView) scroll.scrollIntoView({ behavior: 'smooth', block: 'start' });
     syncOpenPanel();
+    syncMailers();
+  }
+  function safeDecode(s) {
+    try { return decodeURIComponent(s); } catch (e) { return s; }
   }
   function parseMediaHash() {
-    var raw = '';
-    try { raw = decodeURIComponent((location.hash || '').replace(/^#/, '')); }
-    catch (e) { raw = (location.hash || '').replace(/^#/, ''); }
+    var hash = (location.hash || '').replace(/^#/, '');
+    var bits = hash.split('/');
+    var id = safeDecode(bits[0] || '');
+    var second = bits.length > 1 ? safeDecode(bits[1]) : '';
+    var media = (second === 'all' || second === 'video' || second === 'image') ? second : null;
+    var mail = { mailerInHash: false, sort: null, brand: null };
+    if (window.MailerSort) mail = window.MailerSort.parseMailerHash('#' + hash);
+    var emptyMail = { id: id, media: media, mailSort: mail.sort, mailBrand: mail.brand, mailerInHash: !!mail.mailerInHash };
+    if (id && document.getElementById(id)) return emptyMail;
+    var raw = safeDecode(hash);
     var m = raw.match(/^([A-Za-z0-9_-]+)(?:\/(all|video|image))?$/);
-    if (!m) return { id: raw, media: null };
-    return { id: m[1], media: m[2] || null };
+    if (!m) return { id: raw, media: null, mailSort: null, mailBrand: null, mailerInHash: false };
+    return { id: m[1], media: m[2] || null, mailSort: null, mailBrand: null, mailerInHash: false };
   }
   function fromHash() { show(parseMediaHash().id); }
   links.forEach(function (l) {
@@ -334,4 +346,283 @@
   }
   ensureFilters();
   syncOpenPanel();
+  wireMailers();
+  syncMailers();
+
+  var ML_KEY = 'mailer-toolbar-v1';
+  function loadMailers() {
+    var fallback = { sort: 'date-desc', brand: '' };
+    if (!window.MailerSort) return fallback;
+    try {
+      var v = JSON.parse(localStorage.getItem(ML_KEY) || '{}');
+      return {
+        sort: window.MailerSort.normalizeSort(v && v.sort),
+        brand: v && typeof v.brand === 'string' ? v.brand : ''
+      };
+    } catch (e) { return fallback; }
+  }
+  function saveMailers(sort, brand) {
+    if (!window.MailerSort) return;
+    try {
+      var sortN = window.MailerSort.normalizeSort(sort);
+      var brandN = String(brand || '');
+      if (sortN === 'date-desc' && !brandN) localStorage.removeItem(ML_KEY);
+      else localStorage.setItem(ML_KEY, JSON.stringify({ sort: sortN, brand: brandN }));
+    } catch (e) {}
+  }
+  function fieldText(el, attr, sel) {
+    if (el.hasAttribute(attr)) return el.getAttribute(attr) || '';
+    var t = el.querySelector(sel);
+    return t ? t.textContent || '' : '';
+  }
+  function brandButton(value, label, count, on) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'mf-btn';
+    b.setAttribute('role', 'radio');
+    b.setAttribute('data-ml-brand', value);
+    b.setAttribute('aria-checked', on ? 'true' : 'false');
+    b.tabIndex = on ? 0 : -1;
+    b.setAttribute('aria-label', label + ', ' + count);
+    if (value) {
+      var name = document.createElement('bdi');
+      name.textContent = label;
+      b.appendChild(name);
+      b.appendChild(document.createTextNode(' '));
+    } else {
+      b.appendChild(document.createTextNode(label + ' '));
+    }
+    var s = document.createElement('span');
+    s.className = 'mf-n';
+    s.setAttribute('aria-hidden', 'true');
+    s.textContent = '(' + count + ')';
+    b.appendChild(s);
+    return b;
+  }
+  function renderBrandButtons(panel) {
+    var MS = window.MailerSort;
+    var group = panel.querySelector('.ml-brands');
+    if (!group || !MS) return;
+    var cards = panel.querySelectorAll('.mailer-card');
+    var names = [];
+    Array.prototype.forEach.call(cards, function (c) { names.push(fieldText(c, 'data-brand', '.brand-tag')); });
+    var opts = MS.competitorOptions(names);
+    while (group.firstChild) group.removeChild(group.firstChild);
+    group.appendChild(brandButton('', 'הכל', cards.length, true));
+    opts.forEach(function (o) { group.appendChild(brandButton(o.name, o.name, o.count, false)); });
+  }
+  function foldEq(a, b) {
+    var x = String(a || '').replace(/^\s+|\s+$/g, '');
+    var y = String(b || '').replace(/^\s+|\s+$/g, '');
+    if (!x && !y) return true;
+    try { return x.toLocaleLowerCase('he') === y.toLocaleLowerCase('he'); }
+    catch (e) { return x.toLowerCase() === y.toLowerCase(); }
+  }
+  function markRadios(group, attr, value) {
+    if (!group) return;
+    var btns = Array.prototype.slice.call(group.querySelectorAll('[role="radio"]'));
+    var matched = false;
+    btns.forEach(function (b) {
+      var v = b.getAttribute(attr) || '';
+      if (attr === 'data-ml-brand' ? foldEq(v, value) : v === value) matched = true;
+    });
+    btns.forEach(function (b) {
+      var v = b.getAttribute(attr) || '';
+      var on = matched && (attr === 'data-ml-brand' ? foldEq(v, value) : v === value);
+      b.setAttribute('aria-checked', on ? 'true' : 'false');
+      b.tabIndex = on ? 0 : -1;
+    });
+    if (!matched && btns[0]) btns[0].tabIndex = 0;
+  }
+  function countLabel(shown, total) {
+    if (shown === total) return total + ' מיילרים';
+    return shown + ' מתוך ' + total + ' מיילרים';
+  }
+  function applyMailers(opts) {
+    var MS = window.MailerSort;
+    var panel = document.getElementById('mailers');
+    if (!panel || !MS) return;
+    var grid = panel.querySelector('.mailer-grid');
+    if (!grid) return;
+    var sort = MS.normalizeSort(mlState.sort);
+    var brand = String(mlState.brand || '');
+    mlState.sort = sort;
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.mailer-card'));
+    cards.forEach(function (el, i) {
+      if (!el.hasAttribute('data-ml-index')) el.setAttribute('data-ml-index', String(i));
+    });
+    var brandGroup = panel.querySelector('.ml-brands');
+    if (brand && brandGroup) {
+      var canon = '';
+      Array.prototype.forEach.call(brandGroup.querySelectorAll('[data-ml-brand]'), function (b) {
+        var v = b.getAttribute('data-ml-brand') || '';
+        if (v && foldEq(v, brand)) canon = v;
+      });
+      if (canon) brand = canon;
+    }
+    mlState.brand = brand;
+    var metas = cards.map(function (el) {
+      return {
+        el: el,
+        index: Number(el.getAttribute('data-ml-index')),
+        brand: fieldText(el, 'data-brand', '.brand-tag'),
+        score: MS.parseScore(fieldText(el, 'data-score', '.ml-score')),
+        date: MS.parseDateKey(fieldText(el, 'data-date', '.ml-date'))
+      };
+    });
+    var ordered = MS.mailerOrder(metas, sort);
+    var shown = 0;
+    ordered.forEach(function (m) {
+      grid.appendChild(m.el);
+      var ok = MS.matchBrand(m.brand, brand);
+      m.el.hidden = !ok;
+      if (ok) shown++;
+    });
+    markRadios(panel.querySelector('.ml-sort'), 'data-ml-sort', sort);
+    markRadios(panel.querySelector('.ml-brands'), 'data-ml-brand', brand);
+    var count = panel.querySelector('.ml-count');
+    if (count) count.textContent = countLabel(shown, cards.length);
+    var empty = panel.querySelector('.ml-empty');
+    if (empty) empty.hidden = shown !== 0;
+    saveMailers(sort, brand);
+    if (opts && opts.announce && count) count.setAttribute('aria-live', 'polite');
+    if (opts && opts.writeHash && panel.classList.contains('on') && !hashLock) {
+      var h = MS.formatMailerHash(sort, brand);
+      if (location.hash !== h) history.replaceState(null, '', h);
+    }
+  }
+  function setMailerSort(sort) {
+    if (!window.MailerSort) return;
+    mlState.sort = window.MailerSort.normalizeSort(sort);
+    applyMailers({ writeHash: true, announce: true });
+  }
+  function setMailerBrand(brand) {
+    mlState.brand = brand || '';
+    applyMailers({ writeHash: true, announce: true });
+  }
+  function onSegKey(e) {
+    var key = e.key;
+    if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].indexOf(key) < 0) return;
+    var group = e.currentTarget;
+    var btns = Array.prototype.slice.call(group.querySelectorAll('[role="radio"]'));
+    var i = btns.indexOf(document.activeElement);
+    if (i < 0) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var rtl = document.documentElement.getAttribute('dir') === 'rtl';
+    var n = i;
+    if (key === 'Home') n = 0;
+    else if (key === 'End') n = btns.length - 1;
+    else {
+      var forward = key === 'ArrowDown' || key === (rtl ? 'ArrowLeft' : 'ArrowRight');
+      var back = key === 'ArrowUp' || key === (rtl ? 'ArrowRight' : 'ArrowLeft');
+      if (forward) n = (i + 1) % btns.length;
+      else if (back) n = (i - 1 + btns.length) % btns.length;
+      else return;
+    }
+    var b = btns[n];
+    if (b.hasAttribute('data-ml-sort')) setMailerSort(b.getAttribute('data-ml-sort'));
+    else setMailerBrand(b.getAttribute('data-ml-brand') || '');
+    b.focus();
+  }
+  function ensureMailerToolbar(panel) {
+    if (panel.querySelector('.ml-toolbar')) return;
+    var grid = panel.querySelector('.mailer-grid');
+    if (!grid) return;
+    var bar = document.createElement('div');
+    bar.className = 'ml-toolbar';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'סינון ומיון מיילרים');
+    var sorts = [['date-desc', 'תאריך: חדש לישן'], ['date-asc', 'תאריך: ישן לחדש'], ['score-desc', 'ציון: גבוה לנמוך'], ['score-asc', 'ציון: נמוך לגבוה']];
+    var sortField = document.createElement('div');
+    sortField.className = 'ml-field';
+    var sortLabel = document.createElement('span');
+    sortLabel.className = 'ml-field-label';
+    sortLabel.id = 'ml-sort-label';
+    sortLabel.textContent = 'מיון';
+    var sortGroup = document.createElement('div');
+    sortGroup.className = 'ml-seg ml-sort';
+    sortGroup.setAttribute('role', 'radiogroup');
+    sortGroup.setAttribute('aria-labelledby', 'ml-sort-label');
+    sortGroup.setAttribute('aria-controls', 'mailer-grid');
+    sorts.forEach(function (pair, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'mf-btn';
+      b.setAttribute('role', 'radio');
+      b.setAttribute('data-ml-sort', pair[0]);
+      b.setAttribute('aria-checked', i === 0 ? 'true' : 'false');
+      b.tabIndex = i === 0 ? 0 : -1;
+      b.textContent = pair[1];
+      sortGroup.appendChild(b);
+    });
+    sortField.appendChild(sortLabel);
+    sortField.appendChild(sortGroup);
+    var brandField = document.createElement('div');
+    brandField.className = 'ml-field';
+    var brandLabel = document.createElement('span');
+    brandLabel.className = 'ml-field-label';
+    brandLabel.id = 'ml-brand-label';
+    brandLabel.textContent = 'מתחרה';
+    var brandGroup = document.createElement('div');
+    brandGroup.className = 'ml-seg ml-brands';
+    brandGroup.setAttribute('role', 'radiogroup');
+    brandGroup.setAttribute('aria-labelledby', 'ml-brand-label');
+    brandGroup.setAttribute('aria-controls', 'mailer-grid');
+    brandField.appendChild(brandLabel);
+    brandField.appendChild(brandGroup);
+    var count = document.createElement('p');
+    count.className = 'ml-count';
+    count.id = 'ml-count';
+    bar.appendChild(sortField);
+    bar.appendChild(brandField);
+    bar.appendChild(count);
+    var empty = document.createElement('p');
+    empty.className = 'media-empty ml-empty';
+    empty.id = 'ml-empty';
+    empty.hidden = true;
+    empty.setAttribute('role', 'status');
+    empty.textContent = 'אין מיילרים להצגה לפי הסינון שנבחר.';
+    grid.insertAdjacentElement('beforebegin', bar);
+    bar.insertAdjacentElement('afterend', empty);
+    if (!grid.id) grid.id = 'mailer-grid';
+  }
+  function wireMailers() {
+    var panel = document.getElementById('mailers');
+    if (!panel || panel.dataset.mlWired) return;
+    if (!panel.querySelector('.mailer-card')) return;
+    ensureMailerToolbar(panel);
+    var sort = panel.querySelector('.ml-sort');
+    var brands = panel.querySelector('.ml-brands');
+    if (!sort || !brands) return;
+    panel.dataset.mlWired = '1';
+    renderBrandButtons(panel);
+    sort.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('[data-ml-sort]') : null;
+      if (!b || !sort.contains(b)) return;
+      setMailerSort(b.getAttribute('data-ml-sort'));
+    });
+    brands.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('[data-ml-brand]') : null;
+      if (!b || !brands.contains(b)) return;
+      setMailerBrand(b.getAttribute('data-ml-brand') || '');
+    });
+    sort.addEventListener('keydown', onSegKey);
+    brands.addEventListener('keydown', onSegKey);
+  }
+  function syncMailers() {
+    if (!window.MailerSort) return;
+    var panel = document.getElementById('mailers');
+    if (!panel || !panel.querySelector('.ml-toolbar')) return;
+    var parts = parseMediaHash();
+    if (parts.id === 'mailers' && parts.mailerInHash) {
+      mlState.sort = window.MailerSort.normalizeSort(parts.mailSort);
+      mlState.brand = parts.mailBrand || '';
+    } else {
+      var saved = loadMailers();
+      mlState.sort = saved.sort;
+      mlState.brand = saved.brand;
+    }
+    applyMailers({ writeHash: panel.classList.contains('on') && !hashLock, announce: false });
+  }
 })();

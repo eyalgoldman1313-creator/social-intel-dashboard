@@ -2,12 +2,20 @@
 import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import vm from 'node:vm';
 import { mdToHtml } from './md.mjs';
 import { fixLinks } from './fix-external-links.mjs';
 import { makeRenderer, loadJson, rankTop10, nicheIds } from './creatives.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
+function loadMailerSort() {
+  const sandbox = {};
+  sandbox.window = sandbox;
+  vm.runInNewContext(readFileSync(join(root, 'public/mailer-sort.js'), 'utf8'), sandbox);
+  return sandbox.MailerSort;
+}
+const MailerSort = loadMailerSort();
 const data = JSON.parse(readFileSync(join(root, 'data/data.json'), 'utf8'));
 const creatives = loadJson(root, 'data/creatives.json', { items: [] });
 const specs = loadJson(root, 'data/specs.json', { items: {}, mailers: [] });
@@ -197,9 +205,20 @@ function render(scan, prev, { isLatest, scans }) {
   const mailerCard = (m) => {
     const niche = NICHE_MAILER.includes(String(m.brand).toLowerCase());
     const ind = [['🎁', 'הצעה', m.offer], ['🪝', 'הוק', m.hook], ['👆', 'CTA', m.cta]].filter((x) => x[2]);
-    return `<a class="mailer-card" href="/specs/${esc(m.file.replace(/\.html$/, ''))}" target="_blank" rel="noopener">${m.img ? `<div class="ml-thumb"><img src="${esc(m.img)}" alt="צילום ראש המייל: ${esc(m.title)}" loading="lazy" width="600" height="720"></div>` : ''}<div class="ml-body"><div class="ml-tags"><span class="brand-tag ${niche ? 'bt-niche' : 'bt-ref'}">${esc(m.brand)}</span>${m.score ? `<span class="ml-score"><bdi dir="ltr">${esc(m.score)}/10</bdi></span>` : ''}${m.date ? `<span class="ml-date"><bdi dir="ltr">${esc(m.date)}</bdi></span>` : ''}</div><h3>${esc(m.title)}</h3>${ind.length ? `<ul class="ml-ind">${ind.map(([ic, l, v]) => `<li><span class="ml-ic" aria-hidden="true">${ic}</span><b>${l}</b><span>${esc(v)}</span></li>`).join('')}</ul>` : ''}<span class="spec-tag">📄 ניתוח המייל ←</span></div></a>`;
+    // data-* is the raw field (client parses DD.MM.YYYY and decimal scores). Visible tags stay the fallback.
+    const brandAttr = esc(String(m.brand ?? '').trim());
+    const scoreAttr = esc(m.score == null ? '' : String(m.score).trim());
+    const dateAttr = esc(m.date == null ? '' : String(m.date).trim());
+    return `<a class="mailer-card" href="/specs/${esc(m.file.replace(/\.html$/, ''))}" target="_blank" rel="noopener" data-brand="${brandAttr}" data-score="${scoreAttr}" data-date="${dateAttr}">${m.img ? `<div class="ml-thumb"><img src="${esc(m.img)}" alt="צילום ראש המייל: ${esc(m.title)}" loading="lazy" width="600" height="720"></div>` : ''}<div class="ml-body"><div class="ml-tags"><span class="brand-tag ${niche ? 'bt-niche' : 'bt-ref'}">${esc(m.brand)}</span>${m.score ? `<span class="ml-score"><bdi dir="ltr">${esc(m.score)}/10</bdi></span>` : ''}${m.date ? `<span class="ml-date"><bdi dir="ltr">${esc(m.date)}</bdi></span>` : ''}</div><h3>${esc(m.title)}</h3>${ind.length ? `<ul class="ml-ind">${ind.map(([ic, l, v]) => `<li><span class="ml-ic" aria-hidden="true">${ic}</span><b>${l}</b><span>${esc(v)}</span></li>`).join('')}</ul>` : ''}<span class="spec-tag">📄 ניתוח המייל ←</span></div></a>`;
   };
-  const mailersPanel = section('mailers', 'מיילרים', mailers.length ? `<p class="scope">ניתוחי מיילים שיווקיים של מתחרים – כל ניתוח נפתח כדף באתר.</p><div class="ml-legend"><span class="brand-tag bt-niche">מתחרה נישה</span><span class="brand-tag bt-ref">מתחרה רגיל / רפרנס</span><span class="ml-score">ציון /10</span><span class="ml-date">תאריך שליחה</span></div><div class="mailer-grid">${mailers.map(mailerCard).join('')}</div>` : '<p class="fine">אין עדיין ניתוחי מיילרים.</p>');
+  const mailerSortButtons = [['date-desc', 'תאריך: חדש לישן'], ['date-asc', 'תאריך: ישן לחדש'], ['score-desc', 'ציון: גבוה לנמוך'], ['score-asc', 'ציון: נמוך לגבוה']]
+    .map(([v, label], i) => `<button type="button" class="mf-btn" role="radio" data-ml-sort="${v}" aria-checked="${i === 0 ? 'true' : 'false'}" tabindex="${i === 0 ? '0' : '-1'}">${label}</button>`).join('');
+  const mailerBrands = MailerSort.competitorOptions(mailers.map((m) => m.brand));
+  const mailerBrandButtons = [`<button type="button" class="mf-btn" role="radio" data-ml-brand="" aria-checked="true" tabindex="0" aria-label="הכל, ${mailers.length}">הכל <span class="mf-n" aria-hidden="true">(${mailers.length})</span></button>`]
+    .concat(mailerBrands.map((b) => `<button type="button" class="mf-btn" role="radio" data-ml-brand="${esc(b.name)}" aria-checked="false" tabindex="-1" aria-label="${esc(b.name)}, ${b.count}"><bdi>${esc(b.name)}</bdi> <span class="mf-n" aria-hidden="true">(${b.count})</span></button>`))
+    .join('');
+  const mailerToolbar = `<div class="ml-toolbar" role="region" aria-label="סינון ומיון מיילרים"><div class="ml-field"><span class="ml-field-label" id="ml-sort-label">מיון</span><div class="ml-seg ml-sort" role="radiogroup" aria-labelledby="ml-sort-label" aria-controls="mailer-grid">${mailerSortButtons}</div></div><div class="ml-field"><span class="ml-field-label" id="ml-brand-label">מתחרה</span><div class="ml-seg ml-brands" role="radiogroup" aria-labelledby="ml-brand-label" aria-controls="mailer-grid">${mailerBrandButtons}</div></div><p class="ml-count" id="ml-count">${mailers.length} מיילרים</p></div><p class="media-empty ml-empty" id="ml-empty" hidden role="status">אין מיילרים להצגה לפי הסינון שנבחר.</p>`;
+  const mailersPanel = section('mailers', 'מיילרים', mailers.length ? `<p class="scope">ניתוחי מיילים שיווקיים של מתחרים – כל ניתוח נפתח כדף באתר.</p><div class="ml-legend"><span class="brand-tag bt-niche">מתחרה נישה</span><span class="brand-tag bt-ref">מתחרה רגיל / רפרנס</span><span class="ml-score">ציון /10</span><span class="ml-date">תאריך שליחה</span></div>${mailerToolbar}<div class="mailer-grid" id="mailer-grid">${mailers.map(mailerCard).join('')}</div>` : '<p class="fine">אין עדיין ניתוחי מיילרים.</p>');
   const creativesPanel = CR.galleryPanel({ creatives, brands, scanDate: scan.date, asof: creatives.asof });
   // niche Top 10: fallback for snapshots made before the niche list existed (latest week only, from current creatives)
   { const ws = Object.values(top10.weeks || {}).sort((a, b) => a.key.localeCompare(b.key)); const lw = ws[ws.length - 1];
@@ -422,6 +441,7 @@ ${limPanel}
 ${CR.lightbox}
 </main>
 <footer class="foot"><p>סריקה ראשונה: ${esc(scan.date)} · מקורות ציבוריים, קריאה בלבד · ללא מעקב וללא עוגיות · מבוסס על דוחות Google Drive (ראו ״למסמך המלא״ בכל סעיף).</p><p><a href="#limits">מגבלות וכיסוי</a></p></footer>
+<script src="/mailer-sort.js" defer></script>
 <script src="/app.js" defer></script>
 </body></html>`;
 }
