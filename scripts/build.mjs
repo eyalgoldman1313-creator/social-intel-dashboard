@@ -52,7 +52,7 @@ cpSync(join(root, 'public'), dist, { recursive: true });
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const num = (n) => Number(n).toLocaleString('en-US');
 const brandById = Object.fromEntries(data.brands.map((b) => [b.id, b]));
-const docUrl = (id) => `https://docs.google.com/document/d/${id}/edit`;
+const docUrl = (id) => id ? `https://docs.google.com/document/d/${id}/edit` : '';
 const PLAT = data.platforms;
 const GROUP_LABEL = { niche: 'נישה', reference: 'רפרנס' };
 const PLATFORM_LABEL = { meta: 'Meta', tiktok: 'TikTok', google: 'Google', organic: 'אורגני', instagram: 'Instagram', general: 'כללי' };
@@ -62,7 +62,7 @@ const srcTag = (p, text) => `<span class="src plat-${esc(p)}-t">מקור: ${esc(
 const bdi = (s) => `<bdi>${esc(s)}</bdi>`;
 const brandName = (id) => esc(brandById[id]?.name || id);
 const groupBadge = (g) => `<span class="badge g-${g}">${GROUP_LABEL[g]}</span>`;
-const link = (href, text) => `<a class="doclink" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(text)} ↗</a>`;
+const link = (href, text) => !href ? '' : `<a class="doclink" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(text)} ↗</a>`;
 const fullDoc = (id, text = 'למסמך המלא') => link(docUrl(id), text);
 
 function daysTo(dateStr, from = new Date()) {
@@ -104,7 +104,9 @@ const notesList = (arr) => `<ul class="notes">${arr.map((n) => `<li>${esc(n)}</l
 // ---------- renderers ----------
 function render(scan, prev, { isLatest, scans }) {
   const D = scan.drive;
-  const brands = data.brands;
+  const allBrands = data.brands.filter((b) => scan.brandCards?.[b.id]);
+  // brands without stats in this scan (e.g. added after it) are excluded from stats panels but still get a competitor card
+  const brands = data.brands.filter((b) => scan.meta?.brandStats?.[b.id]);
   const niche = brands.filter((b) => b.group === 'niche');
   const ref = brands.filter((b) => b.group === 'reference');
   const delta = (platform, id, key) => {
@@ -196,7 +198,10 @@ function render(scan, prev, { isLatest, scans }) {
   // niche Top 10: fallback for snapshots made before the niche list existed (latest week only, from current creatives)
   { const ws = Object.values(top10.weeks || {}).sort((a, b) => a.key.localeCompare(b.key)); const lw = ws[ws.length - 1];
     if (lw && !lw.niche) { lw.nicheBrands = nicheIds(brands); lw.niche = rankTop10(creatives.items || [], { brandIds: lw.nicheBrands }); } }
-  const top10Panel = CR.top10Panel({ top10, creatives, brands, scanDate: scan.date });
+  const lib = (id) => `https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=ALL&id=${id}&media_type=all`;
+  const wc = (data.winnerChanges || []).slice().sort((a, b) => b.date.localeCompare(a.date));
+  const changesHtml = wc.length ? `<div class="callout"><h3>שינויים במנצחות</h3><ul>${wc.map((c) => `<li><b dir="ltr">${c.date.split('-').reverse().join('.')}</b> · ${bdi(c.brand)}${c.id ? ` · ${c.platform === 'meta' ? `<a href="${lib(c.id)}" target="_blank" rel="noopener noreferrer" dir="ltr">${c.id}</a>` : `<span dir="ltr">${c.id}</span>`}` : ''} – ${esc(c.text)}</li>`).join('')}</ul></div>` : '';
+  const top10Panel = CR.top10Panel({ top10, creatives, brands, scanDate: scan.date }).replace(/(<section[^>]*>(?:\s*<div class="panel-head">[\s\S]*?<\/div>\s*<\/div>)?)/, (m) => m + changesHtml);
   const galleryHint = (txt) => `<p class="gal-link"><a href="#creatives" data-go="creatives">🖼 ${txt} ←</a></p>`;
 
   // ----- Meta -----
@@ -211,7 +216,7 @@ function render(scan, prev, { isLatest, scans }) {
     <p class="fine">כל נקודה = קריאייטיב/משפחה אחת בדוח המותג. ימי ריצה מתאריך ההתחלה עד 04.10.2026 בהנחה שהמודעה פעילה. העמודה השמאלית = מספר קריאייטיבים במדגם.</p></figure>`;
   const nc = scan.meta.nicheCreatives;
   const formatSplit = stack({ title: `פורמט בנישה – ${nc.total} יחידות ניתוח`, source: srcTag('meta', 'Meta Ad Library · ספירה בדוח ההשוואתי'), segments: [{ label: 'תמונה / כרטיס / קרוסלה', value: nc.image }, { label: 'וידאו', value: nc.video }, { label: 'לא תועד', value: nc.fmtUnknown }], total: nc.total });
-  const perBrandFmt = niche.filter((b) => ms[b.id].image != null).map((b) => ({ label: bdi(b.name), segs: [ms[b.id].image, ms[b.id].video] }));
+  const perBrandFmt = niche.filter((b) => ms[b.id]?.image != null).map((b) => ({ label: bdi(b.name), segs: [ms[b.id].image, ms[b.id].video] }));
   const perBrandStack = `<figure class="chart"><figcaption><b>תמונה / וידאו לפי מתחרה (נישה)</b>${srcTag('meta', 'Meta Ad Library')}</figcaption><div class="bars">${perBrandFmt.map((r) => `<div class="bar-row"><div class="bar-label">${r.label}</div><div class="bar-track mini-stack"><div class="seg s0" style="width:${(r.segs[0] / (r.segs[0] + r.segs[1])) * 100}%"><span dir="ltr">${r.segs[0]}</span></div><div class="seg s1" style="width:${(r.segs[1] / (r.segs[0] + r.segs[1])) * 100}%"><span dir="ltr">${r.segs[1]}</span></div></div><div class="bar-val" dir="ltr">${r.segs[0] + r.segs[1]}</div></div>`).join('')}</div><div class="legend"><span><i class="dot s0"></i>תמונה/קרוסלה</span><span><i class="dot s1"></i>וידאו</span></div></figure>`;
   const ctaSplit = stack({ title: 'CTA בנישה: רך מול ישיר', source: srcTag('meta', 'Meta Ad Library'), segments: [{ label: 'רך (Learn more / See details / Sign up)', value: nc.ctaSoft }, { label: 'ישיר (Shop / Order now)', value: nc.ctaDirect }, { label: 'מעורב / לא נראה', value: nc.ctaMixed + nc.ctaUnknown }], total: nc.total });
   const signals = bars({ title: `מאפיינים ב-${nc.total} יחידות הניתוח בנישה (קריאייטיבים / משפחות)`, source: srcTag('meta', 'Meta Ad Library · ספירה שלנו בדוח'), max: nc.total, items: [
@@ -227,7 +232,7 @@ function render(scan, prev, { isLatest, scans }) {
     { label: 'ניסיון / החזר כספי (מסגור ״חודש ניסיון״; התחייבות להחזר: 0)', value: nc.trial }] });
   const topics = bars({ title: 'נושאי הצורך ב-40 הקריאייטיבים העבריים הראשונים (מודעה יכולה לשלב כמה)', source: srcTag('meta', 'Meta Ad Library'), max: 10, items: scan.meta.needTopics.map((t) => ({ label: esc(t.label), value: t.count, display: (t.approx ? '~' : '') + (t.note || t.count) })) });
   const offerTiers = `<ul class="offers">${scan.meta.offerTiers.map((o) => `<li>${groupBadge(o.group)} ${esc(o.text)}</li>`).join('')}</ul>`;
-  const metaBrandDocs = brands.map((b) => link(docUrl(D.perBrand[b.id].meta), b.name)).join('');
+  const metaBrandDocs = brands.map((b) => link(docUrl(D.perBrand[b.id]?.meta), b.name)).join('');
   const metaPanel = section('meta', 'Meta – מודעות ממומנות', `
     ${galleryHint('לראות את הקריאייטיבים עצמם – גלריה, ותק ריצה ו-Top 10')}
     <p class="scope">${esc(scan.meta.scope)}</p>${legend()}
@@ -266,7 +271,7 @@ function render(scan, prev, { isLatest, scans }) {
     ${codes}
     <h3>דפוסים חוצי מותגים</h3>${notesList(scan.tiktok.patterns)}
     <h3>הערות שיטה</h3>${notesList(scan.tiktok.notes)}
-    <h3>דוחות לפי מתחרה</h3><div class="links">${brands.map((b) => link(docUrl(D.perBrand[b.id].tiktok), b.name)).join('')}</div>`,
+    <h3>דוחות לפי מתחרה</h3><div class="links">${brands.map((b) => link(docUrl(D.perBrand[b.id]?.tiktok), b.name)).join('')}</div>`,
     { docs: fullDoc(D.comparative.tiktok) + fullDoc(D.extra.tiktokCreators.id, D.extra.tiktokCreators.label) + link(D.folders.tiktok, 'תיקיית TikTok') });
 
   // ----- Google -----
@@ -281,7 +286,7 @@ function render(scan, prev, { isLatest, scans }) {
   const covRows = niche.map((b) => `<tr><th scope="row">${bdi(b.name)}</th><td dir="ltr">${gs[b.id].total}</td><td dir="ltr">${gs[b.id].target}</td><td dir="ltr">${gs[b.id].checked}</td><td dir="ltr">${gs[b.id].documented}</td><td dir="ltr">${gs[b.id].withCopy}</td><td dir="ltr">${gs[b.id].searchHits}</td></tr>`).join('');
   const covTable = `<div class="tablewrap"><table class="matrix"><caption>כיסוי המדגם בגוגל – אתרי נישה ${srcTag('google', 'Google Ads Transparency Center')}</caption><thead><tr><th>אתר</th><th>סה״כ מודעות</th><th>יעד 30%</th><th>נבדקו</th><th>מתועדות</th><th>עם קופי קריא</th><th>חיפוש אורגני (הופעות)</th></tr></thead><tbody>${covRows}<tr class="sum"><th scope="row">סה״כ נישה</th><td dir="ltr">${cov.total}</td><td dir="ltr">${cov.target}</td><td dir="ltr">${cov.checked} (${cov.checkedPct}%)</td><td dir="ltr">${cov.documented} (${cov.documentedPct}%)</td><td dir="ltr">${cov.withCopy}</td><td>—</td></tr></tbody></table></div>`;
   const covBar = bars({ title: 'כיסוי מול יעד ה-30% באתרי הנישה', source: srcTag('google', 'Google Ads Transparency Center'), max: cov.target, items: [{ label: 'יעד (30%)', value: cov.target, group: 'reference' }, { label: 'נבדקו', value: cov.checked, display: `${cov.checked} (${cov.checkedPct}%)` }, { label: 'מתועדות בפועל', value: cov.documented, display: `${cov.documented} (~${cov.documentedPct}%)` }] });
-  const landing = `<div class="tablewrap"><table class="matrix"><caption>זווית במודעות והצעה בדף הנחיתה ${srcTag('google', 'Google Ads + דפי נחיתה')}</caption><thead><tr><th>אתר</th><th>זווית במודעות</th><th>הצעה / דף נחיתה</th></tr></thead><tbody>${niche.map((b) => `<tr><th scope="row">${bdi(b.name)}</th><td class="txt">${esc(gs[b.id].angle)}</td><td class="txt">${esc(gs[b.id].landing)}</td></tr>`).join('')}</tbody></table></div>`;
+  const landing = `<div class="tablewrap"><table class="matrix"><caption>זווית במודעות והצעה בדף הנחיתה ${srcTag('google', 'Google Ads + דפי נחיתה')}</caption><thead><tr><th>אתר</th><th>זווית במודעות</th><th>הצעה / דף נחיתה</th></tr></thead><tbody>${niche.map((b) => `<tr><th scope="row">${bdi(b.name)}</th><td class="txt">${esc(gs[b.id]?.angle ?? 'חסר – טרם נסרק')}</td><td class="txt">${esc(gs[b.id]?.landing ?? 'חסר – טרם נסרק')}</td></tr>`).join('')}</tbody></table></div>`;
   const shipBars = bars({ title: 'סף משלוח חינם באתר (₪)', source: srcTag('google', 'דפי נחיתה'), max: 600, items: scan.google.freeShippingThresholds.map((t) => ({ label: bdi(brandById[t.brand].name), value: t.value, display: '₪' + t.value })), note: 'EcoSupp ו-Mayven: ללא סף מוצג.' });
   const googlePanel = section('google', 'Google – מודעות ושקיפות', `
     <div class="callout warn"><b>כיסוי נמוך:</b> רק ${cov.documented} מודעות מתועדות מתוך יעד של ${cov.target} באתרי הנישה (~${cov.documentedPct}%). המסקנות כיווניות. אין תאריך first-shown ולכן אין משך ריצה.</div>
@@ -291,7 +296,7 @@ function render(scan, prev, { isLatest, scans }) {
     ${covTable}${landing}
     <h3>רמזי אד-טק (מקוד מקור ציבורי)</h3>${notesList(scan.google.adTech)}
     <h3>הערות ומגבלות</h3>${notesList(scan.google.notes)}
-    <h3>דוחות לפי מתחרה</h3><div class="links">${brands.map((b) => link(docUrl(D.perBrand[b.id].google), b.name)).join('')}</div>`,
+    <h3>דוחות לפי מתחרה</h3><div class="links">${brands.map((b) => link(docUrl(D.perBrand[b.id]?.google), b.name)).join('')}</div>`,
     { docs: fullDoc(D.comparative.google) + link(D.folders.google, 'תיקיית Google') });
 
   // ----- Organic -----
@@ -309,13 +314,13 @@ function render(scan, prev, { isLatest, scans }) {
     <figure class="chart"><figcaption><b>קצב פרסום – GOOM (פיד אינסטגרם מוטמע)</b>${srcTag('organic', 'פיד IG מוטמע באתר')}</figcaption><p class="big-stat"><b dir="ltr">~5.5</b> פוסטים בחודש · חציון 22 לייקים · נותחו 30 מתוך 100 פוסטים</p></figure></div>
     <h3>מה בלט</h3>${notesList(scan.organic.highlights)}
     <h3>הערות ומגבלות</h3>${notesList(scan.organic.notes)}
-    <h3>דוחות לפי מתחרה</h3><div class="links">${brands.map((b) => link(docUrl(D.perBrand[b.id].organic), b.name)).join('')}</div>`,
+    <h3>דוחות לפי מתחרה</h3><div class="links">${brands.map((b) => link(docUrl(D.perBrand[b.id]?.organic), b.name)).join('')}</div>`,
     { docs: fullDoc(D.comparative.organic) + fullDoc(D.extra.organicBlockers.id, D.extra.organicBlockers.label) + link(D.folders.organic, 'תיקיית נראות אורגנית') });
 
   // ----- Competitors -----
-  const cards = brands.map((b) => {
+  const cards = allBrands.map((b) => {
     const c = scan.brandCards[b.id];
-    const docs = D.perBrand[b.id];
+    const docs = D.perBrand[b.id] || {};
     return `<article class="card" data-group="${b.group}"><header><div><h3>${bdi(b.name)} <small>${esc(b.heName)}</small></h3><a class="domain" dir="ltr" href="https://${esc(b.domain)}/" target="_blank" rel="noopener noreferrer">${esc(b.domain)}</a></div>${groupBadge(b.group)}</header>
       <p class="cat">${esc(b.category)}</p>
       <ul class="nums">${c.numbers.map((n) => `<li>${esc(n)}</li>`).join('')}</ul>
@@ -325,7 +330,7 @@ function render(scan, prev, { isLatest, scans }) {
       <div class="links sm">${['meta', 'tiktok', 'google', 'organic'].map((p) => link(docUrl(docs[p]), PLATFORM_LABEL[p])).join('')}</div></article>`;
   }).join('');
   const compPanel = section('competitors', 'מתחרים', `
-    <div class="filters" role="group" aria-label="סינון"><button class="fbtn on" data-filter="all">הכל (${brands.length})</button><button class="fbtn" data-filter="niche">נישה (${brands.filter((b) => b.group === 'niche').length})</button><button class="fbtn" data-filter="reference">רפרנס (${brands.filter((b) => b.group === 'reference').length})</button></div>
+    <div class="filters" role="group" aria-label="סינון"><button class="fbtn on" data-filter="all">הכל (${allBrands.length})</button><button class="fbtn" data-filter="niche">נישה (${allBrands.filter((b) => b.group === 'niche').length})</button><button class="fbtn" data-filter="reference">רפרנס (${allBrands.filter((b) => b.group === 'reference').length})</button></div>
     <div class="cards" id="cards">${cards}</div>
     <p class="fine">מספרים בכרטיסים לקוחים מהדוחות; מקור כל נתון מצוין לפי פלטפורמה (Meta / Google / TikTok / פייסבוק). נישה = משקל גבוה; רפרנס = השראה לטרנדים בלבד.</p>`);
 

@@ -19,7 +19,7 @@ const flag = (n) => { const i = args.indexOf(n); return i >= 0 ? args.splice(i, 
 const asofArg = flag('--asof');
 const SRC = resolve(args[0] || process.env.CREATIVES_SRC || '/workspace/social/creatives');
 const MAX_KB = 150, MAX_W = 900;
-const SOURCES = ['meta', 'tiktok', 'organic'];
+const SOURCES = ['meta', 'tiktok', 'organic', 'google'];
 const brands = JSON.parse(readFileSync(join(root, 'data/data.json'), 'utf8')).brands;
 
 // ---------- helpers ----------
@@ -89,13 +89,13 @@ for (const source of SOURCES) {
     const id = `${source}-${fname}`;
     const it = {
       id, source, brand: brandId(r.brand_slug || r.brand), brandRaw: str(r.brand), library_id: libId || null,
-      platform: source === 'meta' ? (str(r.platform) === 'שניהם' ? 'Facebook + Instagram' : str(r.platform)) : (str(r.platform) || ({ tiktok: 'TikTok', organic: 'אורגני' })[source]),
+      platform: source === 'meta' ? (str(r.platform) === 'שניהם' ? 'Facebook + Instagram' : str(r.platform)) : (str(r.platform) || ({ tiktok: 'TikTok', organic: 'אורגני', google: 'Google' })[source]),
       plat: source === 'meta' ? 'meta' : (({ youtube: 'youtube', instagram: 'instagram', ig: 'instagram', facebook: 'facebook', fb: 'facebook', tiktok: 'tiktok' })[str(r.platform).toLowerCase()] || source),
       format: normFormat(r.format) !== 'unknown' ? normFormat(r.format) : (['tiktok', 'youtube'].includes(str(r.platform).toLowerCase()) || source === 'tiktok' ? 'video' : 'unknown'), start_date: normDate(r.start_date), post_date: normDate(r.post_date), days_active: days,
       status: normStatus(r.status), copy_text: str(r.copy_text), cta: str(r.cta), offer: str(r.offer), hook: str(r.hook),
       language: str(r.language), days_since_posted: numOrNull(r.days_since_posted),
       creative_notes: str(r.creative_notes), library_url: str(r.library_url) || (source === 'meta' && libId ? `https://www.facebook.com/ads/library/?id=${libId}` : ''),
-      post_url: str(r.post_url ?? r.video_url ?? r.url), ctype: source === 'meta' ? 'paid' : (({ 'אורגני': 'organic', organic: 'organic', 'יוצר': 'creator', creator: 'creator', ugc: 'creator', 'שיתוף': 'partnership', partnership: 'partnership', 'שיתוף פעולה': 'partnership' })[str(r.type).trim().toLowerCase()] || 'organic'), variants_count: numOrNull(r.variants_count), family: str(r.family),
+      post_url: str(r.post_url ?? r.video_url ?? r.url), ctype: source === 'meta' || source === 'google' ? 'paid' : (({ 'אורגני': 'organic', organic: 'organic', 'יוצר': 'creator', creator: 'creator', ugc: 'creator', 'שיתוף': 'partnership', partnership: 'partnership', 'שיתוף פעולה': 'partnership' })[str(r.type).trim().toLowerCase()] || 'organic'), variants_count: numOrNull(r.variants_count), family: str(r.family),
       views: r.views ?? null, likes: r.likes ?? null, comments: r.comments ?? null, shares: r.shares ?? null, followers: r.followers ?? null,
       stage: str(r.stage) || null, days_since_start: numOrNull(r.days_since_start), multiple_versions: !!r.multiple_versions,
       copy_scope: str(r.copy_scope), copy_note: str(r.copy_note), copy_text_he: str(r.copy_text_he), copy_language: str(r.copy_language),
