@@ -1,5 +1,5 @@
-.vercel
-.env*
-node_modules
-dist
 .cache
+.env*
+.vercel
+dist
+node_modules
