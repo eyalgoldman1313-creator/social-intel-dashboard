@@ -198,7 +198,10 @@
     var today = window.CommerceEvents.israelToday(new Date());
     var featured = window.matchMedia('(max-width: 520px)').matches ? 2 : 3;
     var board = document.querySelector('[data-event-board]');
-    if (board) board.innerHTML = window.CommerceEvents.renderBoard(events, today, { featured: featured });
+    if (board) {
+      board.innerHTML = window.CommerceEvents.renderBoard(events, today, { featured: featured });
+      window.CommerceEvents.mountBoard(board);
+    }
     var cards = document.querySelector('[data-event-cards]');
     if (cards) cards.innerHTML = window.CommerceEvents.renderCards(events, today);
   }

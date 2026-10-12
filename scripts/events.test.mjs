@@ -193,6 +193,11 @@ test('header chips skip low relevance unless nothing else is in the window', () 
   assert.match(html.slice(stripAt), /רלוונטיות נמוכה/);
   assert.equal((html.match(/class="event"/g) || []).length, 3);
   assert.ok((html.match(/class="event-pill"/g) || []).length >= 5);
+  assert.match(html, /class="event-track"/);
+  assert.equal((html.match(/class="event-set"/g) || []).length, 1);
+  assert.equal(CE.marqueeMode(480, 480, false), 'fit');
+  assert.equal(CE.marqueeMode(900, 360, false), 'marquee');
+  assert.equal(CE.marqueeMode(900, 360, true), 'scroll');
 
   const narrow = CE.renderBoard(events, TODAY, { featured: 2 });
   assert.equal((narrow.match(/class="event"/g) || []).length, 2);

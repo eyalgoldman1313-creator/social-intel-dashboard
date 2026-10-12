@@ -203,10 +203,136 @@
     var rest = list.slice(chipCount);
     var strip = '';
     if (rest.length) {
-      strip = '<div class="event-strip" role="list" tabindex="0" aria-label="אירועים נוספים ב-120 הימים הקרובים. אפשר לגלול אופקית.">' +
-        rest.map(pill).join('') + '</div>';
+      strip = '<div class="event-strip" role="region" tabindex="0" aria-label="אירועים נוספים ב-120 הימים הקרובים">' +
+        '<div class="event-track"><div class="event-set" role="list">' + rest.map(pill).join('') + '</div></div></div>';
     }
     return '<div class="events" role="list" aria-label="האירועים הקרובים">' + head + '</div>' + strip;
+  }
+
+  var MARQUEE_SPEED = 40;
+
+  function marqueeMode(contentWidth, containerWidth, reduceMotion) {
+    if (!(contentWidth > containerWidth + 1)) return 'fit';
+    if (reduceMotion) return 'scroll';
+    return 'marquee';
+  }
+
+  function stripLabel(mode) {
+    var base = 'אירועים נוספים ב-120 הימים הקרובים';
+    if (mode === 'marquee') return base + '. הרצועה נעה לבד ונעצרת במעבר, במגע או במיקוד.';
+    if (mode === 'scroll') return base + '. אפשר לגלול אופקית.';
+    return base;
+  }
+
+  function syncPause(strip) {
+    var track = strip.querySelector('.event-track');
+    if (!track) return;
+    var pause = strip._pause || {};
+    var paused = !!(pause.hover || pause.focus || pause.touch);
+    if (strip.classList.contains('is-marquee')) track.style.animationPlayState = paused ? 'paused' : 'running';
+  }
+
+  function layoutStrip(strip) {
+    var track = strip.querySelector('.event-track');
+    var set = track && track.querySelector('.event-set:not([data-clone])');
+    if (!track || !set) return;
+    var reduce = false;
+    try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { reduce = false; }
+    var contentWidth = set.offsetWidth;
+    var containerWidth = strip.clientWidth;
+    var mode = marqueeMode(contentWidth, containerWidth, reduce);
+    var key = mode + ':' + contentWidth + ':' + containerWidth;
+    if (strip.getAttribute('data-marquee-key') === key) return;
+    strip.setAttribute('data-marquee-key', key);
+    var old = track.querySelector('[data-clone]');
+    if (old) old.parentNode.removeChild(old);
+    strip.classList.remove('is-marquee', 'is-scrollable', 'is-fit');
+    track.style.removeProperty('--marquee-shift');
+    track.style.removeProperty('--marquee-duration');
+    track.style.animationPlayState = '';
+    if (mode === 'fit') {
+      strip.classList.add('is-fit');
+      strip.setAttribute('aria-label', stripLabel('fit'));
+      return;
+    }
+    if (mode === 'scroll') {
+      strip.classList.add('is-scrollable');
+      strip.setAttribute('aria-label', stripLabel('scroll'));
+      return;
+    }
+    var copy = set.cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    copy.removeAttribute('role');
+    copy.setAttribute('data-clone', '');
+    track.appendChild(copy);
+    var gap = parseFloat(window.getComputedStyle(track).columnGap);
+    if (!isFinite(gap)) gap = 0;
+    var shift = set.offsetWidth + gap;
+    track.style.setProperty('--marquee-shift', shift + 'px');
+    track.style.setProperty('--marquee-duration', (shift / MARQUEE_SPEED) + 's');
+    strip.classList.add('is-marquee');
+    strip.setAttribute('aria-label', stripLabel('marquee'));
+    syncPause(strip);
+  }
+
+  var motionWatch = false;
+
+  function mountBoard(root) {
+    if (!root || !root.querySelectorAll) return;
+    var strips = root.querySelectorAll('.event-strip');
+    for (var i = 0; i < strips.length; i++) setupStrip(strips[i]);
+    if (motionWatch || !window.matchMedia) return;
+    motionWatch = true;
+    var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var onChange = function () {
+      var nodes = document.querySelectorAll('.event-strip');
+      for (var n = 0; n < nodes.length; n++) {
+        nodes[n].removeAttribute('data-marquee-key');
+        layoutStrip(nodes[n]);
+      }
+    };
+    if (mq.addEventListener) mq.addEventListener('change', onChange);
+  }
+
+  function setupStrip(strip) {
+    layoutStrip(strip);
+    if (strip.getAttribute('data-marquee-bound') === '1') return;
+    strip.setAttribute('data-marquee-bound', '1');
+    strip._pause = { hover: false, focus: false, touch: false };
+    strip.addEventListener('pointerenter', function (e) {
+      if (e.pointerType && e.pointerType !== 'mouse') return;
+      strip._pause.hover = true;
+      syncPause(strip);
+    });
+    strip.addEventListener('pointerleave', function (e) {
+      if (e.pointerType && e.pointerType !== 'mouse') return;
+      strip._pause.hover = false;
+      syncPause(strip);
+    });
+    strip.addEventListener('pointerdown', function () {
+      strip._pause.touch = true;
+      syncPause(strip);
+    });
+    function endTouch() {
+      strip._pause.touch = false;
+      syncPause(strip);
+    }
+    strip.addEventListener('pointerup', endTouch);
+    strip.addEventListener('pointercancel', endTouch);
+    strip.addEventListener('focusin', function () {
+      strip._pause.focus = true;
+      syncPause(strip);
+    });
+    strip.addEventListener('focusout', function (e) {
+      if (!strip.contains(e.relatedTarget)) {
+        strip._pause.focus = false;
+        syncPause(strip);
+      }
+    });
+    if (typeof ResizeObserver !== 'undefined') {
+      var observer = new ResizeObserver(function () { layoutStrip(strip); });
+      observer.observe(strip);
+    }
   }
 
   function renderCards(events, today) {
@@ -234,6 +360,8 @@
     validate: validate,
     visible: visible,
     renderBoard: renderBoard,
-    renderCards: renderCards
+    renderCards: renderCards,
+    marqueeMode: marqueeMode,
+    mountBoard: mountBoard
   };
 })(typeof window !== 'undefined' ? window : this);
