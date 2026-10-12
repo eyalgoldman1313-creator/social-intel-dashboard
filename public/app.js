@@ -2,6 +2,8 @@
   var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
   var links = Array.prototype.slice.call(document.querySelectorAll('[data-go]'));
   var DEFAULT = 'top10';
+  var mlState = { sort: 'date-desc', brand: '' };
+  var ML_KEY = 'mailer-toolbar-v1';
   function show(id) {
     var el = id ? document.getElementById(id) : null;
     var panel = el && el.classList.contains('panel') ? el : null;
@@ -17,14 +19,25 @@
     if (on && on.scrollIntoView) on.scrollIntoView({ inline: 'center', block: 'nearest' });
     if (scroll && scroll.scrollIntoView) scroll.scrollIntoView({ behavior: 'smooth', block: 'start' });
     syncOpenPanel();
+    syncMailers();
+  }
+  function safeDecode(s) {
+    try { return decodeURIComponent(s); } catch (e) { return s; }
   }
   function parseMediaHash() {
-    var raw = '';
-    try { raw = decodeURIComponent((location.hash || '').replace(/^#/, '')); }
-    catch (e) { raw = (location.hash || '').replace(/^#/, ''); }
+    var hash = (location.hash || '').replace(/^#/, '');
+    var bits = hash.split('/');
+    var id = safeDecode(bits[0] || '');
+    var second = bits.length > 1 ? safeDecode(bits[1]) : '';
+    var media = (second === 'all' || second === 'video' || second === 'image') ? second : null;
+    var mail = { mailerInHash: false, sort: null, brand: null };
+    if (window.MailerSort) mail = window.MailerSort.parseMailerHash('#' + hash);
+    var emptyMail = { id: id, media: media, mailSort: mail.sort, mailBrand: mail.brand, mailerInHash: !!mail.mailerInHash };
+    if (id && document.getElementById(id)) return emptyMail;
+    var raw = safeDecode(hash);
     var m = raw.match(/^([A-Za-z0-9_-]+)(?:\/(all|video|image))?$/);
-    if (!m) return { id: raw, media: null };
-    return { id: m[1], media: m[2] || null };
+    if (!m) return { id: raw, media: null, mailSort: null, mailBrand: null, mailerInHash: false };
+    return { id: m[1], media: m[2] || null, mailSort: null, mailBrand: null, mailerInHash: false };
   }
   function fromHash() { show(parseMediaHash().id); }
   links.forEach(function (l) {
@@ -334,4 +347,206 @@
   }
   ensureFilters();
   syncOpenPanel();
+  wireMailers();
+  syncMailers();
+
+  function loadMailers() {
+    var fallback = { sort: 'date-desc', brand: '' };
+    if (!window.MailerSort) return fallback;
+    try {
+      var v = JSON.parse(localStorage.getItem(ML_KEY) || '{}');
+      return {
+        sort: window.MailerSort.normalizeSort(v && v.sort),
+        brand: v && typeof v.brand === 'string' ? v.brand : ''
+      };
+    } catch (e) { return fallback; }
+  }
+  function saveMailers(sort, brand) {
+    if (!window.MailerSort) return;
+    try {
+      var sortN = window.MailerSort.normalizeSort(sort);
+      var brandN = String(brand || '');
+      if (sortN === 'date-desc' && !brandN) localStorage.removeItem(ML_KEY);
+      else localStorage.setItem(ML_KEY, JSON.stringify({ sort: sortN, brand: brandN }));
+    } catch (e) {}
+  }
+  function fieldText(el, attr, sel) {
+    if (el.hasAttribute(attr)) return el.getAttribute(attr) || '';
+    var t = el.querySelector(sel);
+    return t ? t.textContent || '' : '';
+  }
+  function brandOption(value, label) {
+    var o = document.createElement('option');
+    o.value = value;
+    o.textContent = label;
+    return o;
+  }
+  function renderBrandOptions(panel) {
+    var MS = window.MailerSort;
+    var sel = panel.querySelector('select.ml-brand');
+    if (!sel || !MS) return;
+    var cards = panel.querySelectorAll('.mailer-card');
+    var names = [];
+    Array.prototype.forEach.call(cards, function (c) { names.push(fieldText(c, 'data-brand', '.brand-tag')); });
+    var opts = MS.competitorOptions(names);
+    var keep = sel.value;
+    while (sel.firstChild) sel.removeChild(sel.firstChild);
+    sel.appendChild(brandOption('', 'הכל (' + cards.length + ')'));
+    opts.forEach(function (o) { sel.appendChild(brandOption(o.name, o.name + ' (' + o.count + ')')); });
+    if (keep) sel.value = keep;
+  }
+  function foldEq(a, b) {
+    var x = String(a || '').replace(/^\s+|\s+$/g, '');
+    var y = String(b || '').replace(/^\s+|\s+$/g, '');
+    if (!x && !y) return true;
+    try { return x.toLocaleLowerCase('he') === y.toLocaleLowerCase('he'); }
+    catch (e) { return x.toLowerCase() === y.toLowerCase(); }
+  }
+  function optionValue(sel, value, loose) {
+    if (!sel) return '';
+    var i, v;
+    for (i = 0; i < sel.options.length; i++) {
+      v = sel.options[i].value;
+      if (loose ? (v && foldEq(v, value)) : v === value) return v;
+    }
+    return '';
+  }
+  function countLabel(shown, total) {
+    if (shown === total) return total + ' מיילרים';
+    return shown + ' מתוך ' + total + ' מיילרים';
+  }
+  function applyMailers(opts) {
+    var MS = window.MailerSort;
+    var panel = document.getElementById('mailers');
+    if (!panel || !MS) return;
+    var grid = panel.querySelector('.mailer-grid');
+    if (!grid) return;
+    var sort = MS.normalizeSort(mlState.sort);
+    var brand = String(mlState.brand || '');
+    mlState.sort = sort;
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.mailer-card'));
+    cards.forEach(function (el, i) {
+      if (!el.hasAttribute('data-ml-index')) el.setAttribute('data-ml-index', String(i));
+    });
+    var brandSel = panel.querySelector('select.ml-brand');
+    if (brand && brandSel) {
+      var canon = optionValue(brandSel, brand, true);
+      if (canon) brand = canon;
+      else if (!optionValue(brandSel, brand, false)) {
+        brandSel.appendChild(brandOption(brand, brand + ' (0)'));
+      }
+    }
+    mlState.brand = brand;
+    var metas = cards.map(function (el) {
+      return {
+        el: el,
+        index: Number(el.getAttribute('data-ml-index')),
+        brand: fieldText(el, 'data-brand', '.brand-tag'),
+        score: MS.parseScore(fieldText(el, 'data-score', '.ml-score')),
+        date: MS.parseDateKey(fieldText(el, 'data-date', '.ml-date'))
+      };
+    });
+    var ordered = MS.mailerOrder(metas, sort);
+    var shown = 0;
+    ordered.forEach(function (m) {
+      grid.appendChild(m.el);
+      var ok = MS.matchBrand(m.brand, brand);
+      m.el.hidden = !ok;
+      if (ok) shown++;
+    });
+    var sortSel = panel.querySelector('select.ml-sort');
+    if (sortSel) sortSel.value = sort;
+    if (brandSel) brandSel.value = brand;
+    var count = panel.querySelector('.ml-count');
+    if (count) count.textContent = countLabel(shown, cards.length);
+    var empty = panel.querySelector('.ml-empty');
+    if (empty) empty.hidden = shown !== 0;
+    saveMailers(sort, brand);
+    if (opts && opts.announce && count) count.setAttribute('aria-live', 'polite');
+    if (opts && opts.writeHash && panel.classList.contains('on') && !hashLock) {
+      var h = MS.formatMailerHash(sort, brand);
+      if (location.hash !== h) history.replaceState(null, '', h);
+    }
+  }
+  function setMailerSort(sort) {
+    if (!window.MailerSort) return;
+    mlState.sort = window.MailerSort.normalizeSort(sort);
+    applyMailers({ writeHash: true, announce: true });
+  }
+  function setMailerBrand(brand) {
+    mlState.brand = brand || '';
+    applyMailers({ writeHash: true, announce: true });
+  }
+  function selectPair(id, labelText, className) {
+    var pair = document.createElement('div');
+    pair.className = 'ml-pair';
+    var label = document.createElement('label');
+    label.htmlFor = id;
+    label.textContent = labelText;
+    var sel = document.createElement('select');
+    sel.id = id;
+    sel.className = className;
+    sel.setAttribute('aria-label', labelText);
+    sel.setAttribute('aria-controls', 'mailer-grid');
+    pair.appendChild(label);
+    pair.appendChild(sel);
+    return { pair: pair, sel: sel };
+  }
+  function ensureMailerToolbar(panel) {
+    if (panel.querySelector('.ml-toolbar')) return;
+    var grid = panel.querySelector('.mailer-grid');
+    if (!grid) return;
+    var bar = document.createElement('div');
+    bar.className = 'ml-toolbar';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'סינון ומיון מיילרים');
+    var sort = selectPair('ml-sort', 'מיון', 'ml-sort');
+    [['date-desc', 'תאריך: חדש לישן'], ['date-asc', 'תאריך: ישן לחדש'], ['score-desc', 'ציון: גבוה לנמוך'], ['score-asc', 'ציון: נמוך לגבוה']].forEach(function (pair) {
+      sort.sel.appendChild(brandOption(pair[0], pair[1]));
+    });
+    var brand = selectPair('ml-brand', 'מתחרה', 'ml-brand');
+    var count = document.createElement('p');
+    count.className = 'ml-count';
+    count.id = 'ml-count';
+    bar.appendChild(sort.pair);
+    bar.appendChild(brand.pair);
+    bar.appendChild(count);
+    var empty = document.createElement('p');
+    empty.className = 'media-empty ml-empty';
+    empty.id = 'ml-empty';
+    empty.hidden = true;
+    empty.setAttribute('role', 'status');
+    empty.textContent = 'אין מיילרים להצגה לפי הסינון שנבחר.';
+    grid.insertAdjacentElement('beforebegin', bar);
+    bar.insertAdjacentElement('afterend', empty);
+    if (!grid.id) grid.id = 'mailer-grid';
+  }
+  function wireMailers() {
+    var panel = document.getElementById('mailers');
+    if (!panel || panel.dataset.mlWired) return;
+    if (!panel.querySelector('.mailer-card')) return;
+    ensureMailerToolbar(panel);
+    var sort = panel.querySelector('select.ml-sort');
+    var brands = panel.querySelector('select.ml-brand');
+    if (!sort || !brands) return;
+    panel.dataset.mlWired = '1';
+    renderBrandOptions(panel);
+    sort.addEventListener('change', function () { setMailerSort(sort.value); });
+    brands.addEventListener('change', function () { setMailerBrand(brands.value); });
+  }
+  function syncMailers() {
+    if (!window.MailerSort) return;
+    var panel = document.getElementById('mailers');
+    if (!panel || !panel.querySelector('.ml-toolbar')) return;
+    var parts = parseMediaHash();
+    if (parts.id === 'mailers' && parts.mailerInHash) {
+      mlState.sort = window.MailerSort.normalizeSort(parts.mailSort);
+      mlState.brand = parts.mailBrand || '';
+    } else {
+      var saved = loadMailers();
+      mlState.sort = saved.sort;
+      mlState.brand = saved.brand;
+    }
+    applyMailers({ writeHash: panel.classList.contains('on') && !hashLock, announce: false });
+  }
 })();
