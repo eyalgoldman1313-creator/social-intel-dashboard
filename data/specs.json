@@ -1,768 +1,818 @@
 {
- "_doc": "מיפוי מזהה מודעה/וידאו -> דפי אפיון. קבצים ב-specs/, מוגשים ב-/specs/<file>. ראו README.",
- "items": {
-  "3167033313596218": [
-   {
-    "label": "אפיון",
-    "file": "meta-goom-3167033313596218.html"
-   },
-   {
-    "label": "אפיון וידאו",
-    "file": "meta-goom-3167033313596218-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-goom-3167033313596218-video-nully.html"
-   }
-  ],
-  "2701057770261679": [
-   {
-    "label": "אפיון",
-    "file": "meta-mayven-2701057770261679.html"
-   }
-  ],
-  "1446078710401700": [
-   {
-    "label": "אפיון",
-    "file": "meta-mycolivia-1446078710401700.html"
-   },
-   {
-    "label": "אפיון וידאו",
-    "file": "meta-mycolivia-1446078710401700-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-mycolivia-1446078710401700-video-nully.html"
-   }
-  ],
-  "7509433751793913106": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-goom-7509433751793913106-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-goom-7509433751793913106-nully.html"
-   }
-  ],
-  "7464276663665216775": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-goom-7464276663665216775-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-goom-7464276663665216775-nully.html"
-   }
-  ],
-  "7237048286278978817": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-ecosupp-7237048286278978817-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-ecosupp-7237048286278978817-nully.html"
-   }
-  ],
-  "1849819722546965": [
-   {
-    "label": "אפיון",
-    "file": "meta-wonders-teva-1849819722546965.html"
-   }
-  ],
-  "1110000457458125": [
-   {
-    "label": "אפיון",
-    "file": "meta-wonders-teva-1110000457458125.html"
-   }
-  ],
-  "1526011919561216": [
-   {
-    "label": "אפיון",
-    "file": "meta-mayven-1526011919561216.html"
-   }
-  ],
-  "2030139967843901": [
-   {
-    "label": "אפיון",
-    "file": "meta-goom-2030139967843901.html"
-   }
-  ],
-  "1927825494522210": [
-   {
-    "label": "אפיון",
-    "file": "meta-mycolivia-1927825494522210.html"
-   }
-  ],
-  "1485417696703201": [
-   {
-    "label": "אפיון",
-    "file": "meta-wonders-teva-1485417696703201.html"
-   }
-  ],
-  "802342609477316": [
-   {
-    "label": "אפיון",
-    "file": "meta-mayven-802342609477316.html"
-   }
-  ],
-  "4298407990419608": [
-   {
-    "label": "אפיון",
-    "file": "meta-wonders-teva-4298407990419608.html"
-   }
-  ],
-  "3126536727548124": [
-   {
-    "label": "אפיון",
-    "file": "meta-mycospring-3126536727548124.html"
-   }
-  ],
-  "870480272771882": [
-   {
-    "label": "אפיון",
-    "file": "meta-mayven-870480272771882.html"
-   }
-  ],
-  "1473549080742218": [
-   {
-    "label": "אפיון",
-    "file": "meta-mycospring-1473549080742218.html"
-   }
-  ],
-  "1612888416477651": [
-   {
-    "label": "אפיון",
-    "file": "meta-ecosupp-1612888416477651.html"
-   }
-  ],
-  "1811596686475967": [
-   {
-    "label": "אפיון",
-    "file": "meta-mycospring-1811596686475967.html"
-   }
-  ],
-  "1603490764684158": [
-   {
-    "label": "אפיון",
-    "file": "meta-mayven-1603490764684158.html"
-   }
-  ],
-  "1461267605689035": [
-   {
-    "label": "אפיון",
-    "file": "meta-mayven-1461267605689035.html"
-   }
-  ],
-  "27438977599090018": [
-   {
-    "label": "אפיון",
-    "file": "meta-mycolivia-27438977599090018.html"
-   }
-  ],
-  "1047909297705233": [
-   {
-    "label": "אפיון",
-    "file": "meta-mayven-1047909297705233.html"
-   }
-  ],
-  "1998827250744233": [
-   {
-    "label": "אפיון",
-    "file": "meta-mayven-1047909297705233.html"
-   }
-  ],
-  "27607515932191118": [
-   {
-    "label": "אפיון",
-    "file": "meta-mayven-1047909297705233.html"
-   }
-  ],
-  "2248001762623995": [
-   {
-    "label": "אפיון",
-    "file": "meta-fillit-2248001762623995.html"
-   }
-  ],
-  "1391654222877665": [
-   {
-    "label": "אפיון",
-    "file": "meta-fillit-1391654222877665.html"
-   }
-  ],
-  "1394885005864076": [
-   {
-    "label": "אפיון",
-    "file": "meta-fillit-1391654222877665.html"
-   }
-  ],
-  "1990675184984045": [
-   {
-    "label": "אפיון",
-    "file": "meta-fillit-1990675184984045.html"
-   }
-  ],
-  "1577699003746614": [
-   {
-    "label": "אפיון",
-    "file": "meta-mayven-1577699003746614.html"
-   }
-  ],
-  "1393736352263629": [
-   {
-    "label": "אפיון",
-    "file": "meta-ecosupp-1393736352263629.html"
-   }
-  ],
-  "1614043736869362": [
-   {
-    "label": "אפיון",
-    "file": "meta-ecosupp-1614043736869362.html"
-   }
-  ],
-  "2424233974733476": [
-   {
-    "label": "אפיון",
-    "file": "meta-ecosupp-2424233974733476.html"
-   }
-  ],
-  "2832213563845240": [
-   {
-    "label": "אפיון",
-    "file": "meta-ecosupp-2832213563845240.html"
-   }
-  ],
-  "4520609871526236": [
-   {
-    "label": "אפיון",
-    "file": "meta-ecosupp-4520609871526236.html"
-   }
-  ],
-  "1561232668517208": [
-   {
-    "label": "אפיון",
-    "file": "meta-by-harmony-1561232668517208.html"
-   }
-  ],
-  "1634782284645292": [
-   {
-    "label": "אפיון",
-    "file": "meta-by-harmony-1561232668517208.html"
-   }
-  ],
-  "1867099687601524": [
-   {
-    "label": "אפיון",
-    "file": "meta-by-harmony-1561232668517208.html"
-   }
-  ],
-  "2595606210880723": [
-   {
-    "label": "אפיון",
-    "file": "meta-by-harmony-1561232668517208.html"
-   }
-  ],
-  "2271234116784124": [
-   {
-    "label": "אפיון",
-    "file": "meta-by-harmony-2271234116784124.html"
-   }
-  ],
-  "1631213701699139": [
-   {
-    "label": "אפיון",
-    "file": "meta-ecosupp-1631213701699139.html"
-   }
-  ],
-  "1398248515165290": [
-   {
-    "label": "אפיון",
-    "file": "meta-mycolivia-1398248515165290.html"
-   }
-  ],
-  "1082131837564556": [
-   {
-    "label": "אפיון",
-    "file": "meta-fillit-1082131837564556.html"
-   }
-  ],
-  "1432348698857507": [
-   {
-    "label": "אפיון",
-    "file": "meta-fillit-1432348698857507.html"
-   }
-  ],
-  "1011049791958224": [
-   {
-    "label": "אפיון",
-    "file": "meta-mycospring-1011049791958224.html"
-   }
-  ],
-  "1614888170263566": [
-   {
-    "label": "אפיון",
-    "file": "meta-mycospring-1011049791958224.html"
-   }
-  ],
-  "1781852283056573": [
-   {
-    "label": "אפיון",
-    "file": "meta-mycospring-1011049791958224.html"
-   }
-  ],
-  "1537012781523633": [
-   {
-    "label": "אפיון",
-    "file": "meta-mycolivia-1537012781523633.html"
-   }
-  ],
-  "3191604201037116": [
-   {
-    "label": "אפיון",
-    "file": "meta-mycolivia-1537012781523633.html"
-   }
-  ],
-  "7005863660681825538": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-ecosupp-7005863660681825538-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-ecosupp-7005863660681825538-nully.html"
-   }
-  ],
-  "7418131210653666561": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-fill-it-7418131210653666561-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-fill-it-7418131210653666561-nully.html"
-   }
-  ],
-  "1287638459563997": [
-   {
-    "label": "אפיון",
-    "file": "meta-goom-1287638459563997-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-goom-1287638459563997-video-nully.html"
-   }
-  ],
-  "1407752710332479": [
-   {
-    "label": "אפיון",
-    "file": "meta-goom-1407752710332479-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-goom-1407752710332479-video-nully.html"
-   }
-  ],
-  "2078963186252448": [
-   {
-    "label": "אפיון",
-    "file": "meta-goom-2078963186252448-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-goom-2078963186252448-video-nully.html"
-   }
-  ],
-  "3261965917314415": [
-   {
-    "label": "אפיון",
-    "file": "meta-goom-3261965917314415-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-goom-3261965917314415-video-nully.html"
-   }
-  ],
-  "661624510047108": [
-   {
-    "label": "אפיון",
-    "file": "meta-goom-661624510047108-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-goom-661624510047108-video-nully.html"
-   }
-  ],
-  "7467535299116059911": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-goom-7467535299116059911-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-goom-7467535299116059911-nully.html"
-   }
-  ],
-  "7476055463541361927": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-goom-7476055463541361927-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-goom-7476055463541361927-nully.html"
-   }
-  ],
-  "7483458349900582162": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-goom-7483458349900582162-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-goom-7483458349900582162-nully.html"
-   }
-  ],
-  "7483458856903773458": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-goom-7483458856903773458-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-goom-7483458856903773458-nully.html"
-   }
-  ],
-  "7485388243244944648": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-goom-7485388243244944648-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-goom-7485388243244944648-nully.html"
-   }
-  ],
-  "7521355098941918472": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-goom-7521355098941918472-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-goom-7521355098941918472-nully.html"
-   }
-  ],
-  "7521364123075087634": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-goom-7521364123075087634-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-goom-7521364123075087634-nully.html"
-   }
-  ],
-  "7521365051526155527": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-goom-7521365051526155527-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-goom-7521365051526155527-nully.html"
-   }
-  ],
-  "7529519359207836946": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-goom-7529519359207836946-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-goom-7529519359207836946-nully.html"
-   }
-  ],
-  "7589973139514248468": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-goom-7589973139514248468-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-goom-7589973139514248468-nully.html"
-   }
-  ],
-  "7501713050370657553": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-wonders-teva-7501713050370657553-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-wonders-teva-7501713050370657553-nully.html"
-   }
-  ],
-  "877063661369413": [
-   {
-    "label": "אפיון",
-    "file": "meta-wonders-teva-877063661369413-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-wonders-teva-877063661369413-video-nully.html"
-   }
-  ],
-  "1251886569698289": [
-   {
-    "label": "אפיון",
-    "file": "meta-by-harmony-1251886569698289-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-by-harmony-1251886569698289-video-nully.html"
-   }
-  ],
-  "7376000074024832263": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-by-harmony-7376000074024832263-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-by-harmony-7376000074024832263-nully.html"
-   }
-  ],
-  "7378103159983557908": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-by-harmony-7378103159983557908-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-by-harmony-7378103159983557908-nully.html"
-   }
-  ],
-  "7248546340286844161": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-ecosupp-7248546340286844161-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-ecosupp-7248546340286844161-nully.html"
-   }
-  ],
-  "7387387180454251794": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-fill-it-7387387180454251794-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-fill-it-7387387180454251794-nully.html"
-   }
-  ],
-  "7401792984787750162": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-fill-it-7401792984787750162-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-fill-it-7401792984787750162-nully.html"
-   }
-  ],
-  "7472305784597122311": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-fill-it-7472305784597122311-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-fill-it-7472305784597122311-nully.html"
-   }
-  ],
-  "7535796169679670536": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-fill-it-7535796169679670536-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-fill-it-7535796169679670536-nully.html"
-   }
-  ],
-  "1254992519409952": [
-   {
-    "label": "אפיון",
-    "file": "meta-mycolivia-1254992519409952-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-mycolivia-1254992519409952-video-nully.html"
-   }
-  ],
-  "7427199424335564039": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-wonders-teva-7427199424335564039-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-wonders-teva-7427199424335564039-nully.html"
-   }
-  ],
-  "7515099106335935761": [
-   {
-    "label": "אפיון",
-    "file": "tiktok-wonders-teva-7515099106335935761-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "tiktok-wonders-teva-7515099106335935761-nully.html"
-   }
-  ],
-  "28808231622143243": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-28808231622143243.html"
-   }
-  ],
-  "1074942015441453": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1074942015441453.html"
-   }
-  ],
-  "1462335325670240": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1462335325670240.html"
-   }
-  ],
-  "1454129493257812": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1462335325670240.html"
-   }
-  ],
-  "2142422629709807": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1462335325670240.html"
-   }
-  ],
-  "1523298572810105": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1523298572810105.html"
-   }
-  ],
-  "1115086287758874": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1523298572810105.html"
-   }
-  ],
-  "2148293626072427": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1523298572810105.html"
-   }
-  ],
-  "1592281542681493": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1592281542681493.html"
-   }
-  ],
-  "1290600066469595": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1290600066469595.html"
-   }
-  ],
-  "1602279611492095": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1602279611492095.html"
-   }
-  ],
-  "1604121781111476": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1604121781111476.html"
-   }
-  ],
-  "1718409092543820": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1718409092543820.html"
-   }
-  ],
-  "1786214262523511": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1786214262523511.html"
-   }
-  ],
-  "1023244210494357": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1023244210494357-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-tevakid-1023244210494357-video-nully.html"
-   }
-  ],
-  "1081883297658404": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-1081883297658404-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-tevakid-1081883297658404-video-nully.html"
-   }
-  ],
-  "2247585179425768": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-2247585179425768-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-tevakid-2247585179425768-video-nully.html"
-   }
-  ],
-  "4775775015987326": [
-   {
-    "label": "אפיון",
-    "file": "meta-tevakid-4775775015987326-video-spec.html"
-   },
-   {
-    "label": "תסריט ל-Nully",
-    "file": "meta-tevakid-4775775015987326-video-nully.html"
-   }
+  "_doc": "מיפוי מזהה מודעה/וידאו -> דפי אפיון. קבצים ב-specs/, מוגשים ב-/specs/<file>. ראו README.",
+  "items": {
+    "3167033313596218": [
+      {
+        "label": "אפיון",
+        "file": "meta-goom-3167033313596218.html"
+      },
+      {
+        "label": "אפיון וידאו",
+        "file": "meta-goom-3167033313596218-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-goom-3167033313596218-video-nully.html"
+      }
+    ],
+    "2701057770261679": [
+      {
+        "label": "אפיון",
+        "file": "meta-mayven-2701057770261679.html"
+      }
+    ],
+    "1446078710401700": [
+      {
+        "label": "אפיון",
+        "file": "meta-mycolivia-1446078710401700.html"
+      },
+      {
+        "label": "אפיון וידאו",
+        "file": "meta-mycolivia-1446078710401700-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-mycolivia-1446078710401700-video-nully.html"
+      }
+    ],
+    "7509433751793913106": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-goom-7509433751793913106-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-goom-7509433751793913106-nully.html"
+      }
+    ],
+    "7464276663665216775": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-goom-7464276663665216775-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-goom-7464276663665216775-nully.html"
+      }
+    ],
+    "7237048286278978817": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-ecosupp-7237048286278978817-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-ecosupp-7237048286278978817-nully.html"
+      }
+    ],
+    "1849819722546965": [
+      {
+        "label": "אפיון",
+        "file": "meta-wonders-teva-1849819722546965.html"
+      }
+    ],
+    "1110000457458125": [
+      {
+        "label": "אפיון",
+        "file": "meta-wonders-teva-1110000457458125.html"
+      }
+    ],
+    "1526011919561216": [
+      {
+        "label": "אפיון",
+        "file": "meta-mayven-1526011919561216.html"
+      }
+    ],
+    "2030139967843901": [
+      {
+        "label": "אפיון",
+        "file": "meta-goom-2030139967843901.html"
+      }
+    ],
+    "1927825494522210": [
+      {
+        "label": "אפיון",
+        "file": "meta-mycolivia-1927825494522210.html"
+      }
+    ],
+    "1485417696703201": [
+      {
+        "label": "אפיון",
+        "file": "meta-wonders-teva-1485417696703201.html"
+      }
+    ],
+    "802342609477316": [
+      {
+        "label": "אפיון",
+        "file": "meta-mayven-802342609477316.html"
+      }
+    ],
+    "4298407990419608": [
+      {
+        "label": "אפיון",
+        "file": "meta-wonders-teva-4298407990419608.html"
+      }
+    ],
+    "3126536727548124": [
+      {
+        "label": "אפיון",
+        "file": "meta-mycospring-3126536727548124.html"
+      }
+    ],
+    "870480272771882": [
+      {
+        "label": "אפיון",
+        "file": "meta-mayven-870480272771882.html"
+      }
+    ],
+    "1473549080742218": [
+      {
+        "label": "אפיון",
+        "file": "meta-mycospring-1473549080742218.html"
+      }
+    ],
+    "1612888416477651": [
+      {
+        "label": "אפיון",
+        "file": "meta-ecosupp-1612888416477651.html"
+      }
+    ],
+    "1811596686475967": [
+      {
+        "label": "אפיון",
+        "file": "meta-mycospring-1811596686475967.html"
+      }
+    ],
+    "1603490764684158": [
+      {
+        "label": "אפיון",
+        "file": "meta-mayven-1603490764684158.html"
+      }
+    ],
+    "1461267605689035": [
+      {
+        "label": "אפיון",
+        "file": "meta-mayven-1461267605689035.html"
+      }
+    ],
+    "27438977599090018": [
+      {
+        "label": "אפיון",
+        "file": "meta-mycolivia-27438977599090018.html"
+      }
+    ],
+    "1047909297705233": [
+      {
+        "label": "אפיון",
+        "file": "meta-mayven-1047909297705233.html"
+      }
+    ],
+    "1998827250744233": [
+      {
+        "label": "אפיון",
+        "file": "meta-mayven-1047909297705233.html"
+      }
+    ],
+    "27607515932191118": [
+      {
+        "label": "אפיון",
+        "file": "meta-mayven-1047909297705233.html"
+      }
+    ],
+    "2248001762623995": [
+      {
+        "label": "אפיון",
+        "file": "meta-fillit-2248001762623995.html"
+      }
+    ],
+    "1391654222877665": [
+      {
+        "label": "אפיון",
+        "file": "meta-fillit-1391654222877665.html"
+      }
+    ],
+    "1394885005864076": [
+      {
+        "label": "אפיון",
+        "file": "meta-fillit-1391654222877665.html"
+      }
+    ],
+    "1990675184984045": [
+      {
+        "label": "אפיון",
+        "file": "meta-fillit-1990675184984045.html"
+      }
+    ],
+    "1577699003746614": [
+      {
+        "label": "אפיון",
+        "file": "meta-mayven-1577699003746614.html"
+      }
+    ],
+    "1393736352263629": [
+      {
+        "label": "אפיון",
+        "file": "meta-ecosupp-1393736352263629.html"
+      }
+    ],
+    "1614043736869362": [
+      {
+        "label": "אפיון",
+        "file": "meta-ecosupp-1614043736869362.html"
+      }
+    ],
+    "2424233974733476": [
+      {
+        "label": "אפיון",
+        "file": "meta-ecosupp-2424233974733476.html"
+      }
+    ],
+    "2832213563845240": [
+      {
+        "label": "אפיון",
+        "file": "meta-ecosupp-2832213563845240.html"
+      }
+    ],
+    "4520609871526236": [
+      {
+        "label": "אפיון",
+        "file": "meta-ecosupp-4520609871526236.html"
+      }
+    ],
+    "1561232668517208": [
+      {
+        "label": "אפיון",
+        "file": "meta-by-harmony-1561232668517208.html"
+      }
+    ],
+    "1634782284645292": [
+      {
+        "label": "אפיון",
+        "file": "meta-by-harmony-1561232668517208.html"
+      }
+    ],
+    "1867099687601524": [
+      {
+        "label": "אפיון",
+        "file": "meta-by-harmony-1561232668517208.html"
+      }
+    ],
+    "2595606210880723": [
+      {
+        "label": "אפיון",
+        "file": "meta-by-harmony-1561232668517208.html"
+      }
+    ],
+    "2271234116784124": [
+      {
+        "label": "אפיון",
+        "file": "meta-by-harmony-2271234116784124.html"
+      }
+    ],
+    "1631213701699139": [
+      {
+        "label": "אפיון",
+        "file": "meta-ecosupp-1631213701699139.html"
+      }
+    ],
+    "1398248515165290": [
+      {
+        "label": "אפיון",
+        "file": "meta-mycolivia-1398248515165290.html"
+      }
+    ],
+    "1082131837564556": [
+      {
+        "label": "אפיון",
+        "file": "meta-fillit-1082131837564556.html"
+      }
+    ],
+    "1432348698857507": [
+      {
+        "label": "אפיון",
+        "file": "meta-fillit-1432348698857507.html"
+      }
+    ],
+    "1011049791958224": [
+      {
+        "label": "אפיון",
+        "file": "meta-mycospring-1011049791958224.html"
+      }
+    ],
+    "1614888170263566": [
+      {
+        "label": "אפיון",
+        "file": "meta-mycospring-1011049791958224.html"
+      }
+    ],
+    "1781852283056573": [
+      {
+        "label": "אפיון",
+        "file": "meta-mycospring-1011049791958224.html"
+      }
+    ],
+    "1537012781523633": [
+      {
+        "label": "אפיון",
+        "file": "meta-mycolivia-1537012781523633.html"
+      }
+    ],
+    "3191604201037116": [
+      {
+        "label": "אפיון",
+        "file": "meta-mycolivia-1537012781523633.html"
+      }
+    ],
+    "7005863660681825538": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-ecosupp-7005863660681825538-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-ecosupp-7005863660681825538-nully.html"
+      }
+    ],
+    "7418131210653666561": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-fill-it-7418131210653666561-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-fill-it-7418131210653666561-nully.html"
+      }
+    ],
+    "1287638459563997": [
+      {
+        "label": "אפיון",
+        "file": "meta-goom-1287638459563997-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-goom-1287638459563997-video-nully.html"
+      }
+    ],
+    "1407752710332479": [
+      {
+        "label": "אפיון",
+        "file": "meta-goom-1407752710332479-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-goom-1407752710332479-video-nully.html"
+      }
+    ],
+    "2078963186252448": [
+      {
+        "label": "אפיון",
+        "file": "meta-goom-2078963186252448-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-goom-2078963186252448-video-nully.html"
+      }
+    ],
+    "3261965917314415": [
+      {
+        "label": "אפיון",
+        "file": "meta-goom-3261965917314415-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-goom-3261965917314415-video-nully.html"
+      }
+    ],
+    "661624510047108": [
+      {
+        "label": "אפיון",
+        "file": "meta-goom-661624510047108-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-goom-661624510047108-video-nully.html"
+      }
+    ],
+    "7467535299116059911": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-goom-7467535299116059911-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-goom-7467535299116059911-nully.html"
+      }
+    ],
+    "7476055463541361927": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-goom-7476055463541361927-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-goom-7476055463541361927-nully.html"
+      }
+    ],
+    "7483458349900582162": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-goom-7483458349900582162-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-goom-7483458349900582162-nully.html"
+      }
+    ],
+    "7483458856903773458": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-goom-7483458856903773458-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-goom-7483458856903773458-nully.html"
+      }
+    ],
+    "7485388243244944648": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-goom-7485388243244944648-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-goom-7485388243244944648-nully.html"
+      }
+    ],
+    "7521355098941918472": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-goom-7521355098941918472-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-goom-7521355098941918472-nully.html"
+      }
+    ],
+    "7521364123075087634": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-goom-7521364123075087634-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-goom-7521364123075087634-nully.html"
+      }
+    ],
+    "7521365051526155527": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-goom-7521365051526155527-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-goom-7521365051526155527-nully.html"
+      }
+    ],
+    "7529519359207836946": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-goom-7529519359207836946-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-goom-7529519359207836946-nully.html"
+      }
+    ],
+    "7589973139514248468": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-goom-7589973139514248468-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-goom-7589973139514248468-nully.html"
+      }
+    ],
+    "7501713050370657553": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-wonders-teva-7501713050370657553-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-wonders-teva-7501713050370657553-nully.html"
+      }
+    ],
+    "877063661369413": [
+      {
+        "label": "אפיון",
+        "file": "meta-wonders-teva-877063661369413-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-wonders-teva-877063661369413-video-nully.html"
+      }
+    ],
+    "1251886569698289": [
+      {
+        "label": "אפיון",
+        "file": "meta-by-harmony-1251886569698289-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-by-harmony-1251886569698289-video-nully.html"
+      }
+    ],
+    "7376000074024832263": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-by-harmony-7376000074024832263-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-by-harmony-7376000074024832263-nully.html"
+      }
+    ],
+    "7378103159983557908": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-by-harmony-7378103159983557908-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-by-harmony-7378103159983557908-nully.html"
+      }
+    ],
+    "7248546340286844161": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-ecosupp-7248546340286844161-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-ecosupp-7248546340286844161-nully.html"
+      }
+    ],
+    "7387387180454251794": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-fill-it-7387387180454251794-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-fill-it-7387387180454251794-nully.html"
+      }
+    ],
+    "7401792984787750162": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-fill-it-7401792984787750162-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-fill-it-7401792984787750162-nully.html"
+      }
+    ],
+    "7472305784597122311": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-fill-it-7472305784597122311-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-fill-it-7472305784597122311-nully.html"
+      }
+    ],
+    "7535796169679670536": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-fill-it-7535796169679670536-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-fill-it-7535796169679670536-nully.html"
+      }
+    ],
+    "1254992519409952": [
+      {
+        "label": "אפיון",
+        "file": "meta-mycolivia-1254992519409952-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-mycolivia-1254992519409952-video-nully.html"
+      }
+    ],
+    "7427199424335564039": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-wonders-teva-7427199424335564039-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-wonders-teva-7427199424335564039-nully.html"
+      }
+    ],
+    "7515099106335935761": [
+      {
+        "label": "אפיון",
+        "file": "tiktok-wonders-teva-7515099106335935761-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "tiktok-wonders-teva-7515099106335935761-nully.html"
+      }
+    ],
+    "28808231622143243": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-28808231622143243.html"
+      }
+    ],
+    "1074942015441453": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1074942015441453.html"
+      }
+    ],
+    "1462335325670240": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1462335325670240.html"
+      }
+    ],
+    "1454129493257812": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1462335325670240.html"
+      }
+    ],
+    "2142422629709807": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1462335325670240.html"
+      }
+    ],
+    "1523298572810105": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1523298572810105.html"
+      }
+    ],
+    "1115086287758874": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1523298572810105.html"
+      }
+    ],
+    "2148293626072427": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1523298572810105.html"
+      }
+    ],
+    "1592281542681493": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1592281542681493.html"
+      }
+    ],
+    "1290600066469595": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1290600066469595.html"
+      }
+    ],
+    "1602279611492095": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1602279611492095.html"
+      }
+    ],
+    "1604121781111476": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1604121781111476.html"
+      }
+    ],
+    "1718409092543820": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1718409092543820.html"
+      }
+    ],
+    "1786214262523511": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1786214262523511.html"
+      }
+    ],
+    "1023244210494357": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1023244210494357-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-tevakid-1023244210494357-video-nully.html"
+      }
+    ],
+    "1081883297658404": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-1081883297658404-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-tevakid-1081883297658404-video-nully.html"
+      }
+    ],
+    "2247585179425768": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-2247585179425768-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-tevakid-2247585179425768-video-nully.html"
+      }
+    ],
+    "4775775015987326": [
+      {
+        "label": "אפיון",
+        "file": "meta-tevakid-4775775015987326-video-spec.html"
+      },
+      {
+        "label": "תסריט ל-Nully",
+        "file": "meta-tevakid-4775775015987326-video-nully.html"
+      }
+    ]
+  },
+  "mailers": [
+    {
+      "brand": "Fill It",
+      "title": "הפרק הבא של fillit מתחיל ממש בקרוב (12.10)",
+      "file": "mailer-fillit-2026-10-12.html"
+    },
+    {
+      "brand": "Mayven",
+      "title": "מוכנה לתוספת מרעננת לשגרה שלך? 🍍🥒🍏 (11.10)",
+      "file": "mailer-mayven-2026-10-11.html"
+    },
+    {
+      "brand": "Smiley",
+      "title": "חיוך מושלם רואים מרחוק, ומריחים מקרוב. (10.10)",
+      "file": "mailer-smiley-2026-10-10.html"
+    },
+    {
+      "brand": "Fill It",
+      "title": "נמאס לך מתוספים שלא באמת עובדים? 🛑 (9.10)",
+      "file": "mailer-fillit-2026-10-09.html"
+    },
+    {
+      "brand": "Fill It",
+      "title": "3 סיבות למה דווקא Fillit (8.10)",
+      "file": "mailer-fillit-2026-10-08.html"
+    },
+    {
+      "brand": "Mycospring",
+      "title": "מה הגוף שלכם עושה עם הסוכר שאתם אוכלים? (8.10)",
+      "file": "mailer-mycospring-2026-10-08.html"
+    },
+    {
+      "brand": "Fill It",
+      "title": "הבריאות שלך היא השקעה לטווח ארוך 🔬 (7.10)",
+      "file": "mailer-fillit-2026-10-07.html"
+    },
+    {
+      "brand": "Smiley",
+      "title": "אם אתם כבר לועסים מסטיק - למה לא אחד שמלבין את השיניים? (6.10)",
+      "file": "mailer-smiley-2026-10-06.html"
+    },
+    {
+      "brand": "EcoSupp",
+      "title": "ברוכים הבאים לעולם המופלא של אקוסאפ (4.10)",
+      "file": "mailer-ecosupp-2026-10-04.html"
+    },
+    {
+      "brand": "Fill It",
+      "title": "ברוכה הבאה ל-Fillit! הנה משהו קטן להתחלה... 🎁 (4.10)",
+      "file": "mailer-fillit-2026-10-04.html"
+    },
+    {
+      "brand": "EcoSupp",
+      "title": "איך הגוף שלנו עובד בזמן השינה?",
+      "file": "mailer-ecosupp.html"
+    },
+    {
+      "brand": "Fill It",
+      "title": "הבריאות שלך היא השקעה לטווח ארוך",
+      "file": "mailer-fillit.html"
+    },
+    {
+      "brand": "Mycospring",
+      "title": "שאלנו את מי שמדברות איתכם כל יום",
+      "file": "mailer-mycospring.html"
+    }
   ]
- },
- "mailers": [
-  {
-   "brand": "EcoSupp",
-   "title": "איך הגוף שלנו עובד בזמן השינה?",
-   "file": "mailer-ecosupp.html"
-  },
-  {
-   "brand": "Fillit",
-   "title": "הבריאות שלך היא השקעה לטווח ארוך",
-   "file": "mailer-fillit.html"
-  },
-  {
-   "brand": "Mycospring",
-   "title": "שאלנו את מי שמדברות איתכם כל יום",
-   "file": "mailer-mycospring.html"
-  }
- ]
 }
