@@ -78,6 +78,7 @@
       if (ev.end != null && ev.end !== '' && !isIso(ev.end)) errors.push(where + ' bad end');
       if (isIso(ev.start) && isIso(ev.end) && ev.end < ev.start) errors.push(where + ' end before start');
       if (ev.type !== 'sale' && ev.type !== 'holiday' && ev.type !== 'season') errors.push(where + ' bad type');
+      if (ev.relevance !== 'high' && ev.relevance !== 'medium' && ev.relevance !== 'low') errors.push(where + ' bad relevance');
       if (ev.note != null && typeof ev.note !== 'string') errors.push(where + ' note must be a string');
     });
     return errors;
@@ -122,6 +123,7 @@
       end: ev.end || null,
       type: ev.type,
       typeLabel: TYPES[ev.type] || ev.type,
+      relevance: ev.relevance,
       note: ev.note || '',
       phase: phase,
       days: days,
@@ -143,16 +145,22 @@
       if (ev.start > until) return false;
       return true;
     }).sort(function (a, b) {
+      var ar = a.relevance === 'low' ? 1 : 0;
+      var br = b.relevance === 'low' ? 1 : 0;
+      if (ar !== br) return ar - br;
       if (a.start !== b.start) return a.start < b.start ? -1 : 1;
       return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
     }).map(function (ev) { return decorate(ev, day); });
   }
 
   function spoken(ev) {
-    if (ev.phase === 'ongoing') return 'מתקיים עכשיו, ' + ev.name + ', ' + ev.dateLabel + ', ' + ev.typeLabel;
-    if (ev.phase === 'today') return 'היום, ' + ev.name + ', ' + ev.dateLabel + ', ' + ev.typeLabel;
-    if (ev.phase === 'tomorrow') return 'מחר, ' + ev.name + ', ' + ev.dateLabel + ', ' + ev.typeLabel;
-    return ev.days + ' ימים ל' + ev.name + ', ' + ev.dateLabel + ', ' + ev.typeLabel;
+    var base;
+    if (ev.phase === 'ongoing') base = 'מתקיים עכשיו, ' + ev.name + ', ' + ev.dateLabel + ', ' + ev.typeLabel;
+    else if (ev.phase === 'today') base = 'היום, ' + ev.name + ', ' + ev.dateLabel + ', ' + ev.typeLabel;
+    else if (ev.phase === 'tomorrow') base = 'מחר, ' + ev.name + ', ' + ev.dateLabel + ', ' + ev.typeLabel;
+    else base = ev.days + ' ימים ל' + ev.name + ', ' + ev.dateLabel + ', ' + ev.typeLabel;
+    if (ev.relevance === 'low') base += ', רלוונטיות נמוכה';
+    return base;
   }
 
   function chip(ev) {
@@ -161,7 +169,7 @@
       : '<bdi dir="ltr">' + esc(ev.dateLabel) + '</bdi>';
     var word = ev.phase === 'upcoming' ? '' : ' is-word';
     var tip = ev.note ? ' title="' + esc(ev.note) + '"' : '';
-    return '<div class="event" role="listitem" data-type="' + esc(ev.type) + '"' + tip + '>' +
+    return '<div class="event" role="listitem" data-type="' + esc(ev.type) + '" data-relevance="' + esc(ev.relevance) + '"' + tip + '>' +
       '<span class="event-days' + word + '" aria-hidden="true">' + esc(ev.lead) + '</span>' +
       '<span class="event-copy" aria-hidden="true">' + esc(ev.copy) + '<small>' + sub + '</small></span>' +
       '<span class="visually-hidden">' + esc(spoken(ev)) + '</span>' +
@@ -171,11 +179,12 @@
   function pill(ev) {
     var when = ev.phase === 'ongoing' ? 'מתקיים עכשיו' : ev.phrase;
     var tip = ev.note ? ' title="' + esc(ev.note) + '"' : '';
-    return '<div class="event-pill" role="listitem" data-type="' + esc(ev.type) + '"' + tip + '>' +
+    var extra = ev.relevance === 'low' ? ', רלוונטיות נמוכה' : '';
+    return '<div class="event-pill" role="listitem" data-type="' + esc(ev.type) + '" data-relevance="' + esc(ev.relevance) + '"' + tip + '>' +
       '<span class="pill-when">' + esc(when) + '</span>' +
       '<span class="pill-name">' + esc(ev.name) + '</span>' +
       '<span class="pill-date" dir="ltr">' + esc(ev.dateLabel) + '</span>' +
-      '<span class="visually-hidden">' + esc(ev.typeLabel) + '</span>' +
+      '<span class="visually-hidden">' + esc(ev.typeLabel + extra) + '</span>' +
       '</div>';
   }
 
@@ -187,8 +196,11 @@
     if (!list.length) {
       return '<p class="event-empty" role="status">אין אירועים ב-120 הימים הקרובים</p>';
     }
-    var head = list.slice(0, featured).map(chip).join('');
-    var rest = list.slice(featured);
+    var nonLow = 0;
+    for (var i = 0; i < list.length; i++) if (list[i].relevance !== 'low') nonLow++;
+    var chipCount = nonLow === 0 ? Math.min(featured, list.length) : Math.min(featured, nonLow);
+    var head = list.slice(0, chipCount).map(chip).join('');
+    var rest = list.slice(chipCount);
     var strip = '';
     if (rest.length) {
       strip = '<div class="event-strip" role="list" tabindex="0" aria-label="אירועים נוספים ב-120 הימים הקרובים. אפשר לגלול אופקית.">' +
@@ -204,11 +216,12 @@
       var when = ev.phase === 'ongoing' ? 'מתקיים עכשיו' : ev.phrase;
       var tip = ev.note ? '<p class="fine">' + esc(ev.note) + '</p>' : '';
       var word = ev.phase === 'upcoming' ? '' : ' is-word';
-      return '<article class="ev-card" data-type="' + esc(ev.type) + '">' +
+      var low = ev.relevance === 'low' ? ' · רלוונטיות נמוכה' : '';
+      return '<article class="ev-card" data-type="' + esc(ev.type) + '" data-relevance="' + esc(ev.relevance) + '">' +
         '<div class="ev-n' + word + '" aria-hidden="true">' + esc(ev.lead) + '</div>' +
         '<div><h4>' + esc(ev.name) + '</h4>' +
         '<p class="ev-date" dir="ltr">' + esc(ev.dateLabel) + '</p>' +
-        '<p class="fine">' + esc(when) + ' · ' + esc(ev.typeLabel) + '</p>' + tip + '</div></article>';
+        '<p class="fine">' + esc(when) + ' · ' + esc(ev.typeLabel) + low + '</p>' + tip + '</div></article>';
     }).join('');
   }
 
