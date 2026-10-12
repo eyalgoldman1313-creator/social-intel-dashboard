@@ -20,6 +20,11 @@ const data = JSON.parse(readFileSync(join(root, 'data/data.json'), 'utf8'));
 const creatives = loadJson(root, 'data/creatives.json', { items: [] });
 const specs = loadJson(root, 'data/specs.json', { items: {}, mailers: [] });
 const top10 = loadJson(root, 'data/top10.json', { weeks: {} });
+{ // image health: never let cards go blank silently
+  const { checkImages } = await import('./check-images.mjs');
+  for (const [tab, o] of Object.entries(checkImages(root))) if (o.missing.length + o.remote.length + o.broken.length)
+    console.warn(`! images[${tab}]: ${o.missing.length} missing, ${o.remote.length} remote/expiring, ${o.broken.length} broken of ${o.total} – run scripts/fetch-ad-images.mjs`);
+}
 
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(dist, { recursive: true });

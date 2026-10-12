@@ -72,6 +72,12 @@ function compress(inFile, outFile) {
   return false;
 }
 
+function download(url, out) {
+  mkdirSync(dirname(out), { recursive: true });
+  const r = spawnSync('curl', ['-fsSL', '--max-time', '30', '-A', 'Mozilla/5.0', '-o', out, url]);
+  return r.status === 0 && existsSync(out) && statSync(out).size > 1000;
+}
+
 // ---------- read + normalize ----------
 const warnings = [];
 const items = [];
@@ -104,14 +110,25 @@ for (const source of SOURCES) {
       image: null, imageMissing: true,
     };
     const f = str(r.file ?? r.image);
-    if (f) {
+    const remote = [r.image_url, r.thumbnail_url, r.video_preview_image_url, r.original_image_url, /^https?:/i.test(f) ? f : null].map(str).find((u) => /^https?:\/\//i.test(u));
+    const kept = ['webp', 'jpg', 'jpeg', 'png'].map((e) => `creatives/${source}/${fname}.${e}`).find((x) => existsSync(join(root, 'public', x)));
+    if (f && !/^https?:/i.test(f)) {
       const inFile = [resolve(dir, f), resolve(dir, str(r.brand_slug), f), resolve(dir, 'img', f)].find((x) => existsSync(x) && statSync(x).isFile()) || resolve(dir, f);
       if (existsSync(inFile) && /\.(png|jpe?g|webp|gif|avif)$/i.test(inFile)) {
         const out = join(root, 'public/creatives', source, `${fname}.webp`);
         const ok = compress(inFile, out);
         if (ok) { it.image = `creatives/${source}/${fname}.${ok === 'copied' ? extname(inFile).slice(1).toLowerCase() : 'webp'}`; it.imageMissing = false; withImg++; }
       } else warnings.push(`${id}: image file missing or unsupported (${f})`);
-    } else warnings.push(`${id}: no file`);
+    }
+    // Never hotlink: remote CDN URLs (fbcdn/scontent/googlesyndication, all signed + expiring) are downloaded
+    // at ingest and stored in the repo. Then fall back to a copy already recovered earlier (fetch-ad-images.mjs).
+    if (!it.image && remote) {
+      const tmp = join(root, '.cache/ingest', `${source}-${fname}.img`);
+      if (download(remote, tmp)) { const ok = compress(tmp, join(root, 'public/creatives', source, `${fname}.webp`)); if (ok === true) { it.image = `creatives/${source}/${fname}.webp`; it.imageMissing = false; withImg++; } }
+      else warnings.push(`${id}: remote image download failed (${remote.slice(0, 80)})`);
+    }
+    if (!it.image && kept) { it.image = kept; it.imageMissing = false; withImg++; }
+    if (!it.image) warnings.push(`${id}: no image – run scripts/fetch-ad-images.mjs`);
     items.push(it);
   });
   console.log(`- ${source}: ${raw.length} items, ${withImg} with image`);

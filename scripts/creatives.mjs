@@ -93,9 +93,10 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
     const phLabel = ph === 'organic' ? (CTYPE[it.ctype] || 'אורגני') : PHASE[ph][0];
     const phase = `<span class="cr-phase ph-${ph}">${phLabel}${it.status === 'inactive' ? ' · הופסקה' : ''}</span>`;
     const fmt = `<span class="cr-fmt">${FMT[it.format] || FMT.unknown}</span>`;
-    const inner = it.image
+    const local = it.image && !/^(https?:)?\/\//i.test(it.image); // remote CDN URLs expire – never hotlink them
+    const inner = local
       ? `<img src="/${esc(it.image)}" alt="${esc(`${brandName(it.brand)} – ${oneLine(it.hook || it.copy_text, 60)}`)}" loading="lazy" decoding="async">`
-      : `<div class="cr-ph"><div class="cr-ph-ic" aria-hidden="true">🖼</div><b>אין תמונה זמינה</b>${it.library_url || it.post_url ? `<a href="${esc(it.library_url || it.post_url)}" target="_blank" rel="noopener noreferrer" data-stop>${it.source === 'meta' ? 'צפייה בספריית המודעות' : 'צפייה בפוסט'} ↗</a>` : ''}</div>`;
+      : `<div class="cr-ph"><div class="cr-ph-ic" aria-hidden="true">🖼</div><b>אין תמונה זמינה</b><small class="cr-ph-why">${it.source === 'meta' || it.source === 'google' ? 'התמונה טרם שוחזרה מספריית המודעות' : 'לא נשמרה תמונה'}</small>${it.library_url || it.post_url ? `<a href="${esc(it.library_url || it.post_url)}" target="_blank" rel="noopener noreferrer" data-stop>${it.source === 'meta' ? 'צפייה בספריית המודעות' : 'צפייה בפוסט'} ↗</a>` : ''}</div>`;
     return `<div class="cr-media${big ? ' big' : ''}" role="button" tabindex="0" aria-label="הגדלה">${inner}${days}${phase}${fmt}</div>`;
   }
 

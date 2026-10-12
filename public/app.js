@@ -550,3 +550,13 @@
     applyMailers({ writeHash: panel.classList.contains('on') && !hashLock, announce: false });
   }
 })();
+
+// Fallback: an image that fails to load (deleted file, expired CDN URL) becomes a visible placeholder, never a blank card.
+document.addEventListener('error', function (e) {
+  var img = e.target;
+  if (!img || img.tagName !== 'IMG' || !img.closest('.cr-media') || img.dataset.failed) return;
+  img.dataset.failed = '1';
+  var ph = document.createElement('div'); ph.className = 'cr-ph';
+  ph.innerHTML = '<div class="cr-ph-ic" aria-hidden="true">🖼</div><b>אין תמונה זמינה</b><small class="cr-ph-why">קובץ התמונה לא נטען</small>';
+  img.replaceWith(ph);
+}, true);
