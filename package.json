@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "test": "node --test scripts/*.test.mjs",
     "dev": "node scripts/build.mjs && npx --yes serve dist -l 3000"
   },
   "engines": { "node": ">=20" }

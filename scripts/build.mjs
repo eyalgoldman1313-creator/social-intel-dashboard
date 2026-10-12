@@ -16,7 +16,22 @@ function loadMailerSort() {
   return sandbox.MailerSort;
 }
 const MailerSort = loadMailerSort();
+function loadCommerceEvents() {
+  const sandbox = {};
+  sandbox.window = sandbox;
+  vm.runInNewContext(readFileSync(join(root, 'public/events.js'), 'utf8'), sandbox);
+  return sandbox.CommerceEvents;
+}
+const CommerceEvents = loadCommerceEvents();
 const data = JSON.parse(readFileSync(join(root, 'data/data.json'), 'utf8'));
+const commerceEvents = JSON.parse(readFileSync(join(root, 'data/events.json'), 'utf8'));
+{
+  const eventErrors = CommerceEvents.validate(commerceEvents);
+  if (eventErrors.length) {
+    console.error(eventErrors.join('\n'));
+    process.exit(1);
+  }
+}
 const creatives = loadJson(root, 'data/creatives.json', { items: [] });
 const specs = loadJson(root, 'data/specs.json', { items: {}, mailers: [] });
 const top10 = loadJson(root, 'data/top10.json', { weeks: {} });
@@ -73,11 +88,6 @@ const groupBadge = (g) => `<span class="badge g-${g}">${GROUP_LABEL[g]}</span>`;
 const link = (href, text) => !href ? '' : `<a class="doclink" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(text)} ↗</a>`;
 const fullDoc = (id, text = 'למסמך המלא') => link(docUrl(id), text);
 
-function daysTo(dateStr, from = new Date()) {
-  const a = new Date(dateStr + 'T00:00:00+03:00');
-  return Math.ceil((a - from) / 86400000);
-}
-
 // horizontal bar chart (RTL: bars grow from the right edge)
 function bars({ items, max, unit = '', title, source, note }) {
   const m = max ?? Math.max(...items.map((i) => i.value), 1);
@@ -125,10 +135,8 @@ function render(scan, prev, { isLatest, scans }) {
   };
 
   // ----- header & exec summary -----
-  const events = data.events.map((e) => {
-    const d = daysTo(e.start);
-    return `<div class="event" data-start="${e.start}"><span class="event-days" data-days="${e.start}">${d > 0 ? d : 0}</span><span>ימים ל${esc(e.title)}<small dir="ltr">${esc(e.label)}</small></span></div>`;
-  }).join('');
+  // Countdown text is filled in the browser from data/events.json (Asia/Jerusalem, rolling 120 days).
+  const eventBoard = CommerceEvents.renderBoard(commerceEvents, CommerceEvents.israelToday(new Date()), { featured: 3 });
 
   const takeaways = scan.summary.takeaways.map((t, i) => `<li class="take"><span class="take-n">${i + 1}</span><div>${chip(t.platform)}<p>${esc(t.text)}</p></div></li>`).join('');
   const actions = scan.summary.actions.map((a) => `<li class="act"><span class="act-n">${a.rank}</span><div><h4>${esc(a.title)}</h4><p><b>למה:</b> ${esc(a.why)}</p><div class="tags"><span class="tag pr-${esc(a.priority)}">עדיפות: ${esc(a.priority)}</span><span class="tag">מאמץ: ${esc(a.effort)}</span>${a.platforms.map(chip).join('')}</div></div></li>`).join('');
@@ -141,7 +149,7 @@ function render(scan, prev, { isLatest, scans }) {
       <div><p class="eyebrow">${esc(data.site.subtitle)}</p><h1>${esc(data.site.title)}</h1>
       <p class="updated"><span class="live"></span> עודכן לאחרונה: <b>${esc(scan.date)}</b> / ${esc(scan.statusLabel)}${isLatest ? '' : ' · <b>ארכיון</b>'} <a class="info-i" href="#limits" title="מגבלות וכיסוי" aria-label="מגבלות וכיסוי">i</a></p>
       ${scanSwitch}</div>
-      <div class="events">${events}</div>
+      <div class="event-board" data-event-board>${eventBoard}</div>
     </div></header>`;
 
   const summary = `<section class="summary" id="status" aria-labelledby="status-h">
@@ -360,10 +368,11 @@ function render(scan, prev, { isLatest, scans }) {
 
   // ----- Seasonality -----
   const S = scan.seasonality;
-  const eventCards = data.events.map((e) => `<div class="ev-card"><div class="ev-n" data-days="${e.start}">${Math.max(daysTo(e.start), 0)}</div><div><h4>${esc(e.title)}</h4><p dir="ltr" class="ev-date">${esc(e.label)}</p><p class="fine">ימים מהיום</p></div></div>`).join('');
+  const eventCards = CommerceEvents.renderCards(commerceEvents, CommerceEvents.israelToday(new Date()));
   const obsRows = S.observed.map((o) => `<tr class="grp-${o.group}" data-group="${o.group}"><th scope="row">${bdi(brandById[o.brand].name)} ${groupBadge(o.group)}</th><td>${esc(o.event)}</td><td class="txt">${esc(o.text)}</td><td>${chip(o.platform)}</td></tr>`).join('');
   const seasonPanel = section('trends', 'מגמות ועונתיות', `
-    <div class="ev-cards">${eventCards}</div>
+    <p class="fine">האירועים ב-120 הימים הקרובים, לפי התאריך בישראל. אירוע שעבר נעלם לבד, בלי בנייה מחדש.</p>
+    <div class="ev-cards" data-event-cards>${eventCards}</div>
     <h3>תוכנית עונתית מומלצת</h3>
     <ol class="timeline">${S.plan.map((p) => `<li><b>${esc(p.when)}</b><span>${esc(p.what)}</span></li>`).join('')}</ol>
     <h3>מבצעים עונתיים שנצפו אצל מתחרים</h3>
@@ -440,6 +449,8 @@ ${limPanel}
 ${CR.lightbox}
 </main>
 <footer class="foot"><p>סריקה ראשונה: ${esc(scan.date)} · מקורות ציבוריים, קריאה בלבד · ללא מעקב וללא עוגיות · מבוסס על דוחות Google Drive (ראו ״למסמך המלא״ בכל סעיף).</p><p><a href="#limits">מגבלות וכיסוי</a></p></footer>
+<script type="application/json" id="commerce-events">${JSON.stringify(commerceEvents).replace(/</g, '\\u003c')}</script>
+<script src="/events.js" defer></script>
 <script src="/mailer-sort.js" defer></script>
 <script src="/app.js" defer></script>
 </body></html>`;
