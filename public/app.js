@@ -375,41 +375,25 @@
     var t = el.querySelector(sel);
     return t ? t.textContent || '' : '';
   }
-  function brandButton(value, label, count, on) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'mf-btn';
-    b.setAttribute('role', 'radio');
-    b.setAttribute('data-ml-brand', value);
-    b.setAttribute('aria-checked', on ? 'true' : 'false');
-    b.tabIndex = on ? 0 : -1;
-    b.setAttribute('aria-label', label + ', ' + count);
-    if (value) {
-      var name = document.createElement('bdi');
-      name.textContent = label;
-      b.appendChild(name);
-      b.appendChild(document.createTextNode(' '));
-    } else {
-      b.appendChild(document.createTextNode(label + ' '));
-    }
-    var s = document.createElement('span');
-    s.className = 'mf-n';
-    s.setAttribute('aria-hidden', 'true');
-    s.textContent = '(' + count + ')';
-    b.appendChild(s);
-    return b;
+  function brandOption(value, label) {
+    var o = document.createElement('option');
+    o.value = value;
+    o.textContent = label;
+    return o;
   }
-  function renderBrandButtons(panel) {
+  function renderBrandOptions(panel) {
     var MS = window.MailerSort;
-    var group = panel.querySelector('.ml-brands');
-    if (!group || !MS) return;
+    var sel = panel.querySelector('select.ml-brand');
+    if (!sel || !MS) return;
     var cards = panel.querySelectorAll('.mailer-card');
     var names = [];
     Array.prototype.forEach.call(cards, function (c) { names.push(fieldText(c, 'data-brand', '.brand-tag')); });
     var opts = MS.competitorOptions(names);
-    while (group.firstChild) group.removeChild(group.firstChild);
-    group.appendChild(brandButton('', 'הכל', cards.length, true));
-    opts.forEach(function (o) { group.appendChild(brandButton(o.name, o.name, o.count, false)); });
+    var keep = sel.value;
+    while (sel.firstChild) sel.removeChild(sel.firstChild);
+    sel.appendChild(brandOption('', 'הכל (' + cards.length + ')'));
+    opts.forEach(function (o) { sel.appendChild(brandOption(o.name, o.name + ' (' + o.count + ')')); });
+    if (keep) sel.value = keep;
   }
   function foldEq(a, b) {
     var x = String(a || '').replace(/^\s+|\s+$/g, '');
@@ -418,21 +402,14 @@
     try { return x.toLocaleLowerCase('he') === y.toLocaleLowerCase('he'); }
     catch (e) { return x.toLowerCase() === y.toLowerCase(); }
   }
-  function markRadios(group, attr, value) {
-    if (!group) return;
-    var btns = Array.prototype.slice.call(group.querySelectorAll('[role="radio"]'));
-    var matched = false;
-    btns.forEach(function (b) {
-      var v = b.getAttribute(attr) || '';
-      if (attr === 'data-ml-brand' ? foldEq(v, value) : v === value) matched = true;
-    });
-    btns.forEach(function (b) {
-      var v = b.getAttribute(attr) || '';
-      var on = matched && (attr === 'data-ml-brand' ? foldEq(v, value) : v === value);
-      b.setAttribute('aria-checked', on ? 'true' : 'false');
-      b.tabIndex = on ? 0 : -1;
-    });
-    if (!matched && btns[0]) btns[0].tabIndex = 0;
+  function optionValue(sel, value, loose) {
+    if (!sel) return '';
+    var i, v;
+    for (i = 0; i < sel.options.length; i++) {
+      v = sel.options[i].value;
+      if (loose ? (v && foldEq(v, value)) : v === value) return v;
+    }
+    return '';
   }
   function countLabel(shown, total) {
     if (shown === total) return total + ' מיילרים';
@@ -451,14 +428,13 @@
     cards.forEach(function (el, i) {
       if (!el.hasAttribute('data-ml-index')) el.setAttribute('data-ml-index', String(i));
     });
-    var brandGroup = panel.querySelector('.ml-brands');
-    if (brand && brandGroup) {
-      var canon = '';
-      Array.prototype.forEach.call(brandGroup.querySelectorAll('[data-ml-brand]'), function (b) {
-        var v = b.getAttribute('data-ml-brand') || '';
-        if (v && foldEq(v, brand)) canon = v;
-      });
+    var brandSel = panel.querySelector('select.ml-brand');
+    if (brand && brandSel) {
+      var canon = optionValue(brandSel, brand, true);
       if (canon) brand = canon;
+      else if (!optionValue(brandSel, brand, false)) {
+        brandSel.appendChild(brandOption(brand, brand + ' (0)'));
+      }
     }
     mlState.brand = brand;
     var metas = cards.map(function (el) {
@@ -478,8 +454,9 @@
       m.el.hidden = !ok;
       if (ok) shown++;
     });
-    markRadios(panel.querySelector('.ml-sort'), 'data-ml-sort', sort);
-    markRadios(panel.querySelector('.ml-brands'), 'data-ml-brand', brand);
+    var sortSel = panel.querySelector('select.ml-sort');
+    if (sortSel) sortSel.value = sort;
+    if (brandSel) brandSel.value = brand;
     var count = panel.querySelector('.ml-count');
     if (count) count.textContent = countLabel(shown, cards.length);
     var empty = panel.querySelector('.ml-empty');
@@ -500,30 +477,19 @@
     mlState.brand = brand || '';
     applyMailers({ writeHash: true, announce: true });
   }
-  function onSegKey(e) {
-    var key = e.key;
-    if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End'].indexOf(key) < 0) return;
-    var group = e.currentTarget;
-    var btns = Array.prototype.slice.call(group.querySelectorAll('[role="radio"]'));
-    var i = btns.indexOf(document.activeElement);
-    if (i < 0) return;
-    e.preventDefault();
-    e.stopPropagation();
-    var rtl = document.documentElement.getAttribute('dir') === 'rtl';
-    var n = i;
-    if (key === 'Home') n = 0;
-    else if (key === 'End') n = btns.length - 1;
-    else {
-      var forward = key === 'ArrowDown' || key === (rtl ? 'ArrowLeft' : 'ArrowRight');
-      var back = key === 'ArrowUp' || key === (rtl ? 'ArrowRight' : 'ArrowLeft');
-      if (forward) n = (i + 1) % btns.length;
-      else if (back) n = (i - 1 + btns.length) % btns.length;
-      else return;
-    }
-    var b = btns[n];
-    if (b.hasAttribute('data-ml-sort')) setMailerSort(b.getAttribute('data-ml-sort'));
-    else setMailerBrand(b.getAttribute('data-ml-brand') || '');
-    b.focus();
+  function selectPair(id, labelText, className) {
+    var pair = document.createElement('div');
+    pair.className = 'ml-pair';
+    var label = document.createElement('label');
+    label.htmlFor = id;
+    label.textContent = labelText;
+    var sel = document.createElement('select');
+    sel.id = id;
+    sel.className = className;
+    sel.setAttribute('aria-controls', 'mailer-grid');
+    pair.appendChild(label);
+    pair.appendChild(sel);
+    return { pair: pair, sel: sel };
   }
   function ensureMailerToolbar(panel) {
     if (panel.querySelector('.ml-toolbar')) return;
@@ -533,49 +499,16 @@
     bar.className = 'ml-toolbar';
     bar.setAttribute('role', 'region');
     bar.setAttribute('aria-label', 'סינון ומיון מיילרים');
-    var sorts = [['date-desc', 'תאריך: חדש לישן'], ['date-asc', 'תאריך: ישן לחדש'], ['score-desc', 'ציון: גבוה לנמוך'], ['score-asc', 'ציון: נמוך לגבוה']];
-    var sortField = document.createElement('div');
-    sortField.className = 'ml-field';
-    var sortLabel = document.createElement('span');
-    sortLabel.className = 'ml-field-label';
-    sortLabel.id = 'ml-sort-label';
-    sortLabel.textContent = 'מיון';
-    var sortGroup = document.createElement('div');
-    sortGroup.className = 'ml-seg ml-sort';
-    sortGroup.setAttribute('role', 'radiogroup');
-    sortGroup.setAttribute('aria-labelledby', 'ml-sort-label');
-    sortGroup.setAttribute('aria-controls', 'mailer-grid');
-    sorts.forEach(function (pair, i) {
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.className = 'mf-btn';
-      b.setAttribute('role', 'radio');
-      b.setAttribute('data-ml-sort', pair[0]);
-      b.setAttribute('aria-checked', i === 0 ? 'true' : 'false');
-      b.tabIndex = i === 0 ? 0 : -1;
-      b.textContent = pair[1];
-      sortGroup.appendChild(b);
+    var sort = selectPair('ml-sort', 'מיון', 'ml-sort');
+    [['date-desc', 'תאריך: חדש לישן'], ['date-asc', 'תאריך: ישן לחדש'], ['score-desc', 'ציון: גבוה לנמוך'], ['score-asc', 'ציון: נמוך לגבוה']].forEach(function (pair) {
+      sort.sel.appendChild(brandOption(pair[0], pair[1]));
     });
-    sortField.appendChild(sortLabel);
-    sortField.appendChild(sortGroup);
-    var brandField = document.createElement('div');
-    brandField.className = 'ml-field';
-    var brandLabel = document.createElement('span');
-    brandLabel.className = 'ml-field-label';
-    brandLabel.id = 'ml-brand-label';
-    brandLabel.textContent = 'מתחרה';
-    var brandGroup = document.createElement('div');
-    brandGroup.className = 'ml-seg ml-brands';
-    brandGroup.setAttribute('role', 'radiogroup');
-    brandGroup.setAttribute('aria-labelledby', 'ml-brand-label');
-    brandGroup.setAttribute('aria-controls', 'mailer-grid');
-    brandField.appendChild(brandLabel);
-    brandField.appendChild(brandGroup);
+    var brand = selectPair('ml-brand', 'מתחרה', 'ml-brand');
     var count = document.createElement('p');
     count.className = 'ml-count';
     count.id = 'ml-count';
-    bar.appendChild(sortField);
-    bar.appendChild(brandField);
+    bar.appendChild(sort.pair);
+    bar.appendChild(brand.pair);
     bar.appendChild(count);
     var empty = document.createElement('p');
     empty.className = 'media-empty ml-empty';
@@ -592,23 +525,13 @@
     if (!panel || panel.dataset.mlWired) return;
     if (!panel.querySelector('.mailer-card')) return;
     ensureMailerToolbar(panel);
-    var sort = panel.querySelector('.ml-sort');
-    var brands = panel.querySelector('.ml-brands');
+    var sort = panel.querySelector('select.ml-sort');
+    var brands = panel.querySelector('select.ml-brand');
     if (!sort || !brands) return;
     panel.dataset.mlWired = '1';
-    renderBrandButtons(panel);
-    sort.addEventListener('click', function (e) {
-      var b = e.target.closest ? e.target.closest('[data-ml-sort]') : null;
-      if (!b || !sort.contains(b)) return;
-      setMailerSort(b.getAttribute('data-ml-sort'));
-    });
-    brands.addEventListener('click', function (e) {
-      var b = e.target.closest ? e.target.closest('[data-ml-brand]') : null;
-      if (!b || !brands.contains(b)) return;
-      setMailerBrand(b.getAttribute('data-ml-brand') || '');
-    });
-    sort.addEventListener('keydown', onSegKey);
-    brands.addEventListener('keydown', onSegKey);
+    renderBrandOptions(panel);
+    sort.addEventListener('change', function () { setMailerSort(sort.value); });
+    brands.addEventListener('change', function () { setMailerBrand(brands.value); });
   }
   function syncMailers() {
     if (!window.MailerSort) return;
