@@ -486,6 +486,7 @@
     var sel = document.createElement('select');
     sel.id = id;
     sel.className = className;
+    sel.setAttribute('aria-label', labelText);
     sel.setAttribute('aria-controls', 'mailer-grid');
     pair.appendChild(label);
     pair.appendChild(sel);
