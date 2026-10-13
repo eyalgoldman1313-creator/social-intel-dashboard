@@ -36,6 +36,9 @@ const creatives = loadJson(root, 'data/creatives.json', { items: [] });
 const specs = loadJson(root, 'data/specs.json', { items: {}, mailers: [] });
 const top10 = loadJson(root, 'data/top10.json', { weeks: {} });
 const { siteDates, fmtIL, fmtILTime } = await import('./dates.mjs');
+const orgItems = creatives.items.filter((i) => i.source === 'organic');
+const igPosts = orgItems.filter((i) => i.plat === 'instagram').length, fbPosts = orgItems.filter((i) => i.plat === 'facebook').length;
+const igProfiles = Object.values(data.scans[data.scans.length - 1].organic?.brandStats || {}).filter((b) => b.igFollowers).length;
 const SD = siteDates({ root, data, creatives, top10 });
 const UPDATED = fmtIL(SD.updated), BUILT = `${fmtIL(SD.built)} ${fmtILTime(SD.built)}`;
 console.log(`dates: updated ${UPDATED} (from ${SD.updatedSrc}), built ${BUILT} Israel time`);
@@ -203,10 +206,10 @@ function render(scan, prev, { isLatest, scans }) {
       ${cell(t.none ? '—' : num(t.followers), t.none ? 'zero' : '')}
       ${cell(g.notFound ? 'לא נמצא' : g.total ? (g.approx ? '~' : '') + num(g.total) : '0', g.total ? '' : 'zero')}
       ${cell(o.fbFollowers ? num(o.fbFollowers) : o.fbUnavailable ? 'לא זמין' : o.fbNotFound ? 'לא נמצא' : '—', o.fbFollowers ? '' : 'zero')}
-      <td class="ig">בהמשך</td></tr>`;
+      ${cell(o.igFollowers ? num(o.igFollowers) : 'אין פרופיל', o.igFollowers ? '' : 'zero')}</tr>`;
   }).join('');
   const matrix = `<div class="tablewrap"><table class="matrix"><caption>מטריצת נוכחות – מספר מודעות ועוקבים לכל מתחרה ופלטפורמה ${srcTag('general', 'דוחות ההשוואה בדרייב')}</caption>
-    <thead><tr><th>מתחרה</th><th>Meta<small>תוצאות מודעות</small></th><th>TikTok<small>עוקבים (אורגני)</small></th><th>Google<small>מודעות</small></th><th>פייסבוק<small>עוקבים</small></th><th>Instagram</th></tr></thead><tbody>${matrixRows}</tbody></table></div>`;
+    <thead><tr><th>מתחרה</th><th>Meta<small>תוצאות מודעות</small></th><th>TikTok<small>עוקבים (אורגני)</small></th><th>Google<small>מודעות</small></th><th>פייסבוק<small>עוקבים</small></th><th>Instagram<small>עוקבים · 12.10.2026</small></th></tr></thead><tbody>${matrixRows}</tbody></table></div>`;
 
   const overviewDocs = `<div class="doc-grid">
     ${['meta', 'tiktok', 'google', 'organic'].map((p) => `<div class="doc-card">${chip(p)}<div>${fullDoc(D.comparative[p], 'דוח השוואתי')}${link(D.folders[p], 'תיקייה')}</div></div>`).join('')}
@@ -215,9 +218,9 @@ function render(scan, prev, { isLatest, scans }) {
   const overview = section('overview', 'סקירה כללית', `${summary}${kpis}${matrix}
     <h3>מה בסריקה</h3>
     <ul class="notes"><li>7 אתרי נישה (משקל גבוה מאוד) ו-6 אתרי רפרנס מחוץ לנישה (משקל נמוך – טרנדים, מבצעים עונתיים, פורמטים).</li>
-    <li>4 פלטפורמות נותחו: Meta (מודעות), TikTok (אורגני בלבד), Google (שקיפות מודעות), נראות אורגנית (פייסבוק, YouTube, פיד אינסטגרם מוטמע).</li>
+    <li>4 פלטפורמות נותחו: Meta (מודעות), TikTok (אורגני בלבד), Google (שקיפות מודעות), נראות אורגנית (אינסטגרם, פייסבוק, YouTube, פיד אינסטגרם מוטמע).</li>
     <li>היקף: מודעות ותוכן נותחו בכל שפה ובכל מדינה (לא רק עברית) – בתוקף מ-${esc(scan.date)}.</li>
-    <li>אינסטגרם עדיין <b>בהמשך</b> – ההתחברות לא הושלמה.</li></ul>
+    <li>אינסטגרם ופייסבוק: מחוברים. נותחו ${igProfiles} פרופילי אינסטגרם (12.10.2026); בגלריה ${igPosts} פוסטי אינסטגרם ו-${fbPosts} פוסטי פייסבוק.</li></ul>
     <h3>הדוחות המלאים בדרייב</h3>${overviewDocs}`);
 
   // ----- creatives-first panels -----
@@ -350,12 +353,14 @@ function render(scan, prev, { isLatest, scans }) {
   const fbItems = [...niche, ...ref].filter((b) => os[b.id]?.fbFollowers).sort((a, b) => os[b.id].fbFollowers - os[a.id].fbFollowers).map((b) => ({ label: bdi(b.name), value: os[b.id].fbFollowers, group: b.group }));
   const ytItems = [...niche, ...ref].filter((b) => os[b.id]?.ytSubs).sort((a, b) => os[b.id].ytSubs - os[a.id].ytSubs).map((b) => ({ label: bdi(b.name), value: os[b.id].ytSubs, group: b.group }));
   const recItems = [...niche, ...ref].filter((b) => os[b.id]?.fbRecPct != null).sort((a, b) => os[b.id].fbRecPct - os[a.id].fbRecPct).map((b) => ({ label: bdi(b.name), value: os[b.id].fbRecPct, display: `${os[b.id].fbRecPct}% (${num(os[b.id].fbReviews)})`, group: b.group }));
+  const igItems = [...niche, ...ref].filter((b) => os[b.id]?.igFollowers).sort((a, b) => os[b.id].igFollowers - os[a.id].igFollowers).map((b) => ({ label: bdi(b.name), value: os[b.id].igFollowers, group: b.group }));
   const organicPanel = section('organic', 'נראות אורגנית', `
-    <div class="grid2"><div class="callout soon"><b>אינסטגרם – בהמשך.</b> ניתוח פרופילי אינסטגרם (10 פרופילים) עדיין לא בוצע – ההתחברות לא הושלמה. אין כאן נתונים מאינסטגרם מעבר לפיד מוטמע באתר GOOM.</div>
-    <div class="callout warn"><b>מדגם פייסבוק קטן:</b> 2–5 פוסטים לדף, ללא תאריכים – לא מדד ביצועים.</div></div>
+    <div class="grid2"><div class="callout info"><b>אינסטגרם – נותח.</b> ${igProfiles} פרופילים נאספו ב-12.10.2026 בדפדפן מחובר (קריאה בלבד; ל-Woof אין פרופיל). ${igPosts} פוסטי אינסטגרם בגלריית <a href="#creatives">הקריאייטיבים</a>. סטוריז ו-Highlights לא נפתחו.</div>
+    <div class="callout warn"><b>מדגם פייסבוק קטן:</b> ${fbPosts} פוסטי פייסבוק עם תאריך בגלריה; חסרים permalink וצפיות לחלק מהם – לא מדד ביצועים.</div></div>
     <p class="scope">${esc(scan.organic.scope)}</p>${legend()}
     <div class="grid2">${bars({ title: 'עוקבי פייסבוק', source: srcTag('organic', 'פייסבוק'), items: fbItems, note: 'Fill It: הדף אינו זמין · Smiley, Woof: לא נמצא דף רשמי.' })}
-    ${bars({ title: 'אחוז המלצות בדף פייסבוק (ומספר ביקורות)', source: srcTag('organic', 'פייסבוק'), max: 100, items: recItems })}</div>
+    ${bars({ title: 'עוקבי אינסטגרם', source: srcTag('organic', 'אינסטגרם · 12.10.2026'), items: igItems, note: 'Woof: אין פרופיל אינסטגרם.' })}</div>
+    <div class="grid2">${bars({ title: 'אחוז המלצות בדף פייסבוק (ומספר ביקורות)', source: srcTag('organic', 'פייסבוק'), max: 100, items: recItems })}</div>
     <div class="grid2">${bars({ title: 'מנויי YouTube', source: srcTag('organic', 'YouTube'), items: ytItems, note: 'נותחו 5 ערוצים; למותגים אחרים לא נמצא ערוץ / לא נותח.' })}
     <figure class="chart"><figcaption><b>קצב פרסום – GOOM (פיד אינסטגרם מוטמע)</b>${srcTag('organic', 'פיד IG מוטמע באתר')}</figcaption><p class="big-stat"><b dir="ltr">~5.5</b> פוסטים בחודש · חציון 22 לייקים · נותחו 30 מתוך 100 פוסטים</p></figure></div>
     <h3>מה בלט</h3>${notesList(scan.organic.highlights)}
@@ -488,3 +493,12 @@ scans.slice(0, -1).forEach((s, i) => {
   console.log(`external links fixed in dist: ${L} (Meta library URLs normalized: ${F})`);
 }
 console.log(`built ${scans.length} scan page(s) → dist/`);
+{ // link + wording checks on the built output
+  const { checkDriveLinks } = await import('./check-drive-links.mjs');
+  const r = checkDriveLinks(dist);
+  for (const u of r.unknown) console.warn(`! drive: ${u.id} not in data/drive-names.json (${u.files[0]})`);
+  if (r.outdated.length) { for (const o of r.outdated) console.error(`✗ drive: link to outdated file "${o.name}" (${o.id}) in ${o.files.join(', ')}`); console.error('build failed: links to [גרסה…] files – point them to the current version'); process.exit(1); }
+  console.log(`drive links OK: ${r.total} files, none outdated`);
+  const { checkPending } = await import('./check-pending.mjs');
+  for (const w of checkPending()) console.warn('! pending: ' + w);
+}

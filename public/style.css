@@ -345,3 +345,4 @@ a.info-i{display:inline-grid;place-items:center;width:1.35rem;height:1.35rem;mar
   .ml-count{grid-column:1 / -1;font-size:12px;line-height:1.2}
 }
 .cr-ph-why{font-size:.74rem;opacity:.8}
+.callout.info{background:#ecfdf5;border:1px solid #86efac;color:#14532d}
