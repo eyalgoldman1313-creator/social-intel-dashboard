@@ -145,8 +145,10 @@ function formatSpan(start, end) {
 }
 
 function gregIso(ev) {
+  // abs2greg() is local midnight of the civil day. UTC fields are the
+  // previous day anywhere east of UTC (Asia/Jerusalem included).
   const d = ev.getDate().greg();
-  return iso(d.getUTCFullYear(), d.getUTCMonth() + 1, d.getUTCDate());
+  return iso(d.getFullYear(), d.getMonth() + 1, d.getDate());
 }
 
 function nthWeekday(year, month, weekday, n) {
@@ -186,8 +188,8 @@ function cluster(items) {
 
 function jewishEvents() {
   const raw = HebrewCalendar.calendar({
-    start: new Date(Date.UTC(2026, 7, 1)),
-    end: new Date(Date.UTC(2027, 10, 30)),
+    start: new Date(2026, 7, 1),
+    end: new Date(2027, 10, 30),
     il: true,
     noMinorFast: true,
     noRoshChodesh: true,

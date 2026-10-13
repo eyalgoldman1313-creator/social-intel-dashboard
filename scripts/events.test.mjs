@@ -2,10 +2,14 @@ import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
-import test from 'node:test';
+import test, { mock } from 'node:test';
 import assert from 'node:assert/strict';
 import { HebrewCalendar } from '@hebcal/core';
 import { reportCardWindow, resolveEvents } from './resolve-events.mjs';
+
+// 13.10.2026 12:00 UTC is still 13.10.2026 in Israel. Tests must not follow the host clock.
+const FIXED_NOW = Date.parse('2026-10-13T12:00:00Z');
+mock.timers.enable({ apis: ['Date'], now: FIXED_NOW });
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const sandbox = {};
@@ -26,8 +30,8 @@ function hebcalRange(match, from, to) {
   const [fy, fm, fd] = from.split('-').map(Number);
   const [ty, tm, td] = to.split('-').map(Number);
   return HebrewCalendar.calendar({
-    start: new Date(Date.UTC(fy, fm - 1, fd)),
-    end: new Date(Date.UTC(ty, tm - 1, td)),
+    start: new Date(fy, fm - 1, fd),
+    end: new Date(ty, tm - 1, td),
     il: true,
     noMinorFast: true,
     noRoshChodesh: true,
@@ -37,10 +41,20 @@ function hebcalRange(match, from, to) {
     candlelighting: false
   }).filter((ev) => match(ev.getDesc())).map((ev) => {
     const d = ev.getDate().greg();
-    const iso = d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0') + '-' + String(d.getUTCDate()).padStart(2, '0');
+    const iso = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
     return { iso, hebrewDay: ev.getDate().getDate(), desc: ev.getDesc() };
   });
 }
+
+test('injected now is 13 Oct 2026 in Israel, independent of the host clock', () => {
+  assert.equal(new Date().toISOString(), '2026-10-13T12:00:00.000Z');
+  assert.equal(CE.israelToday(), '2026-10-13');
+  const visible = CE.visible(events);
+  assert.deepEqual(visible.slice(0, 3).map((e) => e.name), ['עונת השפעת', 'יום הרווקים', 'בלאק פריידיי']);
+  assert.equal(visible.find((e) => e.name === 'בלאק פריידיי').days, 45);
+  assert.equal(CE.addDays(CE.israelToday(), 120), '2027-02-10');
+  assert.equal(visible.find((e) => e.name === 'יום המשפחה').days, 117);
+});
 
 test('seed matches the Hebcal resolver and covers through Oct 2027', () => {
   assert.deepEqual(events, resolveEvents());
