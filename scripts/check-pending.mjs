@@ -10,7 +10,7 @@ const PLAT = {
   tiktok: { re: /טיקטוק|TikTok/, has: (c) => c.filter((i) => i.source === 'tiktok').length },
   youtube: { re: /יוטיוב|YouTube/, has: (c) => c.filter((i) => i.plat === 'youtube').length },
 };
-const PENDING = /בהמתנה|בהמשך|ההתחברות לא הושלמה|התחברות לא הושלמה|טרם נותח|עדיין לא (?:נותח|בוצע)|לא נותח/;
+const PENDING = /בהמתנה|ממתין לסריקה|בהמשך|ההתחברות לא הושלמה|התחברות לא הושלמה|טרם נותח|עדיין לא (?:נותח|בוצע)|לא נותח/;
 export function checkPending({ html = existsSync(join(root, 'dist/index.html')) ? readFileSync(join(root, 'dist/index.html'), 'utf8') : '' } = {}) {
   const c = JSON.parse(readFileSync(join(root, 'data/creatives.json'), 'utf8')).items;
   const d = JSON.parse(readFileSync(join(root, 'data/data.json'), 'utf8')); const s = d.scans[d.scans.length - 1];

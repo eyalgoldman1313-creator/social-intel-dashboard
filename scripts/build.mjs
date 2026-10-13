@@ -205,7 +205,7 @@ function render(scan, prev, { isLatest, scans }) {
     const o = scan.organic.brandStats[b.id] || {};
     return `<tr class="grp-${b.group}"><th scope="row">${bdi(b.name)} ${groupBadge(b.group)}</th>
       ${cell(m.resultsLabel || (m.results > 0 ? '~' + num(m.results) : '0'), m.results || m.resultsLabel ? '' : 'zero')}
-      ${cell(t.none ? '—' : num(t.followers), t.none ? 'zero' : '')}
+      ${cell(t.noProfile ? 'אין פרופיל' : t.none ? '—' : num(t.followers), t.none ? 'zero' : '')}
       ${cell(g.notFound ? 'לא נמצא' : g.total ? (g.approx ? '~' : '') + num(g.total) : '0', g.total ? '' : 'zero')}
       ${cell(o.fbFollowers ? num(o.fbFollowers) : o.fbUnavailable ? 'לא זמין' : o.fbNotFound ? 'לא נמצא' : '—', o.fbFollowers ? '' : 'zero')}
       ${cell(o.igFollowers ? num(o.igFollowers) : 'אין פרופיל', o.igFollowers ? '' : 'zero')}</tr>`;
