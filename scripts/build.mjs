@@ -509,4 +509,9 @@ console.log(`built ${scans.length} scan page(s) → dist/`);
   console.log(`drive links OK: ${r.total} files, none outdated`);
   const { checkPending } = await import('./check-pending.mjs');
   for (const w of checkPending()) console.warn('! pending: ' + w);
+  const { driveGaps } = await import('./sync-drive.mjs'); // cached listing only – no Drive access at build time
+  const g = driveGaps();
+  if (g.error) console.warn('! drive sync: ' + g.error);
+  else if (g.gaps.length) { for (const x of g.gaps) console.warn(`! drive sync: ${x.kind} analysis not on dashboard: ${x.name} (${x.id})`); console.warn(`! drive sync: ${g.gaps.length} gap(s) vs listing cached ${g.fetchedAt} – run: node scripts/sync-drive.mjs --kind all`); }
+  else console.log(`drive sync OK: every analysis in the cached Drive listing (${g.fetchedAt}) is on the dashboard`);
 }

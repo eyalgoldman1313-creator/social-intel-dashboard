@@ -113,7 +113,7 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
     if (script) pills.push(`<a class="drv-pill drv-script" href="${esc(script)}" target="_blank" rel="noopener noreferrer" data-stop>${DRIVE_IC.script}<span>תסריט <bdi dir="ltr">Nully</bdi></span></a>`);
     return pills.length ? `<div class="cr-drive" dir="rtl">${pills.join('')}</div>` : '';
   };
-  const specOf = (it) => { const ids = [it.library_id, ...(it.alias_ids || []), ...(String(it.post_url || it.video_url || '').match(/\d{15,}/g) || [])].filter(Boolean); for (const k of ids) if (specs[k]) return specs[k]; return null; };
+  const specOf = (it) => { const ids = [it.library_id, ...(it.alias_ids || []), ...(String(it.post_url || it.video_url || '').match(/\d{15,}/g) || [])].filter(Boolean); const out = [], seen = new Set(); for (const k of new Set(ids)) for (const sp of specs[k] || []) if (!seen.has(sp.file)) { seen.add(sp.file); out.push(sp); } return out.length ? out : null; }; // aliases: merge every id's specs
   const specLinks = (sp) => sp ? `<div class="cr-specs">${sp.map((x) => `<a class="spec-tag" href="/specs/${esc(x.file.replace(/\.html$/, ''))}" target="_blank" rel="noopener">📄 ${esc(x.label)}</a>`).join('')}</div>` : '';
   const compact = (v) => {
     if (v == null || v === '') return '';
