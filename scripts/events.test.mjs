@@ -2,19 +2,36 @@ import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import vm from 'node:vm';
-import test, { mock } from 'node:test';
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import { HebrewCalendar } from '@hebcal/core';
 import { reportCardWindow, resolveEvents } from './resolve-events.mjs';
 
-// 13.10.2026 12:00 UTC is still 13.10.2026 in Israel. Tests must not follow the host clock.
-const FIXED_NOW = Date.parse('2026-10-13T12:00:00Z');
-mock.timers.enable({ apis: ['Date'], now: FIXED_NOW });
+// 2027-02-06 22:30 UTC is 2027-02-07 00:30 in Israel (IST, UTC+2). The calendar
+// script runs in its own vm realm, so freezing Date in this module does not
+// affect it. The clock is installed in that realm instead.
+const FIXED_NOW = Date.parse('2027-02-06T22:30:00Z');
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const sandbox = {};
 sandbox.window = sandbox;
-vm.runInNewContext(readFileSync(join(root, 'public/events.js'), 'utf8'), sandbox);
+const clock = `
+  var __fixedNow = ${FIXED_NOW};
+  var __RealDate = Date;
+  function __ClockDate() {
+    var d = arguments.length === 0 ? new __RealDate(__fixedNow)
+      : arguments.length === 1 ? new __RealDate(arguments[0])
+      : new __RealDate(arguments[0], arguments[1], arguments.length > 2 ? arguments[2] : 1, arguments[3] || 0, arguments[4] || 0, arguments[5] || 0, arguments[6] || 0);
+    if (!(this instanceof __ClockDate)) return String(d);
+    return d;
+  }
+  __ClockDate.now = function () { return __fixedNow; };
+  __ClockDate.parse = function (s) { return __RealDate.parse(s); };
+  __ClockDate.UTC = function () { return __RealDate.UTC.apply(__RealDate, arguments); };
+  __ClockDate.prototype = __RealDate.prototype;
+  Date = __ClockDate;
+`;
+vm.runInNewContext(clock + '\n' + readFileSync(join(root, 'public/events.js'), 'utf8'), sandbox);
 const CE = sandbox.CommerceEvents;
 const events = JSON.parse(readFileSync(join(root, 'data/events.json'), 'utf8'));
 
@@ -46,14 +63,19 @@ function hebcalRange(match, from, to) {
   });
 }
 
-test('injected now is 13 Oct 2026 in Israel, independent of the host clock', () => {
-  assert.equal(new Date().toISOString(), '2026-10-13T12:00:00.000Z');
-  assert.equal(CE.israelToday(), '2026-10-13');
+test('default window follows the clock injected into the calendar realm', () => {
+  const israel = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Jerusalem', year: 'numeric', month: '2-digit', day: '2-digit'
+  }).format(new Date(FIXED_NOW));
+  assert.equal(israel, '2027-02-07');
+  assert.equal(CE.israelToday(), '2027-02-07');
   const visible = CE.visible(events);
-  assert.deepEqual(visible.slice(0, 3).map((e) => e.name), ['עונת השפעת', 'יום הרווקים', 'בלאק פריידיי']);
-  assert.equal(visible.find((e) => e.name === 'בלאק פריידיי').days, 45);
-  assert.equal(CE.addDays(CE.israelToday(), 120), '2027-02-10');
-  assert.equal(visible.find((e) => e.name === 'יום המשפחה').days, 117);
+  assert.deepEqual(visible.slice(0, 3).map((e) => e.name), ['עונת השפעת', 'יום המשפחה', 'פורים']);
+  assert.equal(visible.find((e) => e.name === 'עונת השפעת').phase, 'ongoing');
+  assert.equal(visible.find((e) => e.name === 'יום המשפחה').phase, 'today');
+  assert.equal(visible.find((e) => e.name === 'פורים').days, 44);
+  assert.equal(visible.some((e) => e.name === 'בלאק פריידיי'), false);
+  assert.equal(CE.addDays(CE.israelToday(), 120), '2027-06-07');
 });
 
 test('seed matches the Hebcal resolver and covers through Oct 2027', () => {
