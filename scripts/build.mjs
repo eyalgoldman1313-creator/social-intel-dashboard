@@ -102,6 +102,8 @@ const srcTag = (p, text) => `<span class="src plat-${esc(p)}-t">מקור: ${esc(
 const bdi = (s) => `<bdi>${esc(s)}</bdi>`;
 const brandName = (id) => esc(brandById[id]?.name || id);
 const groupBadge = (g) => `<span class="badge g-${g}">${GROUP_LABEL[g]}</span>`;
+// per-brand platform report: Drive id -> link; explicit null slot -> visible 'not created yet' placeholder; absent -> hidden
+const brandDoc = (docs, p, text) => docs && Object.prototype.hasOwnProperty.call(docs, p) && !docs[p] ? `<span class="doclink pending" title="הדוח עדיין לא נוצר – הקישור יתווסף כשיהיה זמין">${esc(text)} · דוח טרם נוצר</span>` : link(docUrl(docs?.[p]), text);
 const link = (href, text) => !href ? '' : `<a class="doclink" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(text)} ↗</a>`;
 const fullDoc = (id, text = 'למסמך המלא') => link(docUrl(id), text);
 
@@ -217,7 +219,7 @@ function render(scan, prev, { isLatest, scans }) {
 
   const overview = section('overview', 'סקירה כללית', `${summary}${kpis}${matrix}
     <h3>מה בסריקה</h3>
-    <ul class="notes"><li>7 אתרי נישה (משקל גבוה מאוד) ו-6 אתרי רפרנס מחוץ לנישה (משקל נמוך – טרנדים, מבצעים עונתיים, פורמטים).</li>
+    <ul class="notes"><li>${data.brands.filter((b) => b.group === 'niche').length} אתרי נישה (משקל גבוה מאוד) ו-${data.brands.filter((b) => b.group === 'reference').length} אתרי רפרנס מחוץ לנישה (משקל נמוך – טרנדים, מבצעים עונתיים, פורמטים).</li>
     <li>4 פלטפורמות נותחו: Meta (מודעות), TikTok (אורגני בלבד), Google (שקיפות מודעות), נראות אורגנית (אינסטגרם, פייסבוק, YouTube, פיד אינסטגרם מוטמע).</li>
     <li>היקף: מודעות ותוכן נותחו בכל שפה ובכל מדינה (לא רק עברית) – בתוקף מ-${esc(scan.date)}.</li>
     <li>אינסטגרם ופייסבוק: מחוברים. נותחו ${igProfiles} פרופילי אינסטגרם (12.10.2026); בגלריה ${igPosts} פוסטי אינסטגרם ו-${fbPosts} פוסטי פייסבוק.</li></ul>
@@ -281,7 +283,7 @@ function render(scan, prev, { isLatest, scans }) {
     { label: 'ניסיון / החזר כספי (מסגור ״חודש ניסיון״; התחייבות להחזר: 0)', value: nc.trial }] });
   const topics = bars({ title: 'נושאי הצורך ב-40 הקריאייטיבים העבריים הראשונים (מודעה יכולה לשלב כמה)', source: srcTag('meta', 'Meta Ad Library'), max: 10, items: scan.meta.needTopics.map((t) => ({ label: esc(t.label), value: t.count, display: (t.approx ? '~' : '') + (t.note || t.count) })) });
   const offerTiers = `<ul class="offers">${scan.meta.offerTiers.map((o) => `<li>${groupBadge(o.group)} ${esc(o.text)}</li>`).join('')}</ul>`;
-  const metaBrandDocs = brands.map((b) => link(docUrl(D.perBrand[b.id]?.meta), b.name)).join('');
+  const metaBrandDocs = allBrands.map((b) => brandDoc(D.perBrand[b.id], 'meta', b.name)).join('');
   const metaPanel = section('meta', 'Meta – מודעות ממומנות', `
     ${galleryHint('לראות את הקריאייטיבים עצמם – גלריה, ותק ריצה ו-Top 10')}
     <p class="scope">${esc(scan.meta.scope)}</p>${legend()}
@@ -320,7 +322,7 @@ function render(scan, prev, { isLatest, scans }) {
     ${codes}
     <h3>דפוסים חוצי מותגים</h3>${notesList(scan.tiktok.patterns)}
     <h3>הערות שיטה</h3>${notesList(scan.tiktok.notes)}
-    <h3>דוחות לפי מתחרה</h3><div class="links">${brands.map((b) => link(docUrl(D.perBrand[b.id]?.tiktok), b.name)).join('')}</div>`,
+    <h3>דוחות לפי מתחרה</h3><div class="links">${allBrands.map((b) => brandDoc(D.perBrand[b.id], 'tiktok', b.name)).join('')}</div>`,
     { docs: fullDoc(D.comparative.tiktok) + fullDoc(D.extra.tiktokCreators.id, D.extra.tiktokCreators.label) + link(D.folders.tiktok, 'תיקיית TikTok') });
 
   // ----- Google -----
@@ -345,7 +347,7 @@ function render(scan, prev, { isLatest, scans }) {
     ${covTable}${landing}
     <h3>רמזי אד-טק (מקוד מקור ציבורי)</h3>${notesList(scan.google.adTech)}
     <h3>הערות ומגבלות</h3>${notesList(scan.google.notes)}
-    <h3>דוחות לפי מתחרה</h3><div class="links">${brands.map((b) => link(docUrl(D.perBrand[b.id]?.google), b.name)).join('')}</div>`,
+    <h3>דוחות לפי מתחרה</h3><div class="links">${allBrands.map((b) => brandDoc(D.perBrand[b.id], 'google', b.name)).join('')}</div>`,
     { docs: fullDoc(D.comparative.google) + link(D.folders.google, 'תיקיית Google') });
 
   // ----- Organic -----
@@ -365,7 +367,7 @@ function render(scan, prev, { isLatest, scans }) {
     <figure class="chart"><figcaption><b>קצב פרסום – GOOM (פיד אינסטגרם מוטמע)</b>${srcTag('organic', 'פיד IG מוטמע באתר')}</figcaption><p class="big-stat"><b dir="ltr">~5.5</b> פוסטים בחודש · חציון 22 לייקים · נותחו 30 מתוך 100 פוסטים</p></figure></div>
     <h3>מה בלט</h3>${notesList(scan.organic.highlights)}
     <h3>הערות ומגבלות</h3>${notesList(scan.organic.notes)}
-    <h3>דוחות לפי מתחרה</h3><div class="links">${brands.map((b) => link(docUrl(D.perBrand[b.id]?.organic), b.name)).join('')}</div>`,
+    <h3>דוחות לפי מתחרה</h3><div class="links">${allBrands.map((b) => brandDoc(D.perBrand[b.id], 'organic', b.name)).join('')}</div>`,
     { docs: fullDoc(D.comparative.organic) + fullDoc(D.extra.organicBlockers.id, D.extra.organicBlockers.label) + link(D.folders.organic, 'תיקיית נראות אורגנית') });
 
   // ----- Competitors -----
@@ -378,7 +380,7 @@ function render(scan, prev, { isLatest, scans }) {
       <dl><dt>הצעות</dt><dd>${esc(c.offers)}</dd><dt>הוקים</dt><dd>${esc(c.hooks)}</dd><dt>יוצרים</dt><dd>${esc(c.creators)}</dd><dt class="risk">סיכונים</dt><dd class="risk">${esc(c.risks)}</dd></dl>
       <p class="take-line"><b>בשורה התחתונה:</b> ${esc(c.takeaway)}</p>
       ${creatives.items.some((i) => i.brand === b.id) ? `<button type="button" class="fbtn cr-go" data-go-brand="${esc(b.id)}">🖼 הקריאייטיבים של ${bdi(b.name)} (${creatives.items.filter((i) => i.brand === b.id).length})</button>` : ''}
-      <div class="links sm">${['meta', 'tiktok', 'google', 'organic'].map((p) => link(docUrl(docs[p]), PLATFORM_LABEL[p])).join('')}</div></article>`;
+      <div class="links sm">${['meta', 'tiktok', 'google', 'organic'].map((p) => brandDoc(docs, p, PLATFORM_LABEL[p])).join('')}</div></article>`;
   }).join('');
   const compPanel = section('competitors', 'מתחרים', `
     <div class="filters" role="group" aria-label="סינון"><button class="fbtn on" data-filter="all">הכל (${allBrands.length})</button><button class="fbtn" data-filter="niche">נישה (${allBrands.filter((b) => b.group === 'niche').length})</button><button class="fbtn" data-filter="reference">רפרנס (${allBrands.filter((b) => b.group === 'reference').length})</button></div>
