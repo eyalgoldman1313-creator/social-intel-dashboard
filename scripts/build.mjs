@@ -33,6 +33,12 @@ const commerceEvents = JSON.parse(readFileSync(join(root, 'data/events.json'), '
   }
 }
 const creatives = loadJson(root, 'data/creatives.json', { items: [] });
+{ // one card per ad: drop items whose id is another item's alias (or a repeated id)
+  const seen = new Set(), alias = new Set(creatives.items.flatMap((i) => (i.alias_ids || []).map((a) => `${i.source}:${a}`)));
+  const before = creatives.items.length;
+  creatives.items = creatives.items.filter((i) => { const k = i.library_id ? `${i.source}:${i.library_id}` : i.id; if (seen.has(k) || (i.library_id && alias.has(k))) return false; seen.add(k); return true; });
+  if (creatives.items.length !== before) console.warn(`! creatives: ${before - creatives.items.length} duplicate/alias card(s) dropped`);
+}
 const specs = loadJson(root, 'data/specs.json', { items: {}, mailers: [] });
 const top10 = loadJson(root, 'data/top10.json', { weeks: {} });
 const { siteDates, fmtIL, fmtILTime } = await import('./dates.mjs');

@@ -108,6 +108,7 @@ for (const source of SOURCES) {
       landing_url: str(r.landing_url) ? (/^https?:\/\//i.test(str(r.landing_url)) ? str(r.landing_url) : 'https://' + str(r.landing_url)) : '',
       data_notes: str(r.data_notes), engagement: r.engagement ?? null,
       image: null, imageMissing: true,
+      alias_ids: (Array.isArray(r.alias_ids) ? r.alias_ids : []).map(str).filter(Boolean),
     };
     const f = str(r.file ?? r.image);
     const remote = [r.image_url, r.thumbnail_url, r.video_preview_image_url, r.original_image_url, /^https?:/i.test(f) ? f : null].map(str).find((u) => /^https?:\/\//i.test(u));
@@ -133,6 +134,11 @@ for (const source of SOURCES) {
   });
   console.log(`- ${source}: ${raw.length} items, ${withImg} with image`);
 }
+
+// ---------- aliases: an ad id listed in another entry's alias_ids is the same ad – keep one card ----------
+{ const alias = new Map(); for (const it of items) for (const a of it.alias_ids || []) alias.set(`${it.source}:${a}`, it);
+  for (let k = items.length - 1; k >= 0; k--) { const it = items[k], main = alias.get(`${it.source}:${it.library_id}`); if (main && main !== it) { if (!main.image && it.image) { main.image = it.image; main.imageMissing = false; } items.splice(k, 1); console.log(`- alias ${it.library_id} merged into ${main.library_id}`); } } }
+for (const it of items) if (!it.alias_ids?.length) delete it.alias_ids;
 
 // ---------- write creatives.json ----------
 items.sort((a, b) => a.source.localeCompare(b.source) || (b.days_active ?? -1) - (a.days_active ?? -1));
