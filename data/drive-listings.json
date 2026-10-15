@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-10-14T19:14:07+03:00",
+ "fetchedAt": "2026-10-15T19:13:28+03:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1082,6 +1082,13 @@
      "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
     },
     {
+     "id": "1jxHnFtw3KqWWovLbeILjyGdVFMs8_vjc",
+     "name": "אפיון | Mayven | מייל | שעות אחרונות ל-15% הנחה | 7",
+     "mime": "text/html",
+     "modified": "2026-10-15T16:12:58.036Z",
+     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
+    },
+    {
      "id": "1NK0b9Y2Xe08VdQZCsUc4phV5PoSu0lru",
      "name": "אפיון | Mycospring | מייל | הסמסטר התחיל – פוקוס, אנרגיה, חוסן | 8",
      "mime": "text/html",
@@ -1093,6 +1100,13 @@
      "name": "אפיון | Mycospring | מייל | מה הגוף עושה עם הסוכר | 8",
      "mime": "text/html",
      "modified": "2026-10-13T16:25:57.895Z",
+     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
+    },
+    {
+     "id": "1ZhSF0C8Uhm5zVBLxvcI6rmPIJK7B973K",
+     "name": "אפיון | Mycospring | מייל | ריישי לא רק ללילה | 7.5",
+     "mime": "text/html",
+     "modified": "2026-10-15T16:12:57.390Z",
      "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
     },
     {

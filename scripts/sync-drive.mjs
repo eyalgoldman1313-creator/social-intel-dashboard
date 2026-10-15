@@ -39,7 +39,7 @@ export function driveGaps(kinds = KINDS) {
 const strip = (h) => h.replace(/data:image\/[^"')]+/g, '').replace(/<(style|script)[\s\S]*?<\/\1>/g, '').replace(/<\/?(bdi|span|b|mark|strong|em|i|a)\b[^>]*>/g, '').replace(/<[^>]+>/g, ' ')
   .replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 const section = (h, n) => { const m = h.match(new RegExp(`<h3 id="s${n}">[\\s\\S]*?</h3>([\\s\\S]*?)(?=<h3|</section>)`)); return m ? strip(m[1]) : ''; };
-const short = (s, n = 70) => { s = s.split(/(?<=[.;])\s|\s[–—]\s/)[0].trim(); return s.length > n ? s.slice(0, n - 1).trim() + '…' : s; };
+const short = (s, n = 70) => { s = s.split(/(?<=[.;])\s|\s[–—]\s/)[0].trim().replace(/;$/, ''); return s.length > n ? s.slice(0, n - 1).trim() + '…' : s; };
 const slug = (b) => b.toLowerCase().replace(/[^a-z0-9]+/g, '');
 
 function importMailer(f, html) {
