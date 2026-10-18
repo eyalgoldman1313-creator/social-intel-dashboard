@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-10-15T19:13:28+03:00",
+ "fetchedAt": "2026-10-18T10:08:00+03:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
