@@ -39,7 +39,19 @@ export function driveGaps(kinds = KINDS) {
 const strip = (h) => h.replace(/data:image\/[^"')]+/g, '').replace(/<(style|script)[\s\S]*?<\/\1>/g, '').replace(/<\/?(bdi|span|b|mark|strong|em|i|a)\b[^>]*>/g, '').replace(/<[^>]+>/g, ' ')
   .replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 const section = (h, n) => { const m = h.match(new RegExp(`<h3 id="s${n}">[\\s\\S]*?</h3>([\\s\\S]*?)(?=<h3|</section>)`)); return m ? strip(m[1]) : ''; };
-const short = (s, n = 70) => { s = s.split(/(?<=[.;])\s|\s[–—]\s/)[0].trim().replace(/;$/, ''); return s.length > n ? s.slice(0, n - 1).trim() + '…' : s; };
+// first clause of a section: cut at ". " / "; " / " – " but never inside a "quoted" string
+// (a " between two letters is Hebrew gershayim, e.g. ש"ח, and does not open a quote)
+const firstClause = (s) => {
+  const L = /[\p{L}\p{N}]/u;
+  for (let i = 0, q = false; i < s.length; i++) {
+    const c = s[i], nx = s[i + 1] || '';
+    if (c === '"' && !(L.test(s[i - 1] || '') && L.test(nx))) q = !q;
+    else if (!q && (c === '.' || c === ';') && /\s/.test(nx)) return s.slice(0, i + 1);
+    else if (!q && /\s/.test(c) && /[–—]/.test(nx) && /\s/.test(s[i + 2] || '')) return s.slice(0, i);
+  }
+  return s;
+};
+const short = (s, n = 70) => { s = firstClause(s).trim().replace(/;$/, ''); return s.length > n ? s.slice(0, n - 1).trim() + '…' : s; };
 const slug = (b) => b.toLowerCase().replace(/[^a-z0-9]+/g, '');
 
 function importMailer(f, html) {

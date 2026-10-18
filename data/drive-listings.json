@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-10-18T10:08:00+03:00",
+ "fetchedAt": "2026-10-18T10:17:27+03:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -980,190 +980,209 @@
   "mailers": {
    "root": null,
    "folders": [
-    "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
+    "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3",
+    "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD",
+    "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr",
+    "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0",
+    "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0",
+    "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
    ],
    "files": [
     {
-     "id": "177Bu3Nssw1kUj3qZyVIkYnu3u7mHBuWh",
-     "name": "[גרסה ישנה] אפיון | EcoSupp | מייל | איך הגוף עובד בזמן השינה | 8.html",
+     "id": "1kKEtGYJ2e4-VWNASy4o5ehjFXDezpLAX",
+     "name": "אפיון | Smiley | מייל | המספרים מאחורי SmileyFresh | 7",
      "mime": "text/html",
-     "modified": "2026-10-07T13:33:29.742Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1PT7eMwWlJ1FCrAnshLF0_A49IAIKsLP2",
-     "name": "[גרסה ישנה] אפיון | Fill It | מייל | הבריאות שלך היא השקעה | 6.5.html",
-     "mime": "text/html",
-     "modified": "2026-10-07T13:33:36.626Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "14lnpgr9EUZjluOFL9pAML95B-cb2nhTn",
-     "name": "[גרסה ישנה] אפיון | Mycospring | מייל | שאלנו את מי שמדברות איתכם | 7.5.html",
-     "mime": "text/html",
-     "modified": "2026-10-07T13:33:40.890Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1SSkmAMJQk807U4p0dSiwfZCX6xYPWMGT",
-     "name": "אפיון | EcoSupp | מייל | איך הגוף עובד בזמן השינה | 8",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:25:41.308Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1w4cWz0egIQC8UjeCpH5vNa80-1ae0Fyf",
-     "name": "אפיון | EcoSupp | מייל | ברוכים הבאים והצטרפות ל-ecoclub | 7",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:25:49.922Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1m8K3lJGUkS235Tt7ImvzN_rKRa3bsTET",
-     "name": "אפיון | Fill It | מייל | 3 סיבות למה דווקא Fillit | 7.5",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:25:54.303Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "16LvoNyt07kEWYLxxYlNLxahDLB7s2Pzf",
-     "name": "אפיון | Fill It | מייל | A New Era Is Coming | 6",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:26:03.194Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1HDIrWYMQnh3BkaMAXIIXT45NPGSzDUYL",
-     "name": "אפיון | Fill It | מייל | איזה מוצר הכי מתאים לך | 6.5",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:24:09.784Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1_9Lb8tsi9gYjeYfcIKZHpCADFs21zPo5",
-     "name": "אפיון | Fill It | מייל | איך Fillit Exclusive עובד | 5.5",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:25:54.310Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1yGduCYgQ3HfTBKiSLHiF9bXFJRO_xZMa",
-     "name": "אפיון | Fill It | מייל | ברוכה הבאה ו-300 נקודות מתנה | 7",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:25:45.902Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1aqh8uIsvobmbXwRZeSae7hA-trKr2DVV",
-     "name": "אפיון | Fill It | מייל | הבריאות שלך היא השקעה | 6.5",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:25:43.612Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1CJWsfEsw4MtdYlZbzAYblsCJZ77m2MOu",
-     "name": "אפיון | Fill It | מייל | נמאס לך מתוספים שלא עובדים | 6",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:25:59.312Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1lnvLl35g8OntfOfFmvHZgDb4tfNy8xWL",
-     "name": "אפיון | Mayven | מייל | Coming Soon – 13.10.2026 | 5.5",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:26:07.784Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1SqLEID7ja7dKGpGN-XCm_CTWe9JAtLrD",
-     "name": "אפיון | Mayven | מייל | Play It Green – משקה הסופר-פוד | 7.5",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:24:10.787Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1jxHnFtw3KqWWovLbeILjyGdVFMs8_vjc",
-     "name": "אפיון | Mayven | מייל | שעות אחרונות ל-15% הנחה | 7",
-     "mime": "text/html",
-     "modified": "2026-10-15T16:12:58.036Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1NK0b9Y2Xe08VdQZCsUc4phV5PoSu0lru",
-     "name": "אפיון | Mycospring | מייל | הסמסטר התחיל – פוקוס, אנרגיה, חוסן | 8",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:24:14.297Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1j839QjHbd6SG_uvypDZXqmLWJKyeq77r",
-     "name": "אפיון | Mycospring | מייל | מה הגוף עושה עם הסוכר | 8",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:25:57.895Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1ZhSF0C8Uhm5zVBLxvcI6rmPIJK7B973K",
-     "name": "אפיון | Mycospring | מייל | ריישי לא רק ללילה | 7.5",
-     "mime": "text/html",
-     "modified": "2026-10-15T16:12:57.390Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
-    },
-    {
-     "id": "1oIAJgu2Bo-c57X3g43vNwoprumL9qKD4",
-     "name": "אפיון | Mycospring | מייל | שאלנו את מי שמדברות איתכם | 7.5",
-     "mime": "text/html",
-     "modified": "2026-10-13T16:25:48.379Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
+     "modified": "2026-10-18T07:16:34.210Z",
+     "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
     },
     {
      "id": "1Qrp1QZVLklD6S-Eq-7g0KiMp8efdkJVm",
      "name": "אפיון | Smiley | מייל | השאלה שאף אחד לא מעז לשאול | 8",
      "mime": "text/html",
      "modified": "2026-10-14T16:13:46.007Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
+     "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
     },
     {
      "id": "1Q8Cs1QsQym7RheB_rcz-ch5S8GhCEoBQ",
      "name": "אפיון | Smiley | מייל | חיוך מושלם רואים מרחוק ומריחים מקרוב | 8",
      "mime": "text/html",
      "modified": "2026-10-13T16:26:07.384Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
+     "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
     },
     {
      "id": "14jgYeC8ICybD2VO4FvSX4B0C2nIVfdAg",
      "name": "אפיון | Smiley | מייל | יש לכם אירוע בקרוב | 5",
      "mime": "text/html",
      "modified": "2026-10-13T16:24:15.324Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
+     "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+    },
+    {
+     "id": "1sLzHVzqNIRXQb8HrdklDkxjLbasUzsIN",
+     "name": "אפיון | Smiley | מייל | מסטיק שחור שמלבין שיניים | 8",
+     "mime": "text/html",
+     "modified": "2026-10-18T07:16:37.225Z",
+     "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
     },
     {
      "id": "1GqSpUeDYGkYIqDeD0B2dRbuO0W_12btp",
      "name": "אפיון | Smiley | מייל | מסטיק שמלבין את השיניים | 8",
      "mime": "text/html",
      "modified": "2026-10-13T16:25:53.058Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
+     "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+    },
+    {
+     "id": "177Bu3Nssw1kUj3qZyVIkYnu3u7mHBuWh",
+     "name": "[גרסה ישנה] אפיון | EcoSupp | מייל | איך הגוף עובד בזמן השינה | 8.html",
+     "mime": "text/html",
+     "modified": "2026-10-07T13:33:29.742Z",
+     "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
+    },
+    {
+     "id": "1SSkmAMJQk807U4p0dSiwfZCX6xYPWMGT",
+     "name": "אפיון | EcoSupp | מייל | איך הגוף עובד בזמן השינה | 8",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:25:41.308Z",
+     "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
+    },
+    {
+     "id": "1w4cWz0egIQC8UjeCpH5vNa80-1ae0Fyf",
+     "name": "אפיון | EcoSupp | מייל | ברוכים הבאים והצטרפות ל-ecoclub | 7",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:25:49.922Z",
+     "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
     },
     {
      "id": "1Mkor0cmoiFJHNZSKqU9wXiuWrt3_x08t",
      "name": "צילום מסך | EcoSupp | מייל | איך הגוף עובד בזמן השינה.png",
      "mime": "image/png",
      "modified": "2026-10-07T13:37:26.065Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
+     "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
+    },
+    {
+     "id": "1PT7eMwWlJ1FCrAnshLF0_A49IAIKsLP2",
+     "name": "[גרסה ישנה] אפיון | Fill It | מייל | הבריאות שלך היא השקעה | 6.5.html",
+     "mime": "text/html",
+     "modified": "2026-10-07T13:33:36.626Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1m8K3lJGUkS235Tt7ImvzN_rKRa3bsTET",
+     "name": "אפיון | Fill It | מייל | 3 סיבות למה דווקא Fillit | 7.5",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:25:54.303Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "16LvoNyt07kEWYLxxYlNLxahDLB7s2Pzf",
+     "name": "אפיון | Fill It | מייל | A New Era Is Coming | 6",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:26:03.194Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1HDIrWYMQnh3BkaMAXIIXT45NPGSzDUYL",
+     "name": "אפיון | Fill It | מייל | איזה מוצר הכי מתאים לך | 6.5",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:24:09.784Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1_9Lb8tsi9gYjeYfcIKZHpCADFs21zPo5",
+     "name": "אפיון | Fill It | מייל | איך Fillit Exclusive עובד | 5.5",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:25:54.310Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1yGduCYgQ3HfTBKiSLHiF9bXFJRO_xZMa",
+     "name": "אפיון | Fill It | מייל | ברוכה הבאה ו-300 נקודות מתנה | 7",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:25:45.902Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1aqh8uIsvobmbXwRZeSae7hA-trKr2DVV",
+     "name": "אפיון | Fill It | מייל | הבריאות שלך היא השקעה | 6.5",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:25:43.612Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1CJWsfEsw4MtdYlZbzAYblsCJZ77m2MOu",
+     "name": "אפיון | Fill It | מייל | נמאס לך מתוספים שלא עובדים | 6",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:25:59.312Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
     },
     {
      "id": "11tfUWuIXy5cmjZ7RHzbEEtJuDjFT4szV",
      "name": "צילום מסך | Fill It | מייל | הבריאות שלך היא השקעה.png",
      "mime": "image/png",
      "modified": "2026-10-07T13:37:29.180Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1lnvLl35g8OntfOfFmvHZgDb4tfNy8xWL",
+     "name": "אפיון | Mayven | מייל | Coming Soon – 13.10.2026 | 5.5",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:26:07.784Z",
+     "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+    },
+    {
+     "id": "1SqLEID7ja7dKGpGN-XCm_CTWe9JAtLrD",
+     "name": "אפיון | Mayven | מייל | Play It Green – משקה הסופר-פוד | 7.5",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:24:10.787Z",
+     "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+    },
+    {
+     "id": "1jxHnFtw3KqWWovLbeILjyGdVFMs8_vjc",
+     "name": "אפיון | Mayven | מייל | שעות אחרונות ל-15% הנחה | 7",
+     "mime": "text/html",
+     "modified": "2026-10-15T16:12:58.036Z",
+     "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+    },
+    {
+     "id": "14lnpgr9EUZjluOFL9pAML95B-cb2nhTn",
+     "name": "[גרסה ישנה] אפיון | Mycospring | מייל | שאלנו את מי שמדברות איתכם | 7.5.html",
+     "mime": "text/html",
+     "modified": "2026-10-07T13:33:40.890Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1NK0b9Y2Xe08VdQZCsUc4phV5PoSu0lru",
+     "name": "אפיון | Mycospring | מייל | הסמסטר התחיל – פוקוס, אנרגיה, חוסן | 8",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:24:14.297Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1j839QjHbd6SG_uvypDZXqmLWJKyeq77r",
+     "name": "אפיון | Mycospring | מייל | מה הגוף עושה עם הסוכר | 8",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:25:57.895Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1ZhSF0C8Uhm5zVBLxvcI6rmPIJK7B973K",
+     "name": "אפיון | Mycospring | מייל | ריישי לא רק ללילה | 7.5",
+     "mime": "text/html",
+     "modified": "2026-10-15T16:12:57.390Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1oIAJgu2Bo-c57X3g43vNwoprumL9qKD4",
+     "name": "אפיון | Mycospring | מייל | שאלנו את מי שמדברות איתכם | 7.5",
+     "mime": "text/html",
+     "modified": "2026-10-13T16:25:48.379Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
     },
     {
      "id": "1tBX-ZKvqXC3BxJSuPgbfpRPJUm2CN-sv",
      "name": "צילום מסך | Mycospring | מייל | שאלנו את מי שמדברות איתכם.png",
      "mime": "image/png",
      "modified": "2026-10-07T13:37:31.593Z",
-     "folder": "1a70E2BZU53P8hJte-q6DIgQD3E2hW8A3"
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
     }
    ]
   }
