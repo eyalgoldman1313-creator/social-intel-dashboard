@@ -40,13 +40,14 @@ const PHASE = {
   na: ['משך לא ידוע', ''],
 };
 
-// Shared Top 10 ranking (used by import-creatives.mjs and as a build fallback): Meta ads, longest-running first,
-// tie-break variants, max 2 per brand, one per creative family, items with image first.
+// Shared Top 10 ranking (used by import-creatives.mjs and as a build fallback): active Meta ads,
+// longest run first, then variant count. At most 2 per brand and one ad per creative family.
+// An image is display-only and never changes this order.
 export function rankTop10(items, { brandIds = null, max = 10 } = {}) {
   const per = new Map(); const fam = new Set(); const top = [];
   const meta = items.filter((i) => i.source === 'meta' && i.status !== 'inactive' && i.days_active != null && (!brandIds || brandIds.includes(i.brand)));
-  const order = (arr) => [...arr].sort((a, b) => b.days_active - a.days_active || (b.variants_count ?? 0) - (a.variants_count ?? 0));
-  for (const it of [...order(meta.filter((i) => i.image)), ...order(meta.filter((i) => !i.image))]) {
+  const order = [...meta].sort((a, b) => b.days_active - a.days_active || (b.variants_count ?? 0) - (a.variants_count ?? 0));
+  for (const it of order) {
     if (top.length >= max) break;
     const fk = it.family ? `${it.brand}|${it.family}` : null;
     if (fk && fam.has(fk)) continue;
@@ -57,6 +58,23 @@ export function rankTop10(items, { brandIds = null, max = 10 } = {}) {
   return top;
 }
 export const nicheIds = (brands) => brands.filter((b) => b.group === 'niche').map((b) => b.id);
+
+// Why a new Top 10 row showed up versus the previous week's list.
+// 'started' — start_date falls inside this ISO week.
+// 'data' — it was not rankable before (missing, no days, or not active) and entered once that data was completed.
+// Already-rankable ads that only moved up are not tagged. Already-listed ads return null.
+export const ENTRY_DATA_LABEL = 'נכנסה בעקבות השלמת נתונים';
+export function entryReason(item, { prevTopIds = [], prevItem = null, weekStart = '', weekEnd = '' } = {}) {
+  if (!item || typeof item !== 'object') return null;
+  const prev = prevTopIds instanceof Set ? prevTopIds : new Set(prevTopIds || []);
+  const aliasIds = (item.alias_ids || []).map((a) => `${item.source}-${String(a).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`);
+  if ([item.id, ...aliasIds].filter(Boolean).some((id) => prev.has(id))) return null;
+  const start = item.start_date || '';
+  if (start && weekStart && start >= weekStart && (!weekEnd || start <= weekEnd)) return { reason: 'started' };
+  const rankable = !!(prevItem && prevItem.days_active != null && prevItem.status === 'active');
+  if (!rankable) return { reason: 'data', label: ENTRY_DATA_LABEL };
+  return null;
+}
 
 export function loadJson(root, rel, fallback) {
   const p = join(root, rel);
@@ -176,7 +194,7 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
       ${driveBlock(it)}</div>`;
   }
 
-  function card(it, { size = '', rank, basis } = {}) {
+  function card(it, { size = '', rank, basis, entryLabel } = {}) {
     const ph = phaseOf(it);
     const hook = it.hook || oneLine(it.copy_text, 110);
     const src = it.library_url || it.post_url;
@@ -189,7 +207,7 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
       ${rank ? `<span class="t10-rank" aria-label="מקום ${rank}">${rank}</span>` : ''}
       ${media(it, { big: size === 'lg' })}
       <div class="cr-body">
-        <div class="cr-badges">${platChip(it)}${it.source === 'meta' && it.platform ? `<span class="brand-tag">${it.platform === 'Facebook + Instagram' ? 'FB + IG' : esc(it.platform)}</span>` : ''}<span class="brand-tag">${esc(brandName(it.brand))}</span></div>
+        <div class="cr-badges">${platChip(it)}${it.source === 'meta' && it.platform ? `<span class="brand-tag">${it.platform === 'Facebook + Instagram' ? 'FB + IG' : esc(it.platform)}</span>` : ''}<span class="brand-tag">${esc(brandName(it.brand))}</span>${entryLabel ? `<span class="brand-tag t10-entered" dir="rtl">${esc(entryLabel)}</span>` : ''}</div>
         ${specLinks(sp)}
         ${basis ? `<p class="cr-basis">${esc(basis)}</p>` : ''}
         ${hook ? `<p class="cr-hook">${esc(oneLine(hook, 120))}</p>` : ''}
@@ -257,27 +275,35 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
       return section('top10', 'Top 10 – עשרת המובילים השבוע', `<p class="scope">סטוריבורד שבועי של עשר המודעות המובילות: הקריאייטיב עצמו + מדדים מובילים. יתמלא אוטומטית אחרי ייבוא הקריאייטיבים (<code dir="ltr">node scripts/import-creatives.mjs</code>).</p><div class="t10-grid">${ph}</div>`);
     }
     const latest = weeks[weeks.length - 1];
+    const entryLabelOf = (w, i) => {
+      const e = w && w.entered && w.entered[i.id];
+      return e && e.reason === 'data' ? (e.label || ENTRY_DATA_LABEL) : '';
+    };
     const nicheBlock = (w) => {
       const n = w.niche || [];
       const names = (w.nicheBrands || []).map(brandName).join(', ');
       const empty = n.length ? Math.max(0, 10 - n.length) : 0;
-      return `<div class="t10-niche"><h3 class="gal-h">Top 10 — מתחרים בנישה</h3><p class="ins-link"><a href="/insights/niche-cross" target="_blank" rel="noopener">💡 תובנות רוחב — מתחרי נישה (43 מודעות תמונה) ←</a></p><p class="fine">רק מודעות Meta של מתחרי הנישה${names ? ` (${esc(names)})` : ''}. אותה שיטת דירוג: ותק ריצה, שוברי שוויון גרסאות, עד 2 למותג.${n.length < 10 ? ` <b>רק ${n.length} מודעות נישה עומדות בתנאים השבוע – מוצג מה שקיים.</b>` : ''}</p>
-        <div class="t10-cards cr-list t10-grid">${n.map((i) => card(i, { size: 'lg', rank: i.rank, basis: `דירוג לפי: ותק ${i.days_active} ימים${i.variants_count != null ? ` · ${i.variants_count} גרסאות` : ''}` })).join('')}${Array.from({ length: empty }, (_, k) => `<div class="t10-empty"><span class="t10-rank">${n.length + k + 1}</span><div class="cr-ph"><div class="cr-ph-ic" aria-hidden="true">🖼</div><b>אין מספיק מודעות נישה</b></div></div>`).join('')}</div></div>`;
+      const basisLine = (i) => `דירוג לפי: ותק ${i.days_active} ימים${i.variants_count != null ? ` · ${i.variants_count} גרסאות` : ''}`;
+      const imageNote = (w.method || '').includes('קריאייטיבים עם תמונה מדורגים לפני') ? '' : ' התמונה משמשת לתצוגה בלבד ואינה משפיעה על הדירוג.';
+      return `<div class="t10-niche"><h3 class="gal-h">Top 10 — מתחרים בנישה</h3><p class="ins-link"><a href="/insights/niche-cross" target="_blank" rel="noopener">💡 תובנות רוחב — מתחרי נישה (43 מודעות תמונה) ←</a></p><p class="fine">רק מודעות Meta של מתחרי הנישה${names ? ` (${esc(names)})` : ''}. אותה שיטת דירוג: ותק ריצה, שוברי שוויון גרסאות, עד 2 למותג.${imageNote}${n.length < 10 ? ` <b>רק ${n.length} מודעות נישה עומדות בתנאים השבוע – מוצג מה שקיים.</b>` : ''}</p>
+        <div class="t10-cards cr-list t10-grid">${n.map((i) => card(i, { size: 'lg', rank: i.rank, basis: basisLine(i), entryLabel: entryLabelOf(w, i) })).join('')}${Array.from({ length: empty }, (_, k) => `<div class="t10-empty"><span class="t10-rank">${n.length + k + 1}</span><div class="cr-ph"><div class="cr-ph-ic" aria-hidden="true">🖼</div><b>אין מספיק מודעות נישה</b></div></div>`).join('')}        </div></div>`;
     };
     const block = (w, on) => {
       const empty = Math.max(0, 10 - w.items.length);
       const basisOf = (i, s) => (i.basis === 'likes' ? `לייקים ${compact(i.likes)}` : `צפיות ${compact(i.views)}`);
+      const basisLine = (i) => `דירוג לפי: ותק ${i.days_active} ימים${i.variants_count != null ? ` · ${i.variants_count} גרסאות` : ''}`;
       const org = (w.strips || []).map((s) => `<h3 class="gal-h">${esc(s.title)}</h3><p class="fine">${esc(s.basis)}. אורגני – אינו חלק מדירוג המודעות הממומנות.</p><div class="strip-row cr-list">${s.items.map((i) => card(i, { size: 'sm', rank: i.rank, basis: 'דירוג לפי: ' + basisOf(i, s) })).join('')}</div>`).join('');
       return `<div class="t10-week" data-week="${esc(w.key)}"${on ? '' : ' hidden'}>
+        <div class="callout t10-method"><b>מודעות Meta ממומנות – איך מדורגים?</b> ${esc(w.method || '')}</div>
+        ${w.note ? `<p class="fine t10-legacy" dir="rtl">${esc(w.note)}</p>` : ''}
         ${w.items.length ? '' : '<div class="cr-empty"><div class="cr-empty-ic" aria-hidden="true">🖼</div><h3>דירוג מודעות Meta ממתין לנכסים</h3><p>עשרת המודעות הממומנות יופיעו כאן כשיובאו קריאייטיבי Meta עם תאריכי התחלה. מתחת – תוכן אורגני מוביל, מסומן בנפרד.</p></div>'}
-        <div class="t10-cards cr-list t10-grid"${w.items.length ? '' : ' hidden'}>${w.items.map((i) => card(i, { size: 'lg', rank: i.rank, basis: `דירוג לפי: ותק ${i.days_active} ימים${i.variants_count != null ? ` · ${i.variants_count} גרסאות` : ''}` })).join('')}${(w.items.length ? Array.from({ length: empty }, (_, k) => `<div class="t10-empty"><span class="t10-rank">${w.items.length + k + 1}</span><div class="cr-ph"><div class="cr-ph-ic" aria-hidden="true">🖼</div><b>אין מספיק מודעות עדיין</b></div></div>`) : []).join('')}</div>
+        <div class="t10-cards cr-list t10-grid"${w.items.length ? '' : ' hidden'}>${w.items.map((i) => card(i, { size: 'lg', rank: i.rank, basis: basisLine(i), entryLabel: entryLabelOf(w, i) })).join('')}${(w.items.length ? Array.from({ length: empty }, (_, k) => `<div class="t10-empty"><span class="t10-rank">${w.items.length + k + 1}</span><div class="cr-ph"><div class="cr-ph-ic" aria-hidden="true">🖼</div><b>אין מספיק מודעות עדיין</b></div></div>`) : []).join('')}</div>
         ${nicheBlock(w)}
         ${org}<p class="fine">צילום מצב שנוצר ב-${esc(fmtD(w.asof))}.</p></div>`;
     };
     const weekSel = weeks.length > 1 ? `<label class="sel"><span>שבוע</span><select id="t10-week">${[...weeks].reverse().map((w) => `<option value="${esc(w.key)}">שבוע ${w.week} · ${fmtD(w.start)}–${fmtD(w.end)}</option>`).join('')}</select></label>` : '';
     return section('top10', 'Top 10 – עשרת המובילים השבוע', `
       <div class="t10-head"><div><span class="t10-weeklabel">שבוע ${latest.week} · ${fmtD(latest.start)}–${fmtD(latest.end)}</span><p class="fine">נכון ל-${esc(fmtD(latest.asof))}</p></div>${weekSel}</div>
-      <div class="callout t10-method"><b>מודעות Meta ממומנות – איך מדורגים?</b> ${esc(latest.method)}</div>
       ${weeks.slice().reverse().map((w, k) => block(w, k === 0)).join('')}`);
   }
 

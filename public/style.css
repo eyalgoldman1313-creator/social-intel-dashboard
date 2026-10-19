@@ -230,6 +230,8 @@ table.matrix{border-collapse:collapse;width:100%;min-width:560px;font-size:.88re
 .cr-body{padding:10px 12px 12px;display:grid;gap:6px;align-content:start;flex:1}
 .cr-badges{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .brand-tag{font-size:.72rem;color:var(--mut);background:#eef2f7;border-radius:6px;padding:1px 8px;font-weight:600}
+.brand-tag.t10-entered{font-weight:500;background:#f1f5f9}
+.t10-legacy{margin:8px 0 0}
 .cr-hook{margin:0;font-weight:700;font-size:.92rem;line-height:1.35}
 .cr-facts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 6px}
 .cr-facts li{background:#f1f5f9;border-radius:8px;padding:2px 8px;font-size:.78rem;display:flex;gap:5px;align-items:baseline}.cr-facts small{color:var(--mut);font-size:.68rem;font-weight:600}
