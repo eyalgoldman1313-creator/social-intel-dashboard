@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { carryForward, lookupPrev, mergeAliases, mergeImported, prevIndex, retainUnimported, applyWeek, METHOD, LEGACY_RANK_NOTE } from './import-creatives.mjs';
+import { brandId, carryForward, lookupPrev, mergeAliases, mergeImported, prevIndex, retainUnimported, applyWeek, METHOD, LEGACY_RANK_NOTE } from './import-creatives.mjs';
 
 test('carryForward keeps image_source and a known format', () => {
   const prev = prevIndex([
@@ -137,4 +137,13 @@ test('retainUnimported does not duplicate rows from a source that was read', () 
   const items = [{ id: 'meta-1', source: 'meta', image_source: 'meta-ad-library' }];
   retainUnimported(items, prev, new Set(['meta']));
   assert.deepEqual(items.map((i) => i.id), ['meta-1', 'organic-1']);
+});
+
+test('trypups alias imports Google items under brand pups', () => {
+  const pups = { id: 'pups', name: 'Pups', heName: 'try-pups', domain: 'trypups.com', group: 'reference' };
+  assert.equal(brandId('trypups', [pups]), 'pups');
+  assert.equal(brandId('TryPups', [pups]), 'pups');
+  assert.equal(brandId('Pups', [pups]), 'pups');
+  assert.equal(brandId('trypups.com', [pups]), 'pups');
+  assert.equal(brandId('trypups', []), 'pups');
 });
