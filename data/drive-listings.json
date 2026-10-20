@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-10-20T10:54:29+03:00",
+ "fetchedAt": "2026-10-20T19:13:39+03:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1191,6 +1191,34 @@
      "mime": "text/html",
      "modified": "2026-10-20T07:54:15.130Z",
      "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1qHkDITpvz2_DFSI3JnhDvG9hv17fIXc4",
+     "name": "אפיון | Pups | מייל | ₪20 להזמנה הראשונה | 8.5",
+     "mime": "text/html",
+     "modified": "2026-10-20T16:13:39.000Z",
+     "folder": "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP"
+    },
+    {
+     "id": "1qeRqPqJWK1hikCEJ_pBGpd4CtXuifalI",
+     "name": "אפיון | Mayven | מייל | גרדי וגלי במה זכית | 6",
+     "mime": "text/html",
+     "modified": "2026-10-20T16:13:39.000Z",
+     "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+    },
+    {
+     "id": "1wlj2YW2s2AzKDDE0Vqd-FyjI3vOfxqam",
+     "name": "אפיון | Mayven | מייל | הפעלת חשבון עם 10% הנחה | 6",
+     "mime": "text/html",
+     "modified": "2026-10-20T16:13:39.000Z",
+     "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+    },
+    {
+     "id": "1hJb37mGeU8eRvIaYMqEC8A_6v_-otw65",
+     "name": "אפיון | Smiley | מייל | קפה סיגריה קולה יין | 7.5",
+     "mime": "text/html",
+     "modified": "2026-10-20T16:13:39.000Z",
+     "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
     }
    ]
   }

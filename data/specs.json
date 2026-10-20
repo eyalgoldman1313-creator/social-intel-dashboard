@@ -753,6 +753,45 @@
   },
   "mailers": [
     {
+      "brand": "Smiley",
+      "title": "קפה. סיגריה. קולה. יין. (20.10)",
+      "file": "mailer-smiley-2026-10-20.html",
+      "score": "7.5",
+      "date": "20.10.2026",
+      "time": "18:20",
+      "img": "/mailers/mailer-smiley-2026-10-20.webp",
+      "offer": "\"30% הנחה על SmileyFresh\" + \"משלוח חינם עד הבית · 30 ימי ניסיון\" + \"ל…",
+      "hook": "\"קפה. סיגריה. קולה. יין.\" + \"כל אחד מהם משאיר לכם ריח בפה.\" + \"ואת הר…",
+      "cta": "\"אני רוצה ריח מושלם\" ו\"אני רוצה 30% הנחה\" – גוף ראשון.",
+      "drive_id": "1hJb37mGeU8eRvIaYMqEC8A_6v_-otw65"
+    },
+    {
+      "brand": "Mayven",
+      "title": "בחרי מארז, גרדי את הכרטיסים וגלי איזו הפתעה מחכה לך 🎁 | פרסומת (20.10)",
+      "file": "mailer-mayven-2026-10-20.html",
+      "score": "6",
+      "date": "20.10.2026",
+      "time": "13:12",
+      "img": "/mailers/mailer-mayven-2026-10-20.webp",
+      "offer": "מתנה מפתיעה לא ידועה לפי גודל המארז",
+      "hook": "כותרת \"scratch your reward\" + צילום ידיים מגרדות כרטיס \"WELLNESS CLUB…",
+      "cta": "\"גרדי וגלי במה זכית\" (×2)",
+      "drive_id": "1qeRqPqJWK1hikCEJ_pBGpd4CtXuifalI"
+    },
+    {
+      "brand": "Pups",
+      "title": "הנה ה-₪20 שלכם 🎁 (20.10)",
+      "file": "mailer-pups-2026-10-20.html",
+      "score": "8.5",
+      "date": "20.10.2026",
+      "time": "11:21",
+      "img": "/mailers/mailer-pups-2026-10-20.webp",
+      "offer": "\"20 ₪ על ההזמנה הראשונה\", \"בלי מינימום הזמנה, על כל המוצרים (לא כולל…",
+      "hook": "לוגו pups + פס \"🎁 · המתנה שלכם מחכה · 🎁\" + צילום כלב מקבל חטיף ליד…",
+      "cta": "\"למימוש המתנה ←\", \"לרכישה ←\" ×3, \"לאתר, עם ה-₪20 ←\"",
+      "drive_id": "1qHkDITpvz2_DFSI3JnhDvG9hv17fIXc4"
+    },
+    {
       "brand": "Fill It",
       "title": "מסכת השיער האהובה שחיכית לה שנה, חוזרת! >> | פרסומת (20.10)",
       "file": "mailer-fillit-2026-10-20.html",
@@ -1013,6 +1052,19 @@
       "hook": "הכירו את היועצות",
       "cta": "קנו עכשיו / וואטסאפ",
       "drive_id": "1oIAJgu2Bo-c57X3g43vNwoprumL9qKD4"
+    },
+    {
+      "brand": "Mayven",
+      "title": "Mayven - היי מרק איזה כיף שהפעלת את החשבון שלך במייבן 🎉 (4.10)",
+      "file": "mailer-mayven-2026-10-04.html",
+      "score": "6",
+      "date": "04.10.2026",
+      "time": "16:39",
+      "img": "/mailers/mailer-mayven-2026-10-04.webp",
+      "offer": "10% הנחה בהזמנה הראשונה: \"ללא כפל הנחות ומבצעים | תקף להזמנה הראשונה…",
+      "hook": "\"Hey\" ענק על צילום שתי נשים מחייכות עם בקבוק \"Forever Flawless\" + תג…",
+      "cta": "\"הפעילי את החשבון עם 10% הנחה\"",
+      "drive_id": "1wlj2YW2s2AzKDDE0Vqd-FyjI3vOfxqam"
     },
     {
       "brand": "EcoSupp",
