@@ -2748,7 +2748,7 @@
    "start": "2026-10-19",
    "end": "2026-10-25",
    "asof": "2026-10-19",
-   "generatedAt": "2026-10-19T03:38:50.997Z",
+   "generatedAt": "2026-10-20T07:55:11.375Z",
    "method": "דירוג לפי ותק הריצה (ימים פעילה) כמדד לביצועים, כי נתוני הוצאה/מעורבות אינם זמינים למודעות Meta בישראל. שוברי שוויון: מספר גרסאות/שכפולים. עד 2 קריאייטיבים לכל מותג, משפחה אחת נספרת פעם אחת. התמונה משמשת לתצוגה בלבד ואינה משפיעה על הדירוג. ותק הוא אינדיקציה, לא הוכחה לרווחיות.",
    "basis": "ותק ריצה (ימים פעילה), אח״כ מספר גרסאות",
    "items": [
@@ -2794,7 +2794,8 @@
      "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words); no full copy/image captured",
      "engagement": null,
      "image": "creatives/meta/615299921203736.webp",
-     "imageMissing": false
+     "imageMissing": false,
+     "image_source": "meta-ad-library"
     },
     {
      "rank": 2,
@@ -2838,7 +2839,8 @@
      "data_notes": "grid-level only (id, start date, variants label, CTA); no creative detail/image captured",
      "engagement": null,
      "image": "creatives/meta/1135246091412356.webp",
-     "imageMissing": false
+     "imageMissing": false,
+     "image_source": "meta-ad-library"
     },
     {
      "rank": 3,
@@ -2882,7 +2884,8 @@
      "data_notes": "grid-level only (id, start date, variants label, CTA); no creative detail/image captured",
      "engagement": null,
      "image": "creatives/meta/748031391316333.webp",
-     "imageMissing": false
+     "imageMissing": false,
+     "image_source": "meta-ad-library"
     },
     {
      "rank": 4,
@@ -2970,7 +2973,8 @@
      "data_notes": "grid-level only (id, start date, variants label, CTA); no creative detail/image captured",
      "engagement": null,
      "image": "creatives/meta/24130462196646309.webp",
-     "imageMissing": false
+     "imageMissing": false,
+     "image_source": "meta-ad-library"
     },
     {
      "rank": 6,
@@ -3146,7 +3150,8 @@
      "data_notes": "grid-level only (id, start date, variants label, CTA); no creative detail/image captured",
      "engagement": null,
      "image": "creatives/meta/3291137437860681.webp",
-     "imageMissing": false
+     "imageMissing": false,
+     "image_source": "meta-ad-library"
     },
     {
      "rank": 10,
@@ -3236,7 +3241,8 @@
      "data_notes": "grid-level only (id, start date, variants label, CTA); no creative detail/image captured",
      "engagement": null,
      "image": "creatives/meta/748031391316333.webp",
-     "imageMissing": false
+     "imageMissing": false,
+     "image_source": "meta-ad-library"
     },
     {
      "rank": 2,
@@ -3324,7 +3330,8 @@
      "data_notes": "grid-level only (id, start date, variants label, CTA); no creative detail/image captured",
      "engagement": null,
      "image": "creatives/meta/24130462196646309.webp",
-     "imageMissing": false
+     "imageMissing": false,
+     "image_source": "meta-ad-library"
     },
     {
      "rank": 4,
@@ -3500,7 +3507,8 @@
      "data_notes": "grid-level only (id, start date, variants label, CTA); no creative detail/image captured",
      "engagement": null,
      "image": "creatives/meta/3291137437860681.webp",
-     "imageMissing": false
+     "imageMissing": false,
+     "image_source": "meta-ad-library"
     },
     {
      "rank": 8,
@@ -3632,7 +3640,8 @@
      "data_notes": "grid-level only (id, start date, variants label, CTA); no creative detail/image captured",
      "engagement": null,
      "image": "creatives/meta/865826809887373.webp",
-     "imageMissing": false
+     "imageMissing": false,
+     "image_source": "meta-ad-library"
     }
    ],
    "nicheBrands": [
@@ -4111,17 +4120,7 @@
       }
      ]
     }
-   ],
-   "entered": {
-    "meta-615299921203736": {
-     "reason": "data",
-     "label": "נכנסה בעקבות השלמת נתונים"
-    },
-    "meta-1446078710401700": {
-     "reason": "data",
-     "label": "נכנסה בעקבות השלמת נתונים"
-    }
-   }
+   ]
   }
  }
 }
