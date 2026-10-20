@@ -141,6 +141,15 @@
    "group": "niche",
    "category": "סוכריות ג׳לי תוסף לילדים (פוקוס/ויסות, שינה)",
    "site": "https://www.tevakid.co.il/kidease/home"
+  },
+  {
+   "id": "pups",
+   "name": "Pups",
+   "heName": "פאפס",
+   "domain": "trypups.com",
+   "group": "reference",
+   "category": "תוספים ובריאות לכלבים",
+   "site": "https://trypups.com/"
   }
  ],
  "scans": [
