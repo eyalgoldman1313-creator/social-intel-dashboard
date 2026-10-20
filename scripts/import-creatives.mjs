@@ -180,10 +180,10 @@ function normStatus(v) {
 }
 const numOrNull = (v) => { if (v == null || v === '') return null; const n = Number(String(v).replace(/,/g, '')); return Number.isFinite(n) ? n : null; };
 const str = (v) => (v == null ? '' : String(v).trim());
-const ALIAS = { 'wonders-teva': 'wondersteva', 'gmila-luuf': 'trygmila', 'fill-it': 'fillit', fillitvitamins: 'fillit', 'fill-it': 'fillit', 'fill it': 'fillit', luuf: 'trygmila', tryluuf: 'trygmila', gmila: 'trygmila', 'gmila / luuf': 'trygmila', harmony: 'by-harmony', byharmony: 'by-harmony', smiley: 'try-smiley', trysmiley: 'try-smiley', woof: 'mywoof', wonders: 'wondersteva', 'wonders teva': 'wondersteva' };
-function brandId(raw) {
+const ALIAS = { 'wonders-teva': 'wondersteva', 'gmila-luuf': 'trygmila', 'fill-it': 'fillit', fillitvitamins: 'fillit', 'fill-it': 'fillit', 'fill it': 'fillit', luuf: 'trygmila', tryluuf: 'trygmila', gmila: 'trygmila', 'gmila / luuf': 'trygmila', harmony: 'by-harmony', byharmony: 'by-harmony', smiley: 'try-smiley', trysmiley: 'try-smiley', woof: 'mywoof', wonders: 'wondersteva', 'wonders teva': 'wondersteva', trypups: 'pups' };
+export function brandId(raw, brandList = brands) {
   const r0 = str(raw).toLowerCase(); const r = ALIAS[r0] || r0; if (!r) return '';
-  const hit = brands.find((b) => [b.id, b.name, b.heName, b.domain].filter(Boolean).some((x) => x.toLowerCase() === r || r.replace(/^www\./, '').startsWith(x.toLowerCase())));
+  const hit = brandList.find((b) => [b.id, b.name, b.heName, b.domain].filter(Boolean).some((x) => x.toLowerCase() === r || r.replace(/^www\./, '').startsWith(x.toLowerCase())));
   return hit ? hit.id : r;
 }
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) || createHash('md5').update(s).digest('hex').slice(0, 10);
