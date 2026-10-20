@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-10-20T10:52:14+03:00",
+ "fetchedAt": "2026-10-20T10:54:29+03:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1184,6 +1184,13 @@
      "mime": "image/png",
      "modified": "2026-10-07T13:37:31.593Z",
      "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1DOm1MSDqBeqZT55H4L1igEb2ecHvDUOK",
+     "name": "אפיון | Fill It | מייל | GLOW IT חוזרת למלאי | 6.5",
+     "mime": "text/html",
+     "modified": "2026-10-20T07:54:15.130Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
     }
    ]
   }
