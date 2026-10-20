@@ -54,8 +54,11 @@ const driveLinks = loadDriveLinks(root);
   const checker = join(root, 'scripts/check-images.mjs');
   if (existsSync(checker)) {
     const { checkImages } = await import('./check-images.mjs');
-    for (const [tab, o] of Object.entries(checkImages(root))) if (o.missing.length + o.remote.length + o.broken.length)
-      console.warn(`! images[${tab}]: ${o.missing.length} missing, ${o.remote.length} remote/expiring, ${o.broken.length} broken of ${o.total} – run scripts/fetch-ad-images.mjs`);
+    for (const [tab, o] of Object.entries(checkImages(root))) {
+      if (o.missing.length + o.remote.length + o.broken.length)
+        console.warn(`! images[${tab}]: ${o.missing.length} missing, ${o.remote.length} remote/expiring, ${o.broken.length} broken of ${o.total} – run scripts/fetch-ad-images.mjs`);
+      if (o.blank && o.blank.length) console.warn(`! images[${tab}]: ${o.blank.length} blank (<1KB or height ≤ 40px) – warning only`);
+    }
   }
 }
 

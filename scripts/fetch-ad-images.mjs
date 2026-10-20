@@ -4,6 +4,7 @@
 //       and downloads it right away (the fbcdn URL is signed and expires within days).
 // Google: adstransparency.google.com creative page – screenshots the rendered creative.
 // Writes public/creatives/<source>/<slug>.webp and updates data/creatives.json + data/top10.json.
+// A recovered image is display-only: it does not change Top 10 rank (days, then variants).
 // Needs Playwright locally (npm i --no-save playwright && npx playwright install chromium); not used at build time.
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -76,7 +77,7 @@ for (const it of todo) {
   fixed++;
 }
 writeFileSync(cpath, JSON.stringify(data, null, 1) + '\n');
-// keep Top 10 snapshots in sync (images only; ranking is not recomputed)
+// keep Top 10 snapshots in sync (images only; ranking is not recomputed — the picture is display-only)
 const tpath = join(root, 'data/top10.json');
 if (existsSync(tpath)) {
   const byId = new Map(data.items.map((i) => [i.id, i])); const t = JSON.parse(readFileSync(tpath, 'utf8'));
