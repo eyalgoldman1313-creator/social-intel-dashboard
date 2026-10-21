@@ -753,6 +753,58 @@
   },
   "mailers": [
     {
+      "brand": "Pups",
+      "title": "מה הכי מטריד אצלכם? 🐶 (21.10)",
+      "file": "mailer-pups-2026-10-21.html",
+      "score": "8",
+      "date": "21.10.2026",
+      "time": "11:22",
+      "img": "/mailers/mailer-pups-2026-10-21.webp",
+      "offer": "תזכורת: \"וה-₪20 שלכם עוד מחכים: welcome20\" + \"למימוש ה-₪20 ←\"",
+      "hook": "צילום כלב מריח צנצנת Allergy & Itch Chews + \"מה הכי מטריד אצלכם?\" + \"…",
+      "cta": "\"זה אצלנו ←\" ×3",
+      "drive_id": "1mHureAObsVVmVHqBM21DVu8198beH8ky"
+    },
+    {
+      "brand": "Fill It",
+      "title": "תשמרי את זה בסוד: GLOW IT לשיער במתנה >> | פרסומת (21.10)",
+      "file": "mailer-fillit-2026-10-21.html",
+      "score": "7",
+      "date": "21.10.2026",
+      "time": "10:30",
+      "img": "/mailers/mailer-fillit-2026-10-21.webp",
+      "offer": "\"ברכישה מעל ₪449 באתר, GLOW מצטרף להזמנה שלך במתנה.\" + \"עד 24/10/26 |…",
+      "hook": "צילום אישה עם אצבע על השפתיים + \"ששש... הטבה סודית לסופ\"ש\" + \"את בוחר…",
+      "cta": "\"קבלי את GLOW >>\" ו\"למתנה שלי >>\" – גוף ראשון ותחושת בעלות.",
+      "drive_id": "1pJ36OEsR6eFAkDDy-adjrRmLjlkPBUq0"
+    },
+    {
+      "brand": "Mycospring",
+      "title": "לעור שלך יש שעון משלו. הטיפוח שלך מקשיב לו? (פרסומת) (20.10)",
+      "file": "mailer-mycospring-2026-10-20.html",
+      "score": "7.5",
+      "date": "20.10.2026",
+      "time": "20:32",
+      "img": "/mailers/mailer-mycospring-2026-10-20.webp",
+      "offer": "באנדל Morning Ritual (תמצית קורדיספס + תחליב לחות SÈNE) ובאנדל Night…",
+      "hook": "\"SKINCARE, IN RHYTHM – לעור שלך יש שעון משלו. ביום — הגנה. בלילה — הת…",
+      "cta": "\"לבאנדל Morning Ritual ←\", \"לבאנדל Night Ritual ←\", \"לרכישת שגרת הבוק…",
+      "drive_id": "1c3g0XQ5DdlMiBtbrlWDhJ7fd28Xb3VNZ"
+    },
+    {
+      "brand": "EcoSupp",
+      "title": "אוכלים בריא? למה בכל זאת כדאי לקחת תוספים (פרסומת) (20.10)",
+      "file": "mailer-ecosupp-2026-10-20.html",
+      "score": "6.5",
+      "date": "20.10.2026",
+      "time": "19:24",
+      "img": "/mailers/mailer-ecosupp-2026-10-20.webp",
+      "offer": "קופון CHOOSEWELL10: \"10% הנחה + משלוח חינם עד הבית\", \"בתוקף עד 31.10.…",
+      "hook": "צילום קערת יוגורט ופירות, אבוקדו וירקות + \"אוכלים בריא? למה בכל זאת כ…",
+      "cta": "\"מצאו את התוסף שמתאים לכם\", \"לפרטים אודות תוכנית המנויים\", \"אני רוצה…",
+      "drive_id": "1ziouZ0FI4GqzZHvOuAKg3MfeCp6dayE4"
+    },
+    {
       "brand": "Smiley",
       "title": "קפה. סיגריה. קולה. יין. (20.10)",
       "file": "mailer-smiley-2026-10-20.html",

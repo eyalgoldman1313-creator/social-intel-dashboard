@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-10-20T19:13:39+03:00",
+ "fetchedAt": "2026-10-21T19:09:00+03:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1219,6 +1219,34 @@
      "mime": "text/html",
      "modified": "2026-10-20T16:13:39.000Z",
      "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+    },
+    {
+     "id": "1mHureAObsVVmVHqBM21DVu8198beH8ky",
+     "name": "אפיון | Pups | מייל | מה הכי מטריד אצלכם | 8",
+     "mime": "text/html",
+     "modified": "2026-10-21T16:09:00.000Z",
+     "folder": "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP"
+    },
+    {
+     "id": "1pJ36OEsR6eFAkDDy-adjrRmLjlkPBUq0",
+     "name": "אפיון | Fill It | מייל | GLOW IT במתנה ברכישה | 7",
+     "mime": "text/html",
+     "modified": "2026-10-21T16:09:00.000Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1c3g0XQ5DdlMiBtbrlWDhJ7fd28Xb3VNZ",
+     "name": "אפיון | Mycospring | מייל | לעור שלך יש שעון משלו | 7.5",
+     "mime": "text/html",
+     "modified": "2026-10-21T16:09:00.000Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1ziouZ0FI4GqzZHvOuAKg3MfeCp6dayE4",
+     "name": "אפיון | EcoSupp | מייל | אוכלים בריא ולמה בכל זאת תוספים | 6.5",
+     "mime": "text/html",
+     "modified": "2026-10-21T16:09:00.000Z",
+     "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
     }
    ]
   }
