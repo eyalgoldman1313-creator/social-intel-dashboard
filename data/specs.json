@@ -753,6 +753,32 @@
   },
   "mailers": [
     {
+      "brand": "Fill It",
+      "title": "עברנו לשעון חורף. מה עם השינה שלך? >> | פרסומת (25.10)",
+      "file": "mailer-fillit-2026-10-25.html",
+      "score": "6",
+      "date": "25.10.2026",
+      "time": "12:00",
+      "img": "/mailers/mailer-fillit-2026-10-25.webp",
+      "offer": "אין הנחה, אין מתנה ואין מחיר",
+      "hook": "צילום אישה עם מסכת שינה + \"אם כבר הלילות מתחילים להתארך, לפחות שהשינה…",
+      "cta": "2 כפתורים: \"GOODNIGHT GUMMIES >>\" (Hero) ו\"ל־GOODNIGHT GUMMIES >>\" (ת…",
+      "drive_id": "1KwQt-61304IEXXLvtStntAmo5ubqM5UA"
+    },
+    {
+      "brand": "Mycospring",
+      "title": "אל תפספסו את המבצע לשנה החדשה (24.10)",
+      "file": "mailer-mycospring-2026-10-24.html",
+      "score": "6",
+      "date": "24.10.2026",
+      "time": "20:33",
+      "img": "/mailers/mailer-mycospring-2026-10-24.webp",
+      "offer": "באנדל Morning Ritual (תמצית קורדיספס + תחליב לחות SÈNE) ובאנדל Night…",
+      "hook": "\"SKINCARE, IN RHYTHM – לעור שלך יש שעון משלו. ביום — הגנה. בלילה — הת…",
+      "cta": "\"לבאנדל Morning Ritual ←\", \"לבאנדל Night Ritual ←\", \"לרכישת שגרת הבוק…",
+      "drive_id": "11kRLwq5FFBfGYFtaXbidJvvlUxPIRFNO"
+    },
+    {
       "brand": "Smiley",
       "title": "זאת השאלה הנוראית ששואלים אותנו כל הזמן! (24.10)",
       "file": "mailer-smiley-2026-10-24b.html",
