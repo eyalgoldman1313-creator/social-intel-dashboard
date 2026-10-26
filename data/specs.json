@@ -753,6 +753,32 @@
   },
   "mailers": [
     {
+      "brand": "Pups",
+      "title": "4 דברים לדעת לפני שמתחילים (26.10)",
+      "file": "mailer-pups-2026-10-26.html",
+      "score": "7.5",
+      "date": "26.10.2026",
+      "time": "10:24",
+      "img": "/mailers/mailer-pups-2026-10-26.webp",
+      "offer": "אין הצעה חדשה ולא מוזכר ה-₪20 (welcome20) שהופיע בשלושת המיילים הקודמ…",
+      "hook": "צילום צנצנת האבקה הדנטלית + \"ככה זה עובד, בלי מאמץ\" + \"שגרה של כמה שנ…",
+      "cta": "\"לפרטים ←\" ×3 ו\"לבחירת מוצר ←\".",
+      "drive_id": "1GaCcLqg9OrxdbgIYNcTYoHCiwTREniO-"
+    },
+    {
+      "brand": "Mayven",
+      "title": "פספסת בפעם הקודמת? 🍑 | פרסומת (25.10)",
+      "file": "mailer-mayven-2026-10-25.html",
+      "score": "6",
+      "date": "25.10.2026",
+      "time": "19:09",
+      "img": "/mailers/mailer-mayven-2026-10-25.webp",
+      "offer": "אין הנחה",
+      "hook": "כותרת \"COLLAGEN WAVE\" + צילום יד מחזיקה רשת עם המוצר, חוצה אותה סרט \"…",
+      "cta": "\"הצטרפי לרשימת ההמתנה\" (כפתור + קו תחתון בטקסט).",
+      "drive_id": "1i0iDA0OXiOMdzXv_C1JhJdRrvJtp_a5O"
+    },
+    {
       "brand": "Fill It",
       "title": "עברנו לשעון חורף. מה עם השינה שלך? >> | פרסומת (25.10)",
       "file": "mailer-fillit-2026-10-25.html",
