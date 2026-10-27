@@ -754,6 +754,58 @@
   "mailers": [
     {
       "brand": "Pups",
+      "title": "הקלפיות נסגרות ב־22:00. אצלנו פתוח עד חצות 😉 (27.10)",
+      "file": "mailer-pups-2026-10-27b.html",
+      "score": "7.5",
+      "date": "27.10.2026",
+      "time": "19:03",
+      "img": "/mailers/mailer-pups-2026-10-27b.webp",
+      "offer": "אותה הצעה: 15% עם בוחריםנכון, \"בתוקף עד הלילה בחצות, ולא דקה אחרי\" /…",
+      "hook": "תג \"⏰ נשארו כמה שעות · עד חצות\" + הכותרת + אותו צילום ביגל וקוד.",
+      "cta": "\"להזמנה ב-15% הנחה ←\", 4× \"לרכישה ←\", \"אני רוצה ←\".",
+      "drive_id": "1WlcnNAcPE5HgwJ0s9UElbiQcArLNZNeU"
+    },
+    {
+      "brand": "Mayven",
+      "title": "קודם כל, תבחרי היום בעצמך 💌 18% הנחה על כל האתר | פרסומת (27.10)",
+      "file": "mailer-mayven-2026-10-27.html",
+      "score": "6.5",
+      "date": "27.10.2026",
+      "time": "10:19",
+      "img": "/mailers/mailer-mayven-2026-10-27.webp",
+      "offer": "\"18% הנחה על כל האתר ומשלוח חינם\"",
+      "hook": "Header \"ELECTION SALE\" + באנר כחול-סגול \"ELECTION SALE 18% OFF SITEWI…",
+      "cta": "\"GET YOUR 18% OFF\" ×2 (באנגלית במייל בעברית).",
+      "drive_id": "1lJnBymp7FlQsmvhVBoiqD_MSbh-i4IRs"
+    },
+    {
+      "brand": "Pups",
+      "title": "היום בוחרים לפנק את הכלב שלכם 🗳️🐶 (27.10)",
+      "file": "mailer-pups-2026-10-27.html",
+      "score": "8",
+      "date": "27.10.2026",
+      "time": "08:33",
+      "img": "/mailers/mailer-pups-2026-10-27.webp",
+      "offer": "15% על כל האתר עם הקוד בוחריםנכון, \"בתוקף היום בלבד, 27.10, עד חצות\"",
+      "hook": "תג \"🗳️ מבצע יום הבחירות · היום בלבד\" + \"היום בוחרים לפנק את הכלב שלכ…",
+      "cta": "\"להזמנה ב-15% הנחה ←\", 4× \"לרכישה ←\", \"15% על כל האתר ←\".",
+      "drive_id": "1LqeX2qBQmFhRs-sDkNilf1Muun1UBLRH"
+    },
+    {
+      "brand": "Mycospring",
+      "title": "יום הבחירות: לבחירה שלכם יש ערך כפול ✌️ (פרסומת) (26.10)",
+      "file": "mailer-mycospring-2026-10-26.html",
+      "score": "7",
+      "date": "26.10.2026",
+      "time": "19:08",
+      "img": "/mailers/mailer-mycospring-2026-10-26.webp",
+      "offer": "כפל נקודות על כל רכישה באתר, למימוש בקנייה הבאה",
+      "hook": "תמונת יד מכניסה פתק \"כפל\" לקלפי + \"הי\" + \"לבחירה שלך יש ערך כפול! רק…",
+      "cta": "\"לבחירה שלכם באתר\"",
+      "drive_id": "19y-jRvHkzu-MiL8iuOETBUMEyulbdT8l"
+    },
+    {
+      "brand": "Pups",
       "title": "4 דברים לדעת לפני שמתחילים (26.10)",
       "file": "mailer-pups-2026-10-26.html",
       "score": "7.5",
