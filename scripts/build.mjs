@@ -453,7 +453,7 @@ function render(scan, prev, { isLatest, scans }) {
   const panelById = { top10: top10Panel, creatives: creativesPanel, overview, trends: seasonPanel, competitors: compPanel, meta: metaPanel, tiktok: tiktokPanel, google: googlePanel, organic: organicPanel, actions: actionsPanel, mailers: mailersPanel };
   const nav = `<nav class="tabs" aria-label="סעיפים"><div class="tabs-in" role="tablist">${tabs.map(([id, t]) => `<a href="#${id}" role="tab" data-go="${id}" class="${id === 'top10' ? 'on ' : ''}${HOT.has(id) ? 'hot' : ''}">${t}</a>`).join('')}</div></nav>`;
 
-  return `<!doctype html>
+  return labelMatrixTables(`<!doctype html>
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
@@ -483,7 +483,30 @@ ${CR.lightbox}
 <script src="/events.js" defer></script>
 <script src="/mailer-sort.js" defer></script>
 <script src="/app.js" defer></script>
-</body></html>`;
+</body></html>`);
+}
+
+// Phone tables become stacked cards. data-label repeats the column name above each cell.
+function labelMatrixTables(html) {
+  return html.replace(/<table class="matrix"([^>]*)>([\s\S]*?)<\/table>/g, (full, attrs, inner) => {
+    const head = inner.match(/<thead>[\s\S]*?<\/thead>/);
+    if (!head) return full;
+    const labels = [...head[0].matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/g)].map((m) =>
+      m[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
+    const labeled = inner.replace(/<tbody>([\s\S]*?)<\/tbody>/g, (all, rows) => {
+      const next = rows.replace(/<tr\b([^>]*)>([\s\S]*?)<\/tr>/g, (tr, trAttr, cells) => {
+        let i = 0;
+        const patched = cells.replace(/<(th|td)\b([^>]*)>/g, (tag, name, at) => {
+          const label = labels[i++] || '';
+          if (!label || /\bdata-label=/.test(at)) return tag;
+          return `<${name}${at} data-label="${esc(label)}">`;
+        });
+        return `<tr${trAttr}>${patched}</tr>`;
+      });
+      return `<tbody>${next}</tbody>`;
+    });
+    return `<table class="matrix"${attrs}>${labeled}</table>`;
+  });
 }
 
 // ---------- write pages ----------

@@ -349,3 +349,70 @@ a.info-i{display:inline-grid;place-items:center;width:1.35rem;height:1.35rem;mar
 .cr-ph-why{font-size:.74rem;opacity:.8}
 .callout.info{background:#ecfdf5;border:1px solid #86efac;color:#14532d}
 .doclink.pending{opacity:.65;border-style:dashed;cursor:default}
+
+/* ===== phone / small tablet comfort (desktop ≥861px unchanged) ===== */
+@media (max-width:860px){
+  html{scroll-padding-top:88px}
+  .top-in{inline-size:100%;min-inline-size:0}
+  .updated{display:block;max-inline-size:100%;line-height:1.45;overflow-wrap:anywhere}
+  .updated .live{display:inline-block;vertical-align:middle;margin-inline-end:6px}
+  .top a.info-i{inline-size:44px;block-size:44px;margin-inline-start:4px}
+  .tabs a{display:inline-flex;align-items:center;justify-content:center;min-block-size:44px;padding-block:8px;padding-inline:14px;scroll-snap-align:start}
+  .tabs-in{scroll-snap-type:inline mandatory;scrollbar-width:none}
+  .tabs-in{mask-image:linear-gradient(to left,#000,#000 calc(100% - 18px),transparent);-webkit-mask-image:linear-gradient(to left,#000,#000 calc(100% - 18px),transparent)}
+  .panel,.summary-in,.card,.lim,.mailer-card,.cr,.take>div,.act>div,.kpi,.chart{min-inline-size:0;max-inline-size:100%}
+  .cr-body,.cr-links,.cr-hook,.cr-note,.cr-basis,.ml-body,.ml-ind,.card h3,.mailer-card h3,.panel-head h2,h1{min-inline-size:0;overflow-wrap:anywhere}
+  .callout a,code,.domain,.matrix td[dir=ltr],.matrix th[dir=ltr]{overflow-wrap:anywhere}
+  .cr-badges,.cr-specs,.cr-drive,.cr-facts,.ml-tags,.ml-legend,.tags,.links,.panel-docs,.lb-chips,.doc-grid{display:flex;flex-wrap:wrap;gap:8px;min-inline-size:0;max-inline-size:100%}
+  .doc-grid{display:grid}
+  .brand-tag,.chip,.tag,.pill,.spec-tag,.drv-pill,.doclink,.status,.cr-basis,.ml-score,.ml-date{max-inline-size:100%;overflow-wrap:anywhere;white-space:normal;line-height:1.35}
+  .t10-entered{flex:1 1 100%}
+  .drv-pill span{white-space:normal}
+  .spec-tag,.doclink,.gal-link a,.cr-src,.fbtn.cr-go,.fbtn.more{display:inline-flex;align-items:center;min-block-size:44px;box-sizing:border-box}
+  .cr-src{padding-block:4px}
+  .foot a{display:inline-flex;align-items:center;min-block-size:44px;padding-inline:4px}
+  a.domain{display:inline-flex;align-items:center;min-block-size:44px;max-inline-size:100%;overflow-wrap:anywhere}
+  .howto summary{display:flex;align-items:center;min-block-size:44px}
+  .lb-x,.lb-nav{inline-size:44px;block-size:44px}
+  /* Rank sits on the same corner as the format chip once the card stacks. */
+  .t10-grid .cr:has(.t10-rank) .cr-fmt{inset-inline-end:62px;inset-inline-start:auto;top:12px}
+  .strip-row .cr{flex-basis:210px}
+  .strip-row .cr:has(.t10-rank) .cr-fmt{top:42px;inset-inline-end:8px;inset-inline-start:auto}
+  .cr-days,.cr-fmt,.cr-phase,.t10-rank{max-inline-size:calc(100% - 16px)}
+  .lim-grid{grid-template-columns:minmax(0,1fr)}
+  .ev-cards,.doc-grid{grid-template-columns:minmax(0,1fr)}
+  .bar-label,.bar-val{min-inline-size:0;overflow-wrap:anywhere}
+  .chart{max-inline-size:100%}
+  .ml-ind li{flex-wrap:wrap;min-inline-size:0}
+  .ml-ind li span:last-child{min-inline-size:0;overflow-wrap:anywhere}
+  .take,.act{min-inline-size:0}
+  /* Helper filters stay short and on one line; overflow scrolls instead of wrapping or stretching. */
+  .filters{flex-wrap:nowrap;overflow-x:auto;max-inline-size:100%;scrollbar-width:thin;padding-block:2px}
+  .filters .fbtn{flex:0 0 auto;block-size:36px;min-block-size:36px;padding-block:0;padding-inline:12px}
+  .cr-filters{flex-wrap:nowrap;overflow-x:auto;align-items:center;gap:8px;max-inline-size:100%;scrollbar-width:thin}
+  .cr-filters .sel{flex:0 0 auto;min-inline-size:0}
+  .cr-filters .sel select{inline-size:auto;min-inline-size:7.2rem;max-inline-size:11rem;block-size:36px}
+  .cr-filters .chk{flex:0 0 auto;white-space:nowrap;padding-block:0;min-block-size:36px}
+  .cr-filters .cr-count{flex:0 0 auto;margin-inline-start:0;white-space:nowrap;padding-block:0}
+  .ml-toolbar{flex-wrap:nowrap;max-inline-size:100%}
+}
+@media (max-width:540px){
+  .events{flex-direction:column;align-items:stretch}
+  .event{flex:1 1 auto;inline-size:100%;min-inline-size:0}
+  .event-copy{overflow-wrap:anywhere}
+  .cr-grid{grid-template-columns:minmax(0,1fr)}
+  .cr-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tablewrap{overflow:visible;border:0;background:transparent}
+  table.matrix{display:block;min-width:0;min-inline-size:0}
+  table.matrix thead{position:absolute;inline-size:1px;block-size:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+  table.matrix caption{display:block;text-align:start;padding:4px 2px 8px}
+  table.matrix tbody{display:grid;gap:10px}
+  table.matrix tr{display:block;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#fff}
+  table.matrix tr.sum{background:#f8fafc}
+  table.matrix td,table.matrix th,table.matrix td.txt{display:block;border:0;padding:4px 0;min-width:0;min-inline-size:0;text-align:start;overflow-wrap:anywhere}
+  table.matrix td[data-label]::before,table.matrix th[data-label]::before{content:attr(data-label);display:block;font-size:.72rem;font-weight:700;color:var(--mut);margin-bottom:1px}
+}
+/* Mailer sort/brand stay one compact row; the count may sit under them. Do not grow those selects. */
+@media (max-width:540px){
+  .ml-toolbar{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}

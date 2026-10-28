@@ -241,6 +241,10 @@
     var contentWidth = set.offsetWidth;
     var containerWidth = strip.clientWidth;
     var mode = marqueeMode(contentWidth, containerWidth, reduce);
+    // Viewports up to tablet: swipe the strip so each pill stays whole. A marquee fades and clips Hebrew mid-word.
+    var narrowViewport = false;
+    try { narrowViewport = window.matchMedia('(max-width: 860px)').matches; } catch (e) { narrowViewport = false; }
+    if (mode === 'marquee' && narrowViewport) mode = 'scroll';
     var key = mode + ':' + contentWidth + ':' + containerWidth;
     if (strip.getAttribute('data-marquee-key') === key) return;
     strip.setAttribute('data-marquee-key', key);
