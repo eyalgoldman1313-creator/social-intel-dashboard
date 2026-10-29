@@ -753,6 +753,19 @@
   },
   "mailers": [
     {
+      "brand": "Mycospring",
+      "title": "החורף מגיע. מה הגוף שלכם צריך עכשיו? 🍄 (פרסומת) (29.10)",
+      "file": "mailer-mycospring-2026-10-29.html",
+      "score": "7",
+      "date": "29.10.2026",
+      "time": "17:27",
+      "img": "/mailers/mailer-mycospring-2026-10-29.webp",
+      "offer": "אין הנחה, מחיר או מבצע.",
+      "hook": "ניווט + צילום כוס תה חם בחלון + \"החורף מגיע. מה הגוף שלכם צריך עכשיו?…",
+      "cta": "כפתור אחד: \"המומלצים שלנו\"",
+      "drive_id": "1t3bb-Elwu5mjAwTBoUzZajjN0nq0_ZdH"
+    },
+    {
       "brand": "Fill It",
       "title": "את בטוחה שאת בוחרת נכון לעצמך? >> | פרסומת (28.10)",
       "file": "mailer-fillit-2026-10-28.html",
