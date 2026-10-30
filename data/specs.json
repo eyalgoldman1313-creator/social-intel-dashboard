@@ -753,6 +753,32 @@
   },
   "mailers": [
     {
+      "brand": "Pups",
+      "title": "ה-₪20 שלכם עוד כאן (30.10)",
+      "file": "mailer-pups-2026-10-30.html",
+      "score": "7.5",
+      "date": "30.10.2026",
+      "time": "10:25",
+      "img": "/mailers/mailer-pups-2026-10-30.webp",
+      "offer": "\"20 ₪ פעם אחת, בלי מינימום\"",
+      "hook": "פס \"⏳ · תזכורת קטנה · ⏳\" + צילום גולדן מריח חטיף מצנצנת HIP & JOINT B…",
+      "cta": "כפתור אחד \"למימוש ←\" שמחיל את הקוד.",
+      "drive_id": "1gZNG4HTW8SYXI5PiJQJgc42xhoO_PzoN"
+    },
+    {
+      "brand": "Fill It",
+      "title": "המוצר שכדאי שיחכה לך בסל לפני ShoppingIL >> | פרסומת (30.10)",
+      "file": "mailer-fillit-2026-10-30.html",
+      "score": "7",
+      "date": "30.10.2026",
+      "time": "10:01",
+      "img": "/mailers/mailer-fillit-2026-10-30.webp",
+      "offer": "אין הנחה, מחיר או תאריך ל-ShoppingIL",
+      "hook": "\"SHOPPING IL מתקרב, והפעם כדאי להגיע מוכנה. אז מה באמת שווה לך לשים ב…",
+      "cta": "3 כפתורים: \"להכיר את SHAPE COMPLEX >>\" ו-2× \"ל-SHAPE COMPLEX >>\".",
+      "drive_id": "1H-8CUW9x0KLrL_5Bjxi8kAoBINNu8O0D"
+    },
+    {
       "brand": "Mycospring",
       "title": "החורף מגיע. מה הגוף שלכם צריך עכשיו? 🍄 (פרסומת) (29.10)",
       "file": "mailer-mycospring-2026-10-29.html",
