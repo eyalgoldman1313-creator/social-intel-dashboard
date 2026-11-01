@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-10-21T19:09:00+03:00",
+ "fetchedAt": "2026-11-01T19:20:00+02:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -986,7 +986,8 @@
     "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0",
     "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0",
     "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-",
-    "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP"
+    "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP",
+    "1mFv5BuUaFai7itDS-weVwwdvrxJ5IO51"
    ],
    "files": [
     {
@@ -1373,6 +1374,20 @@
      "mime": "text/html",
      "modified": "2026-10-21T16:09:00.000Z",
      "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
+    },
+    {
+     "id": "1vxW1zRbe9fEec1U1e_M6flOuuRrkM0Mj",
+     "name": "אפיון | Fill It | מייל | כבר שמת את BEAUTY בסל ל-Shopping IL | 6.5",
+     "mime": "text/html",
+     "modified": "2026-10-31T17:30:44.000Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1wY5yrbDssrn0wamSdGBitegdCQE66VyA",
+     "name": "אפיון | GOOM | מייל | זה קורה רק פעם בשנה – 25% + רכב | 7.5",
+     "mime": "text/html",
+     "modified": "2026-11-01T09:47:19.000Z",
+     "folder": "1mFv5BuUaFai7itDS-weVwwdvrxJ5IO51"
     }
    ]
   }

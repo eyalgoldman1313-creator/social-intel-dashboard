@@ -753,6 +753,32 @@
   },
   "mailers": [
     {
+      "brand": "GOOM",
+      "title": "זה קורה רק פעם בשנה | (25% הנחה 🎁 + רכב חדש! 🤯) (1.11)",
+      "file": "mailer-goom-2026-11-01.html",
+      "score": "7.5",
+      "date": "01.11.2026",
+      "time": "11:47",
+      "img": "/mailers/mailer-goom-2026-11-01.webp",
+      "offer": "\"25% הנחה על כל האתר (!!)\" + \"כל הזמנה באתר במהלך נובמבר נכנסת אוטומט…",
+      "hook": "באנר \"SHOPPING IL 25% OFF EVERYTHING וגם הגרלה על רכב חדש\" + צילום אי…",
+      "cta": "2 קישורי טקסט כחולים בסגנון מכתב (\"ל-25% הנחה ולהשתתפות בהגרלה >>>\",…",
+      "drive_id": "1wY5yrbDssrn0wamSdGBitegdCQE66VyA"
+    },
+    {
+      "brand": "Fill It",
+      "title": "כבר שמת את BEAUTY בסל ל־Shopping IL? >> | פרסומת (31.10)",
+      "file": "mailer-fillit-2026-10-31.html",
+      "score": "6.5",
+      "date": "31.10.2026",
+      "time": "19:30",
+      "img": "/mailers/mailer-fillit-2026-10-31.webp",
+      "offer": "אין הנחה, מחיר או תאריך",
+      "hook": "צילום עור פנים בתקריב + \"SHOPPING IL מתקרב. והפעם, כדאי להגיע מוכנה.…",
+      "cta": "\"להכיר את BEAUTY COMPLEX >>\" ×2 + \"שתפי אותנו באינסטגרם >>\".",
+      "drive_id": "1vxW1zRbe9fEec1U1e_M6flOuuRrkM0Mj"
+    },
+    {
       "brand": "Smiley",
       "title": "נשארה לך יתרה של ₪49.90 🥰 (31.10)",
       "file": "mailer-smiley-2026-10-31.html",
