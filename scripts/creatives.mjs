@@ -64,13 +64,19 @@ export const nicheIds = (brands) => brands.filter((b) => b.group === 'niche').ma
 // 'data' — it was not rankable before (missing, no days, or not active) and entered once that data was completed.
 // Already-rankable ads that only moved up are not tagged. Already-listed ads return null.
 export const ENTRY_DATA_LABEL = 'נכנסה בעקבות השלמת נתונים';
-export function entryReason(item, { prevTopIds = [], prevItem = null, weekStart = '', weekEnd = '' } = {}) {
+export const ENTRY_RESUMED_LABEL = 'חזרה לפעילות';
+export function entryReason(item, { prevTopIds = [], prevItem = null, weekStart = '', weekEnd = '', prevStatuses = [] } = {}) {
   if (!item || typeof item !== 'object') return null;
   const prev = prevTopIds instanceof Set ? prevTopIds : new Set(prevTopIds || []);
   const aliasIds = (item.alias_ids || []).map((a) => `${item.source}-${String(a).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`);
   if ([item.id, ...aliasIds].filter(Boolean).some((id) => prev.has(id))) return null;
   const start = item.start_date || '';
   if (start && weekStart && start >= weekStart && (!weekEnd || start <= weekEnd)) return { reason: 'started' };
+  // Stopped last week and active again. Checked before 'data': a non-rankable inactive
+  // row used to be labeled as data completion. prevStatuses is the same id in the
+  // immediately previous Top 10 week only (not older history).
+  const wasStopped = prevItem?.status === 'inactive' || (prevStatuses || []).includes('inactive');
+  if (wasStopped && item.status === 'active') return { reason: 'resumed', label: ENTRY_RESUMED_LABEL };
   const rankable = !!(prevItem && prevItem.days_active != null && prevItem.status === 'active');
   if (!rankable) return { reason: 'data', label: ENTRY_DATA_LABEL };
   return null;
@@ -277,7 +283,10 @@ export function makeRenderer({ esc, brandName, srcTag, link, section, daysTo, sp
     const latest = weeks[weeks.length - 1];
     const entryLabelOf = (w, i) => {
       const e = w && w.entered && w.entered[i.id];
-      return e && e.reason === 'data' ? (e.label || ENTRY_DATA_LABEL) : '';
+      if (!e) return '';
+      if (e.reason === 'data') return e.label || ENTRY_DATA_LABEL;
+      if (e.reason === 'resumed') return e.label || ENTRY_RESUMED_LABEL;
+      return '';
     };
     const nicheBlock = (w) => {
       const n = w.niche || [];

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { brandId, carryForward, lookupPrev, mergeAliases, mergeImported, prevIndex, retainUnimported, applyWeek, METHOD, LEGACY_RANK_NOTE } from './import-creatives.mjs';
+import { brandId, carryForward, lookupPrev, mergeAliases, mergeImported, prevIndex, retainUnimported, applyWeek, METHOD, LEGACY_RANK_NOTE, normStatus } from './import-creatives.mjs';
 
 test('carryForward keeps image_source and a known format', () => {
   const prev = prevIndex([
@@ -146,4 +146,60 @@ test('trypups alias imports Google items under brand pups', () => {
   assert.equal(brandId('Pups', [pups]), 'pups');
   assert.equal(brandId('trypups.com', [pups]), 'pups');
   assert.equal(brandId('trypups', []), 'pups');
+  assert.equal(brandId('try-pups', []), 'pups');
+});
+
+test('brand matching ignores punctuation and compares a domain stem in both directions', () => {
+  const pups = { id: 'pups', name: 'Pups', heName: 'try-pups', domain: 'trypups.com', group: 'reference' };
+  assert.equal(brandId({ brand: 'try-pups', brand_slug: 'trypups' }, [pups]), 'pups');
+  assert.equal(brandId({ brand_slug: 'not-a-brand', brand: 'Pups' }, [pups]), 'pups');
+  const acme = { id: 'acme', name: 'Acme', heName: 'אקמי', domain: 'tryacme.com' };
+  assert.equal(brandId('try-acme', [acme]), 'acme');
+  assert.equal(brandId('tryacme.com', [acme]), 'acme');
+  assert.equal(brandId({ brand: 'Try Acme', brand_slug: 'try-acme' }, [acme]), 'acme');
+  assert.equal(brandId('notacme', [acme]), 'notacme');
+  const fill = { id: 'fillit', name: 'Fill It', heName: 'פיל-איט', domain: 'fillitvitamins.com' };
+  assert.equal(brandId('פיל איט', [fill]), 'fillit');
+  assert.equal(brandId('fill it', []), 'fillit');
+});
+
+test('normStatus maps הופסקה and נעלמה to inactive', () => {
+  assert.equal(normStatus('הופסקה'), 'inactive');
+  assert.equal(normStatus('נעלמה'), 'inactive');
+  assert.equal(normStatus('הופסק'), 'inactive');
+  assert.equal(normStatus('מושהית'), 'inactive');
+  assert.equal(normStatus('מושהה'), 'inactive');
+  assert.equal(normStatus('פעיל'), 'active');
+  assert.equal(normStatus('paused'), 'inactive');
+  assert.equal(normStatus('something else'), 'unknown');
+});
+
+test('applyWeek tags a returning active ad as resumed, not data', () => {
+  const prevCreatives = [
+    { id: 'meta-back', source: 'meta', library_id: 'back', days_active: null, status: 'inactive' },
+  ];
+  const items = [
+    { id: 'meta-back', source: 'meta', brand: 'mycolivia', status: 'active', days_active: 235, variants_count: 1, start_date: '2026-03-12' },
+  ];
+  const doc = { weeks: {} };
+  applyWeek(doc, { key: '2026-W44', week: 44, start: '2026-10-26', end: '2026-11-01', asof: '2026-10-26' }, {
+    items, brands: [], imported: new Set(['meta']), strips: [], now: '2026-10-26T00:00:00.000Z', prevCreatives,
+  });
+  assert.equal(doc.weeks['2026-W44'].entered['meta-back'].reason, 'resumed');
+  assert.equal(doc.weeks['2026-W44'].entered['meta-back'].label, 'חזרה לפעילות');
+});
+
+test('an inactive flag from an older week does not keep tagging resumed', () => {
+  const doc = {
+    weeks: {
+      '2026-W40': { key: '2026-W40', items: [{ id: 'meta-x', status: 'inactive', days_active: 10 }] },
+      '2026-W43': { key: '2026-W43', items: [{ id: 'meta-x', status: 'active', days_active: 20 }] },
+    },
+  };
+  applyWeek(doc, { key: '2026-W44', week: 44, start: '2026-10-26', end: '2026-11-01', asof: '2026-10-26' }, {
+    items: [{ id: 'meta-x', source: 'meta', brand: 'a', status: 'active', days_active: 30, start_date: '2025-01-01' }],
+    brands: [], imported: new Set(['meta']), strips: [], now: '2026-10-26T00:00:00.000Z',
+    prevCreatives: [{ id: 'meta-x', source: 'meta', status: 'active', days_active: 30 }],
+  });
+  assert.equal(doc.weeks['2026-W44'].entered, undefined);
 });

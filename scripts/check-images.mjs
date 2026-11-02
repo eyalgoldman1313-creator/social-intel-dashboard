@@ -2,7 +2,7 @@
 // Flags: (1) cards without an image, (2) remote/expiring image URLs (fbcdn, scontent, cdninstagram, tiktokcdn,
 // googlesyndication, any http URL – these are signed and expire), (3) local paths whose file is missing.
 import { readFileSync, existsSync, statSync, openSync, readSync, closeSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const BLANK_BYTES = 1024;
@@ -86,16 +86,25 @@ export function checkImages(r = root) {
   }
   return out;
 }
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const res = checkImages(); let bad = 0;
+// `--strict` fails on missing, remote, broken, AND blank images (under 1KB or ≤40px tall).
+// The build calls checkImages() directly and keeps blanks as a warning.
+export function reportImages(res, { strict = false, verbose = false } = {}) {
+  let bad = 0;
+  const blanks = [];
   for (const [tab, o] of Object.entries(res)) {
     const bySrc = {}; for (const it of o.missing) bySrc[it.source] = (bySrc[it.source] || 0) + 1;
     console.log(`${tab}: ${o.total} cards · missing ${o.missing.length} ${JSON.stringify(bySrc)} · remote ${o.remote.length} · broken ${o.broken.length} · blank ${o.blank.length}`);
     for (const it of [...o.remote, ...o.broken]) console.log(`  ! ${it.id} ${it.image}`);
     for (const it of o.blank) console.warn(`  ~ blank ${it.id} ${it.image} (${it.reason})`);
-    if (process.argv.includes('-v')) for (const it of o.missing) console.log(`  - ${it.id} ${it.days_active ?? ''}d ${it.library_url || it.post_url || ''}`);
+    if (verbose) for (const it of o.missing) console.log(`  - ${it.id} ${it.days_active ?? ''}d ${it.library_url || it.post_url || ''}`);
     bad += o.missing.length + o.remote.length + o.broken.length;
+    blanks.push(...(o.blank || []));
   }
   if (bad) console.log('fix: node scripts/fetch-ad-images.mjs  (recovers from Meta Ad Library / Google Ads Transparency into public/creatives)');
-  if (process.argv.includes('--strict') && bad) process.exit(1);
+  if (strict && blanks.length) console.error(`${blanks.length} blank image(s) < ${BLANK_BYTES}B or ≤ ${BLANK_HEIGHT}px high: ${blanks.map((b) => b.id).join(', ')}`);
+  return { bad, blanks, exitCode: strict && (bad || blanks.length) ? 1 : 0 };
+}
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const { exitCode } = reportImages(checkImages(), { strict: process.argv.includes('--strict'), verbose: process.argv.includes('-v') });
+  if (exitCode) process.exit(exitCode);
 }

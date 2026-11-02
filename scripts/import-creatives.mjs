@@ -116,9 +116,13 @@ export function applyWeek(prevDoc, wk, { items, brands, imported, strips, now, p
     const prior = priorKey ? weeks[priorKey] : null;
     const prevTopIds = new Set((prior?.items || []).map((i) => i.id));
     const by = prevIndex(prevCreatives || []);
+    const priorRows = prior ? [prior.items, prior.niche, ...(prior.strips || []).map((s) => s.items)].flat() : [];
     const entered = {};
     for (const it of top) {
-      const reason = entryReason(it, { prevTopIds, prevItem: lookupPrev(by, it), weekStart: wk.start, weekEnd: wk.end });
+      // Only the immediately previous week. An inactive flag from an older week would
+      // keep tagging an ad that has been active ever since.
+      const prevStatuses = priorRows.filter((x) => x && x.id === it.id && x.status).map((x) => x.status);
+      const reason = entryReason(it, { prevTopIds, prevItem: lookupPrev(by, it), weekStart: wk.start, weekEnd: wk.end, prevStatuses });
       if (reason) entered[it.id] = reason;
     }
     existing.key = wk.key; existing.week = wk.week; existing.start = wk.start; existing.end = wk.end;
@@ -172,19 +176,64 @@ function isoWeek(dateStr) {
 }
 const FORMATS = { image: 'image', static: 'image', 'תמונה': 'image', photo: 'image', video: 'video', 'וידאו': 'video', 'סרטון': 'video', carousel: 'carousel', 'קרוסלה': 'carousel' };
 const normFormat = (v) => FORMATS[String(v || '').trim().toLowerCase()] || FORMATS[String(v || '').trim()] || 'unknown';
-function normStatus(v) {
+export function normStatus(v) {
   const s = String(v || '').trim().toLowerCase();
   if (['active', 'פעיל', 'פעילה', 'running'].includes(s)) return 'active';
-  if (['inactive', 'לא פעיל', 'לא פעילה', 'stopped', 'paused', 'ended'].includes(s)) return 'inactive';
+  if (['inactive', 'לא פעיל', 'לא פעילה', 'stopped', 'paused', 'ended', 'הופסקה', 'הופסק', 'נעלמה', 'מושהית', 'מושהה'].includes(s)) return 'inactive';
   return 'unknown';
 }
 const numOrNull = (v) => { if (v == null || v === '') return null; const n = Number(String(v).replace(/,/g, '')); return Number.isFinite(n) ? n : null; };
 const str = (v) => (v == null ? '' : String(v).trim());
 const ALIAS = { 'wonders-teva': 'wondersteva', 'gmila-luuf': 'trygmila', 'fill-it': 'fillit', fillitvitamins: 'fillit', 'fill-it': 'fillit', 'fill it': 'fillit', luuf: 'trygmila', tryluuf: 'trygmila', gmila: 'trygmila', 'gmila / luuf': 'trygmila', harmony: 'by-harmony', byharmony: 'by-harmony', smiley: 'try-smiley', trysmiley: 'try-smiley', woof: 'mywoof', wonders: 'wondersteva', 'wonders teva': 'wondersteva', trypups: 'pups' };
+// Punctuation-insensitive alias lookup so "try-pups" hits the trypups → pups alias.
+const normKey = (s) => String(s ?? '').toLowerCase().replace(/[^a-z0-9א-ת]/g, '');
+const ALIAS_NORM = new Map(Object.entries(ALIAS).map(([k, v]) => [normKey(k), v]));
+const domainHost = (d) => str(d).toLowerCase().replace(/^www\./, '').split('/')[0];
+// Extra characters allowed when a token and a domain stem contain each other.
+// "google" must not match stem "goom" (the extra is not a TLD).
+const TLD_RESIDUE = new Set(['com', 'co', 'il', 'coil', 'net', 'org', 'io', 'app']);
+function aliasOf(token) {
+  const raw = str(token).toLowerCase();
+  if (!raw) return '';
+  return ALIAS[raw] || ALIAS_NORM.get(normKey(raw)) || raw;
+}
+function stemEitherWay(token, domain) {
+  const host = domainHost(domain);
+  if (!host) return false;
+  const nTok = normKey(token);
+  const nStem = normKey(host.split('.')[0]);
+  const nHost = normKey(host);
+  if (!nTok || !nStem) return false;
+  if (nTok === nStem || nTok === nHost) return true;
+  const [short, long] = nTok.length <= nStem.length ? [nTok, nStem] : [nStem, nTok];
+  if (short.length < 4 || !long.startsWith(short)) return false;
+  return TLD_RESIDUE.has(long.slice(short.length));
+}
+function matchesBrand(token, b) {
+  const r = aliasOf(token);
+  if (!r || !b) return false;
+  const fields = [b.id, b.name, b.heName, b.domain].filter(Boolean);
+  if (fields.some((x) => { const xl = String(x).toLowerCase(); return xl === r || r.replace(/^www\./, '').startsWith(xl); })) return true;
+  const n = normKey(r);
+  if (n && fields.some((x) => normKey(x) === n)) return true;
+  return stemEitherWay(r, b.domain) || stemEitherWay(token, b.domain);
+}
+function brandTokens(raw) {
+  if (raw && typeof raw === 'object') return [raw.brand_slug, raw.brand, raw.slug, raw.name].map(str).filter(Boolean);
+  const s = str(raw);
+  return s ? [s] : [];
+}
+// String, or { brand_slug, brand }. Slug is tried first; a slug that matches no brand
+// falls through to the display name. Unknown tokens still return the alias (or themselves).
 export function brandId(raw, brandList = brands) {
-  const r0 = str(raw).toLowerCase(); const r = ALIAS[r0] || r0; if (!r) return '';
-  const hit = brandList.find((b) => [b.id, b.name, b.heName, b.domain].filter(Boolean).some((x) => x.toLowerCase() === r || r.replace(/^www\./, '').startsWith(x.toLowerCase())));
-  return hit ? hit.id : r;
+  const tokens = brandTokens(raw);
+  if (!tokens.length) return '';
+  const list = Array.isArray(brandList) ? brandList : [];
+  for (const token of tokens) {
+    const hit = list.find((b) => matchesBrand(token, b));
+    if (hit) return hit.id;
+  }
+  return aliasOf(tokens[0]);
 }
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) || createHash('md5').update(s).digest('hex').slice(0, 10);
 
@@ -234,7 +283,7 @@ for (const source of SOURCES) {
     const fname = libId ? slug(libId) : `${slug(str(r.brand_slug || r.brand))}-${md5(str(r.file ?? r.post_url ?? r.video_url ?? n))}`;
     const id = `${source}-${fname}`;
     const it = {
-      id, source, brand: brandId(r.brand_slug || r.brand), brandRaw: str(r.brand), library_id: libId || null,
+      id, source, brand: brandId({ brand_slug: r.brand_slug, brand: r.brand }), brandRaw: str(r.brand), library_id: libId || null,
       platform: source === 'meta' ? (str(r.platform) === 'שניהם' ? 'Facebook + Instagram' : str(r.platform)) : (str(r.platform) || ({ tiktok: 'TikTok', organic: 'אורגני', google: 'Google' })[source]),
       plat: source === 'meta' ? 'meta' : (({ youtube: 'youtube', instagram: 'instagram', ig: 'instagram', facebook: 'facebook', fb: 'facebook', tiktok: 'tiktok' })[str(r.platform).toLowerCase()] || source),
       format: normFormat(r.format) !== 'unknown' ? normFormat(r.format) : (['tiktok', 'youtube'].includes(str(r.platform).toLowerCase()) || source === 'tiktok' ? 'video' : 'unknown'), start_date: normDate(r.start_date), post_date: normDate(r.post_date), days_active: days,
