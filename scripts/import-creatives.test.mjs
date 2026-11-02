@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { brandId, carryForward, lookupPrev, mergeAliases, mergeImported, prevIndex, retainUnimported, applyWeek, METHOD, LEGACY_RANK_NOTE, normStatus } from './import-creatives.mjs';
+import { brandId, carryForward, lookupPrev, mergeAliases, mergeImported, prevIndex, retainUnimported, applyWeek, METHOD, LEGACY_RANK_NOTE, normStatus, NOT_SEEN_NOTE, hasDriveLinks } from './import-creatives.mjs';
 
 test('carryForward keeps image_source and a known format', () => {
   const prev = prevIndex([
@@ -137,6 +137,86 @@ test('retainUnimported does not duplicate rows from a source that was read', () 
   const items = [{ id: 'meta-1', source: 'meta', image_source: 'meta-ad-library' }];
   retainUnimported(items, prev, new Set(['meta']));
   assert.deepEqual(items.map((i) => i.id), ['meta-1', 'organic-1']);
+  assert.equal(items[1].status, undefined);
+});
+
+test('a card with Drive links is kept when its scan omits it; a card without links is dropped', () => {
+  const spec = 'https://drive.google.com/file/d/1daBm53fcn4dxAV5LdZAIYVhxcVrvgV9o/view';
+  const script = 'https://drive.google.com/file/d/1UAQqwqqUAHWSPOnO2WUgxmXUZjK5ND_0/view';
+  const driveLinks = {
+    'tiktok-goom-d178017e': { spec, script },
+    'meta-linked': { spec },
+    'tiktok-empty': {},
+  };
+  const prev = [
+    { id: 'tiktok-goom-d178017e', source: 'tiktok', status: 'active', post_url: 'https://www.tiktok.com/@goom.co.il/video/7521365051526155527', views: 3100000, data_notes: 'קיים' },
+    { id: 'tiktok-plain', source: 'tiktok', status: 'active' },
+    { id: 'tiktok-empty', source: 'tiktok', status: 'active' },
+    { id: 'meta-linked', source: 'meta', status: 'active', days_active: 200, brand: 'goom' },
+    { id: 'meta-plain', source: 'meta', status: 'active', days_active: 10, brand: 'a' },
+    { id: 'organic-inline', source: 'organic', status: 'active', spec_url: spec },
+  ];
+  const items = [{ id: 'tiktok-other', source: 'tiktok', status: 'active' }];
+  const warned = [];
+  retainUnimported(items, prev, new Set(['tiktok', 'meta', 'organic']), {
+    driveLinks,
+    warn: (kept) => warned.push(...kept.map((i) => i.id)),
+  });
+  assert.deepEqual(driveLinks['tiktok-goom-d178017e'], { spec, script });
+  const tik = items.find((i) => i.id === 'tiktok-goom-d178017e');
+  assert.equal(tik.status, 'unknown');
+  assert.equal(tik.views, 3100000);
+  assert.equal(tik.post_url, prev[0].post_url);
+  assert.match(tik.data_notes, new RegExp(NOT_SEEN_NOTE));
+  assert.match(tik.data_notes, /קיים/);
+  assert.equal(items.filter((i) => i.id === 'tiktok-goom-d178017e').length, 1);
+  assert.equal(items.some((i) => i.id === 'tiktok-plain' || i.id === 'tiktok-empty'), false);
+  const meta = items.find((i) => i.id === 'meta-linked');
+  assert.equal(meta.status, 'inactive');
+  assert.match(meta.data_notes, new RegExp(NOT_SEEN_NOTE));
+  assert.equal(items.some((i) => i.id === 'meta-plain'), false);
+  const org = items.find((i) => i.id === 'organic-inline');
+  assert.equal(org.status, 'unknown');
+  assert.equal(hasDriveLinks(org, {}), true);
+  assert.deepEqual(warned.sort(), ['meta-linked', 'organic-inline', 'tiktok-goom-d178017e']);
+
+  const second = items.filter((i) => i.id !== 'tiktok-goom-d178017e');
+  retainUnimported(second, items, new Set(['tiktok']), { driveLinks, warn: () => {} });
+  const again = second.find((i) => i.id === 'tiktok-goom-d178017e');
+  assert.equal(again.data_notes.split(NOT_SEEN_NOTE).length - 1, 1);
+});
+
+test('the default warning names each preserved Drive-linked card', () => {
+  const lines = [];
+  const orig = console.warn;
+  console.warn = (s) => lines.push(String(s));
+  try {
+    retainUnimported(
+      [],
+      [{ id: 'tiktok-goom-d178017e', source: 'tiktok', status: 'active', spec_url: 'https://drive.google.com/file/d/abc123/view' }],
+      new Set(['tiktok']),
+    );
+  } finally {
+    console.warn = orig;
+  }
+  const text = lines.join('\n');
+  assert.match(text, /Drive links/);
+  assert.match(text, /tiktok-goom-d178017e/);
+  assert.match(text, /status unknown/);
+});
+
+test('an alias merge is not undone when the folded card has Drive links', () => {
+  const prev = [
+    { id: 'meta-alias', source: 'meta', library_id: '1', status: 'active', spec_url: 'https://drive.google.com/file/d/abc123/view' },
+    { id: 'meta-main', source: 'meta', library_id: '2', status: 'active' },
+  ];
+  const items = [
+    { id: 'meta-main', source: 'meta', library_id: '2', alias_ids: ['1'], format: 'unknown', image: null },
+    { id: 'meta-alias', source: 'meta', library_id: '1', format: 'image', image: 'a.webp' },
+  ];
+  mergeImported(items, prev, new Set(['meta']), { warn: () => {} });
+  assert.deepEqual(items.map((i) => i.id), ['meta-main']);
+  assert.equal(items[0].status, undefined);
 });
 
 test('trypups alias imports Google items under brand pups', () => {

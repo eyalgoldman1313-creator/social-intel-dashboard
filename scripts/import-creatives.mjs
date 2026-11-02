@@ -8,12 +8,14 @@
 // image_source and a known format are copied from the previous data/creatives.json (including alias merges).
 // A run that does not read meta/index.json (organic-only) keeps Meta/Google items as they are and does not
 // reorder the sponsored Top 10. Week 2026-W42 keeps the ranking it was given under the old image-first rule.
+// A card missing from a source that was read is dropped, unless it has Drive links. Those cards are kept
+// (paid ads marked inactive, other sources unknown) and listed in a warning, so the links stay attached.
 import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, statSync } from 'node:fs';
 import { dirname, join, resolve, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { rankTop10, nicheIds, entryReason } from './creatives.mjs';
+import { rankTop10, nicheIds, entryReason, loadDriveLinks, driveUrls } from './creatives.mjs';
 const md5 = (s) => createHash('md5').update(s).digest('hex').slice(0, 8);
 
 export const METHOD = 'דירוג לפי ותק הריצה (ימים פעילה) כמדד לביצועים, כי נתוני הוצאה/מעורבות אינם זמינים למודעות Meta בישראל. שוברי שוויון: מספר גרסאות/שכפולים. עד 2 קריאייטיבים לכל מותג, משפחה אחת נספרת פעם אחת. התמונה משמשת לתצוגה בלבד ואינה משפיעה על הדירוג. ותק הוא אינדיקציה, לא הוכחה לרווחיות.';
@@ -78,21 +80,56 @@ export function mergeAliases(items) {
   for (const it of items) if (!it.alias_ids?.length) delete it.alias_ids;
   return merged;
 }
+// A Drive spec or script, from data/drive-links.json or from spec_url/script_url on the card.
+export function hasDriveLinks(it, driveLinks = {}) {
+  const { spec, script } = driveUrls(it, driveLinks);
+  return !!(spec || script);
+}
+export const NOT_SEEN_NOTE = 'לא נראה בסריקה הזו';
+export function preservedCardWarning(kept) {
+  const lines = [`! kept ${kept.length} card(s) missing from this scan because they have Drive links (links left in place):`];
+  for (const it of kept) lines.push(`  - ${it.id} (${it.source}) status ${it.status}`);
+  return lines;
+}
+function markNotSeen(old) {
+  const copy = { ...old };
+  // Paid ads that left the library must not stay rankable. A TikTok/organic post was not
+  // "stopped"; unknown matches a card the latest scan simply did not list.
+  copy.status = copy.source === 'meta' || copy.source === 'google' ? 'inactive' : 'unknown';
+  const note = String(copy.data_notes || '');
+  if (!note.includes(NOT_SEEN_NOTE)) copy.data_notes = note ? `${note}, ${NOT_SEEN_NOTE}` : NOT_SEEN_NOTE;
+  return copy;
+}
 // Sources that were not in this run stay as stored, image_source included.
-export function retainUnimported(items, prevItems, importedSources) {
-  const ids = new Set(items.map((i) => i.id));
+// A source that was read drops cards the new index does not list, except cards with Drive
+// links: those are kept and marked not seen, so the link row still has a card.
+// scannedIds includes ids removed by an alias merge, which were in the scan.
+export function retainUnimported(items, prevItems, importedSources, { driveLinks = {}, scannedIds = null, warn } = {}) {
+  const ids = new Set(items.map((i) => i && i.id).filter(Boolean));
+  const scanned = scannedIds instanceof Set ? scannedIds : null;
+  const kept = [];
   for (const old of prevItems || []) {
-    if (!old || importedSources.has(old.source) || ids.has(old.id)) continue;
-    items.push(old);
-    ids.add(old.id);
+    if (!old || !old.id || ids.has(old.id) || (scanned && scanned.has(old.id))) continue;
+    if (!importedSources.has(old.source)) {
+      items.push(old);
+      ids.add(old.id);
+      continue;
+    }
+    if (!hasDriveLinks(old, driveLinks)) continue;
+    const copy = markNotSeen(old);
+    items.push(copy);
+    ids.add(copy.id);
+    kept.push(copy);
   }
+  if (kept.length) (warn || ((rows) => { for (const line of preservedCardWarning(rows)) console.warn(line); }))(kept);
   return items;
 }
-export function mergeImported(newItems, prevItems, importedSources) {
+export function mergeImported(newItems, prevItems, importedSources, opts = {}) {
   const by = prevIndex(prevItems);
   for (const it of newItems) carryForward(it, prevMatches(by, it));
+  const scannedIds = opts.scannedIds instanceof Set ? opts.scannedIds : new Set(newItems.map((i) => i && i.id).filter(Boolean));
   mergeAliases(newItems);
-  retainUnimported(newItems, prevItems, importedSources);
+  retainUnimported(newItems, prevItems, importedSources, { ...opts, scannedIds });
   return newItems;
 }
 // Rewrite sponsored Top 10 only when this run read Meta. Organic/TikTok refresh their own strips.
@@ -327,8 +364,9 @@ for (const source of SOURCES) {
 }
 
 // ---------- aliases: an ad id listed in another entry's alias_ids is the same ad – keep one card ----------
+const scannedIds = new Set(items.map((i) => i.id));
 for (const [from, to] of mergeAliases(items)) console.log(`- alias ${from} merged into ${to}`);
-retainUnimported(items, prevItems, imported);
+retainUnimported(items, prevItems, imported, { driveLinks: loadDriveLinks(root), scannedIds });
 
 // ---------- write creatives.json ----------
 items.sort((a, b) => a.source.localeCompare(b.source) || (b.days_active ?? -1) - (a.days_active ?? -1));
