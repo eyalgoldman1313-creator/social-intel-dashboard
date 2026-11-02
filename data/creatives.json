@@ -16261,9 +16261,8 @@
    "landing_url": "",
    "data_notes": "",
    "engagement": null,
-   "image": "creatives/google/cr08317121301604990977.webp",
-   "imageMissing": false,
-   "image_source": "google-ads-transparency"
+   "image": null,
+   "imageMissing": true
   },
   {
    "id": "google-cr02383628491896651777",
@@ -20995,9 +20994,8 @@
    "landing_url": "",
    "data_notes": "",
    "engagement": null,
-   "image": "creatives/google/cr00959132794959691777.webp",
-   "imageMissing": false,
-   "image_source": "google-ads-transparency"
+   "image": null,
+   "imageMissing": true
   },
   {
    "id": "google-cr13153998605754826753",
@@ -45799,9 +45797,8 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": "creatives/meta/2228148727999892.webp",
-   "imageMissing": false,
-   "image_source": "meta-ad-library"
+   "image": null,
+   "imageMissing": true
   },
   {
    "id": "meta-28572397079027246",
@@ -55600,7 +55597,8 @@
    "data_notes": "פורמט בדוח: \"וידאו/כרטיס\" (לא חד-משמעי) - נקבע לפי capture_log,פלטפורמה: הדוח קובע \"כל המודעות: Facebook + Instagram\",capture_log: שמות הפלטפורמות מופיעים בגריד שבדף (לא חולצו לטקסט; platform נקבע רק לפי הדוח)",
    "engagement": null,
    "image": "creatives/meta/936116518801130.webp",
-   "imageMissing": false
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1622350239253064",
