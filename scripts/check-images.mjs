@@ -53,7 +53,8 @@ function sniff(path) {
 // Warning only: under 1KB, or a readable height of 40px or less (blank / spacer frames).
 export function blankReason(file) {
   let sniffed;
-  try { sniffed = sniff(file); } catch { return ''; }
+  try { sniffed = sniff(file); }
+  catch (e) { return e && e.code === 'ENOENT' ? 'missing' : ''; }
   const dim = imageSize(sniffed.buf);
   const tiny = sniffed.size > 0 && sniffed.size < BLANK_BYTES;
   const short = !!(dim && dim.height <= BLANK_HEIGHT);
