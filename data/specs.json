@@ -753,6 +753,45 @@
   },
   "mailers": [
     {
+      "brand": "Mycospring",
+      "title": "מחר מתחילים: כפל הנחות + תמצית במתנה 🍄 (פרסומת) (2.11)",
+      "file": "mailer-mycospring-2026-11-02.html",
+      "score": "8",
+      "date": "02.11.2026",
+      "time": "15:03",
+      "img": "/mailers/mailer-mycospring-2026-11-02.webp",
+      "offer": "\"12% הנחה נוספת על כל האתר גם על הבאנדלים שכבר מוצעים בהנחה\" + \"קונים…",
+      "hook": "ניווט (חנות הפטריות / הנמכרים ביותר / SĒNE BEAUTY) + באנר \"מחר זה מתח…",
+      "cta": "כפתור שחור \"לבחירת המוצרים שלכם ←\" + קישורי ניווט.",
+      "drive_id": "1FMQqkDHe-PpmJER1RHqBhYkiRwvA7Phb"
+    },
+    {
+      "brand": "Mayven",
+      "title": "הקולגן הנוזלי שלנו חזר למלאי - אל תפספסי אותו הפעם 🍑 | פרסומת (2.11)",
+      "file": "mailer-mayven-2026-11-02.html",
+      "score": "7",
+      "date": "02.11.2026",
+      "time": "10:54",
+      "img": "/mailers/mailer-mayven-2026-11-02.webp",
+      "offer": "10% הנחה + משלוח חינם.",
+      "hook": "באנר כתום \"BACK IN STOCK\" + תגית צהובה \"10% הנחה ומשלוח חינם\" + צילום…",
+      "cta": "כפתור כתום אחד: \"קני עכשיו עם 10% הנחה ומשלוח חינם\".",
+      "drive_id": "1HFWUu711PknT3uEG5aUkDqCZdO4buRZa"
+    },
+    {
+      "brand": "Fill It",
+      "title": "רגע לפני טירוף ShoppingIL, הכירי: ZEN >> | פרסומת (2.11)",
+      "file": "mailer-fillit-2026-11-02.html",
+      "score": "7",
+      "date": "02.11.2026",
+      "time": "10:31",
+      "img": "/mailers/mailer-fillit-2026-11-02.webp",
+      "offer": "אין הנחה, מחיר או תאריך.",
+      "hook": "צילום אישה עם יד על המצח + \"SHOPPING IL מתקרב. והפעם, כדאי להגיע מוכנ…",
+      "cta": "4 כפתורים: \"להכיר את ZEN COMPLEX >>\", \"למחקר>>\", \"לגלות את ZEN >>\", \"…",
+      "drive_id": "140tLxXzuRukOLJJQhxCmO8HQS91Exkg_"
+    },
+    {
       "brand": "GOOM",
       "title": "זה קורה רק פעם בשנה | (25% הנחה 🎁 + רכב חדש! 🤯) (1.11)",
       "file": "mailer-goom-2026-11-01.html",

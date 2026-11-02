@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-11-01T19:20:00+02:00",
+ "fetchedAt": "2026-11-02T19:20:00+02:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1388,6 +1388,27 @@
      "mime": "text/html",
      "modified": "2026-11-01T09:47:19.000Z",
      "folder": "1mFv5BuUaFai7itDS-weVwwdvrxJ5IO51"
+    },
+    {
+     "id": "140tLxXzuRukOLJJQhxCmO8HQS91Exkg_",
+     "name": "אפיון | Fill It | מייל | רגע לפני טירוף ShoppingIL – ZEN | 7",
+     "mime": "text/html",
+     "modified": "2026-11-02T08:31:02.000Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1HFWUu711PknT3uEG5aUkDqCZdO4buRZa",
+     "name": "אפיון | Mayven | מייל | הקולגן הנוזלי חזר למלאי | 7",
+     "mime": "text/html",
+     "modified": "2026-11-02T08:54:55.000Z",
+     "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+    },
+    {
+     "id": "1FMQqkDHe-PpmJER1RHqBhYkiRwvA7Phb",
+     "name": "אפיון | Mycospring | מייל | מחר מתחילים – כפל הנחות + תמצית במתנה | 8",
+     "mime": "text/html",
+     "modified": "2026-11-02T13:03:02.000Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
     }
    ]
   }
