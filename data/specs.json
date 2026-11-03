@@ -753,6 +753,45 @@
   },
   "mailers": [
     {
+      "brand": "By Harmony",
+      "title": "ממחר מתחילים להרוויח כסף ולצבור נקודות על ההתמדה שלכם - פרסומת (3.11)",
+      "file": "mailer-byharmony-2026-11-03.html",
+      "score": "7",
+      "date": "03.11.2026",
+      "time": "18:03",
+      "img": "/mailers/mailer-byharmony-2026-11-03.webp",
+      "offer": "לפי ה-alt: \"שלושה רמזים: כל יום נחשב, כל קנייה נחשבת, מוצרים במתנה\"",
+      "hook": "התמונות לא נטענו בצילום: כל 3 התמונות מתארחות בשרת המעקב track.by-har…",
+      "cta": "כל אחת מ-3 התמונות מקושרת",
+      "drive_id": "1APcuJz_4A7NSQNbxveflrHYjZeqkHqv7"
+    },
+    {
+      "brand": "Mayven",
+      "title": "הפאוץ' שכולן מדברות עליו עכשיו במתנה! 💜 🎁 | פרסומת (3.11)",
+      "file": "mailer-mayven-2026-11-03.html",
+      "score": "7",
+      "date": "03.11.2026",
+      "time": "10:08",
+      "img": "/mailers/mailer-mayven-2026-11-03.webp",
+      "offer": "פאוץ' במתנה מעל ₪399.",
+      "hook": "רקע סגול, \"PURPLE NOVEMBER – FREE GIFT\"",
+      "cta": "2 כפתורים צהובים \"מתנה חינם מעל 399 ₪\" + 4 \"למוצר\".",
+      "drive_id": "1GvlFVkA446fW7gm2vVHGYV2PZyBz7NJp"
+    },
+    {
+      "brand": "Mycospring",
+      "title": "נפתח! 12% הנחה נוספת על הכול + 4+1 (פרסומת) (3.11)",
+      "file": "mailer-mycospring-2026-11-03.html",
+      "score": "7",
+      "date": "03.11.2026",
+      "time": "08:36",
+      "img": "/mailers/mailer-mycospring-2026-11-03.webp",
+      "offer": "\"12% הנחה נוספת על כל האתר – גם על הבאנדלים שכבר בהנחה\" + \"ארבע תמציו…",
+      "hook": "באנר \"שופינג IL מתחיל עכשיו | 12% הנחה נוספת + תמצית במתנה | 3-5.11 |…",
+      "cta": "כפתור שחור \"לבחירת שגרת החורף שלכם ←\".",
+      "drive_id": "1Baz025JwDPngc7HJSEyipgbW46G1l4Rw"
+    },
+    {
       "brand": "Mycospring",
       "title": "מחר מתחילים: כפל הנחות + תמצית במתנה 🍄 (פרסומת) (2.11)",
       "file": "mailer-mycospring-2026-11-02.html",

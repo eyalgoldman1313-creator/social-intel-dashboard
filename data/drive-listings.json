@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-11-02T19:20:00+02:00",
+ "fetchedAt": "2026-11-03T19:20:00+02:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -987,7 +987,8 @@
     "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0",
     "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-",
     "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP",
-    "1mFv5BuUaFai7itDS-weVwwdvrxJ5IO51"
+    "1mFv5BuUaFai7itDS-weVwwdvrxJ5IO51",
+    "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
    ],
    "files": [
     {
@@ -1409,6 +1410,27 @@
      "mime": "text/html",
      "modified": "2026-11-02T13:03:02.000Z",
      "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1Baz025JwDPngc7HJSEyipgbW46G1l4Rw",
+     "name": "אפיון | Mycospring | מייל | נפתח! 12% נוסף + 4+1 | 7",
+     "mime": "text/html",
+     "modified": "2026-11-03T06:36:42.000Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1GvlFVkA446fW7gm2vVHGYV2PZyBz7NJp",
+     "name": "אפיון | Mayven | מייל | הפאוץ' במתנה | 7",
+     "mime": "text/html",
+     "modified": "2026-11-03T08:08:31.000Z",
+     "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+    },
+    {
+     "id": "1APcuJz_4A7NSQNbxveflrHYjZeqkHqv7",
+     "name": "אפיון | By Harmony | מייל | ממחר מרוויחים על ההתמדה | 7",
+     "mime": "text/html",
+     "modified": "2026-11-03T16:03:11.000Z",
+     "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
     }
    ]
   }
