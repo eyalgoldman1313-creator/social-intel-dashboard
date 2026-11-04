@@ -753,6 +753,58 @@
   },
   "mailers": [
     {
+      "brand": "Mycospring",
+      "title": "ארבע תמציות, שגרה אחת. החמישית במתנה (פרסומת) (4.11)",
+      "file": "mailer-mycospring-2026-11-04.html",
+      "score": "7",
+      "date": "04.11.2026",
+      "time": "18:32",
+      "img": "/mailers/mailer-mycospring-2026-11-04.webp",
+      "offer": "3 באנדלים \"עכשיו במחיר מיוחד\": \"ימים עמוסים – תפקוד בשיא\" ₪750←₪594",
+      "hook": "\"איך נראית שגרת הפטריות שלכם? לבוקר, ליום עמוס ולטקס הערב\" + \"שופינג…",
+      "cta": "3 \"קנו עכשיו\" + כפתור \"כפתור: למציאת הבאנדל שלכם ←\"",
+      "drive_id": "1BL8JCGGDl9RqN6_HLmX9yIkRU7D4aTl8"
+    },
+    {
+      "brand": "By Harmony",
+      "title": "50 מטבעות כבר מחכים לך באפליקציה 🪙 (פרסומת) (4.11)",
+      "file": "mailer-byharmony-2026-11-04.html",
+      "score": "7.5",
+      "date": "04.11.2026",
+      "time": "13:21",
+      "img": "/mailers/mailer-byharmony-2026-11-04.webp",
+      "offer": "לפי ה-alt",
+      "hook": "התמונות חסומות (מתארחות בשרת המעקב track.by-harmony.co.il)",
+      "cta": "CTA (לפי alt): \"לפתוח את הארנק\".",
+      "drive_id": "1cL-bN89xjKekB3Zi2tPG3ZaDD08t2JQI"
+    },
+    {
+      "brand": "Fill It",
+      "title": "הטירוף התחיל: 18% על כל האתר. רוצי! >> | פרסומת (4.11)",
+      "file": "mailer-fillit-2026-11-04.html",
+      "score": "7",
+      "date": "04.11.2026",
+      "time": "11:10",
+      "img": "/mailers/mailer-fillit-2026-11-04.webp",
+      "offer": "18% על כל האתר.",
+      "hook": "\"fillit Shopping IL – יש הטבה אחת שחיכית לה כל השנה, היא הגיעה. 18% O…",
+      "cta": "3 כפתורים: \"לרכישה ב-18%, כן כן 18% >>\", \"תקני כחול לבן\", \"ל-18% על ה…",
+      "drive_id": "1kVYhnaA2Fj4MiZEntNSlFega0mPG_67F"
+    },
+    {
+      "brand": "Smiley",
+      "title": "⚠️ לזמן מוגבל: משחקי נובמבר בסמיילי ⚠️ (3.11)",
+      "file": "mailer-smiley-2026-11-03.html",
+      "score": "7",
+      "date": "03.11.2026",
+      "time": "19:15",
+      "img": "/mailers/mailer-smiley-2026-11-03.webp",
+      "offer": "פרסים \"בשווי של עד 300₪\"",
+      "hook": "רקע כהה-סגול, \"משחקי נובמבר של סמיילי התחילו! סובבו את הגלגל וזכו במת…",
+      "cta": "3 כפתורים: \"אני רוצה לסובב את הגלגל 👈\", \"אני רוצה לנסות את המזל שלי…",
+      "drive_id": "1O7SaFvogj2uy1ta1UIhBQkR4Z91iN-uB"
+    },
+    {
       "brand": "By Harmony",
       "title": "ממחר מתחילים להרוויח כסף ולצבור נקודות על ההתמדה שלכם - פרסומת (3.11)",
       "file": "mailer-byharmony-2026-11-03.html",

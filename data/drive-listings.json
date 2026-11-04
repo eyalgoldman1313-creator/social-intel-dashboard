@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-11-03T19:20:00+02:00",
+ "fetchedAt": "2026-11-04T19:20:00+02:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1431,6 +1431,34 @@
      "mime": "text/html",
      "modified": "2026-11-03T16:03:11.000Z",
      "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
+    },
+    {
+     "id": "1O7SaFvogj2uy1ta1UIhBQkR4Z91iN-uB",
+     "name": "אפיון | Smiley | מייל | משחקי נובמבר – גלגל המזל | 7",
+     "mime": "text/html",
+     "modified": "2026-11-03T17:15:31.000Z",
+     "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+    },
+    {
+     "id": "1kVYhnaA2Fj4MiZEntNSlFega0mPG_67F",
+     "name": "אפיון | Fill It | מייל | הטירוף התחיל – 18% על כל האתר | 7",
+     "mime": "text/html",
+     "modified": "2026-11-04T09:10:30.000Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1cL-bN89xjKekB3Zi2tPG3ZaDD08t2JQI",
+     "name": "אפיון | By Harmony | מייל | 50 מטבעות מחכים באפליקציה | 7.5",
+     "mime": "text/html",
+     "modified": "2026-11-04T11:21:31.000Z",
+     "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
+    },
+    {
+     "id": "1BL8JCGGDl9RqN6_HLmX9yIkRU7D4aTl8",
+     "name": "אפיון | Mycospring | מייל | ארבע תמציות, שגרה אחת | 7",
+     "mime": "text/html",
+     "modified": "2026-11-04T16:32:34.000Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
     }
    ]
   }
