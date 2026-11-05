@@ -754,6 +754,45 @@
   "mailers": [
     {
       "brand": "Mycospring",
+      "title": "כל הטבות שופינג IL ממשיכות עד מחר בחצות (פרסומת) (5.11)",
+      "file": "mailer-mycospring-2026-11-05.html",
+      "score": "6.5",
+      "date": "05.11.2026",
+      "time": "19:07",
+      "img": "/mailers/mailer-mycospring-2026-11-05.webp",
+      "offer": "12% נוסף על כל האתר (גם על באנדלים) + 4+1 (תמצית במתנה, \"כולל באנדלים…",
+      "hook": "\"עוד לא בחרתם? ההטבות מחכות לכם באתר\" + \"12% הנחה נוספת + תמצית במתנה…",
+      "cta": "\"כפתור: למציאת הבאנדל שלכם ←\"",
+      "drive_id": "1N2yhxsgILMMzpZqDlBNY051ORyx9wSkn"
+    },
+    {
+      "brand": "By Harmony",
+      "title": "ראיתם כבר? 50 מטבעות מחכים לך 🪙 (פרסומת) (5.11)",
+      "file": "mailer-byharmony-2026-11-05.html",
+      "score": "7",
+      "date": "05.11.2026",
+      "time": "11:25",
+      "img": "/mailers/mailer-byharmony-2026-11-05.webp",
+      "offer": "לפי alt: \"50 מטבעות בפתיחה, 5 על כל יום שמסמנים, 3 על כל 10 ש\"ח בקניי…",
+      "hook": "התמונות חסומות (שרת המעקב track.by-harmony.co.il)",
+      "cta": "CTA לפי alt: \"לפתוח את הארנק\".",
+      "drive_id": "147HDNT4RXvcw6Bkt6DyCwLmnpvR4P2aE"
+    },
+    {
+      "brand": "Fill It",
+      "title": ", זה הזמן להזמין: 18% על כל האתר >> | פרסומת (5.11)",
+      "file": "mailer-fillit-2026-11-05.html",
+      "score": "7",
+      "date": "05.11.2026",
+      "time": "10:05",
+      "img": "/mailers/mailer-fillit-2026-11-05.webp",
+      "offer": "18% על כל האתר",
+      "hook": "צילום שיער ארוך עם צנצנת HAIR + \"אם לא עכשיו, מתי? 18% OFF על כלללל ה…",
+      "cta": "\"לנצל עכשיו! >>\" + כפתור לכל מטרה (למשל \"לHAIR >>\"",
+      "drive_id": "1EZDssKwIlA9ga4vsUxevEl4gkr_Mge4_"
+    },
+    {
+      "brand": "Mycospring",
       "title": "ארבע תמציות, שגרה אחת. החמישית במתנה (פרסומת) (4.11)",
       "file": "mailer-mycospring-2026-11-04.html",
       "score": "7",

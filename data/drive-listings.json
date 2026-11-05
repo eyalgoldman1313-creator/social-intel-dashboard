@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-11-04T19:20:00+02:00",
+ "fetchedAt": "2026-11-05T19:30:00+02:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1458,6 +1458,27 @@
      "name": "אפיון | Mycospring | מייל | ארבע תמציות, שגרה אחת | 7",
      "mime": "text/html",
      "modified": "2026-11-04T16:32:34.000Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1EZDssKwIlA9ga4vsUxevEl4gkr_Mge4_",
+     "name": "אפיון | Fill It | מייל | זה הזמן להזמין – 18% על כל האתר | 7",
+     "mime": "text/html",
+     "modified": "2026-11-05T08:05:44.000Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "147HDNT4RXvcw6Bkt6DyCwLmnpvR4P2aE",
+     "name": "אפיון | By Harmony | מייל | ראיתם כבר? 50 מטבעות מחכים | 7",
+     "mime": "text/html",
+     "modified": "2026-11-05T09:25:27.000Z",
+     "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
+    },
+    {
+     "id": "1N2yhxsgILMMzpZqDlBNY051ORyx9wSkn",
+     "name": "אפיון | Mycospring | מייל | הטבות שופינג IL ממשיכות עד מחר | 6.5",
+     "mime": "text/html",
+     "modified": "2026-11-05T17:07:15.000Z",
      "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
     }
    ]
