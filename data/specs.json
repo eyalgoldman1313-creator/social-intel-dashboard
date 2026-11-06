@@ -753,6 +753,32 @@
   },
   "mailers": [
     {
+      "brand": "Fill It",
+      "title": "הרבה יותר באיכות, ועכשיו הרבה פחות במחיר >> | פרסומת (6.11)",
+      "file": "mailer-fillit-2026-11-06.html",
+      "score": "7",
+      "date": "06.11.2026",
+      "time": "10:30",
+      "img": "/mailers/mailer-fillit-2026-11-06.webp",
+      "offer": "18% על כל האתר",
+      "hook": "צילום צנצנת קפסולות + \"fillit Shopping IL\" + \"פחות במחיר. יותר בפורמו…",
+      "cta": "\"ראית נכון, לרכישה ב-18% >>\", \"להטבה שלא תחזור >>\".",
+      "drive_id": "1hpts5Lo4Ox5XGIFDtRdi1Sh_J3om-oqQ"
+    },
+    {
+      "brand": "Smiley",
+      "title": "לראשונה בישראל: מסטיק שמלבין את השיניים (5.11)",
+      "file": "mailer-smiley-2026-11-05.html",
+      "score": "7.5",
+      "date": "05.11.2026",
+      "time": "19:42",
+      "img": "/mailers/mailer-smiley-2026-11-05.webp",
+      "offer": "1+1: \"179.90₪ במקום 479.80₪\" (לפי alt)",
+      "hook": "התמונות חסומות (מתארחות בשרת המעקב track.try-smiley.com)",
+      "cta": "כל 7 התמונות מקושרות לדף המוצר (פוענח מקישור המעקב, לא נפתח).",
+      "drive_id": "1189vXYy0rL3WUu8h3SGBht8XBfcRSKAS"
+    },
+    {
       "brand": "Mycospring",
       "title": "כל הטבות שופינג IL ממשיכות עד מחר בחצות (פרסומת) (5.11)",
       "file": "mailer-mycospring-2026-11-05.html",

@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-11-05T19:30:00+02:00",
+ "fetchedAt": "2026-11-06T19:15:00+02:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1480,6 +1480,20 @@
      "mime": "text/html",
      "modified": "2026-11-05T17:07:15.000Z",
      "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1hpts5Lo4Ox5XGIFDtRdi1Sh_J3om-oqQ",
+     "name": "אפיון | Fill It | מייל | פחות במחיר, יותר בפורמולה | 7",
+     "mime": "text/html",
+     "modified": "2026-11-06T08:30:48.000Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1189vXYy0rL3WUu8h3SGBht8XBfcRSKAS",
+     "name": "אפיון | Smiley | מייל | לראשונה בישראל – מסטיק שמלבין | 7.5",
+     "mime": "text/html",
+     "modified": "2026-11-05T17:42:32.000Z",
+     "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
     }
    ]
   }
