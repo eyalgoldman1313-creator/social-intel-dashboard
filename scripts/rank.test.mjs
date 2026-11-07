@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { rankTop10, entryReason, ENTRY_DATA_LABEL, makeRenderer } from './creatives.mjs';
+import { rankTop10, entryReason, ENTRY_DATA_LABEL, ENTRY_RESUMED_LABEL, makeRenderer } from './creatives.mjs';
 
 const ad = (over) => ({ source: 'meta', status: 'active', days_active: 10, variants_count: 0, brand: 'a', family: '', image: null, ...over });
 
@@ -74,6 +74,35 @@ test('entryReason distinguishes a new start from data completion', () => {
   assert.equal(already, null);
 });
 
+test('resumed ad gets חזרה לפעילות, not data', () => {
+  const week = { weekStart: '2026-10-26', weekEnd: '2026-11-01' };
+  const resumed = entryReason(
+    { id: 'm1', status: 'active', start_date: '2026-03-01', days_active: 235 },
+    { ...week, prevTopIds: new Set(), prevItem: { id: 'm1', status: 'inactive', days_active: null } },
+  );
+  assert.equal(resumed.reason, 'resumed');
+  assert.equal(resumed.label, 'חזרה לפעילות');
+  assert.equal(resumed.label, ENTRY_RESUMED_LABEL);
+
+  const fromSnapshot = entryReason(
+    { id: 'm2', status: 'active', start_date: '2025-06-01', days_active: 100 },
+    { ...week, prevTopIds: [], prevItem: { status: 'unknown', days_active: null }, prevStatuses: ['inactive'] },
+  );
+  assert.equal(fromSnapshot.reason, 'resumed');
+
+  const startedAgain = entryReason(
+    { id: 'm3', status: 'active', start_date: '2026-10-27' },
+    { ...week, prevTopIds: [], prevItem: { status: 'inactive' } },
+  );
+  assert.deepEqual(startedAgain, { reason: 'started' });
+
+  const stillUnknown = entryReason(
+    { id: 'm4', status: 'active', start_date: '2025-01-01' },
+    { ...week, prevTopIds: [], prevItem: { status: 'unknown', days_active: null }, prevStatuses: [] },
+  );
+  assert.equal(stillUnknown.reason, 'data');
+});
+
 test('Top 10 cards show the data-completion tag and a legacy-week note', () => {
   const esc = (s) => String(s ?? '');
   const { card, top10Panel } = makeRenderer({ esc, brandName: (id) => id, srcTag: () => '', link: () => '', section: (_id, _title, body) => body });
@@ -95,4 +124,21 @@ test('Top 10 cards show the data-completion tag and a legacy-week note', () => {
   assert.match(panel, /dir="rtl"/);
   assert.match(panel, /t10-entered/);
   assert.match(panel, /התמונה משמשת לתצוגה בלבד ואינה משפיעה על הדירוג/);
+
+  const resumedHtml = card(
+    { id: 'meta-back', source: 'meta', brand: 'mycolivia', format: 'video', days_active: 235, platform: 'Facebook + Instagram' },
+    { rank: 10, entryLabel: ENTRY_RESUMED_LABEL },
+  );
+  assert.match(resumedHtml, /class="brand-tag t10-entered" dir="rtl"/);
+  assert.match(resumedHtml, /חזרה לפעילות/);
+  const resumedWeek = {
+    key: '2026-W44', week: 44, start: '2026-10-26', end: '2026-11-01', asof: '2026-10-26',
+    method: 'ותק', items: [{ id: 'meta-back', source: 'meta', brand: 'mycolivia', format: 'video', days_active: 235, rank: 1, platform: 'Facebook + Instagram' }],
+    entered: { 'meta-back': { reason: 'resumed', label: ENTRY_RESUMED_LABEL } },
+    niche: [], strips: [],
+  };
+  const resumedPanel = top10Panel({ top10: { weeks: { '2026-W44': resumedWeek } }, creatives: { items: [] }, brands: [], scanDate: '02.11.2026' });
+  assert.match(resumedPanel, /t10-entered/);
+  assert.match(resumedPanel, /חזרה לפעילות/);
+  assert.doesNotMatch(resumedPanel, /נכנסה בעקבות השלמת נתונים/);
 });

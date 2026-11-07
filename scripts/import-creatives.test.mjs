@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { brandId, carryForward, lookupPrev, mergeAliases, mergeImported, prevIndex, retainUnimported, applyWeek, METHOD, LEGACY_RANK_NOTE } from './import-creatives.mjs';
+import { brandId, carryForward, lookupPrev, mergeAliases, mergeImported, prevIndex, retainUnimported, applyWeek, METHOD, LEGACY_RANK_NOTE, normStatus, NOT_SEEN_NOTE, hasDriveLinks } from './import-creatives.mjs';
 
 test('carryForward keeps image_source and a known format', () => {
   const prev = prevIndex([
@@ -137,6 +137,86 @@ test('retainUnimported does not duplicate rows from a source that was read', () 
   const items = [{ id: 'meta-1', source: 'meta', image_source: 'meta-ad-library' }];
   retainUnimported(items, prev, new Set(['meta']));
   assert.deepEqual(items.map((i) => i.id), ['meta-1', 'organic-1']);
+  assert.equal(items[1].status, undefined);
+});
+
+test('a card with Drive links is kept when its scan omits it; a card without links is dropped', () => {
+  const spec = 'https://drive.google.com/file/d/1daBm53fcn4dxAV5LdZAIYVhxcVrvgV9o/view';
+  const script = 'https://drive.google.com/file/d/1UAQqwqqUAHWSPOnO2WUgxmXUZjK5ND_0/view';
+  const driveLinks = {
+    'tiktok-goom-d178017e': { spec, script },
+    'meta-linked': { spec },
+    'tiktok-empty': {},
+  };
+  const prev = [
+    { id: 'tiktok-goom-d178017e', source: 'tiktok', status: 'active', post_url: 'https://www.tiktok.com/@goom.co.il/video/7521365051526155527', views: 3100000, data_notes: 'קיים' },
+    { id: 'tiktok-plain', source: 'tiktok', status: 'active' },
+    { id: 'tiktok-empty', source: 'tiktok', status: 'active' },
+    { id: 'meta-linked', source: 'meta', status: 'active', days_active: 200, brand: 'goom' },
+    { id: 'meta-plain', source: 'meta', status: 'active', days_active: 10, brand: 'a' },
+    { id: 'organic-inline', source: 'organic', status: 'active', spec_url: spec },
+  ];
+  const items = [{ id: 'tiktok-other', source: 'tiktok', status: 'active' }];
+  const warned = [];
+  retainUnimported(items, prev, new Set(['tiktok', 'meta', 'organic']), {
+    driveLinks,
+    warn: (kept) => warned.push(...kept.map((i) => i.id)),
+  });
+  assert.deepEqual(driveLinks['tiktok-goom-d178017e'], { spec, script });
+  const tik = items.find((i) => i.id === 'tiktok-goom-d178017e');
+  assert.equal(tik.status, 'unknown');
+  assert.equal(tik.views, 3100000);
+  assert.equal(tik.post_url, prev[0].post_url);
+  assert.match(tik.data_notes, new RegExp(NOT_SEEN_NOTE));
+  assert.match(tik.data_notes, /קיים/);
+  assert.equal(items.filter((i) => i.id === 'tiktok-goom-d178017e').length, 1);
+  assert.equal(items.some((i) => i.id === 'tiktok-plain' || i.id === 'tiktok-empty'), false);
+  const meta = items.find((i) => i.id === 'meta-linked');
+  assert.equal(meta.status, 'inactive');
+  assert.match(meta.data_notes, new RegExp(NOT_SEEN_NOTE));
+  assert.equal(items.some((i) => i.id === 'meta-plain'), false);
+  const org = items.find((i) => i.id === 'organic-inline');
+  assert.equal(org.status, 'unknown');
+  assert.equal(hasDriveLinks(org, {}), true);
+  assert.deepEqual(warned.sort(), ['meta-linked', 'organic-inline', 'tiktok-goom-d178017e']);
+
+  const second = items.filter((i) => i.id !== 'tiktok-goom-d178017e');
+  retainUnimported(second, items, new Set(['tiktok']), { driveLinks, warn: () => {} });
+  const again = second.find((i) => i.id === 'tiktok-goom-d178017e');
+  assert.equal(again.data_notes.split(NOT_SEEN_NOTE).length - 1, 1);
+});
+
+test('the default warning names each preserved Drive-linked card', () => {
+  const lines = [];
+  const orig = console.warn;
+  console.warn = (s) => lines.push(String(s));
+  try {
+    retainUnimported(
+      [],
+      [{ id: 'tiktok-goom-d178017e', source: 'tiktok', status: 'active', spec_url: 'https://drive.google.com/file/d/abc123/view' }],
+      new Set(['tiktok']),
+    );
+  } finally {
+    console.warn = orig;
+  }
+  const text = lines.join('\n');
+  assert.match(text, /Drive links/);
+  assert.match(text, /tiktok-goom-d178017e/);
+  assert.match(text, /status unknown/);
+});
+
+test('an alias merge is not undone when the folded card has Drive links', () => {
+  const prev = [
+    { id: 'meta-alias', source: 'meta', library_id: '1', status: 'active', spec_url: 'https://drive.google.com/file/d/abc123/view' },
+    { id: 'meta-main', source: 'meta', library_id: '2', status: 'active' },
+  ];
+  const items = [
+    { id: 'meta-main', source: 'meta', library_id: '2', alias_ids: ['1'], format: 'unknown', image: null },
+    { id: 'meta-alias', source: 'meta', library_id: '1', format: 'image', image: 'a.webp' },
+  ];
+  mergeImported(items, prev, new Set(['meta']), { warn: () => {} });
+  assert.deepEqual(items.map((i) => i.id), ['meta-main']);
+  assert.equal(items[0].status, undefined);
 });
 
 test('trypups alias imports Google items under brand pups', () => {
@@ -146,4 +226,60 @@ test('trypups alias imports Google items under brand pups', () => {
   assert.equal(brandId('Pups', [pups]), 'pups');
   assert.equal(brandId('trypups.com', [pups]), 'pups');
   assert.equal(brandId('trypups', []), 'pups');
+  assert.equal(brandId('try-pups', []), 'pups');
+});
+
+test('brand matching ignores punctuation and compares a domain stem in both directions', () => {
+  const pups = { id: 'pups', name: 'Pups', heName: 'try-pups', domain: 'trypups.com', group: 'reference' };
+  assert.equal(brandId({ brand: 'try-pups', brand_slug: 'trypups' }, [pups]), 'pups');
+  assert.equal(brandId({ brand_slug: 'not-a-brand', brand: 'Pups' }, [pups]), 'pups');
+  const acme = { id: 'acme', name: 'Acme', heName: 'אקמי', domain: 'tryacme.com' };
+  assert.equal(brandId('try-acme', [acme]), 'acme');
+  assert.equal(brandId('tryacme.com', [acme]), 'acme');
+  assert.equal(brandId({ brand: 'Try Acme', brand_slug: 'try-acme' }, [acme]), 'acme');
+  assert.equal(brandId('notacme', [acme]), 'notacme');
+  const fill = { id: 'fillit', name: 'Fill It', heName: 'פיל-איט', domain: 'fillitvitamins.com' };
+  assert.equal(brandId('פיל איט', [fill]), 'fillit');
+  assert.equal(brandId('fill it', []), 'fillit');
+});
+
+test('normStatus maps הופסקה and נעלמה to inactive', () => {
+  assert.equal(normStatus('הופסקה'), 'inactive');
+  assert.equal(normStatus('נעלמה'), 'inactive');
+  assert.equal(normStatus('הופסק'), 'inactive');
+  assert.equal(normStatus('מושהית'), 'inactive');
+  assert.equal(normStatus('מושהה'), 'inactive');
+  assert.equal(normStatus('פעיל'), 'active');
+  assert.equal(normStatus('paused'), 'inactive');
+  assert.equal(normStatus('something else'), 'unknown');
+});
+
+test('applyWeek tags a returning active ad as resumed, not data', () => {
+  const prevCreatives = [
+    { id: 'meta-back', source: 'meta', library_id: 'back', days_active: null, status: 'inactive' },
+  ];
+  const items = [
+    { id: 'meta-back', source: 'meta', brand: 'mycolivia', status: 'active', days_active: 235, variants_count: 1, start_date: '2026-03-12' },
+  ];
+  const doc = { weeks: {} };
+  applyWeek(doc, { key: '2026-W44', week: 44, start: '2026-10-26', end: '2026-11-01', asof: '2026-10-26' }, {
+    items, brands: [], imported: new Set(['meta']), strips: [], now: '2026-10-26T00:00:00.000Z', prevCreatives,
+  });
+  assert.equal(doc.weeks['2026-W44'].entered['meta-back'].reason, 'resumed');
+  assert.equal(doc.weeks['2026-W44'].entered['meta-back'].label, 'חזרה לפעילות');
+});
+
+test('an inactive flag from an older week does not keep tagging resumed', () => {
+  const doc = {
+    weeks: {
+      '2026-W40': { key: '2026-W40', items: [{ id: 'meta-x', status: 'inactive', days_active: 10 }] },
+      '2026-W43': { key: '2026-W43', items: [{ id: 'meta-x', status: 'active', days_active: 20 }] },
+    },
+  };
+  applyWeek(doc, { key: '2026-W44', week: 44, start: '2026-10-26', end: '2026-11-01', asof: '2026-10-26' }, {
+    items: [{ id: 'meta-x', source: 'meta', brand: 'a', status: 'active', days_active: 30, start_date: '2025-01-01' }],
+    brands: [], imported: new Set(['meta']), strips: [], now: '2026-10-26T00:00:00.000Z',
+    prevCreatives: [{ id: 'meta-x', source: 'meta', status: 'active', days_active: 30 }],
+  });
+  assert.equal(doc.weeks['2026-W44'].entered, undefined);
 });
