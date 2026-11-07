@@ -753,6 +753,19 @@
   },
   "mailers": [
     {
+      "brand": "Smiley",
+      "title": "רק פראיירים משלמים 3,000₪ על הלבנה (7.11)",
+      "file": "mailer-smiley-2026-11-07.html",
+      "score": "7",
+      "date": "07.11.2026",
+      "time": "18:34",
+      "img": "/mailers/mailer-smiley-2026-11-07.webp",
+      "offer": "\"מארז ההלבנה: 149.90₪ במקום 272.90₪\" (לפי alt)",
+      "hook": "התמונות חסומות (שרת המעקב track.try-smiley.com)",
+      "cta": "כל 4 התמונות מקושרות לדף try-smiley.com/products/smileykit149 (פוענח…",
+      "drive_id": "19CsxDib99YE9J4uXlxCL4ooHa6m8uzda"
+    },
+    {
       "brand": "Fill It",
       "title": "הרבה יותר באיכות, ועכשיו הרבה פחות במחיר >> | פרסומת (6.11)",
       "file": "mailer-fillit-2026-11-06.html",
