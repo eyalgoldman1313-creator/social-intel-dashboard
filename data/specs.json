@@ -753,6 +753,32 @@
   },
   "mailers": [
     {
+      "brand": "Mayven",
+      "title": "עדכון חשוב לגבי בלאק פריידי השנה💃 | פרסומת (8.11)",
+      "file": "mailer-mayven-2026-11-08.html",
+      "score": "6.5",
+      "date": "08.11.2026",
+      "time": "10:32",
+      "img": "/mailers/mailer-mayven-2026-11-08.webp",
+      "offer": "אין הצעה קונקרטית: \"ההבטחה שלנו? הנחה כזאת לא הייתה השנה\".",
+      "hook": "באנר בתמונה: \"Purple November · Early Access\", שתי נשים עם סוכריות גו…",
+      "cta": "CTA אחד בולט",
+      "drive_id": "1fLbI5qfnZPCM9Ase4ZtYbFMbSWuTW-_W"
+    },
+    {
+      "brand": "GOOM",
+      "title": "אני רק רוצה לוודא שלא פספסת את זה (25% הנחה + רכב במתנה🤯) (פרסומת חשובה) (8.11)",
+      "file": "mailer-goom-2026-11-08.html",
+      "score": "7.5",
+      "date": "08.11.2026",
+      "time": "10:26",
+      "img": "/mailers/mailer-goom-2026-11-08.webp",
+      "offer": "\"כרגע יש לך עד הלילה בחצות 25% הנחה על כל האתר (!!)\" + \"כל הזמנה במהל…",
+      "hook": "לוגו בלבד",
+      "cta": "2 קישורי CTA טקסטואליים + סרגל מוצרים.",
+      "drive_id": "1tnCCwWVwcwiFAyPCZ4XcsyXV2bY5Tm_r"
+    },
+    {
       "brand": "Smiley",
       "title": "רק פראיירים משלמים 3,000₪ על הלבנה (7.11)",
       "file": "mailer-smiley-2026-11-07.html",
