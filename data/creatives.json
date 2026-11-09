@@ -25468,9 +25468,8 @@
    "landing_url": "https://חסר",
    "data_notes": "",
    "engagement": null,
-   "image": "creatives/google/cr14313650710661562369.webp",
-   "imageMissing": false,
-   "image_source": "google-ads-transparency"
+   "image": null,
+   "imageMissing": true
   },
   {
    "id": "google-cr08225510104447844353",
@@ -25775,8 +25774,9 @@
    "landing_url": "https://חסר",
    "data_notes": "",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/google/cr08573272085986541569.webp",
+   "imageMissing": false,
+   "image_source": "google-ads-transparency"
   },
   {
    "id": "google-cr01096199391946997761",
@@ -47162,9 +47162,8 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": "creatives/meta/2228148727999892.webp",
-   "imageMissing": false,
-   "image_source": "meta-ad-library"
+   "image": null,
+   "imageMissing": true
   },
   {
    "id": "meta-28572397079027246",
@@ -133478,8 +133477,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2173281159889048.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1042853608214691",
@@ -135891,8 +135891,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2175047186740267.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2582051268925681",
@@ -135934,8 +135935,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2582051268925681.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1469910851655750",
@@ -164752,8 +164754,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1500182995355313.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1141591508402105",
@@ -164795,8 +164798,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1141591508402105.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1668153441623846",
@@ -164838,8 +164842,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1668153441623846.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1512339534059504",
@@ -164881,8 +164886,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1512339534059504.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1693366775456667",
@@ -164924,8 +164930,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1693366775456667.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2002270544515570",
@@ -164967,8 +164974,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2002270544515570.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1185358453838533",
@@ -165010,8 +165018,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1185358453838533.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1812919533161866",
@@ -165053,8 +165062,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1812919533161866.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2192509024676846",
@@ -165096,8 +165106,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2192509024676846.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1152593003866679",
@@ -165139,8 +165150,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1152593003866679.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2531293044046248",
@@ -165182,8 +165194,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2531293044046248.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-999358053209419",
@@ -165225,8 +165238,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/999358053209419.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2952795255093317",
@@ -165268,8 +165282,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2952795255093317.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1465057022437810",
@@ -165354,8 +165369,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1000474165681372.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1682319183677467",
@@ -165483,8 +165499,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1560369209467208.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1530839185548904",
@@ -165655,8 +165672,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1597650264862357.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1462856185780696",
@@ -165698,8 +165716,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1462856185780696.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1103462605787886",
@@ -165741,8 +165760,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1103462605787886.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1455572893190617",
@@ -165784,8 +165804,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1455572893190617.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1820545819077288",
@@ -165827,8 +165848,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1820545819077288.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2542460936238028",
@@ -166128,8 +166150,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1141899411725741.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1798004111465392",
@@ -166171,8 +166194,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1798004111465392.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1529405279073075",
@@ -166214,8 +166238,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1529405279073075.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-28907666678899315",
@@ -169697,8 +169722,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1132295963065861.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2080406125914764",
@@ -170127,8 +170153,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1122535844012371.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1131114735950793",
@@ -170815,8 +170842,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1753694195698869.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-29704387615835341",
@@ -170858,8 +170886,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/29704387615835341.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1558270726338929",
@@ -170901,8 +170930,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1558270726338929.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2961326724230336",
@@ -170944,8 +170974,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2961326724230336.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1429092359330308",
@@ -171374,8 +171405,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2280509799472370.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1433365022102768",
@@ -171417,8 +171449,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1433365022102768.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1437788321111929",
@@ -171460,8 +171493,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1437788321111929.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1657896782481077",
@@ -171503,8 +171537,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1657896782481077.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1087360054284191",
@@ -171546,8 +171581,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1087360054284191.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1633450161607253",
@@ -171589,8 +171625,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1633450161607253.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-28942430575416784",
@@ -174298,8 +174335,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1875934563841815.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1764633931495155",
@@ -174341,8 +174379,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1764633931495155.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1109661555149547",
@@ -174384,8 +174423,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1109661555149547.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2762954067434398",
@@ -174427,8 +174467,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2762954067434398.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1148606717857955",
@@ -174470,8 +174511,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1148606717857955.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1114368967983055",
@@ -174513,8 +174555,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1114368967983055.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1185939457122853",
@@ -174556,8 +174599,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1185939457122853.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2170280767699665",
@@ -174599,8 +174643,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2170280767699665.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4658312677747227",
@@ -174642,8 +174687,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4658312677747227.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2151746642394741",
@@ -174685,8 +174731,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2151746642394741.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2191320855131104",
@@ -174728,8 +174775,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2191320855131104.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1619283479142424",
@@ -174771,8 +174819,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1619283479142424.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2960098774337532",
@@ -174814,8 +174863,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2960098774337532.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2183795345550543",
@@ -174857,8 +174907,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2183795345550543.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2421661685324454",
@@ -174900,8 +174951,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2421661685324454.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1877545216571258",
@@ -174943,8 +174995,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1877545216571258.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2190624598207437",
@@ -174986,8 +175039,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2190624598207437.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1416496403902343",
@@ -175029,8 +175083,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1416496403902343.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2039274706782375",
@@ -175072,8 +175127,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2039274706782375.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2214258779437805",
@@ -175115,8 +175171,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2214258779437805.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1465242385798130",
@@ -175158,8 +175215,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1465242385798130.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-979934555188256",
@@ -175201,8 +175259,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/979934555188256.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2097947980836837",
@@ -175244,8 +175303,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2097947980836837.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1650461259943277",
@@ -175287,8 +175347,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1650461259943277.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2068038947229936",
@@ -175330,8 +175391,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2068038947229936.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1102916142367478",
@@ -175459,8 +175521,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1123190863974516.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1087855867563863",
@@ -175502,8 +175565,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1087855867563863.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1689266069276419",
@@ -175932,8 +175996,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3669993216484365.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1540185961317305",
@@ -176018,8 +176083,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1412533711942886.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4448747735374287",
@@ -176061,8 +176127,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4448747735374287.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1439419347641221",
@@ -176190,8 +176257,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/948731311405641.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2979277189073008",
@@ -182640,8 +182708,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1441695440766405.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1484569186896195",
@@ -182683,8 +182752,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1484569186896195.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2058606008008332",
@@ -182726,8 +182796,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2058606008008332.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1157434643642555",
@@ -183242,8 +183313,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1100101299463305.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2398942477600941",
@@ -183328,8 +183400,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1098920079631509.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-29277299711895710",
@@ -183371,8 +183444,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/29277299711895710.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-954315394134172",
@@ -183414,8 +183488,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/954315394134172.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1710369380875093",
@@ -183457,8 +183532,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1710369380875093.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1699077928299587",
@@ -184360,8 +184436,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1400631531829702.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2162789107654512",
@@ -184403,8 +184480,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2162789107654512.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1124577123297866",
@@ -184532,8 +184610,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/29289338117362405.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1786430302408378",
@@ -184575,8 +184654,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1786430302408378.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1767384991036430",
@@ -195540,8 +195620,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2170912317110263.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4533904360166762",
@@ -196400,8 +196481,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1130951059338659.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2212747949626482",
@@ -196443,8 +196525,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2212747949626482.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4663042500508143",
@@ -196486,8 +196569,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4663042500508143.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1651126720125347",
@@ -196529,8 +196613,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1651126720125347.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-5161120784115072",
@@ -196572,8 +196657,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/5161120784115072.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-3655217904633370",
@@ -196615,8 +196701,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3655217904633370.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4209427869358059",
@@ -196658,8 +196745,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4209427869358059.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1109041045275251",
@@ -196701,8 +196789,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1109041045275251.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2260732581173920",
@@ -196744,8 +196833,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2260732581173920.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2924843107892601",
@@ -196787,8 +196877,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2924843107892601.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1107515908776526",
@@ -196830,8 +196921,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1107515908776526.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1673653801007471",
@@ -196873,8 +196965,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1673653801007471.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1603905091417105",
@@ -196916,8 +197009,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1603905091417105.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1493111816073894",
@@ -196959,8 +197053,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1493111816073894.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1134410339551401",
@@ -197002,8 +197097,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1134410339551401.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2146757999536645",
@@ -197045,8 +197141,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2146757999536645.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1176876051688158",
@@ -197088,8 +197185,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1176876051688158.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2360380504798421",
@@ -197131,8 +197229,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2360380504798421.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1141084842221852",
@@ -197174,8 +197273,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1141084842221852.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1443694920611183",
@@ -197217,8 +197317,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1443694920611183.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2395478111292306",
@@ -197690,8 +197791,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1385087983464930.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1654487566413940",
@@ -197991,8 +198093,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 17 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4196605810632452.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1159359249994355",
@@ -198034,8 +198137,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 17 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1159359249994355.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1463859185676114",
@@ -198077,8 +198181,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 17 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1463859185676114.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1129391863118887",
@@ -198120,8 +198225,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 17 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1129391863118887.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1636088691587796",
@@ -198163,8 +198269,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 17 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1636088691587796.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2159834064907141",
@@ -198206,8 +198313,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 17 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2159834064907141.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1423843372795961",
@@ -198249,8 +198357,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 17 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1423843372795961.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2058502632037274",
@@ -198292,8 +198401,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 17 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2058502632037274.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-3652802348204524",
@@ -198335,8 +198445,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 17 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3652802348204524.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-29007163668940327",
@@ -198378,8 +198489,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 17 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/29007163668940327.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1438439025136170",
@@ -198421,8 +198533,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 17 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1438439025136170.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-3268188890057686",
@@ -198464,8 +198577,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 17 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3268188890057686.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1468283195185551",
@@ -198980,8 +199094,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1146249197915789.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4503166009899578",
@@ -199023,8 +199138,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4503166009899578.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1443600957210274",
@@ -199066,8 +199182,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1443600957210274.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1147716944297785",
@@ -199109,8 +199226,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 14 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1147716944297785.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-29454023984192509",
@@ -199152,8 +199270,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 14 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/29454023984192509.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1174457825534211",
@@ -199195,8 +199314,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 14 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1174457825534211.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1447884000064760",
@@ -199238,8 +199358,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 14 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1447884000064760.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2567979583613873",
@@ -199281,8 +199402,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 15 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2567979583613873.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-932853546425740",
@@ -199324,8 +199446,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 17 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/932853546425740.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1810178476926287",
@@ -199367,8 +199490,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1810178476926287.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1450511669772688",
@@ -199410,8 +199534,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 14 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1450511669772688.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1875689690087536",
@@ -199453,8 +199578,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1875689690087536.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1141395271600805",
@@ -199496,8 +199622,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1141395271600805.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-28915061594815087",
@@ -199539,8 +199666,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 8 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/28915061594815087.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2221366465391208",
@@ -201646,8 +201774,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1167079992552949.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1038699499261379",
@@ -201689,8 +201818,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1038699499261379.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1659442662638556",
@@ -201732,8 +201862,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1659442662638556.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2171818560074886",
@@ -201775,8 +201906,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2171818560074886.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2002282487111609",
@@ -201818,8 +201950,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2002282487111609.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1367904135281578",
@@ -201861,8 +201994,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1367904135281578.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1666111418217714",
@@ -201904,8 +202038,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1666111418217714.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1364700463402943",
@@ -201947,8 +202082,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1364700463402943.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1672815687826908",
@@ -201990,8 +202126,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1672815687826908.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1759963111933463",
@@ -202033,8 +202170,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1759963111933463.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-3538122396367709",
@@ -202076,8 +202214,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3538122396367709.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1609522853740695",
@@ -202119,8 +202258,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1609522853740695.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1874881340598265",
@@ -202162,8 +202302,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1874881340598265.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1095108646820850",
@@ -202205,8 +202346,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1095108646820850.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2040482313288516",
@@ -202248,8 +202390,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2040482313288516.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1676011947469228",
@@ -202291,8 +202434,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1676011947469228.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2914754315546576",
@@ -202334,8 +202478,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2914754315546576.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2381979455962266",
@@ -202377,8 +202522,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2381979455962266.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1652074349697109",
@@ -202420,8 +202566,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 8, 2026 · Total active time 13 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1652074349697109.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1959886698763117",
