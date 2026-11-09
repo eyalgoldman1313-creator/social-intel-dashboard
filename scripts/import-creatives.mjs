@@ -108,6 +108,8 @@ export function retainUnimported(items, prevItems, importedSources, { driveLinks
   const ids = new Set(items.map((i) => i && i.id).filter(Boolean));
   const scanned = scannedIds instanceof Set ? scannedIds : null;
   const kept = [];
+  // Every omitted card is considered. A Drive link on the first match must not stop the walk,
+  // and the same id is kept once even if prev lists it twice.
   for (const old of prevItems || []) {
     if (!old || !old.id || ids.has(old.id) || (scanned && scanned.has(old.id))) continue;
     if (!importedSources.has(old.source)) {
@@ -121,7 +123,7 @@ export function retainUnimported(items, prevItems, importedSources, { driveLinks
     ids.add(copy.id);
     kept.push(copy);
   }
-  if (kept.length) (warn || ((rows) => { for (const line of preservedCardWarning(rows)) console.warn(line); }))(kept);
+  if (kept.length) (warn || ((rows) => console.warn(preservedCardWarning(rows).join('\n'))))(kept);
   return items;
 }
 export function mergeImported(newItems, prevItems, importedSources, opts = {}) {
