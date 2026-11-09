@@ -57,8 +57,31 @@ export function carryForward(it, prev) {
     if (!row) continue;
     if (!it.image_source && row.image_source && it.image) it.image_source = row.image_source;
     if ((!it.format || it.format === 'unknown') && row.format && row.format !== 'unknown') it.format = row.format;
+    if (!it.image && !it.imageMissingReason && row.imageMissingReason === GRID_ONLY_REASON) {
+      it.imageMissingReason = GRID_ONLY_REASON;
+      it.imageMissing = true;
+    }
   }
   return it;
+}
+// A Meta row the weekly grid never opened has no local file. Flag that so a missing
+// image is not reported as a failed library fetch. detail_level on this record wins;
+// when the record omits it, carryForward keeps a previous grid-only flag.
+export const GRID_ONLY_REASON = 'grid-only';
+export function flagGridOnlyImage(it, raw) {
+  if (!it) return it;
+  if (it.image) { delete it.imageMissingReason; return it; }
+  if (!raw || !Object.prototype.hasOwnProperty.call(raw, 'detail_level')) return it;
+  if (it.source === 'meta' && String(raw.detail_level ?? '').trim().toLowerCase() === 'grid') {
+    it.imageMissing = true;
+    it.imageMissingReason = GRID_ONLY_REASON;
+  } else delete it.imageMissingReason;
+  return it;
+}
+export function missingImageWarning(it) {
+  if (!it || it.image) return null;
+  if (it.imageMissingReason === GRID_ONLY_REASON) return `${it.id}: no image (grid-only) – not a failed fetch`;
+  return `${it.id}: no image – run scripts/fetch-ad-images.mjs`;
 }
 export function mergeAliases(items) {
   const merged = [];
@@ -68,7 +91,8 @@ export function mergeAliases(items) {
     const it = items[k];
     const main = alias.get(`${it.source}:${it.library_id}`);
     if (main && main !== it) {
-      if (!main.image && it.image) { main.image = it.image; main.imageMissing = false; }
+      if (!main.image && it.image) { main.image = it.image; main.imageMissing = false; delete main.imageMissingReason; }
+      else if (!main.image && !main.imageMissingReason && it.imageMissingReason === GRID_ONLY_REASON) main.imageMissingReason = GRID_ONLY_REASON;
       if (!main.image_source && it.image_source && (main.image || it.image)) main.image_source = it.image_source;
       if ((!main.format || main.format === 'unknown') && it.format && it.format !== 'unknown') main.format = it.format;
       merged.push([it.library_id, main.library_id]);
@@ -269,9 +293,11 @@ for (const source of SOURCES) {
       else warnings.push(`${id}: remote image download failed (${remote.slice(0, 80)})`);
     }
     if (!it.image && kept) { it.image = kept; it.imageMissing = false; withImg++; }
-    if (!it.image) warnings.push(`${id}: no image – run scripts/fetch-ad-images.mjs`);
     if (r.image_source && !it.image_source) it.image_source = str(r.image_source);
     carryForward(it, prevMatches(prevBy, it));
+    flagGridOnlyImage(it, r);
+    const gap = missingImageWarning(it);
+    if (gap) warnings.push(gap);
     items.push(it);
   });
   console.log(`- ${source}: ${raw.length} items, ${withImg} with image`);

@@ -3,3 +3,6 @@
 .vercel
 dist
 node_modules
+# Local Playwright login for scripts/fetch-ad-images.mjs. Never commit.
+.auth/
+*storage-state.json

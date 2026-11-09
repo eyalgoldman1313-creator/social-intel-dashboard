@@ -1,0 +1,2 @@
+{"deeplinkAdID":999001,"route":"ads_library","extra":"the requested id is not ad_archive_id"}
+{"ad_archive_id":"111","snapshot":{"display_format":"IMAGE","original_image_url":"https://scontent.example/from-feed.jpg"}}

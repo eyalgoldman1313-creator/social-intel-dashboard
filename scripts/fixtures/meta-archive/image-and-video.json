@@ -1,0 +1,61 @@
+{
+  "data": {
+    "ad_library_main": {
+      "search_results_connection": {
+        "edges": [
+          {
+            "node": {
+              "collated_results": [
+                {
+                  "ad_archive_id": "111",
+                  "snapshot": {
+                    "display_format": "IMAGE",
+                    "original_image_url": "https://scontent.example/111-original.jpg",
+                    "video_preview_image_url": "https://scontent.example/111-preview-should-lose.jpg",
+                    "resized_image_url": "https://scontent.example/111-resized.jpg"
+                  }
+                },
+                {
+                  "ad_archive_id": "222",
+                  "snapshot": {
+                    "display_format": "VIDEO",
+                    "original_image_url": "https://scontent.example/222-original.jpg",
+                    "video_preview_image_url": "https://scontent.example/222-preview.jpg",
+                    "resized_image_url": "https://scontent.example/222-resized.jpg"
+                  }
+                },
+                {
+                  "ad_archive_id": "333",
+                  "snapshot": {
+                    "display_format": "VIDEO",
+                    "original_image_url": "https://scontent.example/333-original-only.jpg"
+                  }
+                },
+                {
+                  "ad_archive_id": "444",
+                  "snapshot": {
+                    "display_format": "CAROUSEL",
+                    "resized_image_url": "https://scontent.example/444-resized.jpg"
+                  }
+                },
+                {
+                  "ad_archive_id": "555",
+                  "snapshot": {
+                    "display_format": "IMAGE"
+                  }
+                },
+                {
+                  "ad_archive_id": "999",
+                  "snapshot": {
+                    "display_format": "IMAGE",
+                    "original_image_url": "https://scontent.example/999-not-wanted.jpg"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

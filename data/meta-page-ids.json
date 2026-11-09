@@ -1,0 +1,24 @@
+{
+ "source": "Facebook page ids (view_all_page_id) from the 2026-11-09 Meta weekly report. softella is keyword-only and has no page. tevakid lists the brand page, then the related Yael Peled page. Keys are dashboard brand ids plus the weekly-report slugs where those differ. This file is fetch config only.",
+ "pages": {
+  "by-harmony": "102186029483059",
+  "goom": "396912320162563",
+  "ecosupp": "243398382424270",
+  "mycolivia": "417738974917024",
+  "mayven": "974772839382498",
+  "fill-it": "105361191456167",
+  "fillit": "105361191456167",
+  "mycospring": "115500990575877",
+  "tevakid": ["1038897489313207", "1178357192019181"],
+  "smiley": "513544668500952",
+  "try-smiley": "513544668500952",
+  "wonders-teva": "270180559520184",
+  "wondersteva": "270180559520184",
+  "woof": "1212873028583372",
+  "mywoof": "1212873028583372",
+  "craftly": "614814515040347",
+  "gmila-luuf": "1275507125655970",
+  "trygmila": "1275507125655970",
+  "pups": "1147664088422193"
+ }
+}
