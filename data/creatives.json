@@ -187421,8 +187421,9 @@
    "landing_url": "https://www.tevakid.co.il/kidease/newarticle",
    "data_notes": "נמצאה בדף הקשור יעל פלד (page 1178357192019181)",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1104514242572264.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2099035277401867",
@@ -187464,8 +187465,9 @@
    "landing_url": "https://www.tevakid.co.il/kidease/tevakid",
    "data_notes": "נמצאה בדף הקשור יעל פלד (page 1178357192019181)",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2099035277401867.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2227763664803116",
