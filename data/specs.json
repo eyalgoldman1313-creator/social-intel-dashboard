@@ -753,6 +753,32 @@
   },
   "mailers": [
     {
+      "brand": "Mycospring",
+      "title": "המלאי התחדש. עכשיו מתחילים 🍄 (פרסומת) (9.11)",
+      "file": "mailer-mycospring-2026-11-09.html",
+      "score": "7",
+      "date": "09.11.2026",
+      "time": "18:00",
+      "img": "/mailers/mailer-mycospring-2026-11-09.webp",
+      "offer": "אין הנחה או קוד.",
+      "hook": "Hero: חמש בקבוקוני תמציות עם כיתוב \"המלאי התחדש. עכשיו מתחילים\"",
+      "cta": "CTA \"המומלצים שלנו\"",
+      "drive_id": "1Q3GLgMQTFGUWd-23DP35iCIWbULRarmB"
+    },
+    {
+      "brand": "Mayven",
+      "title": "אל תפספסי את הגישה המוקדמת🥰🎁| פרסומת (9.11)",
+      "file": "mailer-mayven-2026-11-09.html",
+      "score": "7",
+      "date": "09.11.2026",
+      "time": "11:22",
+      "img": "/mailers/mailer-mayven-2026-11-09.webp",
+      "offer": "אין הצעה קונקרטית.",
+      "hook": "באנר: \"Purple November · Early Access\"",
+      "cta": "CTA אחד",
+      "drive_id": "1DhBTxd_rIw05enwKBuljmGwHghmFTmlr"
+    },
+    {
       "brand": "Mayven",
       "title": "עדכון חשוב לגבי בלאק פריידי השנה💃 | פרסומת (8.11)",
       "file": "mailer-mayven-2026-11-08.html",
