@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-11-02T19:20:00+02:00",
+ "fetchedAt": "2026-11-08T19:15:00+02:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -987,7 +987,8 @@
     "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0",
     "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-",
     "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP",
-    "1mFv5BuUaFai7itDS-weVwwdvrxJ5IO51"
+    "1mFv5BuUaFai7itDS-weVwwdvrxJ5IO51",
+    "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
    ],
    "files": [
     {
@@ -1409,6 +1410,111 @@
      "mime": "text/html",
      "modified": "2026-11-02T13:03:02.000Z",
      "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1Baz025JwDPngc7HJSEyipgbW46G1l4Rw",
+     "name": "אפיון | Mycospring | מייל | נפתח! 12% נוסף + 4+1 | 7",
+     "mime": "text/html",
+     "modified": "2026-11-03T06:36:42.000Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1GvlFVkA446fW7gm2vVHGYV2PZyBz7NJp",
+     "name": "אפיון | Mayven | מייל | הפאוץ' במתנה | 7",
+     "mime": "text/html",
+     "modified": "2026-11-03T08:08:31.000Z",
+     "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+    },
+    {
+     "id": "1APcuJz_4A7NSQNbxveflrHYjZeqkHqv7",
+     "name": "אפיון | By Harmony | מייל | ממחר מרוויחים על ההתמדה | 7",
+     "mime": "text/html",
+     "modified": "2026-11-03T16:03:11.000Z",
+     "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
+    },
+    {
+     "id": "1O7SaFvogj2uy1ta1UIhBQkR4Z91iN-uB",
+     "name": "אפיון | Smiley | מייל | משחקי נובמבר – גלגל המזל | 7",
+     "mime": "text/html",
+     "modified": "2026-11-03T17:15:31.000Z",
+     "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+    },
+    {
+     "id": "1kVYhnaA2Fj4MiZEntNSlFega0mPG_67F",
+     "name": "אפיון | Fill It | מייל | הטירוף התחיל – 18% על כל האתר | 7",
+     "mime": "text/html",
+     "modified": "2026-11-04T09:10:30.000Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1cL-bN89xjKekB3Zi2tPG3ZaDD08t2JQI",
+     "name": "אפיון | By Harmony | מייל | 50 מטבעות מחכים באפליקציה | 7.5",
+     "mime": "text/html",
+     "modified": "2026-11-04T11:21:31.000Z",
+     "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
+    },
+    {
+     "id": "1BL8JCGGDl9RqN6_HLmX9yIkRU7D4aTl8",
+     "name": "אפיון | Mycospring | מייל | ארבע תמציות, שגרה אחת | 7",
+     "mime": "text/html",
+     "modified": "2026-11-04T16:32:34.000Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1EZDssKwIlA9ga4vsUxevEl4gkr_Mge4_",
+     "name": "אפיון | Fill It | מייל | זה הזמן להזמין – 18% על כל האתר | 7",
+     "mime": "text/html",
+     "modified": "2026-11-05T08:05:44.000Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "147HDNT4RXvcw6Bkt6DyCwLmnpvR4P2aE",
+     "name": "אפיון | By Harmony | מייל | ראיתם כבר? 50 מטבעות מחכים | 7",
+     "mime": "text/html",
+     "modified": "2026-11-05T09:25:27.000Z",
+     "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
+    },
+    {
+     "id": "1N2yhxsgILMMzpZqDlBNY051ORyx9wSkn",
+     "name": "אפיון | Mycospring | מייל | הטבות שופינג IL ממשיכות עד מחר | 6.5",
+     "mime": "text/html",
+     "modified": "2026-11-05T17:07:15.000Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1hpts5Lo4Ox5XGIFDtRdi1Sh_J3om-oqQ",
+     "name": "אפיון | Fill It | מייל | פחות במחיר, יותר בפורמולה | 7",
+     "mime": "text/html",
+     "modified": "2026-11-06T08:30:48.000Z",
+     "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+    },
+    {
+     "id": "1189vXYy0rL3WUu8h3SGBht8XBfcRSKAS",
+     "name": "אפיון | Smiley | מייל | לראשונה בישראל – מסטיק שמלבין | 7.5",
+     "mime": "text/html",
+     "modified": "2026-11-05T17:42:32.000Z",
+     "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+    },
+    {
+     "id": "19CsxDib99YE9J4uXlxCL4ooHa6m8uzda",
+     "name": "אפיון | Smiley | מייל | רק פראיירים משלמים 3,000₪ | 7",
+     "mime": "text/html",
+     "modified": "2026-11-07T16:34:07.000Z",
+     "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+    },
+    {
+     "id": "1fLbI5qfnZPCM9Ase4ZtYbFMbSWuTW-_W",
+     "name": "אפיון | Mayven | מייל | עדכון חשוב לגבי בלאק פריידי | 6.5",
+     "mime": "text/html",
+     "modified": "2026-11-08T08:32:09.000Z",
+     "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+    },
+    {
+     "id": "1tnCCwWVwcwiFAyPCZ4XcsyXV2bY5Tm_r",
+     "name": "אפיון | GOOM | מייל | רק רוצה לוודא שלא פספסת (25% + רכב) | 7.5",
+     "mime": "text/html",
+     "modified": "2026-11-08T08:26:43.000Z",
+     "folder": "1mFv5BuUaFai7itDS-weVwwdvrxJ5IO51"
     }
    ]
   }
