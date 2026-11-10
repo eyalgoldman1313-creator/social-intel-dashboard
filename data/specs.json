@@ -753,6 +753,32 @@
   },
   "mailers": [
     {
+      "brand": "Smiley",
+      "title": "2 קופסאות SmileyGum מחכות לך במתנה 🎁 (10.11)",
+      "file": "mailer-smiley-2026-11-10.html",
+      "score": "7",
+      "date": "10.11.2026",
+      "time": "18:59",
+      "img": "/mailers/mailer-smiley-2026-11-10.webp",
+      "offer": "2 קופסאות \"בחינם לגמרי\"",
+      "hook": "אין באנר",
+      "cta": "קישור אחד ל-try-smiley.com/products/smiley-gift-gum (קישור ישיר, קמפי…",
+      "drive_id": "1uVvILdrbx8Bzi7vifioI6_xOC_tUQxR7"
+    },
+    {
+      "brand": "Mayven",
+      "title": "בלאק פריידי סייל מתחיל עכשיו 💃 | פרסומת (10.11)",
+      "file": "mailer-mayven-2026-11-10.html",
+      "score": "8",
+      "date": "10.11.2026",
+      "time": "11:35",
+      "img": "/mailers/mailer-mayven-2026-11-10.webp",
+      "offer": "25% הנחה.",
+      "hook": "תג 25% OFF",
+      "cta": "שני CTA זהים",
+      "drive_id": "1u6NLv4A4wyd8D98_cDTxZbagjW2qldP3"
+    },
+    {
       "brand": "Mycospring",
       "title": "המלאי התחדש. עכשיו מתחילים 🍄 (פרסומת) (9.11)",
       "file": "mailer-mycospring-2026-11-09.html",
