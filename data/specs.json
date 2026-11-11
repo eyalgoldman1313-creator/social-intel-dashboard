@@ -753,6 +753,19 @@
   },
   "mailers": [
     {
+      "brand": "Mayven",
+      "title": "תזכורת: יש 25% הנחה על כל האתר 🖤🔥 | פרסומת (11.11)",
+      "file": "mailer-mayven-2026-11-11.html",
+      "score": "7.5",
+      "date": "11.11.2026",
+      "time": "11:58",
+      "img": "/mailers/mailer-mayven-2026-11-11.webp",
+      "offer": "אותה הצעה: 25% עד 12.11.26 בחצות, לחברות Wellness Club מחוברות.",
+      "hook": "תג 25% OFF",
+      "cta": "שני CTA שונים זה מזה",
+      "drive_id": "1UW1iTPwbWBPSAjkqMVXjSroe31rgMPR0"
+    },
+    {
       "brand": "Smiley",
       "title": "2 קופסאות SmileyGum מחכות לך במתנה 🎁 (10.11)",
       "file": "mailer-smiley-2026-11-10.html",

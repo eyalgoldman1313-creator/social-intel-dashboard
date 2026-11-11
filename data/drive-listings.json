@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-11-10T19:15:00+02:00",
+ "fetchedAt": "2026-11-11T19:15:00+02:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1542,6 +1542,13 @@
      "name": "אפיון | Mayven | מייל | בלאק פריידי סייל מתחיל עכשיו | 8",
      "mime": "text/html",
      "modified": "2026-11-10T09:35:54.000Z",
+     "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+    },
+    {
+     "id": "1UW1iTPwbWBPSAjkqMVXjSroe31rgMPR0",
+     "name": "אפיון | Mayven | מייל | תזכורת 25% הנחה על כל האתר | 7.5",
+     "mime": "text/html",
+     "modified": "2026-11-11T09:58:12.000Z",
      "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
     }
    ]
