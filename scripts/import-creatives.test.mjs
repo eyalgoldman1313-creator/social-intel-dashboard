@@ -1,6 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { brandId, carryForward, lookupPrev, mergeAliases, mergeImported, prevIndex, retainUnimported, applyWeek, METHOD, LEGACY_RANK_NOTE } from './import-creatives.mjs';
+import { readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { brandId, carryForward, lookupPrev, mergeAliases, mergeImported, prevIndex, retainUnimported, applyWeek, METHOD, LEGACY_RANK_NOTE, normStatus, NOT_SEEN_NOTE, hasDriveLinks, preservedCardWarning } from './import-creatives.mjs';
+
+const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const GOOM_TIKTOKS = ['tiktok-goom-d178017e', 'tiktok-goom-f965b98f', 'tiktok-goom-730268ad'];
+const link = (id) => `https://drive.google.com/file/d/${id}/view`;
 
 test('carryForward keeps image_source and a known format', () => {
   const prev = prevIndex([
@@ -137,6 +144,219 @@ test('retainUnimported does not duplicate rows from a source that was read', () 
   const items = [{ id: 'meta-1', source: 'meta', image_source: 'meta-ad-library' }];
   retainUnimported(items, prev, new Set(['meta']));
   assert.deepEqual(items.map((i) => i.id), ['meta-1', 'organic-1']);
+  assert.equal(items[1].status, undefined);
+});
+
+test('a card with Drive links is kept when its scan omits it; a card without links is dropped', () => {
+  const spec = 'https://drive.google.com/file/d/1daBm53fcn4dxAV5LdZAIYVhxcVrvgV9o/view';
+  const script = 'https://drive.google.com/file/d/1UAQqwqqUAHWSPOnO2WUgxmXUZjK5ND_0/view';
+  const driveLinks = {
+    'tiktok-goom-d178017e': { spec, script },
+    'meta-linked': { spec },
+    'tiktok-empty': {},
+  };
+  const prev = [
+    { id: 'tiktok-goom-d178017e', source: 'tiktok', status: 'active', post_url: 'https://www.tiktok.com/@goom.co.il/video/7521365051526155527', views: 3100000, data_notes: 'קיים' },
+    { id: 'tiktok-plain', source: 'tiktok', status: 'active' },
+    { id: 'tiktok-empty', source: 'tiktok', status: 'active' },
+    { id: 'meta-linked', source: 'meta', status: 'active', days_active: 200, brand: 'goom' },
+    { id: 'meta-plain', source: 'meta', status: 'active', days_active: 10, brand: 'a' },
+    { id: 'organic-inline', source: 'organic', status: 'active', spec_url: spec },
+  ];
+  const items = [{ id: 'tiktok-other', source: 'tiktok', status: 'active' }];
+  const warned = [];
+  retainUnimported(items, prev, new Set(['tiktok', 'meta', 'organic']), {
+    driveLinks,
+    warn: (kept) => warned.push(...kept.map((i) => i.id)),
+  });
+  assert.deepEqual(driveLinks['tiktok-goom-d178017e'], { spec, script });
+  const tik = items.find((i) => i.id === 'tiktok-goom-d178017e');
+  assert.equal(tik.status, 'unknown');
+  assert.equal(tik.views, 3100000);
+  assert.equal(tik.post_url, prev[0].post_url);
+  assert.match(tik.data_notes, new RegExp(NOT_SEEN_NOTE));
+  assert.match(tik.data_notes, /קיים/);
+  assert.equal(items.filter((i) => i.id === 'tiktok-goom-d178017e').length, 1);
+  assert.equal(items.some((i) => i.id === 'tiktok-plain' || i.id === 'tiktok-empty'), false);
+  const meta = items.find((i) => i.id === 'meta-linked');
+  assert.equal(meta.status, 'inactive');
+  assert.match(meta.data_notes, new RegExp(NOT_SEEN_NOTE));
+  assert.equal(items.some((i) => i.id === 'meta-plain'), false);
+  const org = items.find((i) => i.id === 'organic-inline');
+  assert.equal(org.status, 'unknown');
+  assert.equal(hasDriveLinks(org, {}), true);
+  assert.deepEqual(warned.sort(), ['meta-linked', 'organic-inline', 'tiktok-goom-d178017e']);
+
+  const second = items.filter((i) => i.id !== 'tiktok-goom-d178017e');
+  retainUnimported(second, items, new Set(['tiktok']), { driveLinks, warn: () => {} });
+  const again = second.find((i) => i.id === 'tiktok-goom-d178017e');
+  assert.equal(again.data_notes.split(NOT_SEEN_NOTE).length - 1, 1);
+});
+
+test('the default warning names each preserved Drive-linked card', () => {
+  const lines = [];
+  const orig = console.warn;
+  console.warn = (s) => lines.push(String(s));
+  try {
+    retainUnimported(
+      [],
+      [{ id: 'tiktok-goom-d178017e', source: 'tiktok', status: 'active', spec_url: 'https://drive.google.com/file/d/abc123/view' }],
+      new Set(['tiktok']),
+    );
+  } finally {
+    console.warn = orig;
+  }
+  const text = lines.join('\n');
+  assert.match(text, /Drive links/);
+  assert.match(text, /tiktok-goom-d178017e/);
+  assert.match(text, /status unknown/);
+});
+
+test('several Drive-linked cards from one brand are all kept, with one warning listing every id', () => {
+  const driveLinks = {
+    'tiktok-goom-d178017e': { spec: link('spec-d178'), script: link('script-d178') },
+    'tiktok-goom-f965b98f': { spec: link('spec-f965') },
+    'tiktok-goom-730268ad': { script: link('script-7302') },
+    'tiktok-goom-inline': {},
+  };
+  const prev = [
+    { id: 'tiktok-goom-d178017e', source: 'tiktok', brand: 'goom', status: 'active', views: 3100000, post_url: 'https://www.tiktok.com/@goom.co.il/video/7521365051526155527' },
+    { id: 'tiktok-goom-d178017e', source: 'tiktok', brand: 'goom', status: 'active', views: 1 },
+    { id: 'tiktok-goom-plain', source: 'tiktok', brand: 'goom', status: 'active', views: 10 },
+    { id: 'tiktok-goom-f965b98f', source: 'tiktok', brand: 'goom', status: 'active', views: 900000, spec_url: '' },
+    { id: 'tiktok-goom-730268ad', source: 'tiktok', brand: 'goom', status: 'active', views: 420000 },
+    { id: 'tiktok-goom-inline', source: 'tiktok', brand: 'goom', status: 'active', script_url: link('script-inline') },
+  ];
+  const items = [{ id: 'tiktok-goom-still', source: 'tiktok', brand: 'goom', status: 'active' }];
+  const calls = [];
+  retainUnimported(items, prev, new Set(['tiktok']), {
+    driveLinks,
+    warn: (kept) => calls.push(preservedCardWarning(kept).join('\n')),
+  });
+  assert.equal(calls.length, 1);
+  for (const id of [...GOOM_TIKTOKS, 'tiktok-goom-inline']) {
+    assert.equal(items.filter((i) => i.id === id).length, 1, id);
+    assert.match(calls[0], new RegExp(id));
+    assert.equal(items.find((i) => i.id === id).status, 'unknown');
+  }
+  assert.equal(items.filter((i) => i.id === 'tiktok-goom-d178017e')[0].views, 3100000);
+  assert.equal(items.some((i) => i.id === 'tiktok-goom-plain'), false);
+  assert.equal(driveLinks['tiktok-goom-d178017e'].spec, link('spec-d178'));
+  assert.equal(driveLinks['tiktok-goom-d178017e'].script, link('script-d178'));
+  assert.equal(hasDriveLinks(prev[3], driveLinks), true);
+  assert.equal(hasDriveLinks({ id: 'tiktok-goom-730268ad' }, driveLinks), true);
+  assert.equal(hasDriveLinks(prev[5], driveLinks), true);
+});
+
+test('only omitted cards that have a Drive link survive a mixed scan', () => {
+  const driveLinks = {
+    'tiktok-goom-d178017e': { spec: link('spec-d178'), script: link('script-d178') },
+    'meta-goom-linked': { script: link('script-meta') },
+  };
+  const prev = [
+    { id: 'tiktok-goom-d178017e', source: 'tiktok', brand: 'goom', status: 'active' },
+    { id: 'tiktok-goom-unlinked', source: 'tiktok', brand: 'goom', status: 'active' },
+    { id: 'tiktok-other-unlinked', source: 'tiktok', brand: 'mayven', status: 'active' },
+    { id: 'meta-goom-linked', source: 'meta', brand: 'goom', status: 'active', days_active: 80 },
+    { id: 'meta-goom-unlinked', source: 'meta', brand: 'goom', status: 'active', days_active: 90 },
+    { id: 'organic-kept', source: 'organic', brand: 'goom', status: 'active' },
+  ];
+  const items = [];
+  retainUnimported(items, prev, new Set(['tiktok', 'meta']), { driveLinks, warn: () => {} });
+  assert.deepEqual(items.map((i) => i.id).sort(), ['meta-goom-linked', 'organic-kept', 'tiktok-goom-d178017e']);
+  assert.equal(items.find((i) => i.id === 'meta-goom-linked').status, 'inactive');
+  assert.equal(items.find((i) => i.id === 'tiktok-goom-d178017e').status, 'unknown');
+  assert.equal(items.find((i) => i.id === 'organic-kept').status, 'active');
+  assert.equal(driveLinks['meta-goom-linked'].script, link('script-meta'));
+});
+
+test('regression fixture: the three GOOM TikToks dropped on 09.11 are all preserved', () => {
+  const driveLinks = {
+    'tiktok-goom-d178017e': {
+      spec: 'https://drive.google.com/file/d/1daBm53fcn4dxAV5LdZAIYVhxcVrvgV9o/view',
+      script: 'https://drive.google.com/file/d/1UAQqwqqUAHWSPOnO2WUgxmXUZjK5ND_0/view',
+    },
+    'tiktok-goom-f965b98f': {
+      spec: 'https://drive.google.com/file/d/1rmYOSH2YkMlmYUJ7nH4Ql233WCfUysXb/view',
+      script: 'https://drive.google.com/file/d/19UUbCTGUMzz_ChnJ-ldN__0AHaaAJYEc/view',
+    },
+    'tiktok-goom-730268ad': {
+      spec: 'https://drive.google.com/file/d/1nQyG_otTWAece_tK8J3iG5Z9s1BGFzWF/view',
+      script: 'https://drive.google.com/file/d/1NBSwlyvYWbdHUicGsLmOzIRq1eHvaFrA/view',
+    },
+  };
+  const before = JSON.stringify(driveLinks);
+  const prev = GOOM_TIKTOKS.map((id, n) => ({
+    id, source: 'tiktok', brand: 'goom', status: 'active', views: 1000 + n,
+    post_url: `https://www.tiktok.com/@goom.co.il/video/${n}`,
+  }));
+  prev.push(
+    { id: 'tiktok-goom-unlinked', source: 'tiktok', brand: 'goom', status: 'active' },
+    { id: 'tiktok-goom-new', source: 'tiktok', brand: 'goom', status: 'active', alias_ids: ['d178017e'], library_id: '999' },
+  );
+  const items = [prev[4]];
+  const calls = [];
+  mergeImported(items, prev, new Set(['tiktok']), {
+    driveLinks,
+    warn: (kept) => calls.push(kept.map((i) => i.id)),
+  });
+  assert.deepEqual(calls, [GOOM_TIKTOKS]);
+  for (const id of GOOM_TIKTOKS) {
+    const hit = items.filter((i) => i.id === id);
+    assert.equal(hit.length, 1);
+    assert.equal(hit[0].status, 'unknown');
+    assert.match(hit[0].data_notes, new RegExp(NOT_SEEN_NOTE));
+  }
+  assert.equal(items.some((i) => i.id === 'tiktok-goom-unlinked'), false);
+  assert.equal(items.filter((i) => i.id === 'tiktok-goom-new').length, 1);
+  assert.equal(JSON.stringify(driveLinks), before);
+});
+
+test('dry run against current creatives: omitting the three GOOM TikToks keeps all of them', () => {
+  const creatives = JSON.parse(readFileSync(join(root, 'data/creatives.json'), 'utf8'));
+  const driveLinks = JSON.parse(readFileSync(join(root, 'data/drive-links.json'), 'utf8'));
+  const linksBefore = JSON.stringify(driveLinks);
+  const prev = creatives.items;
+  const stored = {};
+  for (const id of GOOM_TIKTOKS) {
+    const hits = prev.filter((i) => i.id === id);
+    assert.equal(hits.length, 1, id);
+    assert.equal(hits[0].source, 'tiktok');
+    assert.equal(hits[0].brand, 'goom');
+    assert.ok(driveLinks[id].spec && driveLinks[id].script, id);
+    stored[id] = { status: hits[0].status, data_notes: hits[0].data_notes };
+  }
+  const incoming = prev.filter((i) => i.source === 'tiktok' && !GOOM_TIKTOKS.includes(i.id)).map((i) => structuredClone(i));
+  const calls = [];
+  mergeImported(incoming, prev, new Set(['tiktok']), {
+    driveLinks,
+    warn: (kept) => calls.push(kept.map((i) => i.id)),
+  });
+  assert.equal(calls.length, 1);
+  assert.deepEqual(calls[0].slice().sort(), GOOM_TIKTOKS.slice().sort());
+  for (const id of GOOM_TIKTOKS) {
+    const hits = incoming.filter((i) => i.id === id);
+    assert.equal(hits.length, 1, id);
+    assert.equal(hits[0].status, 'unknown');
+    const original = prev.find((i) => i.id === id);
+    assert.equal(original.status, stored[id].status);
+    assert.equal(original.data_notes, stored[id].data_notes);
+  }
+  assert.equal(JSON.stringify(driveLinks), linksBefore);
+});
+
+test('an alias merge is not undone when the folded card has Drive links', () => {
+  const prev = [
+    { id: 'meta-alias', source: 'meta', library_id: '1', status: 'active', spec_url: 'https://drive.google.com/file/d/abc123/view' },
+    { id: 'meta-main', source: 'meta', library_id: '2', status: 'active' },
+  ];
+  const items = [
+    { id: 'meta-main', source: 'meta', library_id: '2', alias_ids: ['1'], format: 'unknown', image: null },
+    { id: 'meta-alias', source: 'meta', library_id: '1', format: 'image', image: 'a.webp' },
+  ];
+  mergeImported(items, prev, new Set(['meta']), { warn: () => {} });
+  assert.deepEqual(items.map((i) => i.id), ['meta-main']);
+  assert.equal(items[0].status, undefined);
 });
 
 test('trypups alias imports Google items under brand pups', () => {
@@ -146,4 +366,60 @@ test('trypups alias imports Google items under brand pups', () => {
   assert.equal(brandId('Pups', [pups]), 'pups');
   assert.equal(brandId('trypups.com', [pups]), 'pups');
   assert.equal(brandId('trypups', []), 'pups');
+  assert.equal(brandId('try-pups', []), 'pups');
+});
+
+test('brand matching ignores punctuation and compares a domain stem in both directions', () => {
+  const pups = { id: 'pups', name: 'Pups', heName: 'try-pups', domain: 'trypups.com', group: 'reference' };
+  assert.equal(brandId({ brand: 'try-pups', brand_slug: 'trypups' }, [pups]), 'pups');
+  assert.equal(brandId({ brand_slug: 'not-a-brand', brand: 'Pups' }, [pups]), 'pups');
+  const acme = { id: 'acme', name: 'Acme', heName: 'אקמי', domain: 'tryacme.com' };
+  assert.equal(brandId('try-acme', [acme]), 'acme');
+  assert.equal(brandId('tryacme.com', [acme]), 'acme');
+  assert.equal(brandId({ brand: 'Try Acme', brand_slug: 'try-acme' }, [acme]), 'acme');
+  assert.equal(brandId('notacme', [acme]), 'notacme');
+  const fill = { id: 'fillit', name: 'Fill It', heName: 'פיל-איט', domain: 'fillitvitamins.com' };
+  assert.equal(brandId('פיל איט', [fill]), 'fillit');
+  assert.equal(brandId('fill it', []), 'fillit');
+});
+
+test('normStatus maps הופסקה and נעלמה to inactive', () => {
+  assert.equal(normStatus('הופסקה'), 'inactive');
+  assert.equal(normStatus('נעלמה'), 'inactive');
+  assert.equal(normStatus('הופסק'), 'inactive');
+  assert.equal(normStatus('מושהית'), 'inactive');
+  assert.equal(normStatus('מושהה'), 'inactive');
+  assert.equal(normStatus('פעיל'), 'active');
+  assert.equal(normStatus('paused'), 'inactive');
+  assert.equal(normStatus('something else'), 'unknown');
+});
+
+test('applyWeek tags a returning active ad as resumed, not data', () => {
+  const prevCreatives = [
+    { id: 'meta-back', source: 'meta', library_id: 'back', days_active: null, status: 'inactive' },
+  ];
+  const items = [
+    { id: 'meta-back', source: 'meta', brand: 'mycolivia', status: 'active', days_active: 235, variants_count: 1, start_date: '2026-03-12' },
+  ];
+  const doc = { weeks: {} };
+  applyWeek(doc, { key: '2026-W44', week: 44, start: '2026-10-26', end: '2026-11-01', asof: '2026-10-26' }, {
+    items, brands: [], imported: new Set(['meta']), strips: [], now: '2026-10-26T00:00:00.000Z', prevCreatives,
+  });
+  assert.equal(doc.weeks['2026-W44'].entered['meta-back'].reason, 'resumed');
+  assert.equal(doc.weeks['2026-W44'].entered['meta-back'].label, 'חזרה לפעילות');
+});
+
+test('an inactive flag from an older week does not keep tagging resumed', () => {
+  const doc = {
+    weeks: {
+      '2026-W40': { key: '2026-W40', items: [{ id: 'meta-x', status: 'inactive', days_active: 10 }] },
+      '2026-W43': { key: '2026-W43', items: [{ id: 'meta-x', status: 'active', days_active: 20 }] },
+    },
+  };
+  applyWeek(doc, { key: '2026-W44', week: 44, start: '2026-10-26', end: '2026-11-01', asof: '2026-10-26' }, {
+    items: [{ id: 'meta-x', source: 'meta', brand: 'a', status: 'active', days_active: 30, start_date: '2025-01-01' }],
+    brands: [], imported: new Set(['meta']), strips: [], now: '2026-10-26T00:00:00.000Z',
+    prevCreatives: [{ id: 'meta-x', source: 'meta', status: 'active', days_active: 30 }],
+  });
+  assert.equal(doc.weeks['2026-W44'].entered, undefined);
 });
