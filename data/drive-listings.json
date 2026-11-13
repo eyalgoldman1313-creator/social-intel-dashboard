@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-11-12T19:15:00+02:00",
+ "fetchedAt": "2026-11-13T19:15:00+02:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1556,6 +1556,20 @@
      "name": "אפיון | Mayven | מייל | קחי 25% הנחה לפני כולן - בחצות זה נגמר | 8",
      "mime": "text/html",
      "modified": "2026-11-12T10:42:22.000Z",
+     "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+    },
+    {
+     "id": "1EiGWbEJWLyQSINL8ldDcDY-JeAtOxVTN",
+     "name": "אפיון | Mycospring | מייל | ריטואל הערב החדש שלנו | 7.5",
+     "mime": "text/html",
+     "modified": "2026-11-12T17:25:39.000Z",
+     "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+    },
+    {
+     "id": "1oP1AvL_DwJow0YBw9c8pMk7Fjs8ChieE",
+     "name": "אפיון | Mayven | מייל | היום בחצות זה נגמר כפל נקודות + מתנה | 7",
+     "mime": "text/html",
+     "modified": "2026-11-13T07:34:02.000Z",
      "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
     }
    ]
