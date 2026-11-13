@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { brandId, carryForward, lookupPrev, mergeAliases, mergeImported, prevIndex, retainUnimported, applyWeek, METHOD, LEGACY_RANK_NOTE } from './import-creatives.mjs';
+import { brandId, carryForward, lookupPrev, mergeAliases, mergeImported, prevIndex, retainUnimported, applyWeek, flagGridOnlyImage, missingImageWarning, METHOD, LEGACY_RANK_NOTE, GRID_ONLY_REASON } from './import-creatives.mjs';
 
 test('carryForward keeps image_source and a known format', () => {
   const prev = prevIndex([
@@ -137,6 +137,59 @@ test('retainUnimported does not duplicate rows from a source that was read', () 
   const items = [{ id: 'meta-1', source: 'meta', image_source: 'meta-ad-library' }];
   retainUnimported(items, prev, new Set(['meta']));
   assert.deepEqual(items.map((i) => i.id), ['meta-1', 'organic-1']);
+});
+
+test('a new Meta ad at grid level with no local image is flagged grid-only', () => {
+  const fresh = { id: 'meta-new', source: 'meta', library_id: '9', image: null, imageMissing: true };
+  flagGridOnlyImage(fresh, { detail_level: 'grid' });
+  assert.equal(fresh.imageMissing, true);
+  assert.equal(fresh.imageMissingReason, GRID_ONLY_REASON);
+  assert.match(missingImageWarning(fresh), /grid-only/);
+  assert.match(missingImageWarning(fresh), /not a failed fetch/);
+
+  const shot = { id: 'meta-shot', source: 'meta', library_id: '8', image: 'creatives/meta/8.webp', imageMissing: false, imageMissingReason: 'grid-only' };
+  flagGridOnlyImage(shot, { detail_level: 'Grid' });
+  assert.equal(shot.imageMissingReason, undefined);
+  assert.equal(missingImageWarning(shot), null);
+
+  const opened = { id: 'meta-open', source: 'meta', library_id: '7', image: null, imageMissing: true, imageMissingReason: 'grid-only' };
+  flagGridOnlyImage(opened, { detail_level: 'detail' });
+  assert.equal(opened.imageMissingReason, undefined);
+  assert.match(missingImageWarning(opened), /fetch-ad-images/);
+
+  const google = { id: 'google-1', source: 'google', image: null, imageMissing: true };
+  flagGridOnlyImage(google, { detail_level: 'grid' });
+  assert.equal(google.imageMissingReason, undefined);
+
+  const carried = { id: 'meta-old', source: 'meta', library_id: '6', image: null, imageMissing: true };
+  const prev = prevIndex([{ id: 'meta-old', source: 'meta', library_id: '6', image: null, imageMissingReason: 'grid-only' }]);
+  carryForward(carried, lookupPrev(prev, carried));
+  flagGridOnlyImage(carried, {});
+  assert.equal(carried.imageMissingReason, 'grid-only');
+  assert.equal(carried.imageMissing, true);
+
+  const withFile = { id: 'meta-old', source: 'meta', library_id: '6', image: 'creatives/meta/6.webp', imageMissing: false };
+  carryForward(withFile, lookupPrev(prev, withFile));
+  assert.equal(withFile.imageMissingReason, undefined);
+});
+
+test('alias merge keeps a grid-only flag until an image arrives', () => {
+  const items = [
+    { id: 'meta-main', source: 'meta', library_id: '2', image: null, imageMissing: true, alias_ids: ['1'] },
+    { id: 'meta-alias', source: 'meta', library_id: '1', image: null, imageMissing: true, imageMissingReason: 'grid-only' },
+  ];
+  mergeAliases(items);
+  assert.equal(items.length, 1);
+  assert.equal(items[0].imageMissingReason, 'grid-only');
+
+  const withImage = [
+    { id: 'meta-main', source: 'meta', library_id: '2', image: null, imageMissing: true, imageMissingReason: 'grid-only', alias_ids: ['1'] },
+    { id: 'meta-alias', source: 'meta', library_id: '1', image: 'creatives/meta/1.webp', imageMissing: false },
+  ];
+  mergeAliases(withImage);
+  assert.equal(withImage[0].image, 'creatives/meta/1.webp');
+  assert.equal(withImage[0].imageMissing, false);
+  assert.equal(withImage[0].imageMissingReason, undefined);
 });
 
 test('trypups alias imports Google items under brand pups', () => {
