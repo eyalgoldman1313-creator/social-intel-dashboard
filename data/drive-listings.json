@@ -1,6 +1,6 @@
 {
  "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
- "fetchedAt": "2026-11-13T19:15:00+02:00",
+ "fetchedAt": "2026-11-14T19:15:00+02:00",
  "kinds": {
   "videos": {
    "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1570,6 +1570,20 @@
      "name": "אפיון | Mayven | מייל | היום בחצות זה נגמר כפל נקודות + מתנה | 7",
      "mime": "text/html",
      "modified": "2026-11-13T07:34:02.000Z",
+     "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+    },
+    {
+     "id": "1ly3cCFQpLRas7ogew2ZbYuJL4Qnrg9YG",
+     "name": "אפיון | Smiley | מייל | מתנה בשווי 189.90₪ רק עד חצות | 7",
+     "mime": "text/html",
+     "modified": "2026-11-14T16:19:07.000Z",
+     "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+    },
+    {
+     "id": "11vEy1tIJ2N6HDNqOK4fvIez-J4eum12v",
+     "name": "אפיון | Mayven | מייל | בוחרת 3 הרביעי עלינו מתנה | 7.5",
+     "mime": "text/html",
+     "modified": "2026-11-14T16:04:33.000Z",
      "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
     }
    ]

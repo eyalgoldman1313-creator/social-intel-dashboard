@@ -753,6 +753,32 @@
   },
   "mailers": [
     {
+      "brand": "Smiley",
+      "title": "הבחירה אצלך: מתנה בשווי 189.90₪, רק עד חצות 🎁 (14.11)",
+      "file": "mailer-smiley-2026-11-14.html",
+      "score": "7",
+      "date": "14.11.2026",
+      "time": "18:19",
+      "img": "/mailers/mailer-smiley-2026-11-14.webp",
+      "offer": "מתנה אחת לבחירה, \"בחינם לגמרי (רק לשלם על המשלוח)\"",
+      "hook": "אין באנר",
+      "cta": "שני CTA טקסטואליים מקבילים.",
+      "drive_id": "1ly3cCFQpLRas7ogew2ZbYuJL4Qnrg9YG"
+    },
+    {
+      "brand": "Mayven",
+      "title": "בוחרת 3, הרביעי עלינו מתנה 💃 | פרסומת (14.11)",
+      "file": "mailer-mayven-2026-11-14.html",
+      "score": "7.5",
+      "date": "14.11.2026",
+      "time": "18:04",
+      "img": "/mailers/mailer-mayven-2026-11-14.webp",
+      "offer": "בקניית 3 מוצרים מאותו סוג בקטגוריות הקפסולות, הגאמיז או האבקות",
+      "hook": "תג Purple November \"3+1 FREE\"",
+      "cta": "שני CTA זהים",
+      "drive_id": "11vEy1tIJ2N6HDNqOK4fvIez-J4eum12v"
+    },
+    {
       "brand": "Mayven",
       "title": "היום בחצות זה נגמר: כפל נקודות + מתנה 💗 | פרסומת (13.11)",
       "file": "mailer-mayven-2026-11-13.html",
