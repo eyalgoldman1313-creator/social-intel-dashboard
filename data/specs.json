@@ -753,6 +753,58 @@
   },
   "mailers": [
     {
+      "brand": "Mayven",
+      "title": "בואי להפוך 1,200 נקודות לשופינג באתר 💃 | פרסומת (15.11)",
+      "file": "mailer-mayven-2026-11-15.html",
+      "score": "7.5",
+      "date": "15.11.2026",
+      "time": "12:15",
+      "img": "/mailers/mailer-mayven-2026-11-15.webp",
+      "offer": "ניתן לממש עד 1,200 נקודות בשווי של עד 120₪, עד 15.11.2026 בחצות, לחבר…",
+      "hook": "תג Purple November \"1200 POINTS\"",
+      "cta": "שני CTA זהים",
+      "drive_id": "1QQlt9yTrYZFJqK1E44ofB1SFZsaJw4E_"
+    },
+    {
+      "brand": "Fill It",
+      "title": "הבטן נפוחה יותר בערב? 4 הרגלים שיעזרו לך >> | פרסומת (15.11)",
+      "file": "mailer-fillit-2026-11-15.html",
+      "score": "7",
+      "date": "15.11.2026",
+      "time": "10:59",
+      "img": "/mailers/mailer-fillit-2026-11-15.webp",
+      "offer": "אין הנחה, קוד או תאריך.",
+      "hook": "Hero: אישה עם צנצנת Shape Complex וכותרת \"בטן נפוחה יותר בערב? 4 הרגל…",
+      "cta": "CTA לכתבה ולמוצר",
+      "drive_id": "12A5Ys0g9grsBR8BmMROu9h6bKB_n7qJP"
+    },
+    {
+      "brand": "Pups",
+      "title": "חדש ב-Pups 🌙 רגע של שקט ברגעים הרועשים (15.11)",
+      "file": "mailer-pups-2026-11-15.html",
+      "score": "8",
+      "date": "15.11.2026",
+      "time": "10:16",
+      "img": "/mailers/mailer-pups-2026-11-15.webp",
+      "offer": "אותו מבצע: עד 50% + 3 מתנות בכל הזמנה.",
+      "hook": "התמונות חסומות (שרת המעקב track.trypups.com)",
+      "cta": "הבאנרים מקושרים למוצר",
+      "drive_id": "1t2epV-OXEY3871Kht5itpxb7qi0COBAB"
+    },
+    {
+      "brand": "Pups",
+      "title": "רציתי שתשמעו את זה ממני קודם (15.11)",
+      "file": "mailer-pups-2026-11-15b.html",
+      "score": "8",
+      "date": "15.11.2026",
+      "time": "10:03",
+      "img": "/mailers/mailer-pups-2026-11-15b.webp",
+      "offer": "עד 50% הנחה + 3 מתנות בכל הזמנה, בלי קוד.",
+      "hook": "אין באנר",
+      "cta": "CTA אחד בולט",
+      "drive_id": "1T5pycv5kPXvVvrLA1pvIfHwJfUdhrXBx"
+    },
+    {
       "brand": "Smiley",
       "title": "הבחירה אצלך: מתנה בשווי 189.90₪, רק עד חצות 🎁 (14.11)",
       "file": "mailer-smiley-2026-11-14.html",
