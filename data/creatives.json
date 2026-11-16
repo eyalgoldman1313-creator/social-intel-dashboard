@@ -24943,8 +24943,9 @@
    "landing_url": "https://חסר",
    "data_notes": "",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/google/cr06455408671353470977.webp",
+   "imageMissing": false,
+   "image_source": "google-ads-transparency"
   },
   {
    "id": "google-cr14665470792049885185",
@@ -24986,8 +24987,9 @@
    "landing_url": "https://חסר",
    "data_notes": "",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/google/cr14665470792049885185.webp",
+   "imageMissing": false,
+   "image_source": "google-ads-transparency"
   },
   {
    "id": "google-cr16831702212815093761",
@@ -25161,8 +25163,9 @@
    "landing_url": "https://חסר",
    "data_notes": "",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/google/cr01357410858984013825.webp",
+   "imageMissing": false,
+   "image_source": "google-ads-transparency"
   },
   {
    "id": "google-cr09065702052251828225",
@@ -27780,8 +27783,9 @@
    "landing_url": "https://חסר",
    "data_notes": "",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/google/cr06228259834026786817.webp",
+   "imageMissing": false,
+   "image_source": "google-ads-transparency"
   },
   {
    "id": "google-cr10510096762167885825",
@@ -29494,8 +29498,9 @@
    "landing_url": "https://חסר",
    "data_notes": "",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/google/cr12607041358197161985.webp",
+   "imageMissing": false,
+   "image_source": "google-ads-transparency"
   },
   {
    "id": "google-cr18388716668948840449",
@@ -30537,8 +30542,9 @@
    "landing_url": "https://חסר",
    "data_notes": "",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/google/cr02216282057644965889.webp",
+   "imageMissing": false,
+   "image_source": "google-ads-transparency"
   },
   {
    "id": "google-cr16472145203109560321",
@@ -31236,8 +31242,9 @@
    "landing_url": "https://חסר",
    "data_notes": "",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/google/cr03328291559215988737.webp",
+   "imageMissing": false,
+   "image_source": "google-ads-transparency"
   },
   {
    "id": "google-cr12170611245711360001",
@@ -32014,8 +32021,9 @@
    "landing_url": "https://www.fillitvitamins.com/",
    "data_notes": "",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/google/cr02599683961273712641.webp",
+   "imageMissing": false,
+   "image_source": "google-ads-transparency"
   },
   {
    "id": "google-cr18428590904806735873",
@@ -32144,8 +32152,9 @@
    "landing_url": "https://חסר",
    "data_notes": "",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/google/cr08099001353117892609.webp",
+   "imageMissing": false,
+   "image_source": "google-ads-transparency"
   },
   {
    "id": "google-cr02957644265347350529",
@@ -32360,8 +32369,8 @@
    "landing_url": "https://חסר",
    "data_notes": "",
    "engagement": null,
-   "image": "creatives/google/cr10535433358362542081.webp",
-   "imageMissing": false
+   "image": null,
+   "imageMissing": true
   },
   {
    "id": "google-cr01100535590929039361",
@@ -32403,8 +32412,9 @@
    "landing_url": "https://חסר",
    "data_notes": "",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/google/cr01100535590929039361.webp",
+   "imageMissing": false,
+   "image_source": "google-ads-transparency"
   },
   {
    "id": "google-cr10582295609090244609",
@@ -155863,8 +155873,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1045890265198605.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1256422633367326",
@@ -155949,8 +155960,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2349311509150213.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1082685064802250",
@@ -155992,8 +156004,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1082685064802250.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1072194375864386",
@@ -156035,8 +156048,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1072194375864386.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2682829245519054",
@@ -158811,8 +158825,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1142099741873821.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1577648060787431",
@@ -160703,8 +160718,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2999964063693232.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1132826535810449",
@@ -160746,8 +160762,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1132826535810449.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4049986845295670",
@@ -160961,8 +160978,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1372837014736637.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1840513247404100",
@@ -161004,8 +161022,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1840513247404100.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1444612647048571",
@@ -161176,8 +161195,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2251606042092874.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1796882358252427",
@@ -161219,8 +161239,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1796882358252427.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1697976018383777",
@@ -161780,8 +161801,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1661462285353057.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1164166322700529",
@@ -161866,8 +161888,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2414021872738972.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2107099593260923",
@@ -161909,8 +161932,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2107099593260923.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1435003858225776",
@@ -161952,8 +161976,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1435003858225776.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1151646794070003",
@@ -163764,8 +163789,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1157434643642555.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1809774606895289",
@@ -163807,8 +163833,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1809774606895289.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1826041538851290",
@@ -163850,8 +163877,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1826041538851290.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-3642513259247228",
@@ -163893,8 +163921,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3642513259247228.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1849665659790964",
@@ -163936,8 +163965,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1849665659790964.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1404160656115987",
@@ -163979,8 +164009,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1404160656115987.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2937592663266621",
@@ -164022,8 +164053,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2937592663266621.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1117327291202577",
@@ -164065,8 +164097,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1117327291202577.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1677502333889620",
@@ -164108,8 +164141,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1677502333889620.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2660880780996420",
@@ -164927,8 +164961,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1152295447492211.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-978041034902288",
@@ -177035,8 +177070,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/29276126678683614.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1629556701991739",
@@ -177121,8 +177157,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1819396469393737.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1606652101235111",
@@ -177164,8 +177201,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1606652101235111.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1111936144792922",
@@ -177293,8 +177331,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1822690712192442.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2553435481845593",
@@ -177336,8 +177375,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2553435481845593.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-3786629654820039",
@@ -177379,8 +177419,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3786629654820039.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1427416652704035",
@@ -177422,8 +177463,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1427416652704035.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1801914594405086",
@@ -177465,8 +177507,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1801914594405086.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2391851998232055",
@@ -177508,8 +177551,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2391851998232055.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1891824785313257",
@@ -177551,8 +177595,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1891824785313257.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1464176372353490",
@@ -177594,8 +177639,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1464176372353490.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1489913673333810",
@@ -177637,8 +177683,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1489913673333810.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1672629494514588",
@@ -177680,8 +177727,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1672629494514588.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2357151248457627",
@@ -177723,8 +177771,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2357151248457627.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1459165872850577",
@@ -177766,8 +177815,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1459165872850577.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-3520059234849083",
@@ -177809,8 +177859,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3520059234849083.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1476030351134266",
@@ -177852,8 +177903,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1476030351134266.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1672308141118506",
@@ -177895,8 +177947,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1672308141118506.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4546779528876559",
@@ -177938,8 +177991,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4546779528876559.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1710873517121550",
@@ -177981,8 +178035,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1710873517121550.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1061439290252185",
@@ -178024,8 +178079,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1061439290252185.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1459536689479494",
@@ -178067,8 +178123,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1459536689479494.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1801085037676749",
@@ -178110,8 +178167,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1801085037676749.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-29681026484920321",
@@ -178153,8 +178211,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/29681026484920321.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1817765846043509",
@@ -178196,8 +178255,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1817765846043509.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1499282912022545",
@@ -178239,8 +178299,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1499282912022545.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1677720827093552",
@@ -178282,8 +178343,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1677720827093552.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1849607462844269",
@@ -178325,8 +178387,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1849607462844269.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1921630352543634",
@@ -178368,8 +178431,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1921630352543634.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2162018591351802",
@@ -178411,8 +178475,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2162018591351802.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2003867913778314",
@@ -178454,8 +178519,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2003867913778314.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1115373444636501",
@@ -178497,8 +178563,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1115373444636501.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1483533683696591",
@@ -178540,8 +178607,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1483533683696591.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1926793338699002",
@@ -178583,8 +178651,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1926793338699002.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1665885744917974",
@@ -178626,8 +178695,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1665885744917974.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1171447075307966",
@@ -178669,8 +178739,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1171447075307966.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1602274875037637",
@@ -178712,8 +178783,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1602274875037637.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1141725765374441",
@@ -178755,8 +178827,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1141725765374441.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1535471648419769",
@@ -179572,8 +179645,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1136359768753981.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1155496466993857",
@@ -179615,8 +179689,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1155496466993857.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1447992017466554",
@@ -179658,8 +179733,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1447992017466554.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4597752387161829",
@@ -179701,8 +179777,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4597752387161829.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1407363821174082",
@@ -179744,8 +179821,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1407363821174082.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1082817834756477",
@@ -179787,8 +179865,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1082817834756477.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1429047222242087",
@@ -179830,8 +179909,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1429047222242087.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1146740481147510",
@@ -179873,8 +179953,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1146740481147510.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1819232392555675",
@@ -179916,8 +179997,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1819232392555675.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1448878397412092",
@@ -179959,8 +180041,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1448878397412092.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1706791564125242",
@@ -180002,8 +180085,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1706791564125242.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1149723597638130",
@@ -180045,8 +180129,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1149723597638130.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1436654414791315",
@@ -180088,8 +180173,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1436654414791315.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1868033857527523",
@@ -180131,8 +180217,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1868033857527523.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1707818017574329",
@@ -180174,8 +180261,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1707818017574329.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1861006668248389",
@@ -180217,8 +180305,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1861006668248389.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1122182913759360",
@@ -180260,8 +180349,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1122182913759360.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-39881405944839607",
@@ -180303,8 +180393,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/39881405944839607.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1645241320425065",
@@ -182453,8 +182544,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1123723893749645.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4499918170269074",
@@ -183356,8 +183448,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4149852628650555.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1126577119956822",
@@ -183399,8 +183492,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1126577119956822.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1436123514752371",
@@ -183442,8 +183536,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1436123514752371.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1621635106425199",
@@ -183485,8 +183580,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1621635106425199.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4570305646624389",
@@ -183528,8 +183624,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4570305646624389.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1162986109637322",
@@ -183571,8 +183668,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1162986109637322.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1632335405363403",
@@ -183614,8 +183712,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1632335405363403.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4652989704972008",
@@ -183657,8 +183756,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4652989704972008.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1152422804125902",
@@ -183700,8 +183800,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1152422804125902.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-950030068189685",
@@ -183743,8 +183844,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/950030068189685.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1107403055465617",
@@ -183786,8 +183888,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1107403055465617.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1702267024946272",
@@ -183829,8 +183932,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1702267024946272.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1678479960296232",
@@ -183872,8 +183976,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1678479960296232.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2630045080741409",
@@ -183915,8 +184020,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2630045080741409.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1090152487404260",
@@ -183958,8 +184064,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1090152487404260.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1375366297847010",
@@ -184001,8 +184108,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1375366297847010.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1611629180278575",
@@ -184044,8 +184152,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1611629180278575.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-3910779222418796",
@@ -184087,8 +184196,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3910779222418796.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1022037407594047",
@@ -184130,8 +184240,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1022037407594047.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1183118987479758",
@@ -184173,8 +184284,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1183118987479758.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1663106538537796",
@@ -184216,8 +184328,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1663106538537796.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-3063738320646476",
@@ -184259,8 +184372,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3063738320646476.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1009142165565859",
@@ -184302,8 +184416,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1009142165565859.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2383579242177600",
@@ -184345,8 +184460,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2383579242177600.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1834387600920445",
@@ -184388,8 +184504,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1834387600920445.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1603948067608727",
@@ -184431,8 +184548,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1603948067608727.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1165265909182118",
@@ -184474,8 +184592,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1165265909182118.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1105616655804258",
@@ -184517,8 +184636,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1105616655804258.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1687933623343866",
@@ -184560,8 +184680,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1687933623343866.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1512101070823124",
@@ -184646,8 +184767,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1127336826712328.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2968561910173887",
@@ -184689,8 +184811,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2968561910173887.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4529147460677254",
@@ -184732,8 +184855,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4529147460677254.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1162231196474282",
@@ -184775,8 +184899,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1162231196474282.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4500714280142087",
@@ -184818,8 +184943,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4500714280142087.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-39921929324089403",
@@ -185162,8 +185288,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1435426152073835.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1872866857067155",
@@ -185377,8 +185504,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1112131688095977.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2877895255927141",
@@ -187011,8 +187139,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1834175251109343.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1899545151027775",
@@ -188731,8 +188860,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4641276626191695.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1068298766253717",
@@ -188774,8 +188904,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1068298766253717.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2226314428317176",
@@ -189032,8 +189163,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3151444968377796.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1123922897177034",
@@ -189333,8 +189465,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1152988997224665.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1130019716550996",
@@ -190107,8 +190240,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1469862615143720.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1185182574185045",
@@ -190967,8 +191101,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/30194100496857893.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1844660706847334",
@@ -191010,8 +191145,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1844660706847334.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1112364811665724",
@@ -191053,8 +191189,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1112364811665724.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1150604637430563",
@@ -191096,8 +191233,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1150604637430563.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1008388141598892",
@@ -192816,8 +192954,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1162742589755337.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1441697801429358",
@@ -193160,8 +193299,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/968246205980804.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-4240842666046088",
@@ -193246,8 +193386,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1068755706221818.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1678742230526682",
@@ -193504,8 +193645,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3782493165232726.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1164739075894830",
@@ -195998,8 +196140,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1002063838971311.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2238599243736825",
@@ -197288,8 +197431,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1622973345427186.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-974184695336370",
@@ -197331,8 +197475,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/974184695336370.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2590523688117083",
@@ -197374,8 +197519,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2590523688117083.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1585405833404915",
@@ -197417,8 +197563,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1585405833404915.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2986704161662358",
@@ -197460,8 +197607,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2986704161662358.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2316487965810986",
@@ -197503,8 +197651,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2316487965810986.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1453513560297016",
@@ -197546,8 +197695,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1453513560297016.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1466552138908174",
@@ -197589,8 +197739,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1466552138908174.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-3615516998626187",
@@ -197632,8 +197783,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3615516998626187.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1454026619487742",
@@ -197675,8 +197827,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1454026619487742.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1675932160828460",
@@ -197718,8 +197871,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1675932160828460.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2692724514475576",
@@ -197761,8 +197915,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2692724514475576.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1120697910805818",
@@ -197804,8 +197959,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1120697910805818.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1838668850800179",
@@ -197847,8 +198003,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1838668850800179.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1063834216674068",
@@ -197890,8 +198047,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1063834216674068.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1612007806871122",
@@ -197933,8 +198091,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1612007806871122.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1665232178524708",
@@ -197976,8 +198135,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1665232178524708.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1659203362470693",
@@ -198019,8 +198179,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1659203362470693.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1288240196817082",
@@ -198062,8 +198223,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1288240196817082.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1672270507901177",
@@ -198105,8 +198267,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1672270507901177.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-29049285134739515",
@@ -199137,8 +199300,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/3202486603270388.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-977524151648659",
@@ -200470,8 +200634,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1472217451524139.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1649074146699346",
@@ -200513,8 +200678,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1649074146699346.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1879235863270713",
@@ -200556,8 +200722,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1879235863270713.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1164818823172940",
@@ -200599,8 +200766,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1164818823172940.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2528608747628992",
@@ -200642,8 +200810,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2528608747628992.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1512501537609366",
@@ -200685,8 +200854,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1512501537609366.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1641919544149092",
@@ -200728,8 +200898,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1641919544149092.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1895610918551870",
@@ -200771,8 +200942,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1895610918551870.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1186004127433030",
@@ -200814,8 +200986,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1186004127433030.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1926473828733274",
@@ -201115,8 +201288,9 @@
    "landing_url": "https://try-smiley.com/products/smileygum-מסטיקים-פרימיום-לחיוך-בריא",
    "data_notes": "",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/4505583806348261.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1771685327257046",
@@ -202964,8 +203138,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 15 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2007217803278635.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2268941567297569",
@@ -203007,8 +203182,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 15 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2268941567297569.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1148600321475341",
@@ -203050,8 +203226,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 15 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1148600321475341.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1116246174355136",
@@ -203093,8 +203270,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 15 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1116246174355136.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1450220923337422",
@@ -203136,8 +203314,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 15 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1450220923337422.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1132153819219971",
@@ -203179,8 +203358,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 15 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1132153819219971.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2202354627296821",
@@ -203222,8 +203402,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 15 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2202354627296821.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1258092340136460",
@@ -203265,8 +203446,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 15 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1258092340136460.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1678269893707958",
@@ -203308,8 +203490,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 15 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1678269893707958.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1830147144673672",
@@ -203351,8 +203534,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 15 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1830147144673672.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1620477955794278",
@@ -203695,8 +203879,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2337101137126045.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1144442314769236",
@@ -203738,8 +203923,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1144442314769236.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1131651049604604",
@@ -203781,8 +203967,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1131651049604604.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1140291048483643",
@@ -203824,8 +204011,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1140291048483643.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2421789635304792",
@@ -203867,8 +204055,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2421789635304792.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1686161686253561",
@@ -203910,8 +204099,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1686161686253561.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1085155591223575",
@@ -203953,8 +204143,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1085155591223575.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2454781931713810",
@@ -203996,8 +204187,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2454781931713810.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1605289118310095",
@@ -204039,8 +204231,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1605289118310095.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1501374268565539",
@@ -204082,8 +204275,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1501374268565539.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1896969831472320",
@@ -204125,8 +204319,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1896969831472320.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1465816693276241",
@@ -204168,8 +204363,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1465816693276241.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1486992216657373",
@@ -204211,8 +204407,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1486992216657373.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1068695062916142",
@@ -204254,8 +204451,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1068695062916142.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1114296074746571",
@@ -204297,8 +204495,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1114296074746571.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1717382896476443",
@@ -204340,8 +204539,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1717382896476443.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1139372051785293",
@@ -204383,8 +204583,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1139372051785293.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1332321812295766",
@@ -204426,8 +204627,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1332321812295766.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1661675045341995",
@@ -204469,8 +204671,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1661675045341995.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1707372290718423",
@@ -204512,8 +204715,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1707372290718423.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1892586051602390",
@@ -204555,8 +204759,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1892586051602390.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-2646631832426235",
@@ -204598,8 +204803,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 6 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/2646631832426235.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1658777672927374",
@@ -204641,8 +204847,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 18 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1658777672927374.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1156152023552331",
@@ -204684,8 +204891,9 @@
    "landing_url": "",
    "data_notes": "כרטיס: \"Nov 15, 2026 · Total active time 18 hrs\",grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1156152023552331.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1154589080590764",
@@ -256133,8 +256341,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1699077928299587.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "organic-by-harmony-65985cfd",
