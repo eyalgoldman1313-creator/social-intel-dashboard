@@ -149091,8 +149091,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1800523077894743.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1500182995355313",
@@ -149922,8 +149923,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1858258508525962.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-29420628520855062",
@@ -149965,8 +149967,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/29420628520855062.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-1597650264862357",
@@ -156393,8 +156396,9 @@
    "landing_url": "",
    "data_notes": "grid-level only (id, start date, variants label, CTA, format, first words ~40 chars); no full copy/image captured",
    "engagement": null,
-   "image": null,
-   "imageMissing": true
+   "image": "creatives/meta/1473175818008184.webp",
+   "imageMissing": false,
+   "image_source": "meta-ad-library"
   },
   {
    "id": "meta-29725631033708826",
