@@ -1,6 +1,6 @@
 {
   "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
-  "fetchedAt": "2026-11-15T19:10:28+02:00",
+  "fetchedAt": "2026-11-16T19:06:21+02:00",
   "kinds": {
     "videos": {
       "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1542,6 +1542,13 @@
           "name": "אפיון | Mayven | מייל | גרדי וגלי במה זכית | 6",
           "mime": "text/html",
           "modified": "2026-10-20T16:13:20.364Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1D8fSWlFNm1eefJVgV4nuDF2gH2xmGuuu",
+          "name": "אפיון | Mayven | מייל | ההנחה הגדולה של השנה מתחילה עכשיו | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-16T17:05:58.889Z",
           "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
         },
         {
