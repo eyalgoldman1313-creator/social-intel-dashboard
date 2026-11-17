@@ -1,6 +1,6 @@
 {
   "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
-  "fetchedAt": "2026-11-16T19:06:21+02:00",
+  "fetchedAt": "2026-11-17T19:07:36+02:00",
   "kinds": {
     "videos": {
       "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1090,34 +1090,6 @@
           "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
         },
         {
-          "id": "177Bu3Nssw1kUj3qZyVIkYnu3u7mHBuWh",
-          "name": "[גרסה ישנה] אפיון | EcoSupp | מייל | איך הגוף עובד בזמן השינה | 8.html",
-          "mime": "text/html",
-          "modified": "2026-10-07T13:33:29.742Z",
-          "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
-        },
-        {
-          "id": "1SSkmAMJQk807U4p0dSiwfZCX6xYPWMGT",
-          "name": "אפיון | EcoSupp | מייל | איך הגוף עובד בזמן השינה | 8",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:25:41.308Z",
-          "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
-        },
-        {
-          "id": "1w4cWz0egIQC8UjeCpH5vNa80-1ae0Fyf",
-          "name": "אפיון | EcoSupp | מייל | ברוכים הבאים והצטרפות ל-ecoclub | 7",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:25:49.922Z",
-          "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
-        },
-        {
-          "id": "1Mkor0cmoiFJHNZSKqU9wXiuWrt3_x08t",
-          "name": "צילום מסך | EcoSupp | מייל | איך הגוף עובד בזמן השינה.png",
-          "mime": "image/png",
-          "modified": "2026-10-07T13:37:26.065Z",
-          "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
-        },
-        {
           "id": "14lnpgr9EUZjluOFL9pAML95B-cb2nhTn",
           "name": "[גרסה ישנה] אפיון | Mycospring | מייל | שאלנו את מי שמדברות איתכם | 7.5.html",
           "mime": "text/html",
@@ -1172,13 +1144,6 @@
           "mime": "text/html",
           "modified": "2026-10-21T16:09:00.000Z",
           "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
-        },
-        {
-          "id": "1ziouZ0FI4GqzZHvOuAKg3MfeCp6dayE4",
-          "name": "אפיון | EcoSupp | מייל | אוכלים בריא ולמה בכל זאת תוספים | 6.5",
-          "mime": "text/html",
-          "modified": "2026-10-21T16:09:00.000Z",
-          "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
         },
         {
           "id": "1wY5yrbDssrn0wamSdGBitegdCQE66VyA",
@@ -1356,146 +1321,6 @@
           "folder": "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP"
         },
         {
-          "id": "1PT7eMwWlJ1FCrAnshLF0_A49IAIKsLP2",
-          "name": "[גרסה ישנה] אפיון | Fill It | מייל | הבריאות שלך היא השקעה | 6.5.html",
-          "mime": "text/html",
-          "modified": "2026-10-07T13:33:36.626Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1m8K3lJGUkS235Tt7ImvzN_rKRa3bsTET",
-          "name": "אפיון | Fill It | מייל | 3 סיבות למה דווקא Fillit | 7.5",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:25:54.303Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "16LvoNyt07kEWYLxxYlNLxahDLB7s2Pzf",
-          "name": "אפיון | Fill It | מייל | A New Era Is Coming | 6",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:26:03.194Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1pJ36OEsR6eFAkDDy-adjrRmLjlkPBUq0",
-          "name": "אפיון | Fill It | מייל | GLOW IT במתנה ברכישה | 7",
-          "mime": "text/html",
-          "modified": "2026-10-21T16:08:37.426Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1DOm1MSDqBeqZT55H4L1igEb2ecHvDUOK",
-          "name": "אפיון | Fill It | מייל | GLOW IT חוזרת למלאי | 6.5",
-          "mime": "text/html",
-          "modified": "2026-10-20T07:54:15.130Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1HDIrWYMQnh3BkaMAXIIXT45NPGSzDUYL",
-          "name": "אפיון | Fill It | מייל | איזה מוצר הכי מתאים לך | 6.5",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:24:09.784Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1_9Lb8tsi9gYjeYfcIKZHpCADFs21zPo5",
-          "name": "אפיון | Fill It | מייל | איך Fillit Exclusive עובד | 5.5",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:25:54.310Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "18nDfLmWdv2WUtcDUr9rP8aZ89GB69er3",
-          "name": "אפיון | Fill It | מייל | את בטוחה שאת בוחרת נכון לעצמך | 6.5",
-          "mime": "text/html",
-          "modified": "2026-10-28T17:14:59.970Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1yGduCYgQ3HfTBKiSLHiF9bXFJRO_xZMa",
-          "name": "אפיון | Fill It | מייל | ברוכה הבאה ו-300 נקודות מתנה | 7.html",
-          "mime": "text/html",
-          "modified": "2026-10-21T06:18:22.401Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "12A5Ys0g9grsBR8BmMROu9h6bKB_n7qJP",
-          "name": "אפיון | Fill It | מייל | הבטן נפוחה יותר בערב 4 הרגלים | 7",
-          "mime": "text/html",
-          "modified": "2026-11-15T17:09:48.724Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1aqh8uIsvobmbXwRZeSae7hA-trKr2DVV",
-          "name": "אפיון | Fill It | מייל | הבריאות שלך היא השקעה | 6.5",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:25:43.612Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1kVYhnaA2Fj4MiZEntNSlFega0mPG_67F",
-          "name": "אפיון | Fill It | מייל | הטירוף התחיל – 18% על כל האתר | 7",
-          "mime": "text/html",
-          "modified": "2026-11-04T17:05:45.247Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1H-8CUW9x0KLrL_5Bjxi8kAoBINNu8O0D",
-          "name": "אפיון | Fill It | מייל | המוצר שכדאי שיחכה לך בסל לפני ShoppingIL | 7",
-          "mime": "text/html",
-          "modified": "2026-10-30T17:11:22.650Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1EZDssKwIlA9ga4vsUxevEl4gkr_Mge4_",
-          "name": "אפיון | Fill It | מייל | זה הזמן להזמין – 18% על כל האתר | 7",
-          "mime": "text/html",
-          "modified": "2026-11-05T17:14:39.404Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1vxW1zRbe9fEec1U1e_M6flOuuRrkM0Mj",
-          "name": "אפיון | Fill It | מייל | כבר שמת את BEAUTY בסל ל-Shopping IL | 6.5",
-          "mime": "text/html",
-          "modified": "2026-11-01T17:06:11.418Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1CJWsfEsw4MtdYlZbzAYblsCJZ77m2MOu",
-          "name": "אפיון | Fill It | מייל | נמאס לך מתוספים שלא עובדים | 6",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:25:59.312Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1KwQt-61304IEXXLvtStntAmo5ubqM5UA",
-          "name": "אפיון | Fill It | מייל | עברנו לשעון חורף | 6",
-          "mime": "text/html",
-          "modified": "2026-10-25T17:09:31.479Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1hpts5Lo4Ox5XGIFDtRdi1Sh_J3om-oqQ",
-          "name": "אפיון | Fill It | מייל | פחות במחיר, יותר בפורמולה | 7",
-          "mime": "text/html",
-          "modified": "2026-11-06T17:08:13.118Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "140tLxXzuRukOLJJQhxCmO8HQS91Exkg_",
-          "name": "אפיון | Fill It | מייל | רגע לפני טירוף ShoppingIL – ZEN | 7",
-          "mime": "text/html",
-          "modified": "2026-11-02T17:05:52.740Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "11tfUWuIXy5cmjZ7RHzbEEtJuDjFT4szV",
-          "name": "צילום מסך | Fill It | מייל | הבריאות שלך היא השקעה.png",
-          "mime": "image/png",
-          "modified": "2026-10-07T13:37:29.180Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
           "id": "1lnvLl35g8OntfOfFmvHZgDb4tfNy8xWL",
           "name": "אפיון | Mayven | מייל | Coming Soon – 13.10.2026 | 5.5",
           "mime": "text/html",
@@ -1620,6 +1445,195 @@
           "mime": "text/html",
           "modified": "2026-11-11T17:12:58.919Z",
           "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1PT7eMwWlJ1FCrAnshLF0_A49IAIKsLP2",
+          "name": "[גרסה ישנה] אפיון | Fill It | מייל | הבריאות שלך היא השקעה | 6.5.html",
+          "mime": "text/html",
+          "modified": "2026-10-07T13:33:36.626Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1m8K3lJGUkS235Tt7ImvzN_rKRa3bsTET",
+          "name": "אפיון | Fill It | מייל | 3 סיבות למה דווקא Fillit | 7.5",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:25:54.303Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "16LvoNyt07kEWYLxxYlNLxahDLB7s2Pzf",
+          "name": "אפיון | Fill It | מייל | A New Era Is Coming | 6",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:26:03.194Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1pJ36OEsR6eFAkDDy-adjrRmLjlkPBUq0",
+          "name": "אפיון | Fill It | מייל | GLOW IT במתנה ברכישה | 7",
+          "mime": "text/html",
+          "modified": "2026-10-21T16:08:37.426Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1DOm1MSDqBeqZT55H4L1igEb2ecHvDUOK",
+          "name": "אפיון | Fill It | מייל | GLOW IT חוזרת למלאי | 6.5",
+          "mime": "text/html",
+          "modified": "2026-10-20T07:54:15.130Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1HDIrWYMQnh3BkaMAXIIXT45NPGSzDUYL",
+          "name": "אפיון | Fill It | מייל | איזה מוצר הכי מתאים לך | 6.5",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:24:09.784Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1_9Lb8tsi9gYjeYfcIKZHpCADFs21zPo5",
+          "name": "אפיון | Fill It | מייל | איך Fillit Exclusive עובד | 5.5",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:25:54.310Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "18nDfLmWdv2WUtcDUr9rP8aZ89GB69er3",
+          "name": "אפיון | Fill It | מייל | את בטוחה שאת בוחרת נכון לעצמך | 6.5",
+          "mime": "text/html",
+          "modified": "2026-10-28T17:14:59.970Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1yGduCYgQ3HfTBKiSLHiF9bXFJRO_xZMa",
+          "name": "אפיון | Fill It | מייל | ברוכה הבאה ו-300 נקודות מתנה | 7.html",
+          "mime": "text/html",
+          "modified": "2026-10-21T06:18:22.401Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "12A5Ys0g9grsBR8BmMROu9h6bKB_n7qJP",
+          "name": "אפיון | Fill It | מייל | הבטן נפוחה יותר בערב 4 הרגלים | 7",
+          "mime": "text/html",
+          "modified": "2026-11-15T17:09:48.724Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1aqh8uIsvobmbXwRZeSae7hA-trKr2DVV",
+          "name": "אפיון | Fill It | מייל | הבריאות שלך היא השקעה | 6.5",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:25:43.612Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1kVYhnaA2Fj4MiZEntNSlFega0mPG_67F",
+          "name": "אפיון | Fill It | מייל | הטירוף התחיל – 18% על כל האתר | 7",
+          "mime": "text/html",
+          "modified": "2026-11-04T17:05:45.247Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1H-8CUW9x0KLrL_5Bjxi8kAoBINNu8O0D",
+          "name": "אפיון | Fill It | מייל | המוצר שכדאי שיחכה לך בסל לפני ShoppingIL | 7",
+          "mime": "text/html",
+          "modified": "2026-10-30T17:11:22.650Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1gRmlZSbbcvLMeUqEgQqXop7mP4N8o9uw",
+          "name": "אפיון | Fill It | מייל | הצצה אל מאחורי הקלעים אצלנו ב-Fill it | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-17T17:07:13.919Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1EZDssKwIlA9ga4vsUxevEl4gkr_Mge4_",
+          "name": "אפיון | Fill It | מייל | זה הזמן להזמין – 18% על כל האתר | 7",
+          "mime": "text/html",
+          "modified": "2026-11-05T17:14:39.404Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1vxW1zRbe9fEec1U1e_M6flOuuRrkM0Mj",
+          "name": "אפיון | Fill It | מייל | כבר שמת את BEAUTY בסל ל-Shopping IL | 6.5",
+          "mime": "text/html",
+          "modified": "2026-11-01T17:06:11.418Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1CJWsfEsw4MtdYlZbzAYblsCJZ77m2MOu",
+          "name": "אפיון | Fill It | מייל | נמאס לך מתוספים שלא עובדים | 6",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:25:59.312Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1KwQt-61304IEXXLvtStntAmo5ubqM5UA",
+          "name": "אפיון | Fill It | מייל | עברנו לשעון חורף | 6",
+          "mime": "text/html",
+          "modified": "2026-10-25T17:09:31.479Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1hpts5Lo4Ox5XGIFDtRdi1Sh_J3om-oqQ",
+          "name": "אפיון | Fill It | מייל | פחות במחיר, יותר בפורמולה | 7",
+          "mime": "text/html",
+          "modified": "2026-11-06T17:08:13.118Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "140tLxXzuRukOLJJQhxCmO8HQS91Exkg_",
+          "name": "אפיון | Fill It | מייל | רגע לפני טירוף ShoppingIL – ZEN | 7",
+          "mime": "text/html",
+          "modified": "2026-11-02T17:05:52.740Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "11tfUWuIXy5cmjZ7RHzbEEtJuDjFT4szV",
+          "name": "צילום מסך | Fill It | מייל | הבריאות שלך היא השקעה.png",
+          "mime": "image/png",
+          "modified": "2026-10-07T13:37:29.180Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "177Bu3Nssw1kUj3qZyVIkYnu3u7mHBuWh",
+          "name": "[גרסה ישנה] אפיון | EcoSupp | מייל | איך הגוף עובד בזמן השינה | 8.html",
+          "mime": "text/html",
+          "modified": "2026-10-07T13:33:29.742Z",
+          "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
+        },
+        {
+          "id": "1ziouZ0FI4GqzZHvOuAKg3MfeCp6dayE4",
+          "name": "אפיון | EcoSupp | מייל | אוכלים בריא ולמה בכל זאת תוספים | 6.5",
+          "mime": "text/html",
+          "modified": "2026-10-21T16:08:43.903Z",
+          "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
+        },
+        {
+          "id": "1SSkmAMJQk807U4p0dSiwfZCX6xYPWMGT",
+          "name": "אפיון | EcoSupp | מייל | איך הגוף עובד בזמן השינה | 8.html",
+          "mime": "text/html",
+          "modified": "2026-10-21T06:18:29.091Z",
+          "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
+        },
+        {
+          "id": "1w4cWz0egIQC8UjeCpH5vNa80-1ae0Fyf",
+          "name": "אפיון | EcoSupp | מייל | ברוכים הבאים והצטרפות ל-ecoclub | 7",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:25:49.922Z",
+          "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
+        },
+        {
+          "id": "19rHcr-SaaJghqn0EMXVbjwQSGQqb4bB4",
+          "name": "אפיון | EcoSupp | מייל | האומגה 3 שמגיעה ישירות מהמקור | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-17T17:07:15.089Z",
+          "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
+        },
+        {
+          "id": "1Mkor0cmoiFJHNZSKqU9wXiuWrt3_x08t",
+          "name": "צילום מסך | EcoSupp | מייל | איך הגוף עובד בזמן השינה.png",
+          "mime": "image/png",
+          "modified": "2026-10-07T13:37:26.065Z",
+          "folder": "1y77XQdIhyBfgQLzORbQB5v6-svyffDOr"
         }
       ]
     }

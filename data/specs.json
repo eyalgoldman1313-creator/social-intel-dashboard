@@ -753,6 +753,32 @@
   },
   "mailers": [
     {
+      "brand": "EcoSupp",
+      "title": "האומגה 3 שמגיעה ישירות מהמקור - עם הטבה מיוחדת (פרסומת) (17.11)",
+      "file": "mailer-ecosupp-2026-11-17.html",
+      "score": "7.5",
+      "date": "17.11.2026",
+      "time": "19:00",
+      "img": "/mailers/mailer-ecosupp-2026-11-17.webp",
+      "offer": "קוד OMEGA10: 10% הנחה על כל המוצרים + משלוח חינם עד הבית, עד 30.11.26.",
+      "hook": "באנר \"חזרה למלאי!\" + בקבוק אומגה 3.",
+      "cta": "CTA עיקרי להטבה, CTA למנוי, CTA לחנות",
+      "drive_id": "19rHcr-SaaJghqn0EMXVbjwQSGQqb4bB4"
+    },
+    {
+      "brand": "Fill It",
+      "title": "הצצה אל מאחורי הקלעים אצלנו ב-Fill it >> | פרסומת (17.11)",
+      "file": "mailer-fillit-2026-11-17.html",
+      "score": "7.5",
+      "date": "17.11.2026",
+      "time": "12:06",
+      "img": "/mailers/mailer-fillit-2026-11-17.webp",
+      "offer": "אין הנחה, קוד או תאריך להצעה.",
+      "hook": "שלוש תמונות חדשות: Nsh7FX08",
+      "cta": "שלושה CTA ברורים בשלבים שונים",
+      "drive_id": "1gRmlZSbbcvLMeUqEgQqXop7mP4N8o9uw"
+    },
+    {
       "brand": "Mayven",
       "title": "ההנחה הגדולה של השנה מתחילה עכשיו 💫 | פרסומת (16.11)",
       "file": "mailer-mayven-2026-11-16.html",
