@@ -753,6 +753,19 @@
   },
   "mailers": [
     {
+      "brand": "Smiley",
+      "title": "דחוף איתן ה-SmileyFresh בחינם בטעות (18.11)",
+      "file": "mailer-smiley-2026-11-18.html",
+      "score": "6",
+      "date": "18.11.2026",
+      "time": "19:06",
+      "img": "/mailers/mailer-smiley-2026-11-18.webp",
+      "offer": "ההצעה המוצגת: SmileyFresh «בחינם», בלי קוד, בלי מחיר בשקלים, בלי אזכו…",
+      "hook": "מכתב טקסט בלבד.",
+      "cta": "קישור אחד למוצר + קישור הסרה.",
+      "drive_id": "1CY3M44p5oMYX9oLgEugksmP0MZGoL8PC"
+    },
+    {
       "brand": "EcoSupp",
       "title": "האומגה 3 שמגיעה ישירות מהמקור - עם הטבה מיוחדת (פרסומת) (17.11)",
       "file": "mailer-ecosupp-2026-11-17.html",
