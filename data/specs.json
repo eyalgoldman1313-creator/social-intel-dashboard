@@ -753,6 +753,45 @@
   },
   "mailers": [
     {
+      "brand": "By Harmony",
+      "title": "הבלאק פריידיי שלנו התחיל היום 🖤 (פרסומת) (19.11)",
+      "file": "mailer-byharmony-2026-11-19.html",
+      "score": "7.5",
+      "date": "19.11.2026",
+      "time": "11:13",
+      "img": "/mailers/mailer-byharmony-2026-11-19.webp",
+      "offer": "25% הנחה על מנוי שנשארת לכל החיים, בלי קוד, עד 2.12 ב-23:59.",
+      "hook": "כל תמונות התוכן (כולל ספירה לאחור) מתארחות ב-track.by-harmony.co.il ו…",
+      "cta": "באנרים ומוצרים מקושרים דרך שרת המעקב (לא נפתחו).",
+      "drive_id": "1X21mM_IQJfoPn7Iw27_lR52civInxEb7"
+    },
+    {
+      "brand": "Fill It",
+      "title": "שמרי את התאריך: ההטבה הכי גדולה שהייתה כאן >> | פרסומת (19.11)",
+      "file": "mailer-fillit-2026-11-19.html",
+      "score": "7.5",
+      "date": "19.11.2026",
+      "time": "10:30",
+      "img": "/mailers/mailer-fillit-2026-11-19.webp",
+      "offer": "אין הנחה, קוד או פירוט הטבה.",
+      "hook": "תמונה אחת חדשה, 9vbFQuPG.png, על רקע כהה עם בקבוקים.",
+      "cta": "שני CTA זהים",
+      "drive_id": "1iTpxcaYzZKNUGA9s2-7sNDjV77g0Jtnh"
+    },
+    {
+      "brand": "Mayven",
+      "title": "ימים אחרונים לסייל 🔥🖤20% הנחה + מתנה מסתורית | פרסומת (19.11)",
+      "file": "mailer-mayven-2026-11-19.html",
+      "score": "7.5",
+      "date": "19.11.2026",
+      "time": "10:15",
+      "img": "/mailers/mailer-mayven-2026-11-19.webp",
+      "offer": "אותו תוקף כמו ב-16.11: 20% על כל האתר + מתנה מסתורית בקנייה מעל 199₪…",
+      "hook": "תג Purple November חזר (ב-16.11 הוחלף בתג 20% OFF).",
+      "cta": "CTA חוזרים",
+      "drive_id": "1dPeVbuNBuB49T0Z1pFxYxs_BWkhkpCpa"
+    },
+    {
       "brand": "Smiley",
       "title": "דחוף איתן ה-SmileyFresh בחינם בטעות (18.11)",
       "file": "mailer-smiley-2026-11-18.html",

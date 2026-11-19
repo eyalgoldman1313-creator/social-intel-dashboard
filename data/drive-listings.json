@@ -1,6 +1,6 @@
 {
   "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
-  "fetchedAt": "2026-11-18T19:14:47+02:00",
+  "fetchedAt": "2026-11-19T19:16:10+02:00",
   "kinds": {
     "videos": {
       "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1083,32 +1083,11 @@
           "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
         },
         {
-          "id": "1APcuJz_4A7NSQNbxveflrHYjZeqkHqv7",
-          "name": "אפיון | By Harmony | מייל | ממחר מרוויחים על ההתמדה | 7",
-          "mime": "text/html",
-          "modified": "2026-11-03T16:03:11.000Z",
-          "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
-        },
-        {
-          "id": "1cL-bN89xjKekB3Zi2tPG3ZaDD08t2JQI",
-          "name": "אפיון | By Harmony | מייל | 50 מטבעות מחכים באפליקציה | 7.5",
-          "mime": "text/html",
-          "modified": "2026-11-04T11:21:31.000Z",
-          "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
-        },
-        {
           "id": "1BL8JCGGDl9RqN6_HLmX9yIkRU7D4aTl8",
           "name": "אפיון | Mycospring | מייל | ארבע תמציות, שגרה אחת | 7",
           "mime": "text/html",
           "modified": "2026-11-04T16:32:34.000Z",
           "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
-        },
-        {
-          "id": "147HDNT4RXvcw6Bkt6DyCwLmnpvR4P2aE",
-          "name": "אפיון | By Harmony | מייל | ראיתם כבר? 50 מטבעות מחכים | 7",
-          "mime": "text/html",
-          "modified": "2026-11-05T09:25:27.000Z",
-          "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
         },
         {
           "id": "1N2yhxsgILMMzpZqDlBNY051ORyx9wSkn",
@@ -1200,279 +1179,6 @@
           "mime": "text/html",
           "modified": "2026-10-20T16:13:18.825Z",
           "folder": "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP"
-        },
-        {
-          "id": "1lnvLl35g8OntfOfFmvHZgDb4tfNy8xWL",
-          "name": "אפיון | Mayven | מייל | Coming Soon – 13.10.2026 | 5.5",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:26:07.784Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1SqLEID7ja7dKGpGN-XCm_CTWe9JAtLrD",
-          "name": "אפיון | Mayven | מייל | Play It Green – משקה הסופר-פוד | 7.5",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:24:10.787Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1DhBTxd_rIw05enwKBuljmGwHghmFTmlr",
-          "name": "אפיון | Mayven | מייל | אל תפספסי את הגישה המוקדמת | 7",
-          "mime": "text/html",
-          "modified": "2026-11-09T17:13:38.268Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1QQlt9yTrYZFJqK1E44ofB1SFZsaJw4E_",
-          "name": "אפיון | Mayven | מייל | בואי להפוך 1,200 נקודות לשופינג באתר | 7.5",
-          "mime": "text/html",
-          "modified": "2026-11-15T17:09:49.748Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "11vEy1tIJ2N6HDNqOK4fvIez-J4eum12v",
-          "name": "אפיון | Mayven | מייל | בוחרת 3 הרביעי עלינו מתנה | 7.5",
-          "mime": "text/html",
-          "modified": "2026-11-14T17:08:38.656Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1u6NLv4A4wyd8D98_cDTxZbagjW2qldP3",
-          "name": "אפיון | Mayven | מייל | בלאק פריידי סייל מתחיל עכשיו | 8",
-          "mime": "text/html",
-          "modified": "2026-11-10T17:14:06.606Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1qeRqPqJWK1hikCEJ_pBGpd4CtXuifalI",
-          "name": "אפיון | Mayven | מייל | גרדי וגלי במה זכית | 6",
-          "mime": "text/html",
-          "modified": "2026-10-20T16:13:20.364Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1D8fSWlFNm1eefJVgV4nuDF2gH2xmGuuu",
-          "name": "אפיון | Mayven | מייל | ההנחה הגדולה של השנה מתחילה עכשיו | 7.5",
-          "mime": "text/html",
-          "modified": "2026-11-16T17:05:58.889Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1oP1AvL_DwJow0YBw9c8pMk7Fjs8ChieE",
-          "name": "אפיון | Mayven | מייל | היום בחצות זה נגמר כפל נקודות + מתנה | 7",
-          "mime": "text/html",
-          "modified": "2026-11-13T17:12:47.451Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1GvlFVkA446fW7gm2vVHGYV2PZyBz7NJp",
-          "name": "אפיון | Mayven | מייל | הפאוץ' במתנה | 7",
-          "mime": "text/html",
-          "modified": "2026-11-03T17:06:53.189Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1wlj2YW2s2AzKDDE0Vqd-FyjI3vOfxqam",
-          "name": "אפיון | Mayven | מייל | הפעלת חשבון עם 10% הנחה | 6",
-          "mime": "text/html",
-          "modified": "2026-10-20T16:13:22.908Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1HFWUu711PknT3uEG5aUkDqCZdO4buRZa",
-          "name": "אפיון | Mayven | מייל | הקולגן הנוזלי חזר למלאי | 7",
-          "mime": "text/html",
-          "modified": "2026-11-02T17:05:54.455Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1fLbI5qfnZPCM9Ase4ZtYbFMbSWuTW-_W",
-          "name": "אפיון | Mayven | מייל | עדכון חשוב לגבי בלאק פריידי | 6.5",
-          "mime": "text/html",
-          "modified": "2026-11-08T17:08:09.625Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1i0iDA0OXiOMdzXv_C1JhJdRrvJtp_a5O",
-          "name": "אפיון | Mayven | מייל | פספסת בפעם הקודמת | 6",
-          "mime": "text/html",
-          "modified": "2026-10-26T17:10:51.378Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1DIqgpCAstEYxy2JcTjNsTMWqJsoLNgnJ",
-          "name": "אפיון | Mayven | מייל | קחי 25% הנחה לפני כולן - בחצות זה נגמר | 8",
-          "mime": "text/html",
-          "modified": "2026-11-12T17:09:20.772Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1jxHnFtw3KqWWovLbeILjyGdVFMs8_vjc",
-          "name": "אפיון | Mayven | מייל | שעות אחרונות ל-15% הנחה | 7",
-          "mime": "text/html",
-          "modified": "2026-10-15T16:12:58.036Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1lJnBymp7FlQsmvhVBoiqD_MSbh-i4IRs",
-          "name": "אפיון | Mayven | מייל | תבחרי היום בעצמך – 18% | 6.5",
-          "mime": "text/html",
-          "modified": "2026-10-27T17:09:08.740Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1UW1iTPwbWBPSAjkqMVXjSroe31rgMPR0",
-          "name": "אפיון | Mayven | מייל | תזכורת 25% הנחה על כל האתר | 7.5",
-          "mime": "text/html",
-          "modified": "2026-11-11T17:12:58.919Z",
-          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
-        },
-        {
-          "id": "1PT7eMwWlJ1FCrAnshLF0_A49IAIKsLP2",
-          "name": "[גרסה ישנה] אפיון | Fill It | מייל | הבריאות שלך היא השקעה | 6.5.html",
-          "mime": "text/html",
-          "modified": "2026-10-07T13:33:36.626Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1m8K3lJGUkS235Tt7ImvzN_rKRa3bsTET",
-          "name": "אפיון | Fill It | מייל | 3 סיבות למה דווקא Fillit | 7.5",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:25:54.303Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "16LvoNyt07kEWYLxxYlNLxahDLB7s2Pzf",
-          "name": "אפיון | Fill It | מייל | A New Era Is Coming | 6",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:26:03.194Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1pJ36OEsR6eFAkDDy-adjrRmLjlkPBUq0",
-          "name": "אפיון | Fill It | מייל | GLOW IT במתנה ברכישה | 7",
-          "mime": "text/html",
-          "modified": "2026-10-21T16:08:37.426Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1DOm1MSDqBeqZT55H4L1igEb2ecHvDUOK",
-          "name": "אפיון | Fill It | מייל | GLOW IT חוזרת למלאי | 6.5",
-          "mime": "text/html",
-          "modified": "2026-10-20T07:54:15.130Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1HDIrWYMQnh3BkaMAXIIXT45NPGSzDUYL",
-          "name": "אפיון | Fill It | מייל | איזה מוצר הכי מתאים לך | 6.5",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:24:09.784Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1_9Lb8tsi9gYjeYfcIKZHpCADFs21zPo5",
-          "name": "אפיון | Fill It | מייל | איך Fillit Exclusive עובד | 5.5",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:25:54.310Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "18nDfLmWdv2WUtcDUr9rP8aZ89GB69er3",
-          "name": "אפיון | Fill It | מייל | את בטוחה שאת בוחרת נכון לעצמך | 6.5",
-          "mime": "text/html",
-          "modified": "2026-10-28T17:14:59.970Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1yGduCYgQ3HfTBKiSLHiF9bXFJRO_xZMa",
-          "name": "אפיון | Fill It | מייל | ברוכה הבאה ו-300 נקודות מתנה | 7.html",
-          "mime": "text/html",
-          "modified": "2026-10-21T06:18:22.401Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "12A5Ys0g9grsBR8BmMROu9h6bKB_n7qJP",
-          "name": "אפיון | Fill It | מייל | הבטן נפוחה יותר בערב 4 הרגלים | 7",
-          "mime": "text/html",
-          "modified": "2026-11-15T17:09:48.724Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1aqh8uIsvobmbXwRZeSae7hA-trKr2DVV",
-          "name": "אפיון | Fill It | מייל | הבריאות שלך היא השקעה | 6.5",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:25:43.612Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1kVYhnaA2Fj4MiZEntNSlFega0mPG_67F",
-          "name": "אפיון | Fill It | מייל | הטירוף התחיל – 18% על כל האתר | 7",
-          "mime": "text/html",
-          "modified": "2026-11-04T17:05:45.247Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1H-8CUW9x0KLrL_5Bjxi8kAoBINNu8O0D",
-          "name": "אפיון | Fill It | מייל | המוצר שכדאי שיחכה לך בסל לפני ShoppingIL | 7",
-          "mime": "text/html",
-          "modified": "2026-10-30T17:11:22.650Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1gRmlZSbbcvLMeUqEgQqXop7mP4N8o9uw",
-          "name": "אפיון | Fill It | מייל | הצצה אל מאחורי הקלעים אצלנו ב-Fill it | 7.5",
-          "mime": "text/html",
-          "modified": "2026-11-17T17:07:13.919Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1EZDssKwIlA9ga4vsUxevEl4gkr_Mge4_",
-          "name": "אפיון | Fill It | מייל | זה הזמן להזמין – 18% על כל האתר | 7",
-          "mime": "text/html",
-          "modified": "2026-11-05T17:14:39.404Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1vxW1zRbe9fEec1U1e_M6flOuuRrkM0Mj",
-          "name": "אפיון | Fill It | מייל | כבר שמת את BEAUTY בסל ל-Shopping IL | 6.5",
-          "mime": "text/html",
-          "modified": "2026-11-01T17:06:11.418Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1CJWsfEsw4MtdYlZbzAYblsCJZ77m2MOu",
-          "name": "אפיון | Fill It | מייל | נמאס לך מתוספים שלא עובדים | 6",
-          "mime": "text/html",
-          "modified": "2026-10-13T16:25:59.312Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1KwQt-61304IEXXLvtStntAmo5ubqM5UA",
-          "name": "אפיון | Fill It | מייל | עברנו לשעון חורף | 6",
-          "mime": "text/html",
-          "modified": "2026-10-25T17:09:31.479Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "1hpts5Lo4Ox5XGIFDtRdi1Sh_J3om-oqQ",
-          "name": "אפיון | Fill It | מייל | פחות במחיר, יותר בפורמולה | 7",
-          "mime": "text/html",
-          "modified": "2026-11-06T17:08:13.118Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "140tLxXzuRukOLJJQhxCmO8HQS91Exkg_",
-          "name": "אפיון | Fill It | מייל | רגע לפני טירוף ShoppingIL – ZEN | 7",
-          "mime": "text/html",
-          "modified": "2026-11-02T17:05:52.740Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
-        },
-        {
-          "id": "11tfUWuIXy5cmjZ7RHzbEEtJuDjFT4szV",
-          "name": "צילום מסך | Fill It | מייל | הבריאות שלך היא השקעה.png",
-          "mime": "image/png",
-          "modified": "2026-10-07T13:37:29.180Z",
-          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
         },
         {
           "id": "177Bu3Nssw1kUj3qZyVIkYnu3u7mHBuWh",
@@ -1641,6 +1347,321 @@
           "mime": "text/html",
           "modified": "2026-11-07T17:06:26.292Z",
           "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+        },
+        {
+          "id": "1cL-bN89xjKekB3Zi2tPG3ZaDD08t2JQI",
+          "name": "אפיון | By Harmony | מייל | 50 מטבעות מחכים באפליקציה | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-04T17:05:48.705Z",
+          "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
+        },
+        {
+          "id": "1X21mM_IQJfoPn7Iw27_lR52civInxEb7",
+          "name": "אפיון | By Harmony | מייל | הבלאק פריידיי שלנו התחיל היום | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-19T17:15:39.660Z",
+          "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
+        },
+        {
+          "id": "1APcuJz_4A7NSQNbxveflrHYjZeqkHqv7",
+          "name": "אפיון | By Harmony | מייל | ממחר מרוויחים על ההתמדה | 7",
+          "mime": "text/html",
+          "modified": "2026-11-03T17:06:51.107Z",
+          "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
+        },
+        {
+          "id": "147HDNT4RXvcw6Bkt6DyCwLmnpvR4P2aE",
+          "name": "אפיון | By Harmony | מייל | ראיתם כבר? 50 מטבעות מחכים | 7",
+          "mime": "text/html",
+          "modified": "2026-11-05T17:14:36.273Z",
+          "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
+        },
+        {
+          "id": "1PT7eMwWlJ1FCrAnshLF0_A49IAIKsLP2",
+          "name": "[גרסה ישנה] אפיון | Fill It | מייל | הבריאות שלך היא השקעה | 6.5.html",
+          "mime": "text/html",
+          "modified": "2026-10-07T13:33:36.626Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1m8K3lJGUkS235Tt7ImvzN_rKRa3bsTET",
+          "name": "אפיון | Fill It | מייל | 3 סיבות למה דווקא Fillit | 7.5",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:25:54.303Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "16LvoNyt07kEWYLxxYlNLxahDLB7s2Pzf",
+          "name": "אפיון | Fill It | מייל | A New Era Is Coming | 6",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:26:03.194Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1pJ36OEsR6eFAkDDy-adjrRmLjlkPBUq0",
+          "name": "אפיון | Fill It | מייל | GLOW IT במתנה ברכישה | 7",
+          "mime": "text/html",
+          "modified": "2026-10-21T16:08:37.426Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1DOm1MSDqBeqZT55H4L1igEb2ecHvDUOK",
+          "name": "אפיון | Fill It | מייל | GLOW IT חוזרת למלאי | 6.5",
+          "mime": "text/html",
+          "modified": "2026-10-20T07:54:15.130Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1HDIrWYMQnh3BkaMAXIIXT45NPGSzDUYL",
+          "name": "אפיון | Fill It | מייל | איזה מוצר הכי מתאים לך | 6.5",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:24:09.784Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1_9Lb8tsi9gYjeYfcIKZHpCADFs21zPo5",
+          "name": "אפיון | Fill It | מייל | איך Fillit Exclusive עובד | 5.5",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:25:54.310Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "18nDfLmWdv2WUtcDUr9rP8aZ89GB69er3",
+          "name": "אפיון | Fill It | מייל | את בטוחה שאת בוחרת נכון לעצמך | 6.5",
+          "mime": "text/html",
+          "modified": "2026-10-28T17:14:59.970Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1yGduCYgQ3HfTBKiSLHiF9bXFJRO_xZMa",
+          "name": "אפיון | Fill It | מייל | ברוכה הבאה ו-300 נקודות מתנה | 7.html",
+          "mime": "text/html",
+          "modified": "2026-10-21T06:18:22.401Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "12A5Ys0g9grsBR8BmMROu9h6bKB_n7qJP",
+          "name": "אפיון | Fill It | מייל | הבטן נפוחה יותר בערב 4 הרגלים | 7",
+          "mime": "text/html",
+          "modified": "2026-11-15T17:09:48.724Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1aqh8uIsvobmbXwRZeSae7hA-trKr2DVV",
+          "name": "אפיון | Fill It | מייל | הבריאות שלך היא השקעה | 6.5",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:25:43.612Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1kVYhnaA2Fj4MiZEntNSlFega0mPG_67F",
+          "name": "אפיון | Fill It | מייל | הטירוף התחיל – 18% על כל האתר | 7",
+          "mime": "text/html",
+          "modified": "2026-11-04T17:05:45.247Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1H-8CUW9x0KLrL_5Bjxi8kAoBINNu8O0D",
+          "name": "אפיון | Fill It | מייל | המוצר שכדאי שיחכה לך בסל לפני ShoppingIL | 7",
+          "mime": "text/html",
+          "modified": "2026-10-30T17:11:22.650Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1gRmlZSbbcvLMeUqEgQqXop7mP4N8o9uw",
+          "name": "אפיון | Fill It | מייל | הצצה אל מאחורי הקלעים אצלנו ב-Fill it | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-17T17:07:13.919Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1EZDssKwIlA9ga4vsUxevEl4gkr_Mge4_",
+          "name": "אפיון | Fill It | מייל | זה הזמן להזמין – 18% על כל האתר | 7",
+          "mime": "text/html",
+          "modified": "2026-11-05T17:14:39.404Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1vxW1zRbe9fEec1U1e_M6flOuuRrkM0Mj",
+          "name": "אפיון | Fill It | מייל | כבר שמת את BEAUTY בסל ל-Shopping IL | 6.5",
+          "mime": "text/html",
+          "modified": "2026-11-01T17:06:11.418Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1CJWsfEsw4MtdYlZbzAYblsCJZ77m2MOu",
+          "name": "אפיון | Fill It | מייל | נמאס לך מתוספים שלא עובדים | 6",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:25:59.312Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1KwQt-61304IEXXLvtStntAmo5ubqM5UA",
+          "name": "אפיון | Fill It | מייל | עברנו לשעון חורף | 6",
+          "mime": "text/html",
+          "modified": "2026-10-25T17:09:31.479Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1hpts5Lo4Ox5XGIFDtRdi1Sh_J3om-oqQ",
+          "name": "אפיון | Fill It | מייל | פחות במחיר, יותר בפורמולה | 7",
+          "mime": "text/html",
+          "modified": "2026-11-06T17:08:13.118Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "140tLxXzuRukOLJJQhxCmO8HQS91Exkg_",
+          "name": "אפיון | Fill It | מייל | רגע לפני טירוף ShoppingIL – ZEN | 7",
+          "mime": "text/html",
+          "modified": "2026-11-02T17:05:52.740Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1iTpxcaYzZKNUGA9s2-7sNDjV77g0Jtnh",
+          "name": "אפיון | Fill It | מייל | שמרי את התאריך ההטבה הכי גדולה שהייתה כאן | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-19T17:15:41.939Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "11tfUWuIXy5cmjZ7RHzbEEtJuDjFT4szV",
+          "name": "צילום מסך | Fill It | מייל | הבריאות שלך היא השקעה.png",
+          "mime": "image/png",
+          "modified": "2026-10-07T13:37:29.180Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1lnvLl35g8OntfOfFmvHZgDb4tfNy8xWL",
+          "name": "אפיון | Mayven | מייל | Coming Soon – 13.10.2026 | 5.5",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:26:07.784Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1SqLEID7ja7dKGpGN-XCm_CTWe9JAtLrD",
+          "name": "אפיון | Mayven | מייל | Play It Green – משקה הסופר-פוד | 7.5",
+          "mime": "text/html",
+          "modified": "2026-10-13T16:24:10.787Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1DhBTxd_rIw05enwKBuljmGwHghmFTmlr",
+          "name": "אפיון | Mayven | מייל | אל תפספסי את הגישה המוקדמת | 7",
+          "mime": "text/html",
+          "modified": "2026-11-09T17:13:38.268Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1QQlt9yTrYZFJqK1E44ofB1SFZsaJw4E_",
+          "name": "אפיון | Mayven | מייל | בואי להפוך 1,200 נקודות לשופינג באתר | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-15T17:09:49.748Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "11vEy1tIJ2N6HDNqOK4fvIez-J4eum12v",
+          "name": "אפיון | Mayven | מייל | בוחרת 3 הרביעי עלינו מתנה | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-14T17:08:38.656Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1u6NLv4A4wyd8D98_cDTxZbagjW2qldP3",
+          "name": "אפיון | Mayven | מייל | בלאק פריידי סייל מתחיל עכשיו | 8",
+          "mime": "text/html",
+          "modified": "2026-11-10T17:14:06.606Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1qeRqPqJWK1hikCEJ_pBGpd4CtXuifalI",
+          "name": "אפיון | Mayven | מייל | גרדי וגלי במה זכית | 6",
+          "mime": "text/html",
+          "modified": "2026-10-20T16:13:20.364Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1D8fSWlFNm1eefJVgV4nuDF2gH2xmGuuu",
+          "name": "אפיון | Mayven | מייל | ההנחה הגדולה של השנה מתחילה עכשיו | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-16T17:05:58.889Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1oP1AvL_DwJow0YBw9c8pMk7Fjs8ChieE",
+          "name": "אפיון | Mayven | מייל | היום בחצות זה נגמר כפל נקודות + מתנה | 7",
+          "mime": "text/html",
+          "modified": "2026-11-13T17:12:47.451Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1GvlFVkA446fW7gm2vVHGYV2PZyBz7NJp",
+          "name": "אפיון | Mayven | מייל | הפאוץ' במתנה | 7",
+          "mime": "text/html",
+          "modified": "2026-11-03T17:06:53.189Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1wlj2YW2s2AzKDDE0Vqd-FyjI3vOfxqam",
+          "name": "אפיון | Mayven | מייל | הפעלת חשבון עם 10% הנחה | 6",
+          "mime": "text/html",
+          "modified": "2026-10-20T16:13:22.908Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1HFWUu711PknT3uEG5aUkDqCZdO4buRZa",
+          "name": "אפיון | Mayven | מייל | הקולגן הנוזלי חזר למלאי | 7",
+          "mime": "text/html",
+          "modified": "2026-11-02T17:05:54.455Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1dPeVbuNBuB49T0Z1pFxYxs_BWkhkpCpa",
+          "name": "אפיון | Mayven | מייל | ימים אחרונים לסייל 20% הנחה + מתנה מסתורית | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-19T17:15:43.553Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1fLbI5qfnZPCM9Ase4ZtYbFMbSWuTW-_W",
+          "name": "אפיון | Mayven | מייל | עדכון חשוב לגבי בלאק פריידי | 6.5",
+          "mime": "text/html",
+          "modified": "2026-11-08T17:08:09.625Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1i0iDA0OXiOMdzXv_C1JhJdRrvJtp_a5O",
+          "name": "אפיון | Mayven | מייל | פספסת בפעם הקודמת | 6",
+          "mime": "text/html",
+          "modified": "2026-10-26T17:10:51.378Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1DIqgpCAstEYxy2JcTjNsTMWqJsoLNgnJ",
+          "name": "אפיון | Mayven | מייל | קחי 25% הנחה לפני כולן - בחצות זה נגמר | 8",
+          "mime": "text/html",
+          "modified": "2026-11-12T17:09:20.772Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1jxHnFtw3KqWWovLbeILjyGdVFMs8_vjc",
+          "name": "אפיון | Mayven | מייל | שעות אחרונות ל-15% הנחה | 7",
+          "mime": "text/html",
+          "modified": "2026-10-15T16:12:58.036Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1lJnBymp7FlQsmvhVBoiqD_MSbh-i4IRs",
+          "name": "אפיון | Mayven | מייל | תבחרי היום בעצמך – 18% | 6.5",
+          "mime": "text/html",
+          "modified": "2026-10-27T17:09:08.740Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1UW1iTPwbWBPSAjkqMVXjSroe31rgMPR0",
+          "name": "אפיון | Mayven | מייל | תזכורת 25% הנחה על כל האתר | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-11T17:12:58.919Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
         }
       ]
     }
