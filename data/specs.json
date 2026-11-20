@@ -753,6 +753,19 @@
   },
   "mailers": [
     {
+      "brand": "Smiley",
+      "title": "למה אתם צוחקים עם יד על הפה? (19.11)",
+      "file": "mailer-smiley-2026-11-19.html",
+      "score": "7",
+      "date": "19.11.2026",
+      "time": "20:12",
+      "img": "/mailers/mailer-smiley-2026-11-19.webp",
+      "offer": "לפי alt האחרון: \"30 ימי ניסיון. מארז ההלבנה ב-30% הנחה ומשלוח חינם: 1…",
+      "hook": "שבעה בלוקי תמונה חדשים (kit-hand2-1911-01 עד 07), כולם ב-track.try-sm…",
+      "cta": "כל שבע התמונות מקושרות לאותו דף מארז",
+      "drive_id": "1VhAOSsRAkNMUVMMlNA938PpGpAhOXSPd"
+    },
+    {
       "brand": "By Harmony",
       "title": "הבלאק פריידיי שלנו התחיל היום 🖤 (פרסומת) (19.11)",
       "file": "mailer-byharmony-2026-11-19.html",
