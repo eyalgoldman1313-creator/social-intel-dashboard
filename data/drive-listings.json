@@ -1,6 +1,6 @@
 {
   "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
-  "fetchedAt": "2026-11-20T19:14:19+02:00",
+  "fetchedAt": "2026-11-22T19:12:47+02:00",
   "kinds": {
     "videos": {
       "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1669,6 +1669,27 @@
           "mime": "text/html",
           "modified": "2026-11-20T17:13:13.488Z",
           "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+        },
+        {
+          "id": "12U9DZ0nczJtSTYQXzQLkp6zvv2hKsCyR",
+          "name": "אפיון | Pups | מייל | חשוב! המבצע הכי גדול שלנו התחיל עכשיו | 8",
+          "mime": "text/html",
+          "modified": "2026-11-22T17:12:01.072Z",
+          "folder": "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP"
+        },
+        {
+          "id": "1hdIEV4JQzk_cw2y-QJT2xerfS5uTojyV",
+          "name": "אפיון | Fill It | מייל | , עוד יומיים. 3 דברים להכין עד אז | 7",
+          "mime": "text/html",
+          "modified": "2026-11-22T17:11:49.858Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "12KFIyoKSDew-vcyvicSM5ZZGQIgpRNda",
+          "name": "אפיון | Mayven | מייל | שעות אחרונות ליהנות מ - 20% הנחה + מתנה מסתורית | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-22T17:11:52.736Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
         }
       ]
     }

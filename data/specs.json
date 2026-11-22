@@ -753,6 +753,45 @@
   },
   "mailers": [
     {
+      "brand": "Pups",
+      "title": "חשוב! המבצע הכי גדול שלנו התחיל עכשיו 🖤 (22.11)",
+      "file": "mailer-pups-2026-11-22.html",
+      "score": "8",
+      "date": "22.11.2026",
+      "time": "10:41",
+      "img": "/mailers/mailer-pups-2026-11-22.webp",
+      "offer": "עד 50% הנחה במנוי מתחדש + 3 מתנות בכל הזמנה, בלי קוד (המחיר בדף המוצר…",
+      "hook": "12 תמונות תוכן חדשות (pups-bf-2211-s01 עד s12), כולל hero בפורמט gif,…",
+      "cta": "בלוקי המוצרים מקושרים לדפי המוצר",
+      "drive_id": "12U9DZ0nczJtSTYQXzQLkp6zvv2hKsCyR"
+    },
+    {
+      "brand": "Fill It",
+      "title": ", עוד יומיים. 3 דברים להכין עד אז >> | פרסומת (22.11)",
+      "file": "mailer-fillit-2026-11-22.html",
+      "score": "7",
+      "date": "22.11.2026",
+      "time": "10:30",
+      "img": "/mailers/mailer-fillit-2026-11-22.webp",
+      "offer": "אין הנחה, קוד או פירוט הטבה.",
+      "hook": "תמונה אחת חדשה, tqfTZ9uu.png (cdn.flashyapp.com).",
+      "cta": "שני CTA",
+      "drive_id": "1hdIEV4JQzk_cw2y-QJT2xerfS5uTojyV"
+    },
+    {
+      "brand": "Mayven",
+      "title": "שעות אחרונות ליהנות מ - 20% הנחה + מתנה מסתורית | פרסומת (22.11)",
+      "file": "mailer-mayven-2026-11-22.html",
+      "score": "7.5",
+      "date": "22.11.2026",
+      "time": "10:15",
+      "img": "/mailers/mailer-mayven-2026-11-22.webp",
+      "offer": "אותו תוקף כמו ב-16.11 ו-19.11: 20% + מתנה מסתורית בקנייה מעל 199₪ עד…",
+      "hook": "Hero חדש PINde1ka.png (שונה מ-7tqk93ih.jpg ב-16.11 ומ-IuIyt0ZM.png ב-…",
+      "cta": "CTA חוזרים",
+      "drive_id": "12KFIyoKSDew-vcyvicSM5ZZGQIgpRNda"
+    },
+    {
       "brand": "Smiley",
       "title": "למה אתם צוחקים עם יד על הפה? (19.11)",
       "file": "mailer-smiley-2026-11-19.html",
