@@ -753,6 +753,58 @@
   },
   "mailers": [
     {
+      "brand": "GOOM",
+      "title": "חיכיתי כל השנה לשלוח לך את המייל הזה 🖤 (23.11)",
+      "file": "mailer-goom-2026-11-23.html",
+      "score": "7.5",
+      "date": "23.11.2026",
+      "time": "11:16",
+      "img": "/mailers/mailer-goom-2026-11-23.webp",
+      "offer": "30% על כל האתר עם הקוד BLACK30, בלי תאריך סיום כתוב (רק «הזדמנות אחרו…",
+      "hook": "לוגו gAsmmAMO.png (כמו ב-8.11) ואייקוני רשת.",
+      "cta": "קישורים ללוגו, לאתר, ל-5 מוצרים, לרשתות ולהסרה, כולם דרך Flashy מלבד…",
+      "drive_id": "1EcMrVf_gsYN_FV8tFeqUNk_57odEdjEB"
+    },
+    {
+      "brand": "Mycospring",
+      "title": "יש לנו משימה. הפרטים עדיין מסווגים. 👀 (פרסומת) (23.11)",
+      "file": "mailer-mycospring-2026-11-23.html",
+      "score": "6.5",
+      "date": "23.11.2026",
+      "time": "10:46",
+      "img": "/mailers/mailer-mycospring-2026-11-23.webp",
+      "offer": "אין הנחה, קוד או פירוט הטבה.",
+      "hook": "לוגו LsKBbOOA.png (חוזר ממיילים קודמים) + שני באנרים חדשים בלי alt: j…",
+      "cta": "באנר וקישורי ניווט דרך Flashy",
+      "drive_id": "1arRY2Dj_jRXGipmHehGnpzvrSZ-J8tAf"
+    },
+    {
+      "brand": "Mayven",
+      "title": "המבצע היה אמור להיגמר. ואז ליטי התערבה…| פרסומת (23.11)",
+      "file": "mailer-mayven-2026-11-23.html",
+      "score": "7.5",
+      "date": "23.11.2026",
+      "time": "10:29",
+      "img": "/mailers/mailer-mayven-2026-11-23.webp",
+      "offer": "הארכה: אותם 20% + מתנה מסתורית בקנייה מעל 199₪ עד גמר המלאי, עכשיו עד…",
+      "hook": "Hero חדש FBdivvyW.png (שונה מ-7tqk93ih, IuIyt0ZM ו-PINde1ka): \"Don't…",
+      "cta": "CTA חוזרים",
+      "drive_id": "12St0Q7AzhuzAiHwA4HGHhtFZWu1_0dhd"
+    },
+    {
+      "brand": "Pups",
+      "title": "Re: ראיתם מה קורה לכלב בפה? 😳 (23.11)",
+      "file": "mailer-pups-2026-11-23.html",
+      "score": "7.5",
+      "date": "23.11.2026",
+      "time": "10:18",
+      "img": "/mailers/mailer-pups-2026-11-23.webp",
+      "offer": "אותם מחירי מנוי כמו ב-22.11 לאבקה הדנטלית (159 / 239 / 299₪ לשלושה מא…",
+      "hook": "שבע תמונות חדשות (pups-edu-2311-s01 עד s07) ועוד שתיים שחוזרות מ-22.1…",
+      "cta": "רוב הבלוקים לדף האבקה הדנטלית",
+      "drive_id": "1Yd3HOEBXpD-5FUWI__MkJCRH3f5b3OjT"
+    },
+    {
       "brand": "Pups",
       "title": "חשוב! המבצע הכי גדול שלנו התחיל עכשיו 🖤 (22.11)",
       "file": "mailer-pups-2026-11-22.html",
