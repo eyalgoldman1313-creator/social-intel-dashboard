@@ -753,6 +753,45 @@
   },
   "mailers": [
     {
+      "brand": "Fill It",
+      "title": "4 במחיר של פחות מ־3?! Black Friday Sale >> | פרסומת (24.11)",
+      "file": "mailer-fillit-2026-11-24.html",
+      "score": "7.5",
+      "date": "24.11.2026",
+      "time": "10:30",
+      "img": "/mailers/mailer-fillit-2026-11-24.webp",
+      "offer": "15% הנחה על כל האתר + צנצנת נוספת במתנה מהמוצר שאת אוהבת, במסגור «4 ב…",
+      "hook": "תמונה אחת ארוכה, oG5dCNJG.jpg, עם alt מלא: «הבטחנו וקיימנו: 15% הנחה…",
+      "cta": "בתוך התמונה: כפתור «למלא את העגלה >>».",
+      "drive_id": "1C1SmAqcItPKiZbNY37CzPgQZPF6GBH7H"
+    },
+    {
+      "brand": "Mycospring",
+      "title": "הודעה רשמית: מיקוספרינג יוצאת למבצע (פרסומת) (24.11)",
+      "file": "mailer-mycospring-2026-11-24.html",
+      "score": "7.5",
+      "date": "24.11.2026",
+      "time": "10:30",
+      "img": "/mailers/mailer-mycospring-2026-11-24.webp",
+      "offer": "בבאנר WgYAGVUz.png (alt ריק",
+      "hook": "לוגו LsKBbOOA.png (חוזר) + באנר fJTPgm6U.png בלי alt: חותמת TOP SECRE…",
+      "cta": "«קנו עכשיו» בכל צמד",
+      "drive_id": "1jANmXNrXPyatNv4sETiOnMgL064qBbki"
+    },
+    {
+      "brand": "Pups",
+      "title": "Fwd: לא יאומן מה עובר כל צנצנת לפני שהיא מגיעה אליכם (24.11)",
+      "file": "mailer-pups-2026-11-24.html",
+      "score": "7.5",
+      "date": "24.11.2026",
+      "time": "10:12",
+      "img": "/mailers/mailer-pups-2026-11-24.webp",
+      "offer": "אותה מעטפת מבצע כמו ב-15.11 ו-22.11: עד 50% הנחה + 3 מתנות בכל הזמנה,…",
+      "hook": "מכתב טקסטואלי בלבד, בלי לוגו ובלי באנרים",
+      "cta": "כפתור ירוק «לכל המוצרים».",
+      "drive_id": "1WH_YCWSxl_I87GwswpYN9kKpvZ-wDDuk"
+    },
+    {
       "brand": "GOOM",
       "title": "חיכיתי כל השנה לשלוח לך את המייל הזה 🖤 (23.11)",
       "file": "mailer-goom-2026-11-23.html",

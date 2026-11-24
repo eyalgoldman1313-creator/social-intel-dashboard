@@ -1,6 +1,6 @@
 {
   "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
-  "fetchedAt": "2026-11-23T19:15:24+02:00",
+  "fetchedAt": "2026-11-24T19:13:34+02:00",
   "kinds": {
     "videos": {
       "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1717,6 +1717,27 @@
           "name": "אפיון | Pups | מייל | Re: ראיתם מה קורה לכלב בפה? | 7.5",
           "mime": "text/html",
           "modified": "2026-11-23T17:15:02.688Z",
+          "folder": "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP"
+        },
+        {
+          "id": "1jANmXNrXPyatNv4sETiOnMgL064qBbki",
+          "name": "אפיון | Mycospring | מייל | הודעה רשמית: מיקוספרינג יוצאת למבצע | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-24T17:12:48.809Z",
+          "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+        },
+        {
+          "id": "1C1SmAqcItPKiZbNY37CzPgQZPF6GBH7H",
+          "name": "אפיון | Fill It | מייל | 4 במחיר של פחות מ־3?! Black Friday Sale >> | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-24T17:12:50.430Z",
+          "folder": "1sgqYw5-mxMx2gQwlh3tcfty6ClArBtT0"
+        },
+        {
+          "id": "1WH_YCWSxl_I87GwswpYN9kKpvZ-wDDuk",
+          "name": "אפיון | Pups | מייל | Fwd: לא יאומן מה עובר כל צנצנת לפני שהיא מגיעה אליכם | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-24T17:12:52.585Z",
           "folder": "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP"
         }
       ]
