@@ -1,6 +1,6 @@
 {
   "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
-  "fetchedAt": "2026-11-24T19:13:34+02:00",
+  "fetchedAt": "2026-11-25T19:09:28+02:00",
   "kinds": {
     "videos": {
       "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1739,6 +1739,20 @@
           "mime": "text/html",
           "modified": "2026-11-24T17:12:52.585Z",
           "folder": "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP"
+        },
+        {
+          "id": "1MVnkQ1uL0u3-IvjJvxe2wu6hkda5Wemo",
+          "name": "אפיון | Pups | מייל | Re: השאלה שלכם על הגירודים (חשוב!) | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-25T17:09:01.805Z",
+          "folder": "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP"
+        },
+        {
+          "id": "1BOVZ_Q87qQmdSYxuI015YIXNub-FC1nW",
+          "name": "אפיון | Mayven | מייל | תזכורת אחרונה שלא תפספסי | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-25T17:09:03.572Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
         }
       ]
     }
