@@ -1,6 +1,6 @@
 {
   "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
-  "fetchedAt": "2026-11-25T19:09:28+02:00",
+  "fetchedAt": "2026-11-26T19:11:14+02:00",
   "kinds": {
     "videos": {
       "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1753,6 +1753,20 @@
           "mime": "text/html",
           "modified": "2026-11-25T17:09:03.572Z",
           "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1VsTw4f-Q-lS-b0vm4DNPseX0TINZG2Ad",
+          "name": "אפיון | Pups | מייל | Fwd: לא יאומן מה הכלב שלי עושה עכשיו | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-26T17:10:48.497Z",
+          "folder": "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP"
+        },
+        {
+          "id": "1ajZDCAVsLTJkPnelsWc7ULI1Q5DezqI7",
+          "name": "אפיון | Smiley | מייל | אל תזמינו. עוד לא. | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-26T17:10:51.169Z",
+          "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
         }
       ]
     }
