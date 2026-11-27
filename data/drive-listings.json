@@ -1,6 +1,6 @@
 {
   "_doc": "Cached Drive folder listings (refreshed by the agent with the Drive connector). Used by scripts/sync-drive.mjs and the build-time gap warning; the build never calls Drive.",
-  "fetchedAt": "2026-11-26T19:11:14+02:00",
+  "fetchedAt": "2026-11-27T19:19:29+02:00",
   "kinds": {
     "videos": {
       "root": "1gyyDmx6mPXJaO0GUL_w0zFJZf5kHdpUt",
@@ -1766,6 +1766,62 @@
           "name": "אפיון | Smiley | מייל | אל תזמינו. עוד לא. | 7.5",
           "mime": "text/html",
           "modified": "2026-11-26T17:10:51.169Z",
+          "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+        },
+        {
+          "id": "1U5zT7fhSJMqlkgcOgsmPjy3Qa7X7k33r",
+          "name": "אפיון | Smiley | מייל | דחוף: הזדמנות אחרונה להיכנס לרשימת ה-VIP | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-27T17:18:13.996Z",
+          "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+        },
+        {
+          "id": "1uT_Ft9AFPdmgCtCoJ2KNh8LC1jSAONSb",
+          "name": "אפיון | Mycospring | מייל | עדכון מצב: המבצע בעיצומו | 7",
+          "mime": "text/html",
+          "modified": "2026-11-27T17:18:14.984Z",
+          "folder": "1aXYBb3YeyStLbM6XdDNew5RVdoZkVQN-"
+        },
+        {
+          "id": "13kQ3mEzCTJbvVQ9WrdBC8y0-JTgNc3oo",
+          "name": "אפיון | Mayven | מייל | את לא באמת צריכה שנשכנע אותך | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-27T17:18:15.920Z",
+          "folder": "1BEw4_loaI5mI5Vj6HOomKgTKseGs_sQ0"
+        },
+        {
+          "id": "1rWwqjzBfrvh_wY7PBvua0s1kz67OMSen",
+          "name": "אפיון | By Harmony | מייל | היום זה בלאק פריידיי 25% לכל החיים | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-27T17:18:17.189Z",
+          "folder": "1jzBVu4ZMGQGzo0Ss51f14HTEG5pKHCXv"
+        },
+        {
+          "id": "106ofbV-a-eX4gYYhtsNJOWgNvKnuHxNF",
+          "name": "אפיון | Pups | מייל | חשוב! היום בלבד: 50% על כל מוצר נוסף בעגלה | 8",
+          "mime": "text/html",
+          "modified": "2026-11-27T17:18:18.264Z",
+          "folder": "1s_bOfCQm-qTh6qPWEDvltOYQlKT0jMUP"
+        },
+        {
+          "id": "1cpsZig6E_8pmftCA4f_UvLKIxu6UZU4e",
+          "name": "אפיון | Smiley | מייל | הוזמנת לבלאק פריידי הגדול שלנו | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-27T17:18:19.483Z",
+          "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+        },
+        {
+          "id": "1e9uRnCOdkkDhzc4ni0HR5a31ReF3SNlP",
+          "name": "אפיון | Smiley | מייל | מחכות לך עוד מתנות מאיתנו | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-27T17:18:20.807Z",
+          "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
+        },
+        {
+          "id": "1N3yZt_FqvInSgJSPsVcj4U8DVPSozjrt",
+          "name": "אפיון | Smiley | מייל | הזדמנות אחרונה לקבל את המתנה שלך | 7.5",
+          "mime": "text/html",
+          "modified": "2026-11-27T17:18:23.616Z",
           "folder": "1e40tQrm8Y2nicZsELxywHwk85nhOKJeD"
         }
       ]
